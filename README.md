@@ -1,6 +1,9 @@
-# Computer Science and Computational Tools for Data Science
+# Computational Methods for Social Scientists
 
-Repo for www.cs_for_ds.com
+This site is built with `sphinx`, a python-based document builder. 
 
+To build / update the page, navigage to the root folder and run `python -m sphinx source docs/html`
 
-Copyright Nicholas Eubank, 2019
+(after installing `sphinx` and `nbsphinx`)
+
+All materials live in `source` as jupyter notebooks, and built to HTML files in `docs/html`. 

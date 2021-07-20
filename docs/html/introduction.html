@@ -286,24 +286,30 @@ div.rendered_html tbody tr:hover {
 </style>
 <section id="Introduction">
 <h1>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h1>
-<p>In this first in a number of tutorials, we’ll cover the very basics of R. If you’ve programmed before you can skip much of this. But regardless of your background, I hope you’ll find this and subsequent tutorials useful for learning R’s many tools for graphing, statistical analysis, and data collection and management — or what we collectively might call “data science.”</p>
+<p>In this first in a number of tutorials, we’ll cover the very basics of R. If you’ve programmed before you can skip much of this. But regardless of your background, we hope you’ll find this and subsequent tutorials useful for learning R’s many tools for graphing, statistical analysis, and data collection and management — or what we collectively might call “data science.”</p>
+<section id="Installing-R">
+<h2>Installing R<a class="headerlink" href="#Installing-R" title="Permalink to this headline">¶</a></h2>
+<p>First, download R <em>free</em> <a class="reference external" href="https://cloud.r-project.org/">here</a>!</p>
+<p>After you’ve downloaded R itself, you will probably want to also download a program called <a class="reference external" href="https://www.rstudio.com/">RStudio</a> (installation instructions <a class="reference external" href="https://www.rstudio.com/products/rstudio/download/">here</a>; note that you need to already have R to use RStudio). RStudio is a little “helper” program that makes it a little easier to write code for R (it is what is referred to as an “integrated development environment” (IDE)). There are also a lot of other IDEs, but RStudio is the
+easiest and one of the most popular.</p>
+<p>For an installation tutorial and introduction to R functionality, please <a class="reference external" href="https://www.youtube.com/watch?v=ulIv0NiVTs4">go watch this video</a>.</p>
 </section>
-<section id="Getting-R-Running">
-<h1>Getting R Running<a class="headerlink" href="#Getting-R-Running" title="Permalink to this headline">¶</a></h1>
-<p>You can run R using a number of text editors or “integrated development environments” (IDEs). Most people prefer some other application than R’s native environment, which provides only limited functionality in terms of syntax highlighting, auto-completion, and debugging. Alternatives include <a class="reference external" href="https://www.rstudio.com/">RStudio</a>, <a class="reference external" href="https://code.visualstudio.com/">VS Code</a>, <a class="reference external" href="https://www.gnu.org/software/emacs/">Emacs</a>/<a class="reference external" href="http://ess.r-project.org/">ESS</a>, and many many more. <em>Most</em> social
-scientists using R use RStudio, and so we’ll use that here. You can find the official installation instructions <a class="reference external" href="https://www.rstudio.com/products/rstudio/download/">here</a>, but we’d actually recommend <a class="reference external" href="https://www.youtube.com/watch?v=ulIv0NiVTs4">this installation tutorial video here</a>, which also details the basic funcationality of RStudio.</p>
-<p>All IDEs include a console and a text editor. The console is where you’ll see the results (or <em>output</em>) of commands executed from the editor. You can type commands directly into the console, but this is generally not a good strategy. This is because the whole purpose of writing code is to make it reproducible. Typing commands in the text editor will let you come back to them later as long as you save them (using extension .R).</p>
-</section>
-<section id="Testing-Your-Installation">
-<h1>Testing Your Installation<a class="headerlink" href="#Testing-Your-Installation" title="Permalink to this headline">¶</a></h1>
-<p>Fire up RStudio (or whatever IDE you use) and type the following two lines into the text editor. Then execute them, which can be done using a <a class="reference external" href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts">keyboard shortcut</a> — Ctrl+Enter (Windows) or Command+Enter (mac) in RStudio.</p>
+<section id="Interacting-with-R">
+<h2>Interacting with R<a class="headerlink" href="#Interacting-with-R" title="Permalink to this headline">¶</a></h2>
+<p>R has a text-based interface program, which means you can’t ask it to do things by clicking buttons or using drop-down menus. Instead, it has a command prompt where you type messages to R. The place you can type has a little right arrow symbol (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>). Just type your message after that right arrow and hit return. In screenshot below, for example, I’m about to ask R to print the phrase “Hello!” (though I haven’t hit return, so it hasn’t done anything yet):</p>
+<img alt="R_Prompt" src="_images/R_Prompt.png" />
+<p>After you type a command to R, hit return and R will try and do what you’ve asked of it. If I hit return after <code class="docutils literal notranslate"><span class="pre">print(&quot;Hello!&quot;)</span></code>, for example, R will print out the phrase “Hello!”:</p>
+<img alt="R_Prompt_Executed" src="_images/R_Prompt_executed.png" />
+<p>You will notice that after it printed out “Hello!”, a new right arrow appeared. That’s R’s way of saying it’s done doing the last thing you asked it to do.</p>
+<section id="Code-Examples-On-This-Site">
+<h3>Code Examples On This Site<a class="headerlink" href="#Code-Examples-On-This-Site" title="Permalink to this headline">¶</a></h3>
+<p>On this website, you’ll find that code examples don’t look quite like they do when you’re typing in R yourself. Instead, you’ll see code appear in grey blocks with a number on the left side. Below these blocks, you will see the output R has returned after running that code. For example, here’s that same <code class="docutils literal notranslate"><span class="pre">&quot;Hello!&quot;</span></code> line in the style used on this site:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-r notranslate"><div class="highlight"><pre>
-<span></span><span class="n">hello_world</span> <span class="o">&lt;-</span> <span class="s">&quot;hello world&quot;</span>
-<span class="n">hello_world</span>
+<span></span><span class="s">&quot;Hello!&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -311,104 +317,438 @@ scientists using R use RStudio, and so we’ll use that here. You can find the o
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area rendered_html docutils container">
-'hello world'</div>
+'Hello!'</div>
 </div>
-<p>In case it’s not obvious, R output is displayed in gray, above which is code that you should type into your text editor. If R prints out <code class="docutils literal notranslate"><span class="pre">hello</span> <span class="pre">world</span></code>, then you’re good to go!</p>
+<p>In addition, some code will include “comments”. Comments are notes placed in someone’s code to explain what’s going on to other programmers. Comments always start with a <code class="docutils literal notranslate"><span class="pre">#</span></code> in R, which tells R that the text that follows is not something it should try and execute. Comments will always appear in italics and in yellow.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># This is a comment. In the next line, I&#39;ll add 2 and 3.</span>
+<span class="m">2</span> <span class="o">+</span> <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+5</div>
+</div>
 </section>
-<section id="Reading-R-code">
-<h1>Reading R code<a class="headerlink" href="#Reading-R-code" title="Permalink to this headline">¶</a></h1>
-<p>Before we start <em>writing</em> R code, we need to first be able to read R code. After all, you didn’t start writing English before you could read it, did you?</p>
-<p>Let’s begin with the following block of code:</p>
-<div class="nbinput nblast docutils container">
+</section>
+<section id="Basic-Math-in-R">
+<h2>Basic Math in R<a class="headerlink" href="#Basic-Math-in-R" title="Permalink to this headline">¶</a></h2>
+<p>Now that we’ve learned how to pass commands to R, we can start asking R to do things for us. For example, R can do all the normal math operations you are familiar with:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Addition</span>
+<span class="m">2</span> <span class="o">+</span> <span class="m">2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+4</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># Multiplication</span>
+<span class="m">2</span> <span class="o">*</span> <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+6</div>
+</div>
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-r notranslate"><div class="highlight"><pre>
-<span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">5</span>
+<span></span><span class="c1"># Division</span>
+<span class="m">4</span> <span class="o">/</span> <span class="m">2</span>
 </pre></div>
 </div>
 </div>
-<p>What’s happening here? In R, we would read this as “assigning the value of 5 to the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>” (<code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> is called the assignment operator in R). But what exactly do we mean by that?</p>
-<p>If you’d done any programming before, you probably have an implicit notion of a variable and assignment, but in this course we’d like to provide you with an explicit metaphor we’ll keep coming back to: <strong>a variable is a box that holds a value,</strong> and so when we assign the value of 5 to the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>, we’re really saying “put 5 in the box <code class="docutils literal notranslate"><span class="pre">a</span></code>,” which we could draw as:</p>
-<p>[figure out how to draw code with a box next to it.]</p>
-<p>As we walk through a code, we can use this same idea to keep track of how a program evolves. For example, consider this small block of code:</p>
-<p>➤ a &lt;- 5 b &lt;- 7 c &lt;- a + b a &lt;- 3</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Create a third object
-w &lt;- a + b
-w
-
-# Logical tests
-w - b == a
-w - b &gt; a
-b &lt;- 1 # overwrite b
-x &lt;- w - b &gt; a
-x
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+2</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
-<p>Does the output make sense to you? (I’m not displaying it here so that you can try to make sense of it yourself first.)</p>
-<p>Here are some things to pay attention to from our first few lines of code:</p>
-<ol class="arabic simple">
-<li><p><strong>Comments</strong>. Anything after <code class="docutils literal notranslate"><span class="pre">#</span></code> is a comment and won’t be evaluated by R.</p></li>
-<li><p><strong>The assignment operator</strong>. R uses <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> (the assignment operator) to create objects. A single equal sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>) also works, but the norm is to use <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> in R.</p></li>
-<li><p><strong>Objects</strong>. We used the assignment operator to create <em>objects</em> — for example, <code class="docutils literal notranslate"><span class="pre">hello_world</span></code> and <code class="docutils literal notranslate"><span class="pre">a</span></code>. The names of these objects are completely arbitrary. Unless they are created within a function, they are stored in R’s memory with the value you assigned to them (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">5</span></code>) until the end of your R session.</p></li>
-<li><p><strong>Class.</strong> R automatically assigns a class to each object you create. Three classes were used above: numeric, character, and logical. Use <code class="docutils literal notranslate"><span class="pre">class()</span></code> to see what type an object is (e.g., <code class="docutils literal notranslate"><span class="pre">class(hello_world)</span></code>, <code class="docutils literal notranslate"><span class="pre">class(a)</span></code>, and <code class="docutils literal notranslate"><span class="pre">class(x)</span></code>). Why is this important? For one, you may think a certain object has one class when it has another. This will cause issues. For example, this throws an error:</p></li>
-</ol>
-<div class="indent"><div class="nbinput nblast docutils container">
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="c1"># And even exponentiation (e.g. 2 raised to the third power)</span>
+<span class="m">2</span> <span class="o">^</span> <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+8</div>
+</div>
+</section>
+<section id="Variables">
+<h2>Variables<a class="headerlink" href="#Variables" title="Permalink to this headline">¶</a></h2>
+<p>Congratulations! You now know how to do math in R!</p>
+<p>If we want to do more than use R as a calculator, though, we need to be able to not only do math problems, but also store the results of our calculations so we can reuse them in the future, or combine the results of lots of different calculations. In the examples above, R did the math we asked it to do, and printed out the results, but it didn’t keep a copy of those results anywhere.</p>
+<p>In order to store the <em>value</em> of our calculations, we need to <em>assign them to a variable</em>. OK, but what does that actually mean?</p>
+<p>If you’d done any programming before, you probably have an implicit notion of a variable and assignment, but in this course we’d like to provide you with an explicit metaphor we’ll keep coming back to: <strong>a variable is a box that holds a value</strong>. So when we assign the value of 5 to the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>, we’re really saying “put 5 in the box <code class="docutils literal notranslate"><span class="pre">a</span></code>.”</p>
+<p>Once we’ve stored a value by assigning it to a variable, we can then reference that value any time by invoking that variable. For example, let’s calculate the weight of a velociraptor in pounds.</p>
+<img alt="velociraptor" src="_images/velociraptor.jpg" />
+<p>First, let’s store the weight of a velociraptor in kilograms (estimated to be <a class="reference external" href="http://www.dinodatabase.com/dinorcds.asp">113 kg</a>) in a variable called <code class="docutils literal notranslate"><span class="pre">velociraptor_weight_in_kg</span></code>:</p>
+<div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-r notranslate"><div class="highlight"><pre>
-<span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">5</span>
-<span class="n">b</span> <span class="o">&lt;-</span> <span class="s">&quot;7&quot;</span>
-<span class="c1">#a + b</span>
+<span></span><span class="n">velociraptor_weight_in_kg</span> <span class="o">=</span> <span class="m">113</span>
 </pre></div>
 </div>
 </div>
-<p>Not knowing that <code class="docutils literal notranslate"><span class="pre">b</span></code> is a character object (which often is much less obvious than here) would be frustrating. Other classes include factor, matrix, data.frame and many more that we’ll get to.</p>
-</div><ol class="arabic simple" start="5">
-<li><p><strong>Overwriting objects</strong>. You can overwrite objects without R complaining (e.g., <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">&lt;-</span> <span class="pre">1</span></code> above). This can be confusing if you don’t keep track of which objects you have overwritten, but in general this ability is a good thing. R stores every object you create in memory, and overwriting an object saves memory to the extent that R doesn’t need to hold an additional object, which may be consequential when you work with large datasets.</p></li>
-</ol>
-</section>
-<section id="Packages">
-<h1>Packages<a class="headerlink" href="#Packages" title="Permalink to this headline">¶</a></h1>
-<p>The true power of R is that it’s open-source. As such, anyone can extend its core functionality through packages. This often results in remarkable improvements to how we can approach complex data tasks. In subsequent tutorials, I will make particular use of a set of R packages developed by <a class="reference external" href="http://had.co.nz/">Hadley Wickham</a> known as the <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code>.</p>
-<p>To use a package you must:</p>
+<p>Basically, all I’ve done is given a name (the variable name) to a value (in this case, 113).</p>
+<p>Now any time I use that variable name, R knows that that variable name is just a stand-in for 113. For example, if you just type a variable’s name into R, it will tell you the value associated with that variable:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">velociraptor_weight_in_kg</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+113</div>
+</div>
+<p>Now we can do calculations with that variable. There are 2.2 pounds in a kilogram, so to get a velociraptor’s weight in pounds, we can just multiply our weight in kg variable by the conversion factor:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">velociraptor_weight_in_kg</span> <span class="o">*</span> <span class="m">2.2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+248.6</div>
+</div>
+<p>We can also do math with multiple variables, because really anywhere you see a variable, you can just imagine that the value associated with the variable is there instead.</p>
+<p>For example, suppose I have two pet dinosaurs, and my partner has three dinosaurs. If we got married, how many dinosaurs would we have? Let’s do this super-complicated math using variables.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">nick_pet_dinosaurs</span> <span class="o">=</span> <span class="m">2</span>
+<span class="n">adriane_pet_dinosaurs</span> <span class="o">=</span> <span class="m">3</span>
+
+<span class="n">nick_pet_dinosaurs</span> <span class="o">+</span> <span class="n">adriane_pet_dinosaurs</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+5</div>
+</div>
+<p>And if we wanted to, we could also store that new value in a new variable called <code class="docutils literal notranslate"><span class="pre">family_pet_dinosaurs</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">family_pet_dinosaurs</span> <span class="o">=</span> <span class="n">nick_pet_dinosaurs</span> <span class="o">+</span> <span class="n">adriane_pet_dinosaurs</span>
+<span class="n">family_pet_dinosaurs</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+5</div>
+</div>
+<p>One important thing about variables is that you can change the value associated with a variable. Suppose that while walking to work, I stumbled upon a truely adorable Nigersaurus and couldn’t resist adopting her.</p>
+<img alt="Nigersaurus" src="_images/Nigersaurus.jpg" />
+<p>(Photo Credit: <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=3909649">Matt Martyniuk (Dinoguy2)</a>)</p>
+<p>If that happened, we’d need to update the number of pet’s I have by 1!</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">nick_pet_dinosaurs</span> <span class="o">=</span> <span class="n">nick_pet_dinosaurs</span> <span class="o">+</span> <span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<p>Now if we ask R for the value of <code class="docutils literal notranslate"><span class="pre">nick_pet_dinosaurs</span></code>, we’ll see it has increased by 1:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">nick_pet_dinosaurs</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+3</div>
+</div>
+<p>Note there’s something a little weird about the order in which things happen here: when we assign something to a variable by writing <code class="docutils literal notranslate"><span class="pre">variable_name</span> <span class="pre">=</span> <span class="pre">[some</span> <span class="pre">expression]</span></code>, <strong>R evaluates the expression on the right first, then assigns the results of that expression to the variable on the left hand side.</strong></p>
+<p>Given how we normally read left-to-right, this can be a little confusing. So what R did here was:</p>
+<ul class="simple">
+<li><p><em>first</em> calculate <code class="docutils literal notranslate"><span class="pre">nick_pet_dinosaurs</span> <span class="pre">+</span> <span class="pre">1</span></code> (which is the same as <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">1</span></code>),</p></li>
+<li><p><em>then</em> assigned the value of that expression (<code class="docutils literal notranslate"><span class="pre">3</span></code>) to the variable <code class="docutils literal notranslate"><span class="pre">nick_pet_dinsoaurs</span></code>, replacing the old value of <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></li>
+</ul>
+<section id="Variable-Exercises">
+<h3>Variable Exercises<a class="headerlink" href="#Variable-Exercises" title="Permalink to this headline">¶</a></h3>
+<p>OK, this is a great time to pause and try a few exercises for yourself.</p>
+<p>Let’s suppose that you have a dinosaur zoo. In your zoo, you have two <a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Tyrannosaurus_Rex_Dinosaurierland_Ruegen_2009.jpg/240px-Tyrannosaurus_Rex_Dinosaurierland_Ruegen_2009.jpg">T-Rexes</a>, three <a class="reference external" href="http://images.dinosaurpictures.org/unaysaurusJB_57a6.jpg">Unaysaurus</a>, and five
+<a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Spinosaurus_-_Museu_Blau_-_2016_-_01.jpg/1024px-Spinosaurus_-_Museu_Blau_-_2016_-_01.jpg">Spinosaurus</a></p>
 <ol class="arabic simple">
-<li><p><strong>Install it.</strong> You only need to do this once.</p></li>
-<li><p><strong>Load it.</strong> You need to re-load packages every time you open R.</p></li>
+<li><p>Create variables for the number of each dino you have called <code class="docutils literal notranslate"><span class="pre">my_trexes</span></code>, <code class="docutils literal notranslate"><span class="pre">my_unas</span></code>, and <code class="docutils literal notranslate"><span class="pre">my_spinos</span></code>.</p></li>
+<li><p>Now use those variables to calculate how many total dinosaurs you have.</p></li>
+<li><p>Oh no! One of your t-rexes got out and ate an Unaysaurus. Decrease the value of <code class="docutils literal notranslate"><span class="pre">my_unas</span></code> by one.</p></li>
+<li><p>Double oh no! Your T-Rexes were male and female, and they just had a baby! Increase you number T-Rexes by one!</p></li>
+<li><p>Sadly, one of your Spinosauruses died of old age. :( Decreases your count of Spinosauruses by one.</p></li>
+<li><p>How many dinos do you have now? You’ve probably lost count of all these changes, but thankfully they’re all stored in variables, so you can just add them all up!</p></li>
 </ol>
-<p>To install the package <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>, which we’ll use a lot, run</p>
+<p>Answers to exercises can be found <a class="reference external" href="answers.ipynb#Answers-for-Variables-Tutorial">here</a>, but only go to that page if you get REALLY stuck! The best way to learn to program is to try things out and see what works, so don’t deny yourself the learning opportunity that process provides but looking at answers too quickly!</p>
+<div class="admonition note">
+<p>NOTE: There are actually two ways to assign a value to a variable name in R. They work exactly the same, so you can use whichever you want. The first is with a single equal sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>), and the other is with the two symbols that make an arrow (<code class="docutils literal notranslate"><span class="pre">&lt;-</span></code>). So the following two commands are exactly the same:</p>
+</div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-r notranslate"><div class="highlight"><pre>
-<span></span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">),</span> <span class="n">dep</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+<span></span><span class="n">x</span> <span class="o">=</span> <span class="m">72</span>
+<span class="n">x</span> <span class="o">&lt;-</span> <span class="m">72</span>
 </pre></div>
 </div>
 </div>
-<p>And to load these packages, use:</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
-<span></span><span class="nf">require</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div style="margin-top: 15px"></div></section>
-<section id="Style">
-<h1>Style<a class="headerlink" href="#Style" title="Permalink to this headline">¶</a></h1>
-<p>Writing good code requires a lot of practice. Good code executes quickly and is non-repetitive (e.g., uses functions for tasks that need to be executed several times). But most importantly for you right now, good code is easy to understand — both for yourself if you were to come back to it and for someone else reading it.</p>
-<p>To that end, comments are extremely useful. Comments can delineate different blocks of code and, more importantly, clarify what a command or set of commands is doing. Especially use comments if you’re doing something complex — save them for routine tasks that most R programmers will understand.</p>
-<p>There are some other style guidelines you should attempt to follow. Please take a look at <a class="reference external" href="https://google.github.io/styleguide/Rguide.xml">Google’s R Style Guide</a>. In particular, try to observe the spacing and line lengths limits outlined in that document. (Some other rules seem less important to me: I personally like underscores for object and function names.)</p>
 </section>
-<section id="Trouble-shooting">
-<h1>Trouble shooting<a class="headerlink" href="#Trouble-shooting" title="Permalink to this headline">¶</a></h1>
-<p>Many, many times when coding you’ll have an idea of what you want to do but won’t know how to do it in R. This happens even for experienced coders. With the right strategies, you’ll be able to solve a majority of issues you run into yourself. Not having to ask someone else every time you run into a problem will save you a lot of time.</p>
-<p>When you get stuck, google is your friend. For example, if you want to find the mean of a variable, try googling “how to find mean in R” and there will be tons of explanations of how to do this.</p>
-<p>R also has a help feature that can be called using the following syntax: <code class="docutils literal notranslate"><span class="pre">?commandname</span></code>, where <code class="docutils literal notranslate"><span class="pre">commandname</span></code> is the name of the command that you need help with. For example, <code class="docutils literal notranslate"><span class="pre">?mean</span></code> will bring up a help dialog box with information about how to use R’s <code class="docutils literal notranslate"><span class="pre">mean()</span></code> command.</p>
+</section>
+<section id="Types-of-Data">
+<h2>Types of Data<a class="headerlink" href="#Types-of-Data" title="Permalink to this headline">¶</a></h2>
+<p>Up till now, we’ve only been working with numbers, but R is actually equiped to work with a number of different <em>kinds</em> of data. In the course of this tutorial we’ll introduce all of them, but there are really three main ones to be aware of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numeric</span></code> and <code class="docutils literal notranslate"><span class="pre">integer</span></code>: The main data types for numbers. These two types are <em>slightly</em> different (integers is restricted to, we, integers; numeric can be an integer or a number with decimals), but you can think of them as interchangable for now.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">character</span></code>: Text data, like a person’s name, or a quote from a book. Written with <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> before and after (or single quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>) before and after if you’d prefer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logical</span></code>: Data that only takes on the values of true and false. Written <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code></p></li>
+</ul>
+<p>If you’re ever unsure of the type of a variable (or more precisely, of the type of the value associated with a variable), you can ask R with the <code class="docutils literal notranslate"><span class="pre">class()</span></code> function:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="kc">pi</span> <span class="o">=</span> <span class="m">3.1416</span>
+<span class="nf">class</span><span class="p">(</span><span class="kc">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+'numeric'</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">mystery_novel</span> <span class="o">=</span> <span class="s">&quot;T&#39;was a dark and story night&quot;</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">mystery_novel</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+'character'</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">my_logical</span> <span class="o">=</span> <span class="kc">TRUE</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">my_logical</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+'logical'</div>
+</div>
+<section id="Characters">
+<h3>Characters<a class="headerlink" href="#Characters" title="Permalink to this headline">¶</a></h3>
+<p>The value of characters will be evident when we start working with real data, when our datasets will include things like country names, or capitals, or open-ended survey responses. In all these situations, we will use the <code class="docutils literal notranslate"><span class="pre">character</span></code> type to store text.</p>
+<p>Note that if a variable is a character, even if it looks like a number, R will treat it like text and you won’t be able to do things like add or multiple it. For example:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="m">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s">&quot;7&quot;</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+<p>Will generate an error:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="n">in</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">:</span> <span class="n">non</span><span class="o">-</span><span class="n">numeric</span> <span class="n">argument</span> <span class="n">to</span> <span class="n">binary</span> <span class="n">operator</span>
+</pre></div>
+</div>
+<p>Because plus is only defined for numbers, and R sees <code class="docutils literal notranslate"><span class="pre">&quot;7&quot;</span></code> as text. I’ll show you how to deal with this silly situation below.</p>
+</section>
+<section id="Logicals">
+<h3>Logicals<a class="headerlink" href="#Logicals" title="Permalink to this headline">¶</a></h3>
+<p>The use of logicals is less obvious at the moment, but they will eventually prove very important. For now, it’s enough to know they exist, and that the place you are most likely to encounter them is when you write tests. For example:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="m">7</span> <span class="o">&gt;</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+TRUE</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="m">4</span> <span class="o">&lt;</span> <span class="m">3</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+FALSE</div>
+</div>
+<p>This is also a good time to introduce the double-equal sign. Because we use <code class="docutils literal notranslate"><span class="pre">=</span></code> to assign values to variables, we can’t use it to test if two things are equal. To ask R to evaluate whether two things are equal, therefore, we use a double-equal sign (<code class="docutils literal notranslate"><span class="pre">==</span></code>). For example:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="m">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="m">5</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+TRUE</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">c</span> <span class="o">=</span> <span class="m">7</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+FALSE</div>
+</div>
+</section>
+</section>
+<section id="A-Brief-Introduction-to-Functions">
+<h2>A Brief Introduction to Functions<a class="headerlink" href="#A-Brief-Introduction-to-Functions" title="Permalink to this headline">¶</a></h2>
+<p>One last note before we finish off this section: one of the most powerful thing about a language like R is that it’s full of pre-made tools called <em>functions</em>. A function is basically a little program inside R. They can do everything from simple operations (like adding up numbers) to extremely complicated operations (fit a machine learning model).</p>
+<p>The idea of a function is that takes in a set of <em>arguments</em> as an input, and then it <em>returns</em> a result. To use a function, you type out the function name, then place the arguments you want to pass to the function inside parentheses. For example, there’s a function called <code class="docutils literal notranslate"><span class="pre">as.numeric()</span></code> that’s designed to convert a variable that is a character (like <code class="docutils literal notranslate"><span class="pre">&quot;7&quot;</span></code>) to a numeric value (<code class="docutils literal notranslate"><span class="pre">7</span></code>) so we can do arithmatic with that value.</p>
+<p>So to use it, we pass the function <code class="docutils literal notranslate"><span class="pre">as.numeric</span></code> the variable (<code class="docutils literal notranslate"><span class="pre">b</span></code>). The function will then take the value associated with <code class="docutils literal notranslate"><span class="pre">b</span></code> (<code class="docutils literal notranslate"><span class="pre">&quot;7&quot;</span></code>), convert it to a numeric value, then return the converted value. For example:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="m">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s">&quot;7&quot;</span>
+<span class="n">b_as_a_numeric</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b_as_a_numeric</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+12</div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">as.numeric</span></code> didn’t actually change the value of the variable <code class="docutils literal notranslate"><span class="pre">b</span></code> – instead, it returned the converted value, and we assigned it to the variable <code class="docutils literal notranslate"><span class="pre">b_as_a_numeric</span></code>. If we look at <code class="docutils literal notranslate"><span class="pre">b</span></code>, we will see it is still <code class="docutils literal notranslate"><span class="pre">&quot;7&quot;</span></code></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+'7'</div>
+</div>
+<p>But <code class="docutils literal notranslate"><span class="pre">as.numeric</span></code> won’t work on everything. If you pass <code class="docutils literal notranslate"><span class="pre">as.numeric</span></code> a character that doesn’t look like a number, it’s smart enough to know that there’s no way to convert it, so instead of a number, it returns <code class="docutils literal notranslate"><span class="pre">NA</span></code>, which is what R uses when it has no idea what to do. For example:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">silly_example</span> <span class="o">=</span> <span class="s">&quot;This doesn&#39;t look like a number at all!&quot;</span>
+<span class="nf">as.numeric</span><span class="p">(</span><span class="n">silly_example</span><span class="p">)</span>
+
+<span class="n">Warning</span> <span class="n">message</span> <span class="n">in</span> <span class="nf">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">envir</span><span class="p">,</span> <span class="n">enclos</span><span class="p">)</span><span class="o">:</span>
+“<span class="n">NAs</span> <span class="n">introduced</span> <span class="n">by</span> <span class="n">coercion</span>”
+<span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>We’ll talk much more about functions in the future, but for now it’s enough to recognize that they are little programs, and that they operate by accepting inputs (the things placed inside the parenthesis that follow the function name) and return a result to you which you can look at or assign to a variable for later use.</p>
+</section>
 </section>
 
 
@@ -429,13 +769,15 @@ x
 
 <h3>Navigation</h3>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Getting-R-Running">Getting R Running</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Testing-Your-Installation">Testing Your Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Reading-R-code">Reading R code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Packages">Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Style">Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Trouble-shooting">Trouble shooting</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#Installing-R">Installing R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Interacting-with-R">Interacting with R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Basic-Math-in-R">Basic Math in R</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Variables">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#Types-of-Data">Types of Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#A-Brief-Introduction-to-Functions">A Brief Introduction to Functions</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html#Creating-vectors">Creating vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html#Subsetting-vectors">Subsetting vectors</a></li>

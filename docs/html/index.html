@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Welcome to Computational Methods for Social Scientists (in R)! &#8212; Comp Methods for Soc Sci  documentation</title>
+    <title>Computational Methods Boot Camp for Social Scientists &#8212; Comp Methods for Soc Sci  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
@@ -33,55 +33,87 @@
 
           <div class="body" role="main">
             
-  <section id="welcome-to-computational-methods-for-social-scientists-in-r">
-<h1>Welcome to Computational Methods for Social Scientists (in R)!<a class="headerlink" href="#welcome-to-computational-methods-for-social-scientists-in-r" title="Permalink to this headline">¶</a></h1>
-<p>More to come…</p>
+  <section id="computational-methods-boot-camp-for-social-scientists">
+<h1>Computational Methods Boot Camp for Social Scientists<a class="headerlink" href="#computational-methods-boot-camp-for-social-scientists" title="Permalink to this headline">¶</a></h1>
+<p><strong>SUPER PRELIMINARY SYLLABUS DRAFT</strong></p>
+<p>The goal of this Boot Camp is to provide incoming social science graduate students with a foundational understanding of topics including: variable assignment; vectors and matrices; loading, subsetting, cleaning, merging, and collapsing tabular data; plotting; and using loops and functions.</p>
+<p>Throughout, our emphasis will be on learning the <em>generalized principles</em> that underlie how R works. Few fields are changing as quickly as computational social science / data science, and so any specific packages or tools we teach you now are sure to be out of date within a few years.</p>
+<p>But there are a set of fundamental concepts and patterns that are so powerful and flexible that they end up being common to <em>most</em> data science tools, not just across packages in R, but also across languages, and so those are the concepts we’ll try and emphasize here.</p>
+<section id="learning-goals">
+<h2>Learning Goals<a class="headerlink" href="#learning-goals" title="Permalink to this headline">¶</a></h2>
+<p>By the end of this Boot Camp, our goal if for you to be able to:</p>
+<ul class="simple">
+<li><p>Recognize and manipulate vectors and matrices – the basic building blocks of R</p></li>
+<li><p>Manipulate different types of data</p></li>
+<li><p>Load data in R from a range of different sources</p></li>
+<li><p>Summarize data</p></li>
+<li><p>Clean dirty data</p></li>
+<li><p>Merge datasets</p></li>
+<li><p>Find help online when you get stuck in R</p></li>
+<li><p>Write loops to execute repetitive tasks</p></li>
+<li><p>Write functions to generalize your code</p></li>
+</ul>
+</section>
+<section id="class-schedule">
+<h2>Class Schedule<a class="headerlink" href="#class-schedule" title="Permalink to this headline">¶</a></h2>
+<p><cite>Class Schedule &lt;class_schedule&gt;</cite> for schedule of classes.</p>
+</section>
+<section id="r">
+<h2>R<a class="headerlink" href="#r" title="Permalink to this headline">¶</a></h2>
+<p>We’ll spend most of this Boot Camp teaching you to use a program for statistical analysis called <em>R</em> (yup, just the letter, though if you need to google R, I recommend using the search term <cite>Rlang</cite>).</p>
+<p>Why R? Because it’s currently the most-used statistical software in the social sciences, and using the same tool as those around ensures you can effectively collaborate with colleagues, and that if you need help, you can easily get it from those around you.</p>
+<p>It is worth emphasizing that we’re <em>not</em> teaching you R because we think it is the “best” tool for data science. The reality is that there are lots of tools for statistical programming (e.g. R, Stata, SPSS, Python, Julia, Matlab, etc.), and people often develop really strong opinions about what language is best, and sometimes pass judgement on people who use other languages. We would like to discourage this type of thinking.</p>
+<p>My own view — based on years working in a range of languages, including Stata, R, Python, Julia, Matlab, and others — is that the “best” tool is the one that you feel most productive using, and so what is best will depend on a range of factors, like the type of work you’re doing and what tools you used in the past. But perhaps the most important factor impacting what language is “best” in any given situation is what other people are already using. Network effects in data science are <em>huge</em>, and it’s hard to overstate how many advantages there are to using the language that’s being used by your colleagues. Not only does using the “popular” language mean that it’s easier to get help when you have problems, and collaborate with colleagues, but it also means you’re more likely to have access to packages and software written specifically for people working in your field. And when it comes to the social sciences, R is by far the most used language, and so that is what we’ll be learning here.</p>
+<p>With that said, over the course of your career you may find yourself gravitating to one tool or another as required by your research. For that reason, while we will be using R in this course, we’ll also try and emphasize the development of <em>generalizable skills and understandings</em> that you will find useful no matter what language you end up working with in the future.</p>
+</section>
+<section id="required-programming-background">
+<h2>Required Programming Background<a class="headerlink" href="#required-programming-background" title="Permalink to this headline">¶</a></h2>
+<p><strong>None.</strong></p>
+<p>We have <em>absolutely no expectations that students will have any experience with programming!</em> If you know how to use google and email, you have plenty of experience – everything else we’ll take care of.</p>
+<p>At times during the course, we may make statements about how the tools we’re learning (like R) compare to different tools (like Stata or Python) if we find there are students with experience in these other tools. However, if we make those comparisons, it is only to help those students avoid the traps one can fall in if one’s background is in another language. It is in no way because we <em>expect</em> all students to have experience with other tools.</p>
+<section id="but-i-already-know-r-do-i-need-to-be-here">
+<h3>But I already know R. Do I need to be here?<a class="headerlink" href="#but-i-already-know-r-do-i-need-to-be-here" title="Permalink to this headline">¶</a></h3>
+<p>In my experience, <em>most</em> instruction students receive in R tends to provide students with a handful of functions they can call in order to get work done. This is a good way to get started in R, but – again, in my experience – even students who use R a lot often don’t fully understand the basic principles on which languages like R are built. A decade ago, this was less of a problem, but as computational methods take on an increasingly central place in the social sciences, and our computational tools become increasingly sophisticated, this lack of fundamentals often becomes a significant obstacle for students seeking to improve their skills.</p>
+<p>In this course, our goal is not to learn to stitch together a handful of functions to load a data.frame and run a regression; rather, the goal of this course is to help you learn to think like a data scientist about how R works to provide you a foundation on which to build as you move from basic linear regressions to geospatial analysis, network analysis, web-scraping, advanced statistical modelling, or other programming languages.</p>
+</section>
+</section>
+<section id="who-am-i">
+<h2>Who Am I?<a class="headerlink" href="#who-am-i" title="Permalink to this headline">¶</a></h2>
+<p>Because this Boot Camp is targeted at “social scientists” writ large, you may reasonably be asking whether it’s actually appropriately designed for <em>you</em> and your specific interests. Obviously I can’t guarantee the answer is yes for absolutely any student walking through the door, but I have designed this Boot Camp to focus on foundational topics that I think are critical for anyone interested in doing computational social science / data science in 2021 based on my own experiences as a researcher and educator.</p>
+<p>What are those experiences? Over the past 15 years, I have had the good fortunate to do work in a wide range of contexts, including: doing academic social science research published in top political science journals; conducting impact evaluations and analyzing household survey data for the World Bank; working as an expert consultant in US voting rights litigation; and teaching a range of computational social science methods to everyone from undergraduate cultural anthropologists to PhD political scientists. My work has entailed lots of statistics, network analysis, geospatial analysis, and datasets large and small for all imaginable sources. Moreover, many of the instructional materials we’ll use in this course were developed in conjunction with Simon Ejdemyr, who got his PhD in Political Science from Stanford before going on to work as a Data Scientist first at Facebook and now at Netflix.</p>
+<p>So while I may not have worked in your <em>exact</em> area of interest, if your area of interest sounds close to any of those, what we’ll be learning here should be relevant.</p>
+</section>
+<section id="class-organization">
+<h2>Class Organization<a class="headerlink" href="#class-organization" title="Permalink to this headline">¶</a></h2>
+<p>In this class we will be “flipping the classroom” – you will be required to review tutorials on R between classes, and each afternoon we will focus on doing exercises that allow you to get hands-on experience with the skills you’ve read about in an environment where help will be available. These tutorials aren’t very long, and we <strong>strongly</strong> recommend that while you read through them you do so with an open R session so you can just play around a little, trying out the things you learn. The research on learning to program is exceedingly clear on this point: <strong>the only way to learn to program is to actually program</strong>, so the more time you spend playing with R, making mistakes, and troubleshooting, the more you will learn. We’ll do lots of exercises in class, but the more you play on your own too, the more you will learn.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Getting-R-Running">Getting R Running</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Testing-Your-Installation">Testing Your Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Reading-R-code">Reading R code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Packages">Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Style">Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Trouble-shooting">Trouble shooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Creating-vectors">Creating vectors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="vectors.html#c()">c()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vectors.html#seq()">seq()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vectors.html#rep()">rep()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vectors.html#Using-more-than-one-function">Using more than one function</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Subsetting-vectors">Subsetting vectors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="vectors.html#Subsetting-with-logicals">Subsetting with logicals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vectors.html#Subsetting-using-indexing">Subsetting using indexing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="vectors.html#Subsetting-using-names">Subsetting using names</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Modifying-vectors">Modifying vectors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="vectors.html#Vector-arithmetics">Vector arithmetics</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Summarizing-vectors">Summarizing vectors</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="vectors.html#Code-generalization">Code generalization</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="vectors.html#Creating-vectors">Creating vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectors.html#Subsetting-vectors">Subsetting vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectors.html#Modifying-vectors">Modifying vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectors.html#Summarizing-vectors">Summarizing vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html">Dataset Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html#Creating-datasets">Creating datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html#Dataset-structure">Dataset structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html#Basic-commands">Basic commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html#Reading-data">Reading data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html#Exercises">Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html">Modifying Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Subsetting">Subsetting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Sorting">Sorting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Dropping">Dropping</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Renaming">Renaming</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Unique-values">Unique values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#New-variables">New variables</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="modifying-data.html#ifelse()">ifelse()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modifying-data.html#revalue()">revalue()</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modifying-data.html#A-note-on-factor-variables">A note on factor variables</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#New-variables">New variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Chaining">Chaining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merging-appending.html">Merging &amp; Appending</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merging-appending.html#Merging">Merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merging-appending.html#Appending">Appending</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merging-appending.html#Exercises">Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collapsing-data.html">Collapsing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#One-grouping-variable">One grouping variable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Several-grouping-variables">Several grouping variables</a></li>
@@ -96,14 +128,11 @@
 <li class="toctree-l1"><a class="reference internal" href="writing-functions.html">Writing Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Motivation">Motivation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Building-blocks">Building blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Applications">Applications</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="writing-functions.html#Reading-several-files">Reading several files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="writing-functions.html#Complex-analyses">Complex analyses</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Applications">Applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Exercises">Exercises</a></li>
 </ul>
 </div>
+</section>
 </section>
 <section id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
@@ -133,18 +162,18 @@
 <h3>Navigation</h3>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Getting-R-Running">Getting R Running</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Testing-Your-Installation">Testing Your Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Reading-R-code">Reading R code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Packages">Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Style">Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Trouble-shooting">Trouble shooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html#Creating-vectors">Creating vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html#Subsetting-vectors">Subsetting vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html#Modifying-vectors">Modifying vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html#Summarizing-vectors">Summarizing vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html">Dataset Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html#Creating-datasets">Creating datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html#Dataset-structure">Dataset structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html#Basic-commands">Basic commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html#Reading-data">Reading data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html#Exercises">Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html">Modifying Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Subsetting">Subsetting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Sorting">Sorting</a></li>
@@ -154,6 +183,10 @@
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#New-variables">New variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Chaining">Chaining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merging-appending.html">Merging &amp; Appending</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merging-appending.html#Merging">Merging</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merging-appending.html#Appending">Appending</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merging-appending.html#Exercises">Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collapsing-data.html">Collapsing Data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#One-grouping-variable">One grouping variable</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Several-grouping-variables">Several grouping variables</a></li>
