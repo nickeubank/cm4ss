@@ -19,7 +19,7 @@
 - Data Types
 - Subsetting Vectors
 - Matrices and Linear Algebra
-- DataFrames: Manipulating REAL DATA! [maybe too ambitious to fit in this session?]
+- DataFrames: Manipulating REAL DATA! (maybe too ambitious to fit in this session?)
 
 **Read Before Class:**
 

@@ -83,8 +83,9 @@ In this class we will be "flipping the classroom" -- you will be required to rev
    CLASS SCHEDULE <class_schedule>
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :hidden:
+   :caption: TOPICS
 
    Introduction <introduction>
    Data Types <data_types>
