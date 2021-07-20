@@ -260,7 +260,7 @@ world <- read.csv("data/world-small.csv")
 ```
 
 ```{r, eval=FALSE}
-world <- read.csv("world-small.csv")
+world <- read.csv("data/world-small.csv")
 ```
 
 I'm reading the file from the working directory and assigning it

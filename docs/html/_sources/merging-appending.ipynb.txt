@@ -1,0 +1,329 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "source": [
+    "# Merging & Appending\n",
+    "\n",
+    "This tutorial explains how to combine datasets by merging or appending them. Merging means transferring *columns* from one dataset to another, while appending means transferring *rows* from one dataset to another. These are two important tasks since datasets only very rarely come with all the information we need. \n"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "Merging\n",
+    "==================\n",
+    "\n",
+    "Say you're interested in how economic development affects democracy\n",
+    "across countries, but all you have are two separate datasets on these\n",
+    "two factors. What you need to do is to combine the two.  When you're\n",
+    "done with this, you also need information on what world region each\n",
+    "country is located in. These tasks can be accomplished with one-to-one\n",
+    "merging and one-to-many merging."
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "One-to-one merging\n",
+    "--------------------\n",
+    "\n",
+    "To illustrate, say you had two datasets that look like this: "
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "source": [
+    "# Generate toy dataset 1: \n",
+    "demo <- data.frame(\n",
+    "    country = c(\"USA\", \"Albania\", \"Turkey\", \"China\", \"Sudan\"),\n",
+    "    democracy_score = c(19, 16, 16, 5, 10)\n",
+    "    )\n",
+    "demo\n",
+    "\n",
+    "# Generate toy dataset 2: \n",
+    "econ <- data.frame(\n",
+    "    country = c(\"China\", \"Albania\", \"Turkey\", \"USA\", \"Sudan\"),\n",
+    "    gdp_pc = c(12000, 10000, 9000, 20000, 500)\n",
+    "    )\n",
+    "econ"
+   ],
+   "outputs": [],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "We can merge these datasets using R's `merge()` command, where `by` specifies\n",
+    "the variable the two datasets has in common (usually called an \"ID\" variable):"
+   ],
+   "metadata": {
+    "lines_to_next_cell": 0
+   }
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "source": [
+    "df <- merge(demo, econ, by = \"country\")\n",
+    "df"
+   ],
+   "outputs": [],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "You can merge on more than one variable. Say you had two datasets that look \n",
+    "like this:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "source": [
+    "# Generate toy dataset 1: \n",
+    "demo <- data.frame(\n",
+    "    expand.grid(country = c(\"USA\", \"China\", \"Sudan\"), year = 1994:1996),\n",
+    "    democracy_score = round(runif(9, 0, 20), 0)\n",
+    "    )\n",
+    "demo\n",
+    "\n",
+    "# Generate toy dataset 2: \n",
+    "econ <- data.frame(\n",
+    "    expand.grid(year = 1994:1996, country = c(\"USA\", \"China\", \"Sudan\")),\n",
+    "    gdp_pc = round(runif(9, 1000, 20000), 0)\n",
+    "    )\n",
+    "econ\n",
+    "\n",
+    "merge(demo, econ, by = c(\"country\", \"year\"))"
+   ],
+   "outputs": [],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "Here, we're merging on both country and year. \n",
+    "\n",
+    "If one of the data frames has missing observations, only observations \n",
+    "the two data frames have in common will be kept when merging, unless\n",
+    "you specify `all.x`, `all.y`, or `all`: "
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "source": [
+    "econ <- econ[-c(5, 9), ] #delete obs. 5 & 9 for illustrative purposes\n",
+    "econ\n",
+    "dim(demo) #different number of observations (rows) than 'econ'\n",
+    "dim(econ) #different number of observations (rows) than 'demo'          \n",
+    "\n",
+    "merge(demo, econ, by = c(\"country\", \"year\")) #keep only matching observations \n",
+    "merge(demo, econ, by = c(\"country\", \"year\"), all.x = TRUE) #keep all observations in 'demo'"
+   ],
+   "outputs": [],
+   "metadata": {
+    "lines_to_next_cell": 2
+   }
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "One-to-many merging\n",
+    "------------------------\n",
+    "\n",
+    "In the previous examples the ID variables we used for merging uniquely \n",
+    "identified observations in each data frame. This is called one-to-one\n",
+    "merging. \n",
+    "\n",
+    "Sometimes we need to do things slightly differently, using one-to-many merging. \n",
+    "Say, for example, we have the following two data frames: "
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "source": [
+    "demo <- data.frame(\n",
+    "    expand.grid(country = c(\"USA\", \"China\", \"Sudan\"), year = 1994:1996),\n",
+    "    democracy_score = round(runif(9, 0, 20), 0)\n",
+    "    )\n",
+    "demo\n",
+    "\n",
+    "region <- data.frame(\n",
+    "    country = c(\"USA\", \"China\", \"Sudan\"), \n",
+    "    region = c(\"America\", \"Asia\", \"Africa\")\n",
+    "    )\n",
+    "region"
+   ],
+   "outputs": [],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "A one-to-many merge of these data frames would look like this: "
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "source": [
+    "merge(demo, region, by = \"country\")"
+   ],
+   "outputs": [],
+   "metadata": {
+    "lines_to_next_cell": 2
+   }
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "Appending\n",
+    "===============\n",
+    "\n",
+    "Appending means matching datasets vertically. We can do this in R using \n",
+    "`rbind()`. The two dataframes you're appending must have identical \n",
+    "variable names. Here's an example: "
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "source": [
+    "df1 <- data.frame(\n",
+    "    year = rep(1990:1995, 2),\n",
+    "    country = c(rep(\"country1\", 6), rep(\"country2\", 6))\n",
+    "    )\n",
+    "df2 <- data.frame(\n",
+    "    year = rep(1996:2000, 2),\n",
+    "    country = c(rep(\"country1\", 5), rep(\"country2\", 5))\n",
+    "    )\n",
+    "\n",
+    "df <- rbind(df1, df2) #append\n",
+    "\n",
+    "require(dplyr) #to display output in certain order\n",
+    "arrange(df, country, year)"
+   ],
+   "outputs": [],
+   "metadata": {
+    "lines_to_next_cell": 0
+   }
+  },
+  {
+   "cell_type": "markdown",
+   "source": [],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "Exercises \n",
+    "==============\n",
+    "\n",
+    "**Warm-up:** Merge the three data frames defined below. Your final data\n",
+    "frame should have 9 rows and 5 columns. Hint: merge only two data\n",
+    "frames at a time."
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "source": [
+    "df1 <- data.frame(\n",
+    "    name = c(\"Mary\", \"Thor\", \"Sven\", \"Jane\", \"Ake\", \"Stephan\",\n",
+    "             \"Bjorn\", \"Oden\", \"Dennis\"),\n",
+    "    treatment_gr = c(rep(c(1, 2, 3), each = 3)),\n",
+    "    weight_p1 = round(runif(9, 100, 200), 0)\n",
+    "    )\n",
+    "df2 <- data.frame(\n",
+    "    name = c(\"Sven\", \"Jane\", \"Ake\", \"Mary\", \"Thor\", \"Stephan\", \n",
+    "             \"Oden\", \"Bjorn\"),\n",
+    "    weight_p2 = round(runif(8, 100, 200), 0)\n",
+    "    )                           \n",
+    "df3 <- data.frame(\n",
+    "    treatment_gr = c(1, 2, 3),\n",
+    "    type = c(\"dog-lovers\", \"cat-lovers\", \"all-lovers\")\n",
+    "    )\n"
+   ],
+   "outputs": [],
+   "metadata": {
+    "lines_to_next_cell": 2
+   }
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "**More extensive:** A prominent economic theory predicts that higher\n",
+    "income inequality should be associated with more redistribution from\n",
+    "the rich to the poor (Meltzer and Richard 1981). Let's create a\n",
+    "dataset that will allow us to test this prediction using\n",
+    "U.S. state-level data.\n",
+    "\n",
+    "1. Download data on inequality and tax collection (links below). Take\n",
+    "a moment to familiarize yourself with the codebooks. Then read each\n",
+    "dataset into R.\n",
+    "* [Dataset](../data/Frank_All_v97.csv) with six measures of inequality\n",
+    "(originally from [Mark W. Frank](http://www.shsu.edu/eco_mwf/inequality.html)). \n",
+    "* [Tax data](http://www.census.gov/govs/statetax/historical_data.html) that\n",
+    "can be used to measure fiscal capacity/redistribution. Use \n",
+    "the \"State Government Tax Collections\" link. \n"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "2. Keep only the Year, State, Name, Total Taxes, and Total Income\n",
+    "Taxes variables in the tax dataset, and rename these if\n",
+    "necessary. Keep all the variables in the inequality dataset. Subset\n",
+    "both datasets to be in the year range 1960-2012. \n",
+    "\n",
+    "3. Merge the two datasets. Take a moment to think about how to do\n",
+    "this. Your final dataset should have 2650 rows and 12 variables. (Keep\n",
+    "only data on the 50 states; 50 states x 53 years = 2650 observations.)\n",
+    "Hint: You may find [this dataset with state identifiers](../data/State_FIPS.csv) \n",
+    "helpful. \n",
+    "\n",
+    "4. The Total Tax and Total Income Tax variables from the tax dataset have\n",
+    "commas in them, and are therefore not numeric. Remove the commas and \n",
+    "convert the variables to numeric. Hint: `gsub()`. \n",
+    "\n",
+    "\n",
+    "\n",
+    "\n",
+    "\n"
+   ],
+   "metadata": {}
+  }
+ ],
+ "metadata": {
+  "jupytext": {
+   "cell_metadata_filter": "-all",
+   "main_language": "R",
+   "notebook_metadata_filter": "-all"
+  },
+  "language_info": {
+   "name": "R"
+  },
+  "kernelspec": {
+   "name": "ir",
+   "display_name": "R",
+   "language": "R"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

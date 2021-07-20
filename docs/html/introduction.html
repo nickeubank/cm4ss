@@ -1,0 +1,535 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction &#8212; Comp Methods for Soc Sci  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Vectors" href="vectors.html" />
+    <link rel="prev" title="Welcome to Computational Methods for Social Scientists (in R)!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<section id="Introduction">
+<h1>Introduction<a class="headerlink" href="#Introduction" title="Permalink to this headline">¶</a></h1>
+<p>In this first in a number of tutorials, we’ll cover the very basics of R. If you’ve programmed before you can skip much of this. But regardless of your background, I hope you’ll find this and subsequent tutorials useful for learning R’s many tools for graphing, statistical analysis, and data collection and management — or what we collectively might call “data science.”</p>
+</section>
+<section id="Getting-R-Running">
+<h1>Getting R Running<a class="headerlink" href="#Getting-R-Running" title="Permalink to this headline">¶</a></h1>
+<p>You can run R using a number of text editors or “integrated development environments” (IDEs). Most people prefer some other application than R’s native environment, which provides only limited functionality in terms of syntax highlighting, auto-completion, and debugging. Alternatives include <a class="reference external" href="https://www.rstudio.com/">RStudio</a>, <a class="reference external" href="https://code.visualstudio.com/">VS Code</a>, <a class="reference external" href="https://www.gnu.org/software/emacs/">Emacs</a>/<a class="reference external" href="http://ess.r-project.org/">ESS</a>, and many many more. <em>Most</em> social
+scientists using R use RStudio, and so we’ll use that here. You can find the official installation instructions <a class="reference external" href="https://www.rstudio.com/products/rstudio/download/">here</a>, but we’d actually recommend <a class="reference external" href="https://www.youtube.com/watch?v=ulIv0NiVTs4">this installation tutorial video here</a>, which also details the basic funcationality of RStudio.</p>
+<p>All IDEs include a console and a text editor. The console is where you’ll see the results (or <em>output</em>) of commands executed from the editor. You can type commands directly into the console, but this is generally not a good strategy. This is because the whole purpose of writing code is to make it reproducible. Typing commands in the text editor will let you come back to them later as long as you save them (using extension .R).</p>
+</section>
+<section id="Testing-Your-Installation">
+<h1>Testing Your Installation<a class="headerlink" href="#Testing-Your-Installation" title="Permalink to this headline">¶</a></h1>
+<p>Fire up RStudio (or whatever IDE you use) and type the following two lines into the text editor. Then execute them, which can be done using a <a class="reference external" href="https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts">keyboard shortcut</a> — Ctrl+Enter (Windows) or Command+Enter (mac) in RStudio.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">hello_world</span> <span class="o">&lt;-</span> <span class="s">&quot;hello world&quot;</span>
+<span class="n">hello_world</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+'hello world'</div>
+</div>
+<p>In case it’s not obvious, R output is displayed in gray, above which is code that you should type into your text editor. If R prints out <code class="docutils literal notranslate"><span class="pre">hello</span> <span class="pre">world</span></code>, then you’re good to go!</p>
+</section>
+<section id="Reading-R-code">
+<h1>Reading R code<a class="headerlink" href="#Reading-R-code" title="Permalink to this headline">¶</a></h1>
+<p>Before we start <em>writing</em> R code, we need to first be able to read R code. After all, you didn’t start writing English before you could read it, did you?</p>
+<p>Let’s begin with the following block of code:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<p>What’s happening here? In R, we would read this as “assigning the value of 5 to the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>” (<code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> is called the assignment operator in R). But what exactly do we mean by that?</p>
+<p>If you’d done any programming before, you probably have an implicit notion of a variable and assignment, but in this course we’d like to provide you with an explicit metaphor we’ll keep coming back to: <strong>a variable is a box that holds a value,</strong> and so when we assign the value of 5 to the variable <code class="docutils literal notranslate"><span class="pre">a</span></code>, we’re really saying “put 5 in the box <code class="docutils literal notranslate"><span class="pre">a</span></code>,” which we could draw as:</p>
+<p>[figure out how to draw code with a box next to it.]</p>
+<p>As we walk through a code, we can use this same idea to keep track of how a program evolves. For example, consider this small block of code:</p>
+<p>➤ a &lt;- 5 b &lt;- 7 c &lt;- a + b a &lt;- 3</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Create a third object
+w &lt;- a + b
+w
+
+# Logical tests
+w - b == a
+w - b &gt; a
+b &lt;- 1 # overwrite b
+x &lt;- w - b &gt; a
+x
+</pre></div>
+</div>
+<p>Does the output make sense to you? (I’m not displaying it here so that you can try to make sense of it yourself first.)</p>
+<p>Here are some things to pay attention to from our first few lines of code:</p>
+<ol class="arabic simple">
+<li><p><strong>Comments</strong>. Anything after <code class="docutils literal notranslate"><span class="pre">#</span></code> is a comment and won’t be evaluated by R.</p></li>
+<li><p><strong>The assignment operator</strong>. R uses <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> (the assignment operator) to create objects. A single equal sign (<code class="docutils literal notranslate"><span class="pre">=</span></code>) also works, but the norm is to use <code class="docutils literal notranslate"><span class="pre">&lt;-</span></code> in R.</p></li>
+<li><p><strong>Objects</strong>. We used the assignment operator to create <em>objects</em> — for example, <code class="docutils literal notranslate"><span class="pre">hello_world</span></code> and <code class="docutils literal notranslate"><span class="pre">a</span></code>. The names of these objects are completely arbitrary. Unless they are created within a function, they are stored in R’s memory with the value you assigned to them (e.g., <code class="docutils literal notranslate"><span class="pre">&quot;hello</span> <span class="pre">world&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">5</span></code>) until the end of your R session.</p></li>
+<li><p><strong>Class.</strong> R automatically assigns a class to each object you create. Three classes were used above: numeric, character, and logical. Use <code class="docutils literal notranslate"><span class="pre">class()</span></code> to see what type an object is (e.g., <code class="docutils literal notranslate"><span class="pre">class(hello_world)</span></code>, <code class="docutils literal notranslate"><span class="pre">class(a)</span></code>, and <code class="docutils literal notranslate"><span class="pre">class(x)</span></code>). Why is this important? For one, you may think a certain object has one class when it has another. This will cause issues. For example, this throws an error:</p></li>
+</ol>
+<div class="indent"><div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">&lt;-</span> <span class="m">5</span>
+<span class="n">b</span> <span class="o">&lt;-</span> <span class="s">&quot;7&quot;</span>
+<span class="c1">#a + b</span>
+</pre></div>
+</div>
+</div>
+<p>Not knowing that <code class="docutils literal notranslate"><span class="pre">b</span></code> is a character object (which often is much less obvious than here) would be frustrating. Other classes include factor, matrix, data.frame and many more that we’ll get to.</p>
+</div><ol class="arabic simple" start="5">
+<li><p><strong>Overwriting objects</strong>. You can overwrite objects without R complaining (e.g., <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">&lt;-</span> <span class="pre">1</span></code> above). This can be confusing if you don’t keep track of which objects you have overwritten, but in general this ability is a good thing. R stores every object you create in memory, and overwriting an object saves memory to the extent that R doesn’t need to hold an additional object, which may be consequential when you work with large datasets.</p></li>
+</ol>
+</section>
+<section id="Packages">
+<h1>Packages<a class="headerlink" href="#Packages" title="Permalink to this headline">¶</a></h1>
+<p>The true power of R is that it’s open-source. As such, anyone can extend its core functionality through packages. This often results in remarkable improvements to how we can approach complex data tasks. In subsequent tutorials, I will make particular use of a set of R packages developed by <a class="reference external" href="http://had.co.nz/">Hadley Wickham</a> known as the <code class="docutils literal notranslate"><span class="pre">tidyverse</span></code>.</p>
+<p>To use a package you must:</p>
+<ol class="arabic simple">
+<li><p><strong>Install it.</strong> You only need to do this once.</p></li>
+<li><p><strong>Load it.</strong> You need to re-load packages every time you open R.</p></li>
+</ol>
+<p>To install the package <code class="docutils literal notranslate"><span class="pre">dplyr</span></code>, which we’ll use a lot, run</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;dplyr&quot;</span><span class="p">),</span> <span class="n">dep</span> <span class="o">=</span> <span class="bp">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>And to load these packages, use:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="nf">require</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div style="margin-top: 15px"></div></section>
+<section id="Style">
+<h1>Style<a class="headerlink" href="#Style" title="Permalink to this headline">¶</a></h1>
+<p>Writing good code requires a lot of practice. Good code executes quickly and is non-repetitive (e.g., uses functions for tasks that need to be executed several times). But most importantly for you right now, good code is easy to understand — both for yourself if you were to come back to it and for someone else reading it.</p>
+<p>To that end, comments are extremely useful. Comments can delineate different blocks of code and, more importantly, clarify what a command or set of commands is doing. Especially use comments if you’re doing something complex — save them for routine tasks that most R programmers will understand.</p>
+<p>There are some other style guidelines you should attempt to follow. Please take a look at <a class="reference external" href="https://google.github.io/styleguide/Rguide.xml">Google’s R Style Guide</a>. In particular, try to observe the spacing and line lengths limits outlined in that document. (Some other rules seem less important to me: I personally like underscores for object and function names.)</p>
+</section>
+<section id="Trouble-shooting">
+<h1>Trouble shooting<a class="headerlink" href="#Trouble-shooting" title="Permalink to this headline">¶</a></h1>
+<p>Many, many times when coding you’ll have an idea of what you want to do but won’t know how to do it in R. This happens even for experienced coders. With the right strategies, you’ll be able to solve a majority of issues you run into yourself. Not having to ask someone else every time you run into a problem will save you a lot of time.</p>
+<p>When you get stuck, google is your friend. For example, if you want to find the mean of a variable, try googling “how to find mean in R” and there will be tons of explanations of how to do this.</p>
+<p>R also has a help feature that can be called using the following syntax: <code class="docutils literal notranslate"><span class="pre">?commandname</span></code>, where <code class="docutils literal notranslate"><span class="pre">commandname</span></code> is the name of the command that you need help with. For example, <code class="docutils literal notranslate"><span class="pre">?mean</span></code> will bring up a help dialog box with information about how to use R’s <code class="docutils literal notranslate"><span class="pre">mean()</span></code> command.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Comp Methods for Soc Sci</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Getting-R-Running">Getting R Running</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Testing-Your-Installation">Testing Your Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Reading-R-code">Reading R code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Packages">Packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Style">Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Trouble-shooting">Trouble shooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectors.html#Creating-vectors">Creating vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectors.html#Subsetting-vectors">Subsetting vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectors.html#Modifying-vectors">Modifying vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectors.html#Summarizing-vectors">Summarizing vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectors.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifying-data.html">Modifying Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Subsetting">Subsetting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Sorting">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Dropping">Dropping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Renaming">Renaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Unique-values">Unique values</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#New-variables">New variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Chaining">Chaining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html">Collapsing Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#One-grouping-variable">One grouping variable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Several-grouping-variables">Several grouping variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Additional-manipulation">Additional manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Different-functions">Different functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html">Wide &amp; Long Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html#Wide-versus-long-data">Wide versus long data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html#A-case-for-long-data">A case for long data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html#Wide-to-long-conversion">Wide-to-long conversion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-functions.html">Writing Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Motivation">Motivation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Building-blocks">Building blocks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Applications">Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Exercises">Exercises</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to Computational Methods for Social Scientists (in R)!</a></li>
+      <li>Next: <a href="vectors.html" title="next chapter">Vectors</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Nick Eubank & Simon Ejdemyr.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/introduction.ipynb.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-133477154-1']);
+      _gaq.push(['_setDomainName', 'none']);
+      _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    
+  </body>
+</html>

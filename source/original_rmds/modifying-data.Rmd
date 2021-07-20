@@ -297,7 +297,7 @@ world <- read.csv("data/world-small.csv")
 
 ```{r, eval=FALSE}
 # Read world-small dataset
-world <- read.csv("world-small.csv")
+world <- read.csv("data/world-small.csv")
 ```
 
 
