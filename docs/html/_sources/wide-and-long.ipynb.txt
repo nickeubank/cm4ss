@@ -12,8 +12,8 @@
   {
    "cell_type": "markdown",
    "source": [
-    "Wide versus long data\n",
-    "=====================\n",
+    "## Wide versus long data\n",
+    "\n",
     "\n",
     "Illustrating the difference between wide and long datasets is easiest\n",
     "using an example. Here are two datasets with the exact same information\n",
@@ -179,8 +179,8 @@
   {
    "cell_type": "markdown",
    "source": [
-    "A case for long data\n",
-    "=====================\n",
+    "## A case for long data\n",
+    "\n",
     "\n",
     "There are many reasons to prefer datasets structured in long\n",
     "form. Repeating some of the points made in Hadley Wickham's\n",
@@ -215,8 +215,8 @@
   {
    "cell_type": "markdown",
    "source": [
-    "Wide-to-long conversion\n",
-    "========================\n",
+    "## Wide-to-long conversion\n",
+    "\n",
     "\n",
     "To illustrate how to convert a dataset from wide to long format, we'll\n",
     "use a UNICEF dataset on under-five child mortality across 196\n",
@@ -323,8 +323,8 @@
   {
    "cell_type": "markdown",
    "source": [
-    "Exercises\n",
-    "==========\n",
+    "## Exercises\n",
+    "\n",
     "\n",
     "Go to [www.childmortality.org](http://www.childmortality.org/) and\n",
     "download the dataset under \"Estimates for under-five, infant and\n",

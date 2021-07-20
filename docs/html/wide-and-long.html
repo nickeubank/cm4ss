@@ -287,9 +287,8 @@ div.rendered_html tbody tr:hover {
 <section id="Wide-&amp;-Long-Data">
 <h1>Wide &amp; Long Data<a class="headerlink" href="#Wide-&-Long-Data" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial has three purposes: to explain the difference between long and wide form datasets, to show why it’s generally preferable to use long form datasets, and to go over how to convert datasets from wide to long form.</p>
-</section>
 <section id="Wide-versus-long-data">
-<h1>Wide versus long data<a class="headerlink" href="#Wide-versus-long-data" title="Permalink to this headline">¶</a></h1>
+<h2>Wide versus long data<a class="headerlink" href="#Wide-versus-long-data" title="Permalink to this headline">¶</a></h2>
 <p>Illustrating the difference between wide and long datasets is easiest using an example. Here are two datasets with the exact same information represented in wide and long form respectively (imagine that <code class="docutils literal notranslate"><span class="pre">avgtemp</span></code> represents average temperature in Celsius):</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -356,7 +355,7 @@ div.rendered_html tbody tr:hover {
 <p>As is obvious, the long dataset separates the unit of analysis (country-year) into two separate variables. The wide dataset combines one of the keys (<code class="docutils literal notranslate"><span class="pre">year</span></code>) with the value variable (<code class="docutils literal notranslate"><span class="pre">avgtemp</span></code>).</p>
 </section>
 <section id="A-case-for-long-data">
-<h1>A case for long data<a class="headerlink" href="#A-case-for-long-data" title="Permalink to this headline">¶</a></h1>
+<h2>A case for long data<a class="headerlink" href="#A-case-for-long-data" title="Permalink to this headline">¶</a></h2>
 <p>There are many reasons to prefer datasets structured in long form. Repeating some of the points made in Hadley Wickham’s <a class="reference external" href="http://vita.had.co.nz/papers/tidy-data.html">excellent paper on the topic</a>, here are three reasons why you should attempt to structure your data in long form:</p>
 <ol class="arabic simple">
 <li><p>If you have many value variables, it is difficult to summarize wide-form datasets at a glance (which in turn makes it hard to identify mistakes in the data). For example, imagine we have a dataset with 50 years and 10 value variables of interest — this would result in 500 columns in wide form. Summarizing each column to look for strange observations, or simply understanding which variables are included in the dataset, becomes difficult in this case.</p></li>
@@ -365,7 +364,7 @@ div.rendered_html tbody tr:hover {
 </ol>
 </section>
 <section id="Wide-to-long-conversion">
-<h1>Wide-to-long conversion<a class="headerlink" href="#Wide-to-long-conversion" title="Permalink to this headline">¶</a></h1>
+<h2>Wide-to-long conversion<a class="headerlink" href="#Wide-to-long-conversion" title="Permalink to this headline">¶</a></h2>
 <p>To illustrate how to convert a dataset from wide to long format, we’ll use a UNICEF dataset on under-five child mortality across 196 countries. Download the dataset <a class="reference external" href="../data/unicef-u5mr.csv">here</a>; it is based on data that can be found at <a class="reference external" href="http://www.childmortality.org/">www.childmortality.org</a>. The under-five mortality rate is expressed as the number of under-five deaths per 1,000 live births.</p>
 <p>Set your working directory and read the file:</p>
 <div class="nbinput nblast docutils container">
@@ -418,7 +417,7 @@ div.rendered_html tbody tr:hover {
 <p>Learn more about <code class="docutils literal notranslate"><span class="pre">gather()</span></code> and other excellent <code class="docutils literal notranslate"><span class="pre">tidyr</span></code> functions that facilitate tidy data <a class="reference external" href="http://blog.rstudio.org/2014/07/22/introducing-tidyr/">here</a> and <a class="reference external" href="http://blog.rstudio.org/2015/09/13/tidyr-0-3-0/">here</a>.</p>
 </section>
 <section id="Exercises">
-<h1>Exercises<a class="headerlink" href="#Exercises" title="Permalink to this headline">¶</a></h1>
+<h2>Exercises<a class="headerlink" href="#Exercises" title="Permalink to this headline">¶</a></h2>
 <p>Go to <a class="reference external" href="http://www.childmortality.org/">www.childmortality.org</a> and download the dataset under “Estimates for under-five, infant and neonatal mortality”. (You can also download it <a class="reference external" href="../data/RatesDeaths_AllIndicators.xlsx">here</a>.) The dataset is in wide form and contains six value variables of interest: under-five (0-4 years) mortality, infant (0-1 years) mortality, neonatal (0-1 month) mortality, as well as the number of under-five, infant, and neonatal deaths.</p>
 <ol class="arabic simple">
 <li><p>Read the dataset into R. Note that it is in .xlsx format — there are R packages that will allow you to read such files, or you can convert it to .csv using software such as Excel and then use <code class="docutils literal notranslate"><span class="pre">read.csv()</span></code>. Note that you don’t need the first few rows of the dataset.</p></li>
@@ -436,6 +435,7 @@ div.rendered_html tbody tr:hover {
 </div><ol class="arabic simple" start="4">
 <li><p>How many under-five, infant, and neonatal deaths occurred in total in the world in years 1990, 1995, 2000, 2005, and 2015? (Hint: see the tutorial on <a class="reference external" href="../collapsing-data">collapsing data</a>.)</p></li>
 </ol>
+</section>
 </section>
 
 
@@ -457,43 +457,19 @@ div.rendered_html tbody tr:hover {
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Getting-R-Running">Getting R Running</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Testing-Your-Installation">Testing Your Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Reading-R-code">Reading R code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Packages">Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Style">Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Trouble-shooting">Trouble shooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Creating-vectors">Creating vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Subsetting-vectors">Subsetting vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Modifying-vectors">Modifying vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Summarizing-vectors">Summarizing vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html">Dataset Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html#Exercises">Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html">Modifying Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Subsetting">Subsetting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Sorting">Sorting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Dropping">Dropping</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Renaming">Renaming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Unique-values">Unique values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#New-variables">New variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Chaining">Chaining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merging-appending.html">Merging and Appending</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collapsing-data.html">Collapsing Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#One-grouping-variable">One grouping variable</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Several-grouping-variables">Several grouping variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Additional-manipulation">Additional manipulation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Different-functions">Different functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Exercises">Exercises</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Wide &amp; Long Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Wide-versus-long-data">Wide versus long data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#A-case-for-long-data">A case for long data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Wide-to-long-conversion">Wide-to-long conversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Exercises">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html">Writing Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Motivation">Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Building-blocks">Building blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Applications">Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Exercises">Exercises</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Reshaping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlflow.html#Exercises">Exercises</a></li>
 </ul>
 
 <div class="relations">

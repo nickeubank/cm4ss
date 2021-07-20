@@ -19,7 +19,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Wide &amp; Long Data" href="wide-and-long.html" />
-    <link rel="prev" title="Modifying Data" href="modifying-data.html" />
+    <link rel="prev" title="Merging &amp; Appending" href="merging-appending.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -299,9 +299,8 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-</section>
 <section id="One-grouping-variable">
-<h1>One grouping variable<a class="headerlink" href="#One-grouping-variable" title="Permalink to this headline">¶</a></h1>
+<h2>One grouping variable<a class="headerlink" href="#One-grouping-variable" title="Permalink to this headline">¶</a></h2>
 <p>To illustrate how collapsing works, let’s create a data frame with three variables: <code class="docutils literal notranslate"><span class="pre">student</span></code> (an id variable that uniquely identifies each row); <code class="docutils literal notranslate"><span class="pre">school</span></code> (a grouping variable indicating the student’s school); and <code class="docutils literal notranslate"><span class="pre">sat_score</span></code> (the student’s SAT score).</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
@@ -405,7 +404,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </section>
 <section id="Several-grouping-variables">
-<h1>Several grouping variables<a class="headerlink" href="#Several-grouping-variables" title="Permalink to this headline">¶</a></h1>
+<h2>Several grouping variables<a class="headerlink" href="#Several-grouping-variables" title="Permalink to this headline">¶</a></h2>
 <p>In the previous example we collapsed the data using only one grouping variable. Collapsing can also be done using several grouping variables. Let’s modify the <code class="docutils literal notranslate"><span class="pre">grades</span></code> data frame to illustrate:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
@@ -486,7 +485,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </section>
 <section id="Additional-manipulation">
-<h1>Additional manipulation<a class="headerlink" href="#Additional-manipulation" title="Permalink to this headline">¶</a></h1>
+<h2>Additional manipulation<a class="headerlink" href="#Additional-manipulation" title="Permalink to this headline">¶</a></h2>
 <p>One nice thing about using <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> functions for collapsing data is that you can combine them with other data manipulation functions, many of which are covered in a separate tutorial on <a class="reference external" href="../modifying-data">modifying data</a>. The result is elegant code that is easy to debug and relatively quick to execute. Here’s an example in which I’m filtering the <code class="docutils literal notranslate"><span class="pre">grades</span></code> data frame to class of 2017 and then collapsing:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
@@ -547,7 +546,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </section>
 <section id="Different-functions">
-<h1>Different functions<a class="headerlink" href="#Different-functions" title="Permalink to this headline">¶</a></h1>
+<h2>Different functions<a class="headerlink" href="#Different-functions" title="Permalink to this headline">¶</a></h2>
 <p>In all the examples above I’ve used <code class="docutils literal notranslate"><span class="pre">mean()</span></code> inside <code class="docutils literal notranslate"><span class="pre">summarize()</span></code>. Of course you’re by no means limited to finding the mean. You can use all of R’s built-in functions or write your own function. Here are examples that make use of other common functions:</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
@@ -639,6 +638,7 @@ div.rendered_html tbody tr:hover {
 </table></div>
 </div>
 </section>
+</section>
 <section id="Exercises">
 <h1>Exercises<a class="headerlink" href="#Exercises" title="Permalink to this headline">¶</a></h1>
 <ol class="arabic simple">
@@ -667,50 +667,26 @@ div.rendered_html tbody tr:hover {
 <h3>Navigation</h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Getting-R-Running">Getting R Running</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Testing-Your-Installation">Testing Your Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Reading-R-code">Reading R code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Packages">Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Style">Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Trouble-shooting">Trouble shooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Creating-vectors">Creating vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Subsetting-vectors">Subsetting vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Modifying-vectors">Modifying vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Summarizing-vectors">Summarizing vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html">Dataset Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html#Exercises">Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html">Modifying Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Subsetting">Subsetting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Sorting">Sorting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Dropping">Dropping</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Renaming">Renaming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Unique-values">Unique values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#New-variables">New variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Chaining">Chaining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merging-appending.html">Merging and Appending</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Collapsing Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#One-grouping-variable">One grouping variable</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Several-grouping-variables">Several grouping variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Additional-manipulation">Additional manipulation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#Different-functions">Different functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#Exercises">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html">Wide &amp; Long Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html#Wide-versus-long-data">Wide versus long data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html#A-case-for-long-data">A case for long data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html#Wide-to-long-conversion">Wide-to-long conversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html#Exercises">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html">Writing Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Motivation">Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Building-blocks">Building blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Applications">Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html">Reshaping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlflow.html#Exercises">Exercises</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="modifying-data.html" title="previous chapter">Modifying Data</a></li>
+      <li>Previous: <a href="merging-appending.html" title="previous chapter">Merging &amp; Appending</a></li>
       <li>Next: <a href="wide-and-long.html" title="next chapter">Wide &amp; Long Data</a></li>
   </ul></li>
 </ul>

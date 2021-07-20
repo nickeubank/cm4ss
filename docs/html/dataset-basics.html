@@ -18,6 +18,8 @@
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Modifying Data" href="modifying-data.html" />
+    <link rel="prev" title="Vectors" href="vectors.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -285,9 +287,8 @@ div.rendered_html tbody tr:hover {
 <section id="Dataset-Basics">
 <h1>Dataset Basics<a class="headerlink" href="#Dataset-Basics" title="Permalink to this headline">¶</a></h1>
 <p>This tutorial introduces datasets — “data frames” in R. If you’ve completed the <a class="reference internal" href="vectors.html"><span class="doc">tutorial on vectors</span></a>, you’ll soon see that datasets can be thought of as a collection of vectors stored as columns in a dataset. We’ll talk about how to create datasets and how to read them from file. We’ll also talk more conceptually about how datasets should be structured.</p>
-</section>
 <section id="Creating-datasets">
-<h1>Creating datasets<a class="headerlink" href="#Creating-datasets" title="Permalink to this headline">¶</a></h1>
+<h2>Creating datasets<a class="headerlink" href="#Creating-datasets" title="Permalink to this headline">¶</a></h2>
 <p>Let’s start by learning how to create a dataset in R. This turns out to be very simple — just combine vectors using the <code class="docutils literal notranslate"><span class="pre">data.frame()</span></code> command.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -350,7 +351,7 @@ div.rendered_html tbody tr:hover {
 <p>We created a dataset called <code class="docutils literal notranslate"><span class="pre">children</span></code>, which has 3 rows and 3 columns. We used two approaches that differ in whether they first save vectors to R’s memory.</p>
 </section>
 <section id="Dataset-structure">
-<h1>Dataset structure<a class="headerlink" href="#Dataset-structure" title="Permalink to this headline">¶</a></h1>
+<h2>Dataset structure<a class="headerlink" href="#Dataset-structure" title="Permalink to this headline">¶</a></h2>
 <p>More important than learning the mechanics of creating a dataset in R is to understand their general structure:</p>
 <ol class="arabic simple">
 <li><p>Each column should consist of a vector that gives some fact about the world (e.g., age in years). We usually refer to these columns as <em>variables</em>.</p></li>
@@ -397,10 +398,10 @@ div.rendered_html tbody tr:hover {
 <p>We can say that the <strong>unit of analysis</strong> in the dataset <code class="docutils literal notranslate"><span class="pre">countries</span></code> is country-year. This means that two id variables (country and year) are required to uniquely identify each row. In the <code class="docutils literal notranslate"><span class="pre">children</span></code> dataset above the unit of analysis is “child” or “person”.</p>
 </section>
 <section id="Basic-commands">
-<h1>Basic commands<a class="headerlink" href="#Basic-commands" title="Permalink to this headline">¶</a></h1>
+<h2>Basic commands<a class="headerlink" href="#Basic-commands" title="Permalink to this headline">¶</a></h2>
 <p>Here are some commands that are useful for getting to know your data and for understanding dataset structures in general.</p>
 <section id="Dimensions">
-<h2>Dimensions<a class="headerlink" href="#Dimensions" title="Permalink to this headline">¶</a></h2>
+<h3>Dimensions<a class="headerlink" href="#Dimensions" title="Permalink to this headline">¶</a></h3>
 <p>The first is <code class="docutils literal notranslate"><span class="pre">dim()</span></code>, which gives the dimensions of a data frame. The number of rows are listed first, columns second.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -445,6 +446,7 @@ div.rendered_html tbody tr:hover {
 <div class="output_area rendered_html docutils container">
 3</div>
 </div>
+</section>
 </section>
 <section id="Snapshots">
 <h2>Snapshots<a class="headerlink" href="#Snapshots" title="Permalink to this headline">¶</a></h2>
@@ -709,9 +711,8 @@ div.rendered_html tbody tr:hover {
 </table></div>
 </div>
 </section>
-</section>
 <section id="Reading-data">
-<h1>Reading data<a class="headerlink" href="#Reading-data" title="Permalink to this headline">¶</a></h1>
+<h2>Reading data<a class="headerlink" href="#Reading-data" title="Permalink to this headline">¶</a></h2>
 <p>Note: In this section we’ll be working with a dataset called <code class="docutils literal notranslate"><span class="pre">world-small.csv</span></code>, which you can download <a class="reference external" href="data/world-small.csv">here</a>.</p>
 <p>So far we’ve created datasets ourselves. Oftentimes, however, we’ll want to read a dataset into R from file. Datasets come in many formats — e.g., .csv, .txt, .dta, and .RData. R can read most data formats as is, but sometimes it may be necessary to manually reformat some elements in the file or even to reconvert the whole file to a different format (e.g., using Stat/Transfer). For now, we’ll assume that the file is in a readable format.</p>
 <p>To read a file you need to</p>
@@ -719,6 +720,7 @@ div.rendered_html tbody tr:hover {
 <li><p>Specify where the file is located on your computer. This is referred to as setting your working directory.</p></li>
 <li><p>Execute a command that will read the file from your working directory.</p></li>
 </ol>
+</section>
 <section id="Setting-the-working-directory">
 <h2>Setting the working directory<a class="headerlink" href="#Setting-the-working-directory" title="Permalink to this headline">¶</a></h2>
 <p>You can set your working directory manually. In RStudio, go to Session –&gt; Set Working Directory –&gt; Choose Directory… and find the folder in which your file is located.</p>
@@ -793,51 +795,29 @@ tutorial</a>.</p>
 
 
 <h3>Navigation</h3>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Getting-R-Running">Getting R Running</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Testing-Your-Installation">Testing Your Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Reading-R-code">Reading R code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Packages">Packages</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Style">Style</a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html#Trouble-shooting">Trouble shooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Creating-vectors">Creating vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Subsetting-vectors">Subsetting vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Modifying-vectors">Modifying vectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vectors.html#Summarizing-vectors">Summarizing vectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html#Exercises">Exercises</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Dataset Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#Exercises">Exercises</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html">Modifying Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Subsetting">Subsetting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Sorting">Sorting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Dropping">Dropping</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Renaming">Renaming</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Unique-values">Unique values</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#New-variables">New variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Chaining">Chaining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merging-appending.html">Merging and Appending</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collapsing-data.html">Collapsing Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#One-grouping-variable">One grouping variable</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Several-grouping-variables">Several grouping variables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Additional-manipulation">Additional manipulation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Different-functions">Different functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Exercises">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html">Wide &amp; Long Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html#Wide-versus-long-data">Wide versus long data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html#A-case-for-long-data">A case for long data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html#Wide-to-long-conversion">Wide-to-long conversion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html#Exercises">Exercises</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html">Writing Functions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Motivation">Motivation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Building-blocks">Building blocks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Applications">Applications</a></li>
-<li class="toctree-l1"><a class="reference internal" href="writing-functions.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html">Reshaping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlflow.html#Exercises">Exercises</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="vectors.html" title="previous chapter">Vectors</a></li>
+      <li>Next: <a href="modifying-data.html" title="next chapter">Modifying Data</a></li>
   </ul></li>
 </ul>
 </div>

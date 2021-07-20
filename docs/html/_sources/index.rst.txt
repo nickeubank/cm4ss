@@ -80,14 +80,15 @@ In this class we will be "flipping the classroom" -- you will be required to rev
    :maxdepth: 1
 
    Introduction <introduction>
+   Data Types <data_types>
    Vectors <vectors>
    Datasets <dataset-basics> 
    Modifying Data <modifying-data>
    Merging and Appending <merging-appending>
    Collapsing Data <collapsing-data>
    Reshaping <wide-and-long>
-   Functions and Loops <writing-functions>
-
+   Functions <writing-functions>
+   Loops and Control Flow <controlflow>
 
 Indices and tables
 ==================

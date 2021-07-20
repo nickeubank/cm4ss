@@ -80,6 +80,7 @@ In this class we will be "flipping the classroom" -- you will be required to rev
    :maxdepth: 1
 
    Introduction <introduction>
+   Data Types <data_types>
    Vectors <vectors>
    Datasets <dataset-basics> 
    Modifying Data <modifying-data>

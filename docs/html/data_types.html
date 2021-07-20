@@ -1,24 +1,23 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>How computers think about numbers and text &#8212; CS for DS  documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "ignoreClass": "document", "processEscapes": true, "processClass": "math|output_area"}})</script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Data Types &#8212; Comp Methods for Soc Sci  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "document", "processHtmlClass": "math|output_area"}}</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Structures" href="data_structures.html" />
-    <link rel="prev" title="Defensive Programming" href="defensive_programming.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -31,6 +30,8 @@
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
   
@@ -38,31 +39,45 @@
 /* CSS for nbsphinx extension */
 
 /* remove conflicting styling from Sphinx themes */
-div.nbinput,
-div.nbinput div.prompt,
-div.nbinput div.input_area,
-div.nbinput div[class*=highlight],
-div.nbinput div[class*=highlight] pre,
-div.nboutput,
-div.nbinput div.prompt,
-div.nbinput div.output_area,
-div.nboutput div[class*=highlight],
-div.nboutput div[class*=highlight] pre {
-    background: none;
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
     border: none;
-    padding: 0 0;
+    padding: 0;
     margin: 0;
     box-shadow: none;
 }
 
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
 /* avoid gaps between output lines */
-div.nboutput div[class*=highlight] pre {
+div.nboutput.container div[class*=highlight] pre {
     line-height: normal;
 }
 
 /* input/output containers */
-div.nbinput,
-div.nboutput {
+div.nbinput.container,
+div.nboutput.container {
     display: -webkit-flex;
     display: flex;
     align-items: flex-start;
@@ -70,92 +85,104 @@ div.nboutput {
     width: 100%;
 }
 @media (max-width: 540px) {
-    div.nbinput,
-    div.nboutput {
+    div.nbinput.container,
+    div.nboutput.container {
         flex-direction: column;
     }
 }
 
 /* input container */
-div.nbinput {
+div.nbinput.container {
     padding-top: 5px;
 }
 
 /* last container */
-div.nblast {
+div.nblast.container {
     padding-bottom: 5px;
 }
 
 /* input prompt */
-div.nbinput div.prompt pre {
+div.nbinput.container div.prompt pre {
     color: #307FC1;
 }
 
 /* output prompt */
-div.nboutput div.prompt pre {
+div.nboutput.container div.prompt pre {
     color: #BF5B3D;
 }
 
 /* all prompts */
-div.nbinput div.prompt,
-div.nboutput div.prompt {
-    min-width: 5ex;
-    padding-top: 0.4em;
-    padding-right: 0.4em;
-    text-align: right;
-    flex: 0;
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
 }
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
 @media (max-width: 540px) {
-    div.nbinput div.prompt,
-    div.nboutput div.prompt {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
         text-align: left;
         padding: 0.4em;
     }
-    div.nboutput div.prompt.empty {
+    div.nboutput.container div.prompt.empty {
         padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
     }
 }
 
 /* disable scrollbars on prompts */
-div.nbinput div.prompt pre,
-div.nboutput div.prompt pre {
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
     overflow: hidden;
 }
 
 /* input/output area */
-div.nbinput div.input_area,
-div.nboutput div.output_area {
-    padding: 0.4em;
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
     -webkit-flex: 1;
     flex: 1;
     overflow: auto;
 }
 @media (max-width: 540px) {
-    div.nbinput div.input_area,
-    div.nboutput div.output_area {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
         width: 100%;
     }
 }
 
 /* input area */
-div.nbinput div.input_area {
+div.nbinput.container div.input_area {
     border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background: #f5f5f5;
+    /*background: #f5f5f5;*/
 }
 
 /* override MathJax center alignment in output cells */
-div.nboutput div[class*=MathJax] {
+div.nboutput.container div[class*=MathJax] {
     text-align: left !important;
 }
 
 /* override sphinx.ext.imgmath center alignment in output cells */
-div.nboutput div.math p {
+div.nboutput.container div.math p {
     text-align: left;
 }
 
 /* standard error */
-div.nboutput div.output_area.stderr {
+div.nboutput.container div.output_area.stderr {
     background: #fdd;
 }
 
@@ -199,6 +226,28 @@ div.nboutput div.output_area.stderr {
 .ansi-bold { font-weight: bold; }
 .ansi-underline { text-decoration: underline; }
 
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt a.copybtn {
+    display: none;
+}
+
 /* Some additional styling taken form the Jupyter notebook CSS */
 div.rendered_html table {
   border: none;
@@ -233,83 +282,209 @@ div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
 </style>
-<div class="section" id="How-computers-think-about-numbers-and-text">
-<h1>How computers think about numbers and text<a class="headerlink" href="#How-computers-think-about-numbers-and-text" title="Permalink to this headline">¶</a></h1>
+<section id="Data-Types">
+<h1>Data Types<a class="headerlink" href="#Data-Types" title="Permalink to this headline">¶</a></h1>
+<section id="Types-of-Data">
+<h2>Types of Data<a class="headerlink" href="#Types-of-Data" title="Permalink to this headline">¶</a></h2>
+<p>Up till now, we’ve only been working with numbers, but R is actually equiped to work with a number of different <em>kinds</em> of data. In the course of this tutorial we’ll introduce all of them, but there are really three main ones to be aware of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">numeric</span></code> and <code class="docutils literal notranslate"><span class="pre">integer</span></code>: The main data types for numbers. These two types are <em>slightly</em> different (integers is restricted to, we, integers; numeric can be an integer or a number with decimals), but you can think of them as interchangable for now.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">character</span></code>: Text data, like a person’s name, or a quote from a book. Written with <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> before and after (or single quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>) before and after if you’d prefer.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">logical</span></code>: Data that only takes on the values of true and false. Written <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code></p></li>
+</ul>
+<p>If you’re ever unsure of the type of a variable (or more precisely, of the type of the value associated with a variable), you can ask R with the <code class="docutils literal notranslate"><span class="pre">class()</span></code> function:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
-<div class="input_area highlight-julia notranslate"><div class="highlight"><pre>
-<span></span><span class="n">bitstring</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="kc">pi</span> <span class="o">=</span> <span class="m">3.1416</span>
+<span class="nf">class</span><span class="p">(</span><span class="kc">pi</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
-</pre></div>
+<div class="prompt empty docutils container">
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&quot;0000000000000000000000000000000000000000000000000000000000000001&quot;
-</pre></div>
-</div>
+<div class="output_area rendered_html docutils container">
+'numeric'</div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
-<div class="input_area highlight-julia notranslate"><div class="highlight"><pre>
-<span></span><span class="n">bitstring</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">mystery_novel</span> <span class="o">=</span> <span class="s">&quot;T&#39;was a dark and story night&quot;</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">mystery_novel</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
-</pre></div>
+<div class="prompt empty docutils container">
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>&quot;0011111111110000000000000000000000000000000000000000000000000000&quot;
-</pre></div>
-</div>
+<div class="output_area rendered_html docutils container">
+'character'</div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
-<div class="input_area highlight-julia notranslate"><div class="highlight"><pre>
-<span></span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="o">/</span><span class="mi">5</span>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">my_logical</span> <span class="o">=</span> <span class="kc">TRUE</span>
+<span class="nf">class</span><span class="p">(</span><span class="n">my_logical</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+'logical'</div>
+</div>
+<section id="Characters">
+<h3>Characters<a class="headerlink" href="#Characters" title="Permalink to this headline">¶</a></h3>
+<p>The value of characters will be evident when we start working with real data, when our datasets will include things like country names, or capitals, or open-ended survey responses. In all these situations, we will use the <code class="docutils literal notranslate"><span class="pre">character</span></code> type to store text.</p>
+<p>Note that if a variable is a character, even if it looks like a number, R will treat it like text and you won’t be able to do things like add or multiple it. For example:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="m">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s">&quot;7&quot;</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 </pre></div>
 </div>
-<div class="output_area highlight-none notranslate"><div class="highlight"><pre>
-<span></span>false
+<p>Will generate an error:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="n">in</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="o">:</span> <span class="n">non</span><span class="o">-</span><span class="n">numeric</span> <span class="n">argument</span> <span class="n">to</span> <span class="n">binary</span> <span class="n">operator</span>
+</pre></div>
+</div>
+<p>Because plus is only defined for numbers, and R sees <code class="docutils literal notranslate"><span class="pre">&quot;7&quot;</span></code> as text. I’ll show you how to deal with this silly situation below.</p>
+</section>
+<section id="Logicals">
+<h3>Logicals<a class="headerlink" href="#Logicals" title="Permalink to this headline">¶</a></h3>
+<p>The use of logicals is less obvious at the moment, but they will eventually prove very important. For now, it’s enough to know they exist, and that the place you are most likely to encounter them is when you write tests. For example:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="m">7</span> <span class="o">&gt;</span> <span class="m">5</span>
 </pre></div>
 </div>
 </div>
-<p>Further reading / Resources:</p>
-<p>Computerphile Floating Point: <a class="reference external" href="https://www.youtube.com/watch?v=PZRI1IfStY0">https://www.youtube.com/watch?v=PZRI1IfStY0</a></p>
-<p>Computerphile Unicode: <a class="reference external" href="https://www.youtube.com/watch?v=MijmeoH9LT4">https://www.youtube.com/watch?v=MijmeoH9LT4</a></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+TRUE</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-julia notranslate"><div class="highlight"><pre>
-<span></span>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="m">4</span> <span class="o">&lt;</span> <span class="m">3</span>
 </pre></div>
 </div>
 </div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
 </div>
+<div class="output_area rendered_html docutils container">
+FALSE</div>
+</div>
+<p>This is also a good time to introduce the double-equal sign. Because we use <code class="docutils literal notranslate"><span class="pre">=</span></code> to assign values to variables, we can’t use it to test if two things are equal. To ask R to evaluate whether two things are equal, therefore, we use a double-equal sign (<code class="docutils literal notranslate"><span class="pre">==</span></code>). For example:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="m">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="m">5</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+TRUE</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">c</span> <span class="o">=</span> <span class="m">7</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+FALSE</div>
+</div>
+</section>
+</section>
+<section id="A-Brief-Introduction-to-Functions">
+<h2>A Brief Introduction to Functions<a class="headerlink" href="#A-Brief-Introduction-to-Functions" title="Permalink to this headline">¶</a></h2>
+<p>One last note before we finish off this section: one of the most powerful thing about a language like R is that it’s full of pre-made tools called <em>functions</em>. A function is basically a little program inside R. They can do everything from simple operations (like adding up numbers) to extremely complicated operations (fit a machine learning model).</p>
+<p>The idea of a function is that takes in a set of <em>arguments</em> as an input, and then it <em>returns</em> a result. To use a function, you type out the function name, then place the arguments you want to pass to the function inside parentheses. For example, there’s a function called <code class="docutils literal notranslate"><span class="pre">as.numeric()</span></code> that’s designed to convert a variable that is a character (like <code class="docutils literal notranslate"><span class="pre">&quot;7&quot;</span></code>) to a numeric value (<code class="docutils literal notranslate"><span class="pre">7</span></code>) so we can do arithmatic with that value.</p>
+<p>So to use it, we pass the function <code class="docutils literal notranslate"><span class="pre">as.numeric</span></code> the variable (<code class="docutils literal notranslate"><span class="pre">b</span></code>). The function will then take the value associated with <code class="docutils literal notranslate"><span class="pre">b</span></code> (<code class="docutils literal notranslate"><span class="pre">&quot;7&quot;</span></code>), convert it to a numeric value, then return the converted value. For example:</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">a</span> <span class="o">=</span> <span class="m">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s">&quot;7&quot;</span>
+<span class="n">b_as_a_numeric</span> <span class="o">=</span> <span class="nf">as.numeric</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">+</span> <span class="n">b_as_a_numeric</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+12</div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">as.numeric</span></code> didn’t actually change the value of the variable <code class="docutils literal notranslate"><span class="pre">b</span></code> – instead, it returned the converted value, and we assigned it to the variable <code class="docutils literal notranslate"><span class="pre">b_as_a_numeric</span></code>. If we look at <code class="docutils literal notranslate"><span class="pre">b</span></code>, we will see it is still <code class="docutils literal notranslate"><span class="pre">&quot;7&quot;</span></code></p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+</pre></div>
+</div>
+<div class="input_area highlight-r notranslate"><div class="highlight"><pre>
+<span></span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area rendered_html docutils container">
+'7'</div>
+</div>
+<p>But <code class="docutils literal notranslate"><span class="pre">as.numeric</span></code> won’t work on everything. If you pass <code class="docutils literal notranslate"><span class="pre">as.numeric</span></code> a character that doesn’t look like a number, it’s smart enough to know that there’s no way to convert it, so instead of a number, it returns <code class="docutils literal notranslate"><span class="pre">NA</span></code>, which is what R uses when it has no idea what to do. For example:</p>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">silly_example</span> <span class="o">=</span> <span class="s">&quot;This doesn&#39;t look like a number at all!&quot;</span>
+<span class="nf">as.numeric</span><span class="p">(</span><span class="n">silly_example</span><span class="p">)</span>
+
+<span class="n">Warning</span> <span class="n">message</span> <span class="n">in</span> <span class="nf">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">envir</span><span class="p">,</span> <span class="n">enclos</span><span class="p">)</span><span class="o">:</span>
+“<span class="n">NAs</span> <span class="n">introduced</span> <span class="n">by</span> <span class="n">coercion</span>”
+<span class="o">&lt;</span><span class="kc">NA</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>We’ll talk much more about functions in the future, but for now it’s enough to recognize that they are little programs, and that they operate by accepting inputs (the things placed inside the parenthesis that follow the function name) and return a result to you which you can look at or assign to a variable for later use.</p>
+</section>
+</section>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">CS for DS</a></h1>
+<h1 class="logo"><a href="index.html">Comp Methods for Soc Sci</a></h1>
 
 
 
@@ -319,51 +494,58 @@ div.rendered_html tbody tr:hover {
 
 
 <h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="defensive_programming.html">Defensive Programming</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">How Computers Think About Numbers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="data_structures.html">Data Structures</a></li>
-<li class="toctree-l1"><a class="reference internal" href="parallelism.html">Parallelism</a></li>
-<li class="toctree-l1"><a class="reference internal" href="memory_hierarchy.html">Big Data and Memory Hierarchy</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html">Speed</a></li>
-<li class="toctree-l1"><a class="reference internal" href="terminal.html">The Terminal</a></li>
-<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter Labs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="git_and_github.html">Git and Github</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_help.html">Getting Help Online</a></li>
-<li class="toctree-l1"><a class="reference internal" href="languages.html">Understanding Programming Language Ecosystem</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vectors.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html">Dataset Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataset-basics.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifying-data.html">Modifying Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modifying-data.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="merging-appending.html">Merging and Appending</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html">Collapsing Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="collapsing-data.html#Exercises">Exercises</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wide-and-long.html">Reshaping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writing-functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlflow.html">Loops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controlflow.html#Exercises">Exercises</a></li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="defensive_programming.html" title="previous chapter">Defensive Programming</a></li>
-      <li>Next: <a href="data_structures.html" title="next chapter">Data Structures</a></li>
   </ul></li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2019, Nick Eubank.
+      &copy;2021, Nick Eubank & Simon Ejdemyr.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.1</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/data_types.ipynb.txt"
