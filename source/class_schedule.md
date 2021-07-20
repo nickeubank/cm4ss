@@ -24,6 +24,7 @@
 **Read Before Class:**
 
 - [Intro to R (Review)](introduction.ipynb)
+- [Data Types](data_types.ipynb)
 - [Vectors in R](vectors.ipynb)
 - [DataFrames](dataset-basics.ipynb)
 

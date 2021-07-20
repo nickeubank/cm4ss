@@ -335,8 +335,8 @@
   {
    "cell_type": "markdown",
    "source": [
-    "Exercises\n",
-    "================\n",
+    "## Exercises\n",
+    "\n",
     "\n",
     "1. Use a for loop to take the square root of each value in the following \n",
     "vector: `vec1 <- c(4, 9, 81, 100, 1000, 10^6)`. Save the results to a new \n",

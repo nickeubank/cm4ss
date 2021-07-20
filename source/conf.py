@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "Comp Methods for Soc Sci"
+project = "CM4SS"
 copyright = "2021, Nick Eubank & Simon Ejdemyr"
 author = "Nick Eubank & Simon Ejdemyr"
 

@@ -2,7 +2,7 @@
 Computational Methods Boot Camp for Social Scientists
 ================================================================
 
-**SUPER PRELIMINARY SYLLABUS DRAFT**
+**PRELIMINARY PAGE DRAFT. MUCH WORK TO BE DONE!**
 
 The goal of this Boot Camp is to provide incoming social science graduate students with a foundational understanding of topics including: variable assignment; vectors and matrices; loading, subsetting, cleaning, merging, and collapsing tabular data; plotting; and using loops and functions.
 
@@ -28,7 +28,7 @@ By the end of this Boot Camp, our goal if for you to be able to:
 Class Schedule
 ---------------
 
-`Class Schedule <class_schedule>` for schedule of classes. 
+`Class Schedule <class_schedule.md>`_ for schedule of classes, reading assignments and exercises.
 
 R
 ----
@@ -76,8 +76,15 @@ In this class we will be "flipping the classroom" -- you will be required to rev
 
 
 
+.. toctree:: 
+   :maxdepth: 1
+   :hidden:
+
+   CLASS SCHEDULE <class_schedule>
+
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    Introduction <introduction>
    Data Types <data_types>
@@ -89,10 +96,3 @@ In this class we will be "flipping the classroom" -- you will be required to rev
    Reshaping <wide-and-long>
    Functions <writing-functions>
    Loops and Control Flow <controlflow>
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

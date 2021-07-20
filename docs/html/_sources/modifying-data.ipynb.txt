@@ -2336,8 +2336,8 @@
   {
    "cell_type": "markdown",
    "source": [
-    "Exercises \n",
-    "==================\n",
+    "## Exercises \n",
+    "\n",
     "\n",
     "1. Read the `world-small.csv` dataset into R and store it in an object called `world`.\n",
     "\n",
