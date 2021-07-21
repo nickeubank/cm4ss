@@ -19,7 +19,9 @@
 
 # -- Project information -----------------------------------------------------
 
+html_title = "Computational Methods for Social Scientists"
 project = "CM4SS"
+nav_title = "CM4SS"
 copyright = "2021, Nick Eubank & Simon Ejdemyr"
 author = "Nick Eubank & Simon Ejdemyr"
 
@@ -73,20 +75,48 @@ exclude_patterns = ["_build", "**.ipynb_checkpoints"]
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
 
-
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "alabaster"
+# html_theme = "alabaster"
+html_theme = "sphinx_material"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-html_theme_options = {"analytics_id": "UA-133477154-1"}
+html_theme_options = {
+    "base_url": "http://bashtage.github.io/sphinx-material/",
+    "google_analytics_account": "UA-XXXXX",
+    "html_minify": True,
+    "css_minify": True,
+    "globaltoc_depth": 2,
+    # If False, expand all TOC entries
+    "globaltoc_collapse": True,
+    # If True, show hidden TOC entries
+    "globaltoc_includehidden": True,
+    "master_doc": False,
+    # "theme_color": "#2196f3",
+    "theme_color": "#012169",
+    "nav_links": [
+        {
+            "href": "index",
+            "internal": True,
+            "title": "Home",
+        },
+        {"href": "class_schedule", "internal": True, "title": "Class Schedule"},
+        {
+            "href": "https://www.nickeubank.com",
+            "internal": False,
+            "title": "About The Author",
+        },
+    ],
+}
 
+
+#     "logo_icon": "&#xe869",
 # 'github_button': 'true',
 # 'github_repo': 'https://github.com/nickeubank/cs_for_ds',
 # 'github_user': 'nickeubank',
@@ -103,13 +133,11 @@ html_static_path = ["_static"]
 # default: ``['localtoc.html', 'relations.html', 'sourcelink.html',
 # 'searchbox.html']``.
 #
-# html_sidebars = {}
-
+html_sidebars = {
+    "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
+}
 
 # -- Options for HTMLHelp output ---------------------------------------------
-
-# Output file base name for HTML help builder.
-htmlhelp_basename = "CSforDSdoc"
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -129,13 +157,6 @@ latex_elements = {
     # 'figure_align': 'htbp',
 }
 
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    (master_doc, "CSforDS.tex", "CS for DS Documentation", "Nick Eubank", "manual"),
-]
-
 
 # -- Options for manual page output ------------------------------------------
 
@@ -145,21 +166,6 @@ man_pages = [(master_doc, "csfords", "CS for DS Documentation", [author], 1)]
 
 
 # -- Options for Texinfo output ----------------------------------------------
-
-# Grouping the document tree into Texinfo files. List of tuples
-# (source start file, target name, title, author,
-#  dir menu entry, description, category)
-texinfo_documents = [
-    (
-        master_doc,
-        "CSforDS",
-        "CS for DS Documentation",
-        author,
-        "CSforDS",
-        "One line description of project.",
-        "Miscellaneous",
-    ),
-]
 
 
 # -- Options for Epub output -------------------------------------------------

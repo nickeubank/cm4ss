@@ -1,6 +1,6 @@
 
-Computational Methods Boot Camp for Social Scientists
-================================================================
+Welcome!
+=========
 
 **PRELIMINARY PAGE DRAFT. MUCH WORK TO BE DONE!**
 
@@ -28,7 +28,7 @@ By the end of this Boot Camp, our goal if for you to be able to:
 Class Schedule
 ---------------
 
-`Class Schedule <class_schedule.md>`_ for schedule of classes, reading assignments and exercises.
+`Class Schedule <class_schedule.rst>`_ for schedule of classes, reading assignments and exercises.
 
 R
 ----
@@ -77,23 +77,24 @@ In this class we will be "flipping the classroom" -- you will be required to rev
 
 
 .. toctree:: 
-   :maxdepth: 1
    :hidden:
+   :maxdepth: 1
 
-   CLASS SCHEDULE <class_schedule>
+   class_schedule
+
 
 .. toctree::
+   :caption: Readings
    :maxdepth: 2
-   :hidden:
-   :caption: TOPICS
 
-   Introduction <introduction>
-   Data Types <data_types>
-   Vectors <vectors>
-   Datasets <dataset-basics> 
-   Modifying Data <modifying-data>
-   Merging and Appending <merging-appending>
-   Collapsing Data <collapsing-data>
-   Reshaping <wide-and-long>
-   Functions <writing-functions>
-   Loops and Control Flow <controlflow>
+   introduction.ipynb
+   data_types.ipynb
+   vectors.ipynb
+   dataset-basics.ipynb
+   modifying-data.ipynb
+   merging-appending.ipynb
+   collapsing-data.ipynb
+   wide-and-long.ipynb
+   writing-functions.ipynb
+   controlflow.ipynb
+
