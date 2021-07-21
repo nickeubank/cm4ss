@@ -1,5 +1,5 @@
 # Class Schedule and Curriculum
-
+dfsdf
 ## TO DO BEFORE FIRST CLASS
 
 - [Installing RSTudio](https://www.youtube.com/watch?v=ulIv0NiVTs4)
@@ -62,8 +62,4 @@
 - Vectorization with apply
 
 **Read Before Class:**
-
-- [Control Flow](controlflow.ipynb)
-- [Writing Functions](writing-functions.ipynb)
-- Plotting with ggplot
 
