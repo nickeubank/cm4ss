@@ -7,9 +7,9 @@ Class Schedule and Curriculum
 Before First Class
 ------------------------
 
--  `Installing RSTudio <https://www.youtube.com/watch?v=ulIv0NiVTs4>`__
--  Student Knowledge Assessment survey
--  `Introduction to R <introduction.ipynb>`__
+- Welcome Video
+- Student Knowledge Assessment survey
+- `Introduction to R <introduction.ipynb>`__
 
 Session 1 (Monday Afternoon): Variables & Vectors
 -------------------------------------------------
