@@ -73,8 +73,8 @@ language = None
 exclude_patterns = ["_build", "**.ipynb_checkpoints"]
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = None
-
+# pygments_style = "vs"
+pygments_style = "friendly"
 # -- Options for HTML output -------------------------------------------------
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
@@ -82,17 +82,17 @@ pygments_style = None
 #
 # html_theme = "alabaster"
 html_theme = "sphinx_material"
-
+html_logo = "images/mids_logo.svg"
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
 html_theme_options = {
-    "base_url": "http://bashtage.github.io/sphinx-material/",
+    "base_url": "http://cm4ss.com",
     "google_analytics_account": "UA-XXXXX",
     "html_minify": True,
     "css_minify": True,
-    "globaltoc_depth": 2,
+    "globaltoc_depth": 1,
     # If False, expand all TOC entries
     "globaltoc_collapse": True,
     # If True, show hidden TOC entries
@@ -114,6 +114,7 @@ html_theme_options = {
         },
     ],
 }
+html_show_sourcelink = False
 
 
 #     "logo_icon": "&#xe869",

@@ -74,6 +74,8 @@ Class Organization
 
 In this class we will be "flipping the classroom" -- you will be required to review tutorials on R between classes, and each afternoon we will focus on doing exercises that allow you to get hands-on experience with the skills you've read about in an environment where help will be available. These tutorials aren't very long, and we **strongly** recommend that while you read through them you do so with an open R session so you can just play around a little, trying out the things you learn. The research on learning to program is exceedingly clear on this point: **the only way to learn to program is to actually program**, so the more time you spend playing with R, making mistakes, and troubleshooting, the more you will learn. We'll do lots of exercises in class, but the more you play on your own too, the more you will learn.
 
+Note that one consequence of this class structure is that the in person sessions will only be of value if you do the required readings before attending. In fact, because many in class exercises will be done in small groups, students who don't read materials in advance will not only undermine their own learning, but they also have the potential to undermine the learning experience of their fellow students. As a result, **each class will begin with a short quiz on the required readings.** These quizzes should be trivially easy if you did the readings, **but any student who fails to quizzes** will be asked to leave the boot camp in the interest of ensuring unprepared students don't undermine the experiece of students who have prepared appropriately. 
+
 
 
 .. toctree:: 
@@ -84,6 +86,7 @@ In this class we will be "flipping the classroom" -- you will be required to rev
 
 
 .. toctree::
+   :hidden:
    :caption: Readings
    :maxdepth: 2
 

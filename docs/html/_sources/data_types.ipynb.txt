@@ -3,28 +3,38 @@
         {
             "cell_type": "markdown",
             "source": [
-                "# Data Types"
+                "# Data Types\n",
+                "\n",
+                "One of the features of computers than can be frustrating to new programmers is their inflexibility, and one place this inflexibility is most evident is in the fact that programs like R store data in discrete *types*. In this section, we'll go over the three data types you'll encounter most -- `numeric`, `character`, and `logical` types -- as well as what it means for R to have these discrete data types. \n",
+                "\n",
+                "## Types and Their Uses\n",
+                "\n",
+                "The three types of data you'll work with most in R are `numeric`, `character`, and `logical`, and each has an important role to play in for the social science researcher. \n",
+                "\n",
+                "`numeric` data, as the name implies, is data that stores numbers. This may be people's ages or incomes, countries' GDPs and infant mortality rates, global temperatures, or survey responses on a scale from 1 to 7. `numeric` data is the only data type we'll talk about here that supports mathematical operations, like multiplying, dividing, adding and subtracting, etc. \n",
+                "\n",
+                "`character` data is text data. It could be something short, like a survey respondent's name, or something longer, like the content of a tweet or a politician's speech.  \n",
+                "\n",
+                "Finally, `logical` data takes on only two values: `TRUE` and `FALSE` (note those values have to be written in all capitals to be recognized by R!). `logical` data can store information about the world (you could have a variable called `female` that only has values of `TRUE` and `FALSE`), but more often we use it for testing. For example, suppose we wanted to test whether a survey respondent's age is over 18 to evaluate whether they are eligible to vote. We'd probably do something like ask whether `age >= 18`, which would evaluate to `TRUE` or `FALSE`. "
             ],
             "metadata": {}
         },
         {
             "cell_type": "markdown",
             "source": [
-                "## Types of Data\n",
+                "## Working with Data Types\n",
                 "\n",
-                "Up till now, we've only been working with numbers, but R is actually equiped to work with a number of different *kinds* of data. In the course of this tutorial we'll introduce all of them, but there are really three main ones to be aware of:\n",
+                "Unlike some programming languages, when you assign values to a variable, you don't have to tell R the type of data you're assigning in advance (this is definitely not true for all languages, and something that makes R much easier to use than many other languages!). Instead, R will make inferences based on what you've passed. Namely: \n",
                 "\n",
-                "- `numeric` and `integer`: The main data types for numbers. These two types are *slightly* different (integers is restricted to, we, integers; numeric can be an integer or a number with decimals), but you can think of them as interchangable for now.\n",
-                "- `character`: Text data, like a person's name, or a quote from a book. Written with `\"` before and after (or single quotes (`'`) before and after if you'd prefer.\n",
-                "- `logical`: Data that only takes on the values of true and false. Written `TRUE` and `FALSE`\n",
+                "- If you type out a number, R will assume it's `numeric`. \n",
+                "  - (If you've worked in other programming languages, you've probably heard these referred to as `floats`.)\n",
+                "- If you type out something and put it in double-quotation marks (`\"like this\"`), R will treat it as a `character`.\n",
+                "  - (If you've worked in other programming languages, you've probably heard these referred to as `strings`.)\n",
+                "- If R sees `TRUE` or `FALSE`, or an expression that is evaluated to `TRUE` or `FALSE` (like `7 > 3`, which is obvously `TRUE`) it will treat it as logical. \n",
+                "  - (If you've worked in other programming languages, you've probably heard these referred to as `bools` or `booleans`.)\n",
                 "\n",
-                "If you're ever unsure of the type of a variable (or more precisely, of the type of the value associated with a variable), you can ask R with the `class()` function:\n"
+                "To illustrate, let's play around a little. Note that we can always check the type of data by putting our data, or the variable to which the data has been assigned, between the parentheses of the `class()` function. For example:"
             ],
-            "metadata": {}
-        },
-        {
-            "cell_type": "markdown",
-            "source": [],
             "metadata": {}
         },
         {
@@ -36,6 +46,7 @@
             ],
             "outputs": [
                 {
+                    "output_type": "display_data",
                     "data": {
                         "text/plain": [
                             "[1] \"numeric\""
@@ -50,8 +61,7 @@
                             "'numeric'"
                         ]
                     },
-                    "metadata": {},
-                    "output_type": "display_data"
+                    "metadata": {}
                 }
             ],
             "metadata": {}
@@ -65,6 +75,7 @@
             ],
             "outputs": [
                 {
+                    "output_type": "display_data",
                     "data": {
                         "text/plain": [
                             "[1] \"character\""
@@ -79,21 +90,21 @@
                             "'character'"
                         ]
                     },
-                    "metadata": {},
-                    "output_type": "display_data"
+                    "metadata": {}
                 }
             ],
             "metadata": {}
         },
         {
             "cell_type": "code",
-            "execution_count": 17,
+            "execution_count": 10,
             "source": [
-                "my_logical = TRUE\n",
+                "my_logical = 7 < 3\n",
                 "class(my_logical)"
             ],
             "outputs": [
                 {
+                    "output_type": "display_data",
                     "data": {
                         "text/plain": [
                             "[1] \"logical\""
@@ -108,8 +119,7 @@
                             "'logical'"
                         ]
                     },
-                    "metadata": {},
-                    "output_type": "display_data"
+                    "metadata": {}
                 }
             ],
             "metadata": {}
@@ -117,94 +127,66 @@
         {
             "cell_type": "markdown",
             "source": [
-                "### Characters\n",
-                "\n",
-                "The value of characters will be evident when we start working with real data, when our datasets will include things like country names, or capitals, or open-ended survey responses. In all these situations, we will use the `character` type to store text. \n",
-                "\n",
-                "Note that if a variable is a character, even if it looks like a number, R will treat it like text and you won't be able to do things like add or multiple it. For example:"
-            ],
-            "metadata": {}
-        },
-        {
-            "cell_type": "markdown",
-            "source": [
-                "```R\n",
-                "a = 5\n",
-                "b = \"7\"\n",
-                "a + b \n",
-                "```\n",
-                "\n",
-                "Will generate an error:\n",
-                "\n",
-                "```R\n",
-                "Error in a + b: non-numeric argument to binary operator\n",
-                "```\n",
-                "\n",
-                "Because plus is only defined for numbers, and R sees `\"7\"` as text. I'll show you how to deal with this silly situation below. "
-            ],
-            "metadata": {}
-        },
-        {
-            "cell_type": "markdown",
-            "source": [
-                "### Logicals\n",
-                "\n",
-                "The use of logicals is less obvious at the moment, but they will eventually prove very important. For now, it's enough to know they exist, and that the place you are most likely to encounter them is when you write tests. For example:"
+                "It's worth emphasizing here that putting a variable into a function is exactly the same as putting the value assigned to that variable into the function. This is, indeed, one of those core ideas about how most programming languages work: a variable is just a stand-in for the value that has been assigned for it, and R will treat them interchangably. e.g.:"
             ],
             "metadata": {}
         },
         {
             "cell_type": "code",
-            "execution_count": 18,
+            "execution_count": 2,
             "source": [
-                "7 > 5"
+                "# Evaluating the variable pi\n",
+                "pi = 3.1416\n",
+                "class(pi)\n"
             ],
             "outputs": [
                 {
+                    "output_type": "display_data",
                     "data": {
                         "text/plain": [
-                            "[1] TRUE"
+                            "[1] \"numeric\""
                         ],
                         "text/markdown": [
-                            "TRUE"
+                            "'numeric'"
                         ],
                         "text/latex": [
-                            "TRUE"
+                            "'numeric'"
                         ],
                         "text/html": [
-                            "TRUE"
+                            "'numeric'"
                         ]
                     },
-                    "metadata": {},
-                    "output_type": "display_data"
+                    "metadata": {}
                 }
             ],
             "metadata": {}
         },
         {
             "cell_type": "code",
-            "execution_count": 19,
+            "execution_count": 1,
             "source": [
-                "4 < 3"
+                "# Has the same effect as just putting \n",
+                "# in the value directly!\n",
+                "class(3.1416)"
             ],
             "outputs": [
                 {
+                    "output_type": "display_data",
                     "data": {
                         "text/plain": [
-                            "[1] FALSE"
+                            "[1] \"numeric\""
                         ],
                         "text/markdown": [
-                            "FALSE"
+                            "'numeric'"
                         ],
                         "text/latex": [
-                            "FALSE"
+                            "'numeric'"
                         ],
                         "text/html": [
-                            "FALSE"
+                            "'numeric'"
                         ]
                     },
-                    "metadata": {},
-                    "output_type": "display_data"
+                    "metadata": {}
                 }
             ],
             "metadata": {}
@@ -212,93 +194,25 @@
         {
             "cell_type": "markdown",
             "source": [
-                "This is also a good time to introduce the double-equal sign. Because we use `=` to assign values to variables, we can't use it to test if two things are equal. To ask R to evaluate whether two things are equal, therefore, we use a double-equal sign (`==`). For example:"
+                "## Operations and Data Types\n",
+                "\n",
+                "Data types aren't just about helping R remember what kind of data has been assigned to a variable -- it also affects how some operators (like `+`) are interpreted. \n",
+                "\n",
+                "For example, if I put `+` between two numeric variables, R will do the obvious thing and add them up:"
             ],
             "metadata": {}
         },
         {
             "cell_type": "code",
-            "execution_count": 20,
+            "execution_count": 3,
             "source": [
-                "a = 5\n",
-                "b = 5\n",
-                "a == b"
+                "a <- 10\n",
+                "b <- 2\n",
+                "a + b"
             ],
             "outputs": [
                 {
-                    "data": {
-                        "text/plain": [
-                            "[1] TRUE"
-                        ],
-                        "text/markdown": [
-                            "TRUE"
-                        ],
-                        "text/latex": [
-                            "TRUE"
-                        ],
-                        "text/html": [
-                            "TRUE"
-                        ]
-                    },
-                    "metadata": {},
-                    "output_type": "display_data"
-                }
-            ],
-            "metadata": {}
-        },
-        {
-            "cell_type": "code",
-            "execution_count": 21,
-            "source": [
-                "c = 7\n",
-                "a == c"
-            ],
-            "outputs": [
-                {
-                    "data": {
-                        "text/plain": [
-                            "[1] FALSE"
-                        ],
-                        "text/markdown": [
-                            "FALSE"
-                        ],
-                        "text/latex": [
-                            "FALSE"
-                        ],
-                        "text/html": [
-                            "FALSE"
-                        ]
-                    },
-                    "metadata": {},
-                    "output_type": "display_data"
-                }
-            ],
-            "metadata": {}
-        },
-        {
-            "cell_type": "markdown",
-            "source": [
-                "## A Brief Introduction to Functions\n",
-                "\n",
-                "One last note before we finish off this section: one of the most powerful thing about a language like R is that it's full of pre-made tools called *functions*. A function is basically a little program inside R. They can do everything from simple operations (like adding up numbers) to extremely complicated operations (fit a machine learning model). \n",
-                "\n",
-                "The idea of a function is that takes in a set of *arguments* as an input, and then it *returns* a result. To use a function, you type out the function name, then place the arguments you want to pass to the function inside parentheses. For example, there's a function called `as.numeric()` that's designed to convert a variable that is a character (like `\"7\"`) to a numeric value (`7`) so we can do arithmatic with that value. \n",
-                "\n",
-                "So to use it, we pass the function `as.numeric` the variable (`b`). The function will then take the value associated with `b` (`\"7\"`), convert it to a numeric value, then return the converted value. For example:"
-            ],
-            "metadata": {}
-        },
-        {
-            "cell_type": "code",
-            "execution_count": 22,
-            "source": [
-                "a = 5\n",
-                "b = \"7\"\n",
-                "b_as_a_numeric = as.numeric(b)\n",
-                "a + b_as_a_numeric"
-            ],
-            "outputs": [
-                {
+                    "output_type": "display_data",
                     "data": {
                         "text/plain": [
                             "[1] 12"
@@ -313,8 +227,7 @@
                             "12"
                         ]
                     },
-                    "metadata": {},
-                    "output_type": "display_data"
+                    "metadata": {}
                 }
             ],
             "metadata": {}
@@ -322,55 +235,14 @@
         {
             "cell_type": "markdown",
             "source": [
-                "Note that `as.numeric` didn't actually change the value of the variable `b` -- instead, it returned the converted value, and we assigned it to the variable `b_as_a_numeric`. If we look at `b`, we will see it is still `\"7\"`"
-            ],
-            "metadata": {}
-        },
-        {
-            "cell_type": "code",
-            "execution_count": 23,
-            "source": [
-                "b"
-            ],
-            "outputs": [
-                {
-                    "data": {
-                        "text/plain": [
-                            "[1] \"7\""
-                        ],
-                        "text/markdown": [
-                            "'7'"
-                        ],
-                        "text/latex": [
-                            "'7'"
-                        ],
-                        "text/html": [
-                            "'7'"
-                        ]
-                    },
-                    "metadata": {},
-                    "output_type": "display_data"
-                }
-            ],
-            "metadata": {}
-        },
-        {
-            "cell_type": "markdown",
-            "source": [
-                "But `as.numeric` won't work on everything. If you pass `as.numeric` a character that doesn't look like a number, it's smart enough to know that there's no way to convert it, so instead of a number, it returns `NA`, which is what R uses when it has no idea what to do. For example:"
-            ],
-            "metadata": {}
-        },
-        {
-            "cell_type": "markdown",
-            "source": [
-                "```R\n",
-                "silly_example = \"This doesn't look like a number at all!\"\n",
-                "as.numeric(silly_example)\n",
+                "But if I try and put a `+` between two character variables, R will stop and say \"WAIT A MINUTE! I don't know how to add two characters!\" \n",
                 "\n",
-                "Warning message in eval(expr, envir, enclos):\n",
-                "“NAs introduced by coercion”\n",
-                "<NA>\n",
+                "```r \n",
+                "a <- \"Lyra\"\n",
+                "b <- \"Belacqua\"\n",
+                "a + b \n",
+                "\n",
+                "> Error in a + b : non-numeric argument to binary operator\n",
                 "```"
             ],
             "metadata": {}
@@ -378,7 +250,236 @@
         {
             "cell_type": "markdown",
             "source": [
-                "We'll talk much more about functions in the future, but for now it's enough to recognize that they are little programs, and that they operate by accepting inputs (the things placed inside the parenthesis that follow the function name) and return a result to you which you can look at or assign to a variable for later use."
+                "Note that one place that this behavior can be confusing is when R has stored numbers as characters -- something that happens a lot when you are importing a file. That's because, as I said before, computers are *really* inflexible. For example, suppose you had the following code:\n",
+                "\n",
+                "```r\n",
+                "a <- \"5\"\n",
+                "b <- \"4\"\n",
+                "a + b\n",
+                "```\n",
+                "\n",
+                "Now, if I asked you what that should print out, I'm sure you'd say \"9\", because you're smart and can recognize what I *want*. But R can't do that -- it sees you trying to add two character variables and says \"nope, sorry! Can't do that.\"\n",
+                "\n",
+                "```r\n",
+                "a <- \"5\"\n",
+                "b <- \"4\"\n",
+                "a + b\n",
+                "\n",
+                "> Error in a + b : non-numeric argument to binary operator\n",
+                "```\n"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "\n",
+                "\n",
+                "Which brings us to..."
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "## Converting Data Types\n",
+                "\n",
+                "From time to time, you'll want to move between data types, and for that we have a couple special functions, all with the same naming structure: `as.numeric()`, `as.character()`, and `as.logical()`. Each of these will take a variable and *try* to convert it to the type named, and it if can't throw up an error. \n",
+                "\n",
+                "So let's do our example above again using `as.numeric()`:\n"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 6,
+            "source": [
+                "a <- \"5\"\n",
+                "b <- \"4\"\n",
+                "a <- as.numeric(a)\n",
+                "b <- as.numeric(b)\n",
+                "a + b"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[1] 9"
+                        ],
+                        "text/markdown": [
+                            "9"
+                        ],
+                        "text/latex": [
+                            "9"
+                        ],
+                        "text/html": [
+                            "9"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "Ta-da! "
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "**NOTE:** I didn't just type `as.numeric(a)`, I typed `a <- as.numeric(a)`. \n",
+                "\n",
+                "If I had just typed `as.numeric(a)`, R would have evaluated that expression (which evaluates to `5`, where `5` is numeric) and printed it out. But `a` itself wouldn't have changed, because I didn't re-assign the value of that expression back to `a`."
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "## More on Logical\n",
+                "\n",
+                "OK, before we move on, let's talk a little more about logical data, as its usefulness is perhaps the least evident at the moment. But they're important because of how often in data analysis or data wrangling we want to evaluate logical statements, and the results of those need to take the form of `TRUE` and `FALSE`. \n",
+                "\n",
+                "To illustrate here are a number of examples where logicals come into play:"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 18,
+            "source": [
+                "# Simple math tests, like inequalities\n",
+                "7 > 5"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[1] TRUE"
+                        ],
+                        "text/markdown": [
+                            "TRUE"
+                        ],
+                        "text/latex": [
+                            "TRUE"
+                        ],
+                        "text/html": [
+                            "TRUE"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 19,
+            "source": [
+                "-1 >= 10"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[1] FALSE"
+                        ],
+                        "text/markdown": [
+                            "FALSE"
+                        ],
+                        "text/latex": [
+                            "FALSE"
+                        ],
+                        "text/html": [
+                            "FALSE"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "The other place logical data types come up a lot are when we want to test whether two things are the same (equal). Because we can use `=` to assign values to variables (see note on assignment operators [here](introduction.ipynb)), we can't test whether two things are equal by typing something like `a = 5` -- because R wouldn't know if you're assigning 5 to `a`, or asking whether the value already assigned to `a` is equal to 5.\n",
+                "\n",
+                "So to evaluate whether two things are equal, we use a double-equal sign (`==`). For example:"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 20,
+            "source": [
+                "a <- 5\n",
+                "b <- 5\n",
+                "a == b"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[1] TRUE"
+                        ],
+                        "text/markdown": [
+                            "TRUE"
+                        ],
+                        "text/latex": [
+                            "TRUE"
+                        ],
+                        "text/html": [
+                            "TRUE"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 21,
+            "source": [
+                "c <- 7\n",
+                "a == c"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[1] FALSE"
+                        ],
+                        "text/markdown": [
+                            "FALSE"
+                        ],
+                        "text/latex": [
+                            "FALSE"
+                        ],
+                        "text/html": [
+                            "FALSE"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "## Exercises\n",
+                "\n",
+                "stuff here."
             ],
             "metadata": {}
         }
@@ -386,7 +487,17 @@
     "metadata": {
         "orig_nbformat": 4,
         "language_info": {
-            "name": "r"
+            "name": "R",
+            "codemirror_mode": "r",
+            "pygments_lexer": "r",
+            "mimetype": "text/x-r-source",
+            "file_extension": ".r",
+            "version": "4.1.0"
+        },
+        "kernelspec": {
+            "name": "ir",
+            "display_name": "R",
+            "language": "R"
         }
     },
     "nbformat": 4,
