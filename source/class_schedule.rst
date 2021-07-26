@@ -1,13 +1,15 @@
 Class Schedule and Curriculum
 =============================
 
+**PRELIMINARY SITE DRAFT. MUCH WORK TO BE DONE!**
+
+
 Before First Class
 ------------------------
 
 -  `Installing RSTudio <https://www.youtube.com/watch?v=ulIv0NiVTs4>`__
 -  Student Knowledge Assessment survey
--  `Intro to R (Review) <introduction.ipynb>`__
--  `Data Types <data_types.ipynb>`__
+-  `Introduction to R <introduction.ipynb>`__
 
 Session 1 (Monday Afternoon): Variables & Vectors
 -------------------------------------------------
@@ -30,6 +32,7 @@ Session 2 (Tuesday Morning): Generalizing Vectors
 
 **Read Before Class:**
 
+-  `Data Types <data_types.ipynb>`__
 -  `Vectors in R <vectors.ipynb>`__
 -  `DataFrames <dataset-basics.ipynb>`__
 

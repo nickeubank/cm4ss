@@ -2,7 +2,7 @@
 Welcome!
 =========
 
-**PRELIMINARY PAGE DRAFT. MUCH WORK TO BE DONE!**
+**PRELIMINARY SITE DRAFT. MUCH WORK TO BE DONE!**
 
 The goal of this Boot Camp is to provide incoming social science graduate students with a foundational understanding of topics including: variable assignment; vectors and matrices; loading, subsetting, cleaning, merging, and collapsing tabular data; plotting; and using loops and functions.
 
