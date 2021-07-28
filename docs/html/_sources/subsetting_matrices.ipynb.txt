@@ -336,7 +336,467 @@
         {
             "cell_type": "markdown",
             "source": [
-                "## Subsetting with Logicals"
+                "## Subsetting with Logicals\n",
+                "\n",
+                "Subsetting with logical vectors also generalizes from vectors to matrices in the same way. To illustrate, let's go back to our toy matrix of survey respondenses:"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 25,
+            "source": [
+                "income <- c(22000, 75000, 19000)\n",
+                "age <- c(20, 35, 55)\n",
+                "education <- c(12, 16, 11)\n",
+                "\n",
+                "survey <- cbind(income, age, education)\n",
+                "survey"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "     income age education\n",
+                            "[1,] 22000  20  12       \n",
+                            "[2,] 65000  35  16       \n",
+                            "[3,] 19000  55  11       "
+                        ],
+                        "text/markdown": [
+                            "\n",
+                            "A matrix: 3 × 3 of type dbl\n",
+                            "\n",
+                            "| income | age | education |\n",
+                            "|---|---|---|\n",
+                            "| 22000 | 20 | 12 |\n",
+                            "| 65000 | 35 | 16 |\n",
+                            "| 19000 | 55 | 11 |\n",
+                            "\n"
+                        ],
+                        "text/latex": [
+                            "A matrix: 3 × 3 of type dbl\n",
+                            "\\begin{tabular}{lll}\n",
+                            " income & age & education\\\\\n",
+                            "\\hline\n",
+                            "\t 22000 & 20 & 12\\\\\n",
+                            "\t 65000 & 35 & 16\\\\\n",
+                            "\t 19000 & 55 & 11\\\\\n",
+                            "\\end{tabular}\n"
+                        ],
+                        "text/html": [
+                            "<table class=\"dataframe\">\n",
+                            "<caption>A matrix: 3 × 3 of type dbl</caption>\n",
+                            "<thead>\n",
+                            "\t<tr><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>\n",
+                            "</thead>\n",
+                            "<tbody>\n",
+                            "\t<tr><td>22000</td><td>20</td><td>12</td></tr>\n",
+                            "\t<tr><td>65000</td><td>35</td><td>16</td></tr>\n",
+                            "\t<tr><td>19000</td><td>55</td><td>11</td></tr>\n",
+                            "</tbody>\n",
+                            "</table>\n"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "If we wanted to select all the rows where income was less than the US median income (about 65,000), we would first extract the income column, then create a logical column that's `TRUE` if income is below 65,000, then put that in the first position of our square brackets:"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 27,
+            "source": [
+                "income = survey[,1]\n",
+                "income"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[1] 22000 65000 19000"
+                        ],
+                        "text/markdown": [
+                            "1. 22000\n",
+                            "2. 65000\n",
+                            "3. 19000\n",
+                            "\n",
+                            "\n"
+                        ],
+                        "text/latex": [
+                            "\\begin{enumerate*}\n",
+                            "\\item 22000\n",
+                            "\\item 65000\n",
+                            "\\item 19000\n",
+                            "\\end{enumerate*}\n"
+                        ],
+                        "text/html": [
+                            "<style>\n",
+                            ".list-inline {list-style: none; margin:0; padding: 0}\n",
+                            ".list-inline>li {display: inline-block}\n",
+                            ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+                            "</style>\n",
+                            "<ol class=list-inline><li>22000</li><li>65000</li><li>19000</li></ol>\n"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 28,
+            "source": [
+                "below_median = income < 65000\n",
+                "below_median"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[1]  TRUE FALSE  TRUE"
+                        ],
+                        "text/markdown": [
+                            "1. TRUE\n",
+                            "2. FALSE\n",
+                            "3. TRUE\n",
+                            "\n",
+                            "\n"
+                        ],
+                        "text/latex": [
+                            "\\begin{enumerate*}\n",
+                            "\\item TRUE\n",
+                            "\\item FALSE\n",
+                            "\\item TRUE\n",
+                            "\\end{enumerate*}\n"
+                        ],
+                        "text/html": [
+                            "<style>\n",
+                            ".list-inline {list-style: none; margin:0; padding: 0}\n",
+                            ".list-inline>li {display: inline-block}\n",
+                            ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+                            "</style>\n",
+                            "<ol class=list-inline><li>TRUE</li><li>FALSE</li><li>TRUE</li></ol>\n"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 29,
+            "source": [
+                "survey[below_median,]"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "     income age education\n",
+                            "[1,] 22000  20  12       \n",
+                            "[2,] 19000  55  11       "
+                        ],
+                        "text/markdown": [
+                            "\n",
+                            "A matrix: 2 × 3 of type dbl\n",
+                            "\n",
+                            "| income | age | education |\n",
+                            "|---|---|---|\n",
+                            "| 22000 | 20 | 12 |\n",
+                            "| 19000 | 55 | 11 |\n",
+                            "\n"
+                        ],
+                        "text/latex": [
+                            "A matrix: 2 × 3 of type dbl\n",
+                            "\\begin{tabular}{lll}\n",
+                            " income & age & education\\\\\n",
+                            "\\hline\n",
+                            "\t 22000 & 20 & 12\\\\\n",
+                            "\t 19000 & 55 & 11\\\\\n",
+                            "\\end{tabular}\n"
+                        ],
+                        "text/html": [
+                            "<table class=\"dataframe\">\n",
+                            "<caption>A matrix: 2 × 3 of type dbl</caption>\n",
+                            "<thead>\n",
+                            "\t<tr><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>\n",
+                            "</thead>\n",
+                            "<tbody>\n",
+                            "\t<tr><td>22000</td><td>20</td><td>12</td></tr>\n",
+                            "\t<tr><td>19000</td><td>55</td><td>11</td></tr>\n",
+                            "</tbody>\n",
+                            "</table>\n"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "Or, of course, we could do that all in one line instead of breaking out the steps:"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 30,
+            "source": [
+                "survey[survey[, 1] < 65000, ]"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "     income age education\n",
+                            "[1,] 22000  20  12       \n",
+                            "[2,] 19000  55  11       "
+                        ],
+                        "text/markdown": [
+                            "\n",
+                            "A matrix: 2 × 3 of type dbl\n",
+                            "\n",
+                            "| income | age | education |\n",
+                            "|---|---|---|\n",
+                            "| 22000 | 20 | 12 |\n",
+                            "| 19000 | 55 | 11 |\n",
+                            "\n"
+                        ],
+                        "text/latex": [
+                            "A matrix: 2 × 3 of type dbl\n",
+                            "\\begin{tabular}{lll}\n",
+                            " income & age & education\\\\\n",
+                            "\\hline\n",
+                            "\t 22000 & 20 & 12\\\\\n",
+                            "\t 19000 & 55 & 11\\\\\n",
+                            "\\end{tabular}\n"
+                        ],
+                        "text/html": [
+                            "<table class=\"dataframe\">\n",
+                            "<caption>A matrix: 2 × 3 of type dbl</caption>\n",
+                            "<thead>\n",
+                            "\t<tr><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>\n",
+                            "</thead>\n",
+                            "<tbody>\n",
+                            "\t<tr><td>22000</td><td>20</td><td>12</td></tr>\n",
+                            "\t<tr><td>19000</td><td>55</td><td>11</td></tr>\n",
+                            "</tbody>\n",
+                            "</table>\n"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "Or, since R used the names of vectors we passed to `cbind()` as column names, we could also subset our columns by name, which makes our code a lot easier to understand:"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 32,
+            "source": [
+                "survey[survey[, \"income\"] < 65000, ]"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "     income age education\n",
+                            "[1,] 22000  20  12       \n",
+                            "[2,] 19000  55  11       "
+                        ],
+                        "text/markdown": [
+                            "\n",
+                            "A matrix: 2 × 3 of type dbl\n",
+                            "\n",
+                            "| income | age | education |\n",
+                            "|---|---|---|\n",
+                            "| 22000 | 20 | 12 |\n",
+                            "| 19000 | 55 | 11 |\n",
+                            "\n"
+                        ],
+                        "text/latex": [
+                            "A matrix: 2 × 3 of type dbl\n",
+                            "\\begin{tabular}{lll}\n",
+                            " income & age & education\\\\\n",
+                            "\\hline\n",
+                            "\t 22000 & 20 & 12\\\\\n",
+                            "\t 19000 & 55 & 11\\\\\n",
+                            "\\end{tabular}\n"
+                        ],
+                        "text/html": [
+                            "<table class=\"dataframe\">\n",
+                            "<caption>A matrix: 2 × 3 of type dbl</caption>\n",
+                            "<thead>\n",
+                            "\t<tr><th scope=col>income</th><th scope=col>age</th><th scope=col>education</th></tr>\n",
+                            "</thead>\n",
+                            "<tbody>\n",
+                            "\t<tr><td>22000</td><td>20</td><td>12</td></tr>\n",
+                            "\t<tr><td>19000</td><td>55</td><td>11</td></tr>\n",
+                            "</tbody>\n",
+                            "</table>\n"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "Now suppose I also wanted to subset the columns I get back at the same time. For example, suppose I wanted the education levels of everyone with incomes below the US median. I could do this in two steps by subsetting rows and then subsetting columns:"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 33,
+            "source": [
+                "below_median <- survey[survey[, \"income\"] < 65000, ]\n",
+                "below_median[, \"education\"]"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[1] 12 11"
+                        ],
+                        "text/markdown": [
+                            "1. 12\n",
+                            "2. 11\n",
+                            "\n",
+                            "\n"
+                        ],
+                        "text/latex": [
+                            "\\begin{enumerate*}\n",
+                            "\\item 12\n",
+                            "\\item 11\n",
+                            "\\end{enumerate*}\n"
+                        ],
+                        "text/html": [
+                            "<style>\n",
+                            ".list-inline {list-style: none; margin:0; padding: 0}\n",
+                            ".list-inline>li {display: inline-block}\n",
+                            ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+                            "</style>\n",
+                            "<ol class=list-inline><li>12</li><li>11</li></ol>\n"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "Or I can do it all in one command!"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 35,
+            "source": [
+                "survey[survey[,\"income\"] < 65000, \"education\"]"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[1] 12 11"
+                        ],
+                        "text/markdown": [
+                            "1. 12\n",
+                            "2. 11\n",
+                            "\n",
+                            "\n"
+                        ],
+                        "text/latex": [
+                            "\\begin{enumerate*}\n",
+                            "\\item 12\n",
+                            "\\item 11\n",
+                            "\\end{enumerate*}\n"
+                        ],
+                        "text/html": [
+                            "<style>\n",
+                            ".list-inline {list-style: none; margin:0; padding: 0}\n",
+                            ".list-inline>li {display: inline-block}\n",
+                            ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+                            "</style>\n",
+                            "<ol class=list-inline><li>12</li><li>11</li></ol>\n"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "So what is the average education of people earning less than the median income in the US in our toy data?"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 36,
+            "source": [
+                "mean(survey[survey[,\"income\"] < 65000, \"education\"])"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[1] 11.5"
+                        ],
+                        "text/markdown": [
+                            "11.5"
+                        ],
+                        "text/latex": [
+                            "11.5"
+                        ],
+                        "text/html": [
+                            "11.5"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "OK -- I know we've just covered a lot, but hopefully that example makes clear how quickly we can start doing really, really powerful analyses and answering \n",
+                "substantive questions *just by subsetting our data carefully.*"
             ],
             "metadata": {}
         },
@@ -656,7 +1116,7 @@
                 "- **3D measurements that evolve over time:** just as we can model survey data that evolves over time in three dimensions, we can also model three-dimensional volumetric data that evolves over time (e.g. not just a slice of a climate model, but its evoluation) in a four-dimensional array!\n",
                 "- **Satellite Data:** Satellite image data usually comes in the form of sets of 2-dimensional images, where each image includes information about light intensity at a given wavelength. When these images are stacked to, say, generate a color image, or identify wavelength combinations common to certain types of pollution, flood waters, or specific crops, you get a three-dimensional array.\n",
                 "\n",
-                "So yeah, high dimensional arrays are a SUPER powerful data structure, and one you shouldn't shy away"
+                "So yeah, high dimensional arrays are a SUPER powerful data structure, and one you shouldn't shy away."
             ],
             "metadata": {}
         }
