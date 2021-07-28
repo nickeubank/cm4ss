@@ -10,6 +10,8 @@ Before First Class
 - Welcome Video
 - Student Knowledge Assessment survey
 - `Introduction to R <introduction.ipynb>`__
+- `Data Types <data_types.ipynb>`__
+
 
 Session 1 (Monday Afternoon): Variables & Vectors
 -------------------------------------------------
@@ -27,14 +29,14 @@ Session 2 (Tuesday Morning): Generalizing Vectors
 -  Data Types
 -  Subsetting Vectors
 -  Matrices and Linear Algebra
--  DataFrames: Manipulating REAL DATA! [maybe too ambitious to fit in
-   this session?]
+-  DataFrames: Manipulating REAL DATA!
 
 **Read Before Class:**
 
--  `Data Types <data_types.ipynb>`__
--  `Vectors in R <vectors.ipynb>`__
--  `DataFrames <dataset-basics.ipynb>`__
+-  `Intro to Vectors <intro_to_vectors.ipynb>`__
+-  `Subsetting Vectors <subsetting_vectors.ipynb>`__
+-  `Intro to Matrices <intro_to_matrices.ipynb>`__
+- `Subsetting Matrices <subsetting_matrices.ipynb>`__
 
 Session 3 (Tuesday Afternoon): Data Wrangling
 ---------------------------------------------
@@ -46,6 +48,8 @@ Session 3 (Tuesday Afternoon): Data Wrangling
 
 **Read Before Class:**
 
+
+-  `DataFrames <dataset-basics.ipynb>`__
 -  `Modifying DataFrames <modifying-data.ipynb>`__
 
 Session 4 (Thursday Morning): Merging and Aggregating

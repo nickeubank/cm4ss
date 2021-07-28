@@ -92,7 +92,10 @@ Note that one consequence of this class structure is that the in person sessions
 
    introduction.ipynb
    data_types.ipynb
-   vectors.ipynb
+   intro_to_vectors.ipynb
+   subsetting_vectors.ipynb
+   intro_to_matrices.ipynb
+   subsetting_matrices.ipynb
    dataset-basics.ipynb
    modifying-data.ipynb
    merging-appending.ipynb
