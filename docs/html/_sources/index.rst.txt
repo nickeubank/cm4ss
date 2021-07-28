@@ -96,11 +96,11 @@ Note that one consequence of this class structure is that the in person sessions
    subsetting_vectors.ipynb
    intro_to_matrices.ipynb
    subsetting_matrices.ipynb
-   dataset-basics.ipynb
-   modifying-data.ipynb
-   merging-appending.ipynb
-   collapsing-data.ipynb
-   wide-and-long.ipynb
-   writing-functions.ipynb
+   dataset_basics.ipynb
+   modifying_data.ipynb
+   merging_appending.ipynb
+   collapsing_data.ipynb
+   wide_and_long.ipynb
    controlflow.ipynb
+   functions.ipynb
 

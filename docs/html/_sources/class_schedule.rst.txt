@@ -31,7 +31,6 @@ Session 2: Generalizing Vectors
 -  Data Types
 -  Subsetting Vectors
 -  Matrices and Linear Algebra
--  DataFrames: Manipulating REAL DATA!
 
 **Read Before Class:**
 
@@ -46,14 +45,14 @@ Session 3: Data Wrangling
 **Tuesday, August 10th, 10:00 - 11:30 EST**
 
 - Data Frames
-- Data Wrangling with ``dplyr``
+- Data Wrangling with `dplyr`
 - Reading error messages
 
 **Read Before Class:**
 
 
--  `DataFrames <dataset-basics.ipynb>`__
--  `Modifying DataFrames <modifying-data.ipynb>`__
+-  `DataFrames <dataset_basics.ipynb>`__
+-  `Modifying DataFrames <modifying_data.ipynb>`__
 
 Session 4: Merging and Aggregating
 -----------------------------------------------------
@@ -66,8 +65,8 @@ Session 4: Merging and Aggregating
 
 **Read Before Class:**
 
--  `Collapsing Data <collapsing-data.ipynb>`__
--  `Merging and Appending <merging-appending.ipynb>`__
+-  `Collapsing Data <collapsing_data.ipynb>`__
+-  `Merging and Appending <merging_appending.ipynb>`__
 
 Session 5: Plotting, Loops and Functions
 -------------------------------------------------------------
@@ -81,5 +80,5 @@ Session 5: Plotting, Loops and Functions
 **Read Before Class:**
 
 -  `Control Flow <controlflow.ipynb>`__
--  `Writing Functions <writing-functions.ipynb>`__
+-  `Writing Functions <functions.ipynb>`__
 -  Plotting with ggplot
