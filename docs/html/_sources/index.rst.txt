@@ -2,7 +2,6 @@
 Welcome!
 =========
 
-**PRELIMINARY SITE DRAFT. MUCH WORK TO BE DONE!**
 
 The goal of this Boot Camp is to provide incoming social science graduate students with a foundational understanding of topics including: variable assignment; vectors and matrices; loading, subsetting, cleaning, merging, and collapsing tabular data; plotting; and using loops and functions.
 
@@ -53,8 +52,8 @@ We have *absolutely no expectations that students will have any experience with 
 
 At times during the course, we may make statements about how the tools we're learning (like R) compare to different tools (like Stata or Python) if we find there are students with experience in these other tools. However, if we make those comparisons, it is only to help those students avoid the traps one can fall in if one's background is in another language. It is in no way because we *expect* all students to have experience with other tools.
 
-But I already know R. Do I need to be here?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+But I already know R. Is this really for me?
+---------------------------------------------
 
 In my experience, *most* instruction students receive in R tends to provide students with a handful of functions they can call in order to get work done. This is a good way to get started in R, but -- again, in my experience -- even students who use R a lot often don't fully understand the basic principles on which languages like R are built. A decade ago, this was less of a problem, but as computational methods take on an increasingly central place in the social sciences, and our computational tools become increasingly sophisticated, this lack of fundamentals often becomes a significant obstacle for students seeking to improve their skills. 
 

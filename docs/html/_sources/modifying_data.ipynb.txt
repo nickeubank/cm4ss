@@ -5,6 +5,9 @@
    "source": [
     "# Modifying Data\n",
     "\n",
+    "**PRELIMINARY SITE DRAFT. MUCH WORK TO BE DONE!**\n",
+    "\n",
+    "\n",
     "Being able to quickly modify datasets is critical. This involves, among other things --  subsetting, sorting, extracting unique observations, renaming variables, dropping variables, and creating new variables.  To accomplish each of these tasks, we'll use a set of\n",
     " relatively new functions introduced in the **dplyr** package developed\n",
     " by [Hadley Wickham](http://had.co.nz/).  A nice introduction to this\n",

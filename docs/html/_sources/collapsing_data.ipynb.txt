@@ -4,8 +4,8 @@
    "cell_type": "markdown",
    "source": [
     "# Collapsing Data \n",
-    "Simon Ejdemyr and Nick Eubank\n",
-    "July, 2021\n",
+    "\n",
+    "**PRELIMINARY SITE DRAFT. MUCH WORK TO BE DONE!**\n",
     "\n",
     "This tutorial explains how to collapse data in R. Collapsing means using one or several *grouping variables* to find summary statistics --- mean, median, etc. --- for different categories in your data. For example, if you have yearly income data for the 50 U.S. states over a 10-year period (i.e., you have 500 data points), you may want to know what the mean income was in each state (collapsing the data to 50 data points) or in each year (10 data points). Or you may want to collapse the data by year *and* U.S. region, say, South v. non-South (20 data points). Like the [tutorial on modifying data](modifying-data.ipynb) this tutorial draws on a set of intuitive and elegant functions from the `dplyr` package.\n"
    ],

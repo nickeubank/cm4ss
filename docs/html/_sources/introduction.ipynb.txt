@@ -489,11 +489,9 @@
    "source": [
     "## Functions\n",
     "\n",
-    "The last thing to talk about in this reading is perhaps the most important construct in programming: the function!\n",
+    "The last thing to talk about in this reading is one of the most useful concepts in computer science: the function!\n",
     "\n",
-    "Up until now, we've mostly been doing little mathematical manipulations that you can imagine doing on a calculator. But often times we want to be able to do complicated manipulations of our data without writing out all the steps ourselves, and that's where functions come in.\n",
-    "\n",
-    "The basic idea of a function is that it is an object that accepts data as an input, does something with that data, and then returns something to you. For example, `sqrt` is a function that calculates the square root of a number. It takes a number as an input (i.e. you put a number in between the two parentheses that follow the function name) and returns the square root of that number:"
+    "Functions are small packages of code that take inputs from the user, do some manipulations with those inputs, and return a result. For example, `sqrt()` is a function that calculates the square root of a number. It takes a number as an input (i.e. you put a number in between the two parentheses that follow the function name) and it returns the square root of that number:"
    ],
    "metadata": {}
   },
@@ -502,6 +500,78 @@
    "execution_count": 14,
    "source": [
     "sqrt(9)"
+   ],
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[1] 3"
+      ],
+      "text/markdown": [
+       "3"
+      ],
+      "text/latex": [
+       "3"
+      ],
+      "text/html": [
+       "3"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "The inputs you pass to a function are called *arguments*, and whatever the function returns to you is called a *return value*. \n",
+    "\n",
+    "Different functions may also take different numbers of arguments. For example the function `substr()` returns a portion of a character that you pass to it, and it takes 3 arguments: the first is a character, the second is the index of the first letter you want to keep, and the third argument the last letter you want to keep. How if I wanted to keep the first word (\"Once\") from the character \"Once upon a time\", I'd type:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "source": [
+    "substr(\"Once upon a time\", 1, 4)"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "[1] \"Once\""
+      ],
+      "text/markdown": [
+       "'Once'"
+      ],
+      "text/latex": [
+       "'Once'"
+      ],
+      "text/html": [
+       "'Once'"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "In addition, functions sometimes have optional *keyword arguments*. When you use these arguments, you have to type the name of the argument and `=` before you put in a specific value. For example R has a function called `round` that rounds off numeric data. By default, `round` will round numbers off to the nearest integer (i.e. no decimal places):"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "source": [
+    "round(3.141592653589793)"
    ],
    "outputs": [
     {
@@ -528,11 +598,76 @@
   {
    "cell_type": "markdown",
    "source": [
-    "How did it just calculate the square root of 9? Here's the magic of functions: you don't have to know! \n",
+    "But it accepts a keyword argument called `digits` that allows you to change its behavior. For example, if I wanted pi rounded to 2 decimal places, I could type:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "source": [
+    "round(3.141592653589793, digits = 2)"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "[1] 3.14"
+      ],
+      "text/markdown": [
+       "3.14"
+      ],
+      "text/latex": [
+       "3.14"
+      ],
+      "text/html": [
+       "3.14"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "How do you know what arguments a function takes? Every (well-written) function comes with documentation! Just type `?function_name` in R, and you'll see it's documentation. For example, the documentation for `round` has a section called \"arguments\" that tells you about the `digits` keyword:\n",
     "\n",
-    "My intro to computer science teacher once said that if took remembered only one thing from his class, we should remember **\"a function is a toaster.\"** OK, stay with me: by that, he meant that just like a toaster, it's not your job to know how a function works; you're only responsible for knowing what you're allowed to put in, and for accepting what it returns. If one day my toaster suddenly changed from heating my bread with electricity to channeling cosmic rays, it wouldn't really change how I interact with the toaster: I put bread in, I get toast back.\n",
     "\n",
-    "Now this idea of a toaster taking something in and returning something to you (the \"return value\") is relevant to our discussion of variables and assignment. Just like any other expression, if you ask R to evaluate a line of code with a function in it, and you don't assign that value back to a variable, that return value gets printed out and is then forgotten. So if you want to keep the result of a function, remember you always have to assign it to a variable. e.g."
+    "```\n",
+    "> ?round\n",
+    "\n",
+    "Round                   package:base                   R Documentation\n",
+    "\n",
+    "Rounding of Numbers\n",
+    "\n",
+    "...\n",
+    "\n",
+    "Arguments:\n",
+    "\n",
+    "       x: a numeric vector.  Or, for ‘round’ and ‘signif’, a complex\n",
+    "          vector.\n",
+    "\n",
+    "  digits: integer indicating the number of decimal places (‘round’) or\n",
+    "          significant digits (‘signif’) to be used.  Negative values\n",
+    "          are allowed (see ‘Details’).\n",
+    "\n",
+    "     ...: arguments to be passed to methods.\n",
+    "\n",
+    "```\n",
+    "\n",
+    "**To get out of one of these help files, type `q`**"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "### Assigning Return Values \n",
+    "\n",
+    "Just like any other expression, if you ask R to evaluate a line of code with a function in it and don't assign that value back to a variable, that return value gets printed out and then immediately forgotten. So if you want to keep the result of a function, remember you always have to assign it to a variable. e.g."
    ],
    "metadata": {}
   },
@@ -574,6 +709,13 @@
      },
      "metadata": {}
     }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "### Evaluating Nested Functions"
    ],
    "metadata": {}
   },
@@ -633,29 +775,34 @@
   {
    "cell_type": "markdown",
    "source": [
-    "Anyway, we'll talk a LOT more about functions later on in the course, including learning about all the amazing functionality that comes built into R in the form of functions it provides. And by the end of the course you'll even be able to write your own functions! \n",
+    "### How Do Functions Work?\n",
     "\n",
-    "But for now it's enough to know that they're just objects that take inputs, do something, and return an output to you to use (and you need to assign that return value to a variable if you want it remembered!)."
+    "There's nothing magic about functions -- they're just bundles of code in a neat little package. Indeed, later in this course we'll show you how to write functions of your own!\n",
+    "\n",
+    "But you also shouldn't worry about the fact that you can't immediately see the code that is making a function like `sqrt()` work. In fact, this is the best thing about functions -- you don't actually need to know what's going on inside the function. You only need to know the arguments you need to pass to it to get back the thing that you want. \n",
+    "\n",
+    "In this sense, a function is kind of like a toaster: you put bread in, you get toast back; how the toaster is turning the bread into toast isn't really something you need to worry about. I *think* that my toaster is making toast by running electricity through metal wires until they heat up, but if it turned out that my toaster were actually capturing the energy of passing cosmic rays, it wouldn't change the way that I make my breakfast -- I would still put bread in, get toast back, and eat. And functions are the same way!"
    ],
    "metadata": {}
   },
   {
    "cell_type": "markdown",
    "source": [
-    "And that's it! You now know all the basics of how assignment works in R. Next up, we'll talk about types of data in R.\n",
+    "## Next Steps\n",
     "\n",
-    "## Where's the Social Science!\n",
+    "Congratulations! You now know the basics of how a programming language works. In [our next reading](data_types.ipynb), we'll discuss some of the ways data can be represented within R, after which we'll do a handful of exercises so you can practice variable assignment and using functions.\n",
     "\n",
-    "Don't worry, I promise we'll get to good, applied social science examples very soon! \n",
+    "If you've never worked with the programming language before, this may feel like a lot -- don't worry! We will have lots of opportunities to practice what you've read, and I don't expect you to feel comfortable with any of this until you've had a chance do some exercises. Programming is a skill that you learn by doing. \n",
     "\n",
-    "One goal of this course is to ensure that you have a solid understanding of programming principles, rather than just teach you how to chain together a handful of functions to do some basic data manipulations. No discipline is changing faster than data science and computational social science, so if you just learn a handful of specific commands, not only will you not be prepared to transfer your skills to new tools and applications, but you may also struggle if the commands you know change, as they surely will. By contrast, by learning these fundamental principles about *how* programming languages work, you'll develop a more robust, less \"brittle\" skill set that will provide you with a solid foundation for learning new tools over the course of your entire social science career."
-   ],
-   "metadata": {}
-  },
-  {
-   "cell_type": "markdown",
-   "source": [
-    "## Exercises"
+    "If you have worked with R before, I recognize that this might feel a little slow -- please bear with me! Our goal in this course is to ensure everyone has a solid foundation in R, which means the first couple readings may be review for some of you. We'll get into material I feel confident will be novel soon.\n",
+    "\n",
+    "### Where's the Social Science!\n",
+    "\n",
+    "It's normal at this point to find yourself saying \"wait... this isn't what I signed up for when I chose to pursue social science! This feels like computer science.\" Hang in there -- I promise we'll get to good, applied social science examples within a couple classes.  \n",
+    "\n",
+    "No discipline is changing faster than data science / computational social science. As a result, I don't want to just teach you how to chain together a handful of specific functions to do basic data manipulations. That might be the faster path to getting to work with social science datasets, but when those functions change in the future (which they inevitably will), or your research demands you move on to other tools, you won't have the understanding of how R works required to adapt. \n",
+    "\n",
+    "But by learning the fundamental principles of *how* programming languages work, you'll develop a more robust, less \"brittle\" skill set that will provide you with a solid foundation for learning new tools over the course of your entire social science career. It may feel a little slow at first, but I promise it'll pay off over the years. "
    ],
    "metadata": {}
   }

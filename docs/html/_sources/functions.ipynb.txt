@@ -5,6 +5,9 @@
    "source": [
     "# Writing Functions\n",
     "\n",
+    "**PRELIMINARY SITE DRAFT. MUCH WORK TO BE DONE!**\n",
+    "\n",
+    "\n",
     "This tutorial explains how you can write your own functions in R. Why do this? Functions are useful when you want to execute a task over and over again, resulting in less verbose and more easily interpretable code. After explaining the basics of writing functions, this tutorial covers two data science applications for writing functions.\n"
    ],
    "metadata": {}

@@ -5,6 +5,8 @@
    "source": [
     "# Loops\n",
     "\n",
+    "**PRELIMINARY SITE DRAFT. MUCH WORK TO BE DONE!**\n",
+    "\n",
     "\n",
     "For loops can be useful when you want to iterate a process in R --- e.g., run a simulation. This tutorial explains how to write for loops and shows how to use them to run Monte Carlo simulations. For loops are neat, but it's worth emphasizing that you should avoid them and instead use [vectorization](http://www.noamross.net/blog/2014/4/16/vectorization-in-r--why.html) --- which is much faster --- when possible. "
    ],
