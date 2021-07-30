@@ -52,7 +52,8 @@ Session 3: Data Wrangling
 
 
 -  `DataFrames <dataset_basics.ipynb>`__
--  `Modifying DataFrames <modifying_data.ipynb>`__
+-  `Reading Data <reading_data.ipynb>`__
+-  `Intro to dplyr and the Tidyverse <intro_to_tidyverse.ipynb>`__
 
 Session 4: Merging and Aggregating
 -----------------------------------------------------
@@ -65,8 +66,8 @@ Session 4: Merging and Aggregating
 
 **Read Before Class:**
 
--  `Collapsing Data <collapsing_data.ipynb>`__
--  `Merging and Appending <merging_appending.ipynb>`__
+- `Merging and Appending <merging_appending.ipynb>`__
+- `Defensive Programming <defensive_programming.ipynb>`__
 
 Session 5: Plotting, Loops and Functions
 -------------------------------------------------------------
@@ -82,3 +83,11 @@ Session 5: Plotting, Loops and Functions
 -  `Control Flow <controlflow.ipynb>`__
 -  `Writing Functions <functions.ipynb>`__
 -  Plotting with ggplot
+
+Further Reading: Collapsing Data
+---------------------------------
+
+'Cause we certainly didn't cover everything about R in five sessions!
+
+- `Collapsing Data <collapsing_data.ipynb>`__
+- `Wide and Long Data <wide_and_long_data.ipynb>`__

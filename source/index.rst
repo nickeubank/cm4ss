@@ -96,7 +96,8 @@ Note that one consequence of this class structure is that the in person sessions
    intro_to_matrices.ipynb
    subsetting_matrices.ipynb
    dataset_basics.ipynb
-   modifying_data.ipynb
+   reading_data.ipynb
+   intro_to_tidyverse.ipynb
    merging_appending.ipynb
    collapsing_data.ipynb
    wide_and_long.ipynb

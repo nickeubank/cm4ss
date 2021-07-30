@@ -1,5 +1,10 @@
 # Welcome!
 
+## Housekeeping
+
+- Slack
+- How to pair program
+
 ##
 Welcome
 - Why R?
