@@ -50,8 +50,8 @@ Session 3: Data Wrangling
 
 **Read Before Class:**
 
--  `DataFrames <dataset_basics.ipynb>`__
--  `Reading Data <reading_data.ipynb>`__
+-  `DataFrames <intro_to_dataframes.ipynb>`__
+-  `Manipulating Dataframes <manipulating_dataframes.ipynb>`__
 -  `dplyr and the Tidyverse <intro_to_tidyverse.ipynb>`__
 
 Session 4: Merging and Aggregating
@@ -62,6 +62,7 @@ Session 4: Merging and Aggregating
 -  Merging workflows (on paper)
 -  Merge data in R
 -  Collapsing and Aggregating Data
+-  Defensive Programming
 
 **Read Before Class:**
 
