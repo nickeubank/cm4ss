@@ -3,16 +3,18 @@
   {
    "cell_type": "markdown",
    "source": [
-    "# Intro to dplyr and the Tidyverse\n",
+    "# dplyr and the Tidyverse\n",
     "\n",
     "\n",
-    "Being able to quickly modify datasets -- often referred to as \"data wrangling\" -- is critical to being a social scientist. Indeed, most social scientists and data scientists spend a huge proportion of their time of their time cleaning and organizing their data. ([about 80 percent in surveys](https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/?sh=44a70ffb6f63). \n",
+    "Being able to quickly modify datasets -- often referred to as \"data wrangling\" -- is critical to being a social scientist. Indeed, most social scientists and data scientists spend a huge proportion of their time of their time cleaning and organizing their data. ([about 80 percent in surveys](https://www.forbes.com/sites/gilpress/2016/03/23/data-preparation-most-time-consuming-least-enjoyable-data-science-task-survey-says/?sh=44a70ffb6f63)). \n",
     "\n",
     "In our previous readings, we learned how to accomplish tasks like subsetting and modifying variables using what's called \"array indexing\" (using those `[]` square brackets). \n",
     "\n",
     "There is, however, another approach to manipulating dataframes in R that is very popular: a set of packages known collectively as the [tidyverse](https://www.tidyverse.org/) originally developed by [Hadley Wickham](http://had.co.nz/).\n",
     "\n",
-    "In this reading, we'll explore a tidyverse library called `dplyr`, which provides a set of simple functions for subsetting, sorting, renaming variables, and extracting unique values. To be clear **it doesn't allow you to do anything you couldn't do with array indexing, it just provides different ways to write your commands** But the way it allows you to write commands is something that many people find quite compelling. \n",
+    "In this reading, we'll explore a tidyverse library called `dplyr`, which provides a set of simple functions for subsetting, sorting, renaming variables, and extracting unique values. To be clear **dplyr doesn't allow you to do anything you couldn't do with array indexing, it just provides different ways to write your commands.** But the way it allows you to write commands is something that many people find quite compelling. \n",
+    "\n",
+    "## The Philosophy of dplyr\n",
     "\n",
     "Before we get into dplyr, however, a quick note word of caution: there's a reason we learned to manipulate dataframes using array indexing before I introduced dplyr. That's because, despite its popularity, I will confess to having some mis-givings about dplyr.\n",
     "\n",
@@ -26,7 +28,7 @@
     "\n",
     "(If you want to read a more eloquent version of this critique, [you can find one here](https://towardsdatascience.com/a-thousand-gadgets-my-thoughts-on-the-r-tidyverse-2441d8504433).)\n",
     "\n",
-    "With all that said, my view on this is definitely a minority view among R users, and so you should definitely get to know what dplyr is about before you decide whether it's for you. So let's dive in, and you can decide for yourself whether dplyr is for you, whether you're rather not using it, or whether you decide some functions are great but others are not! "
+    "None of that is to suggest you should avoid dplyr or the rest of the tidyverse entirely. To the contrary, I think the tidyverse plotting library (`ggplot`) is the best plotting library around, and I'm a fan of several dplyr functions (especially `rename`, which makes an otherwise tedious task quite simple). But as you use it, be mindful of its different philosophy of programming, and approach it with intentionality. "
    ],
    "metadata": {}
   },

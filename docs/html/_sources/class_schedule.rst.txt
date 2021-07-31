@@ -50,10 +50,9 @@ Session 3: Data Wrangling
 
 **Read Before Class:**
 
-
 -  `DataFrames <dataset_basics.ipynb>`__
 -  `Reading Data <reading_data.ipynb>`__
--  `Intro to dplyr and the Tidyverse <intro_to_tidyverse.ipynb>`__
+-  `dplyr and the Tidyverse <intro_to_tidyverse.ipynb>`__
 
 Session 4: Merging and Aggregating
 -----------------------------------------------------
