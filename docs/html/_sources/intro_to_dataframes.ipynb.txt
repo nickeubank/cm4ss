@@ -3,7 +3,7 @@
   {
    "cell_type": "markdown",
    "source": [
-    "# DataFrame Basics\n",
+    "# Intro to Dataframes\n",
     "\n",
     "In our previous lessons, we've talked about how vectors are often used to store lots of different observations of a given measurement (e.g. the answers of different survey respondents to a given question), and how matrices can be used to collect lots of different measurements in columns (e.g. each column can be answers to different questions). \n",
     "\n",

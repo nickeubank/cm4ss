@@ -3,8 +3,7 @@
   {
    "cell_type": "markdown",
    "source": [
-    "# Subsetting Vectors\n",
-    "\n"
+    "# Manipulating Vectors"
    ],
    "metadata": {}
   },
