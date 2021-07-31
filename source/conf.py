@@ -22,8 +22,8 @@
 html_title = "Computational Methods for Social Scientists"
 project = "CM4SS"
 nav_title = "CM4SS"
-copyright = "2021, Nick Eubank & Simon Ejdemyr"
-author = "Nick Eubank & Simon Ejdemyr"
+copyright = "2021, Nick Eubank"
+author = "Nick Eubank"
 
 # The short X.Y version
 version = ""

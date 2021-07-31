@@ -337,6 +337,133 @@
   {
    "cell_type": "markdown",
    "source": [
+    "## Don't Loop Over Big Vectors / Data "
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "\n",
+    "**CAUTION:** Do not loop over your dataset rows\n",
+    "\n",
+    "Loops are powerful, but one thing you almost never want to do is loop over the rows of your dataset. The reason is that looping is **much** slower than doing an operation using vector math (a practice called \"vectorization\"). "
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "To illustrate, suppose I want to add up two vectors, each with 1,000,000 entries:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "source": [
+    "v1 <- rnorm(1000000)\n",
+    "v2 <- rnorm(1000000)\n",
+    "\n",
+    "# add up with vector math:\n",
+    "\n",
+    "vector_time <- system.time(v1 + v2)\n",
+    "vector_time"
+   ],
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "   user  system elapsed \n",
+       "  0.002   0.000   0.001 "
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "Note I have to put them in a function to do it because of how "
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "source": [
+    "# Now add them up in a loop.\n",
+    "\n",
+    "looped <- function(v1, v2){\n",
+    "    # Add up in a loop\n",
+    "    for (i in 1:1000000) {\n",
+    "        v1[i] = v1[i] + v2[i]\n",
+    "    }\n",
+    "    return(v1)\n",
+    "}\n",
+    "\n",
+    "looped_time <- system.time(looped(v1, v2))\n",
+    "looped_time"
+   ],
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "   user  system elapsed \n",
+       "  0.070   0.003   0.073 "
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "source": [
+    "# Looped took about this many time longer:\n",
+    "\n",
+    "round(looped_time[[\"elapsed\"]] / vector_time[[\"elapsed\"]])\n"
+   ],
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[1] 73"
+      ],
+      "text/markdown": [
+       "73"
+      ],
+      "text/latex": [
+       "73"
+      ],
+      "text/html": [
+       "73"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "So... yeah. 73x slower. Don't do it. \n",
+    "\n",
+    "Also, if that code looks weird, it's because the result of `system.time` is being stored in a list, which is an interesting data structure we sadly don't have time to cover, but which you can read about [here](lists.ipynb))"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
     "## Exercises\n",
     "\n",
     "\n",

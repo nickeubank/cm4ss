@@ -1063,6 +1063,15 @@
     "- If data of different types are passed to the `c()` function, it will type promote them to the lowest type that can store all the input types. "
    ],
    "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "## Next Steps\n",
+    "\n",
+    "Now that we're familiar with vectors, [it's time to learn to manipulate them!](manipulating_vectors.ipynb)"
+   ],
+   "metadata": {}
   }
  ],
  "metadata": {

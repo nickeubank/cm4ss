@@ -36,7 +36,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 1,
    "source": [
     "# Generate toy dataset 1: \n",
     "demo <- data.frame(\n",
@@ -52,7 +52,120 @@
     "    )\n",
     "econ"
    ],
-   "outputs": [],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  country democracy_score\n",
+       "1 USA     19             \n",
+       "2 Albania 16             \n",
+       "3 Turkey  16             \n",
+       "4 China    5             \n",
+       "5 Sudan   10             "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 5 × 2\n",
+       "\n",
+       "| country &lt;chr&gt; | democracy_score &lt;dbl&gt; |\n",
+       "|---|---|\n",
+       "| USA     | 19 |\n",
+       "| Albania | 16 |\n",
+       "| Turkey  | 16 |\n",
+       "| China   |  5 |\n",
+       "| Sudan   | 10 |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 5 × 2\n",
+       "\\begin{tabular}{ll}\n",
+       " country & democracy\\_score\\\\\n",
+       " <chr> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t USA     & 19\\\\\n",
+       "\t Albania & 16\\\\\n",
+       "\t Turkey  & 16\\\\\n",
+       "\t China   &  5\\\\\n",
+       "\t Sudan   & 10\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 5 × 2</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th><th scope=col>democracy_score</th></tr>\n",
+       "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>USA    </td><td>19</td></tr>\n",
+       "\t<tr><td>Albania</td><td>16</td></tr>\n",
+       "\t<tr><td>Turkey </td><td>16</td></tr>\n",
+       "\t<tr><td>China  </td><td> 5</td></tr>\n",
+       "\t<tr><td>Sudan  </td><td>10</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    },
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  country gdp_pc\n",
+       "1 China   12000 \n",
+       "2 Albania 10000 \n",
+       "3 Turkey   9000 \n",
+       "4 USA     20000 \n",
+       "5 Sudan     500 "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 5 × 2\n",
+       "\n",
+       "| country &lt;chr&gt; | gdp_pc &lt;dbl&gt; |\n",
+       "|---|---|\n",
+       "| China   | 12000 |\n",
+       "| Albania | 10000 |\n",
+       "| Turkey  |  9000 |\n",
+       "| USA     | 20000 |\n",
+       "| Sudan   |   500 |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 5 × 2\n",
+       "\\begin{tabular}{ll}\n",
+       " country & gdp\\_pc\\\\\n",
+       " <chr> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t China   & 12000\\\\\n",
+       "\t Albania & 10000\\\\\n",
+       "\t Turkey  &  9000\\\\\n",
+       "\t USA     & 20000\\\\\n",
+       "\t Sudan   &   500\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 5 × 2</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th><th scope=col>gdp_pc</th></tr>\n",
+       "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>China  </td><td>12000</td></tr>\n",
+       "\t<tr><td>Albania</td><td>10000</td></tr>\n",
+       "\t<tr><td>Turkey </td><td> 9000</td></tr>\n",
+       "\t<tr><td>USA    </td><td>20000</td></tr>\n",
+       "\t<tr><td>Sudan  </td><td>  500</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
    "metadata": {}
   },
   {
@@ -67,12 +180,69 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 2,
    "source": [
     "df <- merge(demo, econ, by = \"country\")\n",
     "df"
    ],
-   "outputs": [],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  country democracy_score gdp_pc\n",
+       "1 Albania 16              10000 \n",
+       "2 China    5              12000 \n",
+       "3 Sudan   10                500 \n",
+       "4 Turkey  16               9000 \n",
+       "5 USA     19              20000 "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 5 × 3\n",
+       "\n",
+       "| country &lt;chr&gt; | democracy_score &lt;dbl&gt; | gdp_pc &lt;dbl&gt; |\n",
+       "|---|---|---|\n",
+       "| Albania | 16 | 10000 |\n",
+       "| China   |  5 | 12000 |\n",
+       "| Sudan   | 10 |   500 |\n",
+       "| Turkey  | 16 |  9000 |\n",
+       "| USA     | 19 | 20000 |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 5 × 3\n",
+       "\\begin{tabular}{lll}\n",
+       " country & democracy\\_score & gdp\\_pc\\\\\n",
+       " <chr> & <dbl> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t Albania & 16 & 10000\\\\\n",
+       "\t China   &  5 & 12000\\\\\n",
+       "\t Sudan   & 10 &   500\\\\\n",
+       "\t Turkey  & 16 &  9000\\\\\n",
+       "\t USA     & 19 & 20000\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 5 × 3</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th><th scope=col>democracy_score</th><th scope=col>gdp_pc</th></tr>\n",
+       "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>Albania</td><td>16</td><td>10000</td></tr>\n",
+       "\t<tr><td>China  </td><td> 5</td><td>12000</td></tr>\n",
+       "\t<tr><td>Sudan  </td><td>10</td><td>  500</td></tr>\n",
+       "\t<tr><td>Turkey </td><td>16</td><td> 9000</td></tr>\n",
+       "\t<tr><td>USA    </td><td>19</td><td>20000</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
    "metadata": {}
   },
   {
@@ -85,7 +255,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 3,
    "source": [
     "# Generate toy dataset 1: \n",
     "demo <- data.frame(\n",
@@ -103,7 +273,224 @@
     "\n",
     "merge(demo, econ, by = c(\"country\", \"year\"))"
    ],
-   "outputs": [],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  country year democracy_score\n",
+       "1 USA     1994  8             \n",
+       "2 China   1994 11             \n",
+       "3 Sudan   1994  2             \n",
+       "4 USA     1995 16             \n",
+       "5 China   1995 16             \n",
+       "6 Sudan   1995 15             \n",
+       "7 USA     1996  0             \n",
+       "8 China   1996  2             \n",
+       "9 Sudan   1996  1             "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 9 × 3\n",
+       "\n",
+       "| country &lt;fct&gt; | year &lt;int&gt; | democracy_score &lt;dbl&gt; |\n",
+       "|---|---|---|\n",
+       "| USA   | 1994 |  8 |\n",
+       "| China | 1994 | 11 |\n",
+       "| Sudan | 1994 |  2 |\n",
+       "| USA   | 1995 | 16 |\n",
+       "| China | 1995 | 16 |\n",
+       "| Sudan | 1995 | 15 |\n",
+       "| USA   | 1996 |  0 |\n",
+       "| China | 1996 |  2 |\n",
+       "| Sudan | 1996 |  1 |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 9 × 3\n",
+       "\\begin{tabular}{lll}\n",
+       " country & year & democracy\\_score\\\\\n",
+       " <fct> & <int> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t USA   & 1994 &  8\\\\\n",
+       "\t China & 1994 & 11\\\\\n",
+       "\t Sudan & 1994 &  2\\\\\n",
+       "\t USA   & 1995 & 16\\\\\n",
+       "\t China & 1995 & 16\\\\\n",
+       "\t Sudan & 1995 & 15\\\\\n",
+       "\t USA   & 1996 &  0\\\\\n",
+       "\t China & 1996 &  2\\\\\n",
+       "\t Sudan & 1996 &  1\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 9 × 3</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>democracy_score</th></tr>\n",
+       "\t<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td> 8</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td>11</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td> 2</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td>16</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td>16</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>15</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td> 0</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 2</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td> 1</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    },
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  year country gdp_pc\n",
+       "1 1994 USA      5661 \n",
+       "2 1995 USA     11459 \n",
+       "3 1996 USA      4509 \n",
+       "4 1994 China    6531 \n",
+       "5 1995 China    8181 \n",
+       "6 1996 China    7780 \n",
+       "7 1994 Sudan    9747 \n",
+       "8 1995 Sudan    4242 \n",
+       "9 1996 Sudan   15742 "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 9 × 3\n",
+       "\n",
+       "| year &lt;int&gt; | country &lt;fct&gt; | gdp_pc &lt;dbl&gt; |\n",
+       "|---|---|---|\n",
+       "| 1994 | USA   |  5661 |\n",
+       "| 1995 | USA   | 11459 |\n",
+       "| 1996 | USA   |  4509 |\n",
+       "| 1994 | China |  6531 |\n",
+       "| 1995 | China |  8181 |\n",
+       "| 1996 | China |  7780 |\n",
+       "| 1994 | Sudan |  9747 |\n",
+       "| 1995 | Sudan |  4242 |\n",
+       "| 1996 | Sudan | 15742 |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 9 × 3\n",
+       "\\begin{tabular}{lll}\n",
+       " year & country & gdp\\_pc\\\\\n",
+       " <int> & <fct> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t 1994 & USA   &  5661\\\\\n",
+       "\t 1995 & USA   & 11459\\\\\n",
+       "\t 1996 & USA   &  4509\\\\\n",
+       "\t 1994 & China &  6531\\\\\n",
+       "\t 1995 & China &  8181\\\\\n",
+       "\t 1996 & China &  7780\\\\\n",
+       "\t 1994 & Sudan &  9747\\\\\n",
+       "\t 1995 & Sudan &  4242\\\\\n",
+       "\t 1996 & Sudan & 15742\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 9 × 3</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>year</th><th scope=col>country</th><th scope=col>gdp_pc</th></tr>\n",
+       "\t<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>1994</td><td>USA  </td><td> 5661</td></tr>\n",
+       "\t<tr><td>1995</td><td>USA  </td><td>11459</td></tr>\n",
+       "\t<tr><td>1996</td><td>USA  </td><td> 4509</td></tr>\n",
+       "\t<tr><td>1994</td><td>China</td><td> 6531</td></tr>\n",
+       "\t<tr><td>1995</td><td>China</td><td> 8181</td></tr>\n",
+       "\t<tr><td>1996</td><td>China</td><td> 7780</td></tr>\n",
+       "\t<tr><td>1994</td><td>Sudan</td><td> 9747</td></tr>\n",
+       "\t<tr><td>1995</td><td>Sudan</td><td> 4242</td></tr>\n",
+       "\t<tr><td>1996</td><td>Sudan</td><td>15742</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    },
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  country year democracy_score gdp_pc\n",
+       "1 China   1994 11               6531 \n",
+       "2 China   1995 16               8181 \n",
+       "3 China   1996  2               7780 \n",
+       "4 Sudan   1994  2               9747 \n",
+       "5 Sudan   1995 15               4242 \n",
+       "6 Sudan   1996  1              15742 \n",
+       "7 USA     1994  8               5661 \n",
+       "8 USA     1995 16              11459 \n",
+       "9 USA     1996  0               4509 "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 9 × 4\n",
+       "\n",
+       "| country &lt;fct&gt; | year &lt;int&gt; | democracy_score &lt;dbl&gt; | gdp_pc &lt;dbl&gt; |\n",
+       "|---|---|---|---|\n",
+       "| China | 1994 | 11 |  6531 |\n",
+       "| China | 1995 | 16 |  8181 |\n",
+       "| China | 1996 |  2 |  7780 |\n",
+       "| Sudan | 1994 |  2 |  9747 |\n",
+       "| Sudan | 1995 | 15 |  4242 |\n",
+       "| Sudan | 1996 |  1 | 15742 |\n",
+       "| USA   | 1994 |  8 |  5661 |\n",
+       "| USA   | 1995 | 16 | 11459 |\n",
+       "| USA   | 1996 |  0 |  4509 |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 9 × 4\n",
+       "\\begin{tabular}{llll}\n",
+       " country & year & democracy\\_score & gdp\\_pc\\\\\n",
+       " <fct> & <int> & <dbl> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t China & 1994 & 11 &  6531\\\\\n",
+       "\t China & 1995 & 16 &  8181\\\\\n",
+       "\t China & 1996 &  2 &  7780\\\\\n",
+       "\t Sudan & 1994 &  2 &  9747\\\\\n",
+       "\t Sudan & 1995 & 15 &  4242\\\\\n",
+       "\t Sudan & 1996 &  1 & 15742\\\\\n",
+       "\t USA   & 1994 &  8 &  5661\\\\\n",
+       "\t USA   & 1995 & 16 & 11459\\\\\n",
+       "\t USA   & 1996 &  0 &  4509\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 9 × 4</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>democracy_score</th><th scope=col>gdp_pc</th></tr>\n",
+       "\t<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>China</td><td>1994</td><td>11</td><td> 6531</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td>16</td><td> 8181</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 2</td><td> 7780</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td> 2</td><td> 9747</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>15</td><td> 4242</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td> 1</td><td>15742</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td> 8</td><td> 5661</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td>16</td><td>11459</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td> 0</td><td> 4509</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
    "metadata": {}
   },
   {
@@ -119,17 +506,276 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 4,
    "source": [
     "econ <- econ[-c(5, 9), ] #delete obs. 5 & 9 for illustrative purposes\n",
     "econ\n",
     "dim(demo) #different number of observations (rows) than 'econ'\n",
-    "dim(econ) #different number of observations (rows) than 'demo'          \n",
+    "dim(econ) #different number of observations (rows) than 'demo'\n",
     "\n",
     "merge(demo, econ, by = c(\"country\", \"year\")) #keep only matching observations \n",
     "merge(demo, econ, by = c(\"country\", \"year\"), all.x = TRUE) #keep all observations in 'demo'"
    ],
-   "outputs": [],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  year country gdp_pc\n",
+       "1 1994 USA      5661 \n",
+       "2 1995 USA     11459 \n",
+       "3 1996 USA      4509 \n",
+       "4 1994 China    6531 \n",
+       "6 1996 China    7780 \n",
+       "7 1994 Sudan    9747 \n",
+       "8 1995 Sudan    4242 "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 7 × 3\n",
+       "\n",
+       "| <!--/--> | year &lt;int&gt; | country &lt;fct&gt; | gdp_pc &lt;dbl&gt; |\n",
+       "|---|---|---|---|\n",
+       "| 1 | 1994 | USA   |  5661 |\n",
+       "| 2 | 1995 | USA   | 11459 |\n",
+       "| 3 | 1996 | USA   |  4509 |\n",
+       "| 4 | 1994 | China |  6531 |\n",
+       "| 6 | 1996 | China |  7780 |\n",
+       "| 7 | 1994 | Sudan |  9747 |\n",
+       "| 8 | 1995 | Sudan |  4242 |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 7 × 3\n",
+       "\\begin{tabular}{r|lll}\n",
+       "  & year & country & gdp\\_pc\\\\\n",
+       "  & <int> & <fct> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t1 & 1994 & USA   &  5661\\\\\n",
+       "\t2 & 1995 & USA   & 11459\\\\\n",
+       "\t3 & 1996 & USA   &  4509\\\\\n",
+       "\t4 & 1994 & China &  6531\\\\\n",
+       "\t6 & 1996 & China &  7780\\\\\n",
+       "\t7 & 1994 & Sudan &  9747\\\\\n",
+       "\t8 & 1995 & Sudan &  4242\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 7 × 3</caption>\n",
+       "<thead>\n",
+       "\t<tr><th></th><th scope=col>year</th><th scope=col>country</th><th scope=col>gdp_pc</th></tr>\n",
+       "\t<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><th scope=row>1</th><td>1994</td><td>USA  </td><td> 5661</td></tr>\n",
+       "\t<tr><th scope=row>2</th><td>1995</td><td>USA  </td><td>11459</td></tr>\n",
+       "\t<tr><th scope=row>3</th><td>1996</td><td>USA  </td><td> 4509</td></tr>\n",
+       "\t<tr><th scope=row>4</th><td>1994</td><td>China</td><td> 6531</td></tr>\n",
+       "\t<tr><th scope=row>6</th><td>1996</td><td>China</td><td> 7780</td></tr>\n",
+       "\t<tr><th scope=row>7</th><td>1994</td><td>Sudan</td><td> 9747</td></tr>\n",
+       "\t<tr><th scope=row>8</th><td>1995</td><td>Sudan</td><td> 4242</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    },
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "[1] 9 3"
+      ],
+      "text/markdown": [
+       "1. 9\n",
+       "2. 3\n",
+       "\n",
+       "\n"
+      ],
+      "text/latex": [
+       "\\begin{enumerate*}\n",
+       "\\item 9\n",
+       "\\item 3\n",
+       "\\end{enumerate*}\n"
+      ],
+      "text/html": [
+       "<style>\n",
+       ".list-inline {list-style: none; margin:0; padding: 0}\n",
+       ".list-inline>li {display: inline-block}\n",
+       ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+       "</style>\n",
+       "<ol class=list-inline><li>9</li><li>3</li></ol>\n"
+      ]
+     },
+     "metadata": {}
+    },
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "[1] 7 3"
+      ],
+      "text/markdown": [
+       "1. 7\n",
+       "2. 3\n",
+       "\n",
+       "\n"
+      ],
+      "text/latex": [
+       "\\begin{enumerate*}\n",
+       "\\item 7\n",
+       "\\item 3\n",
+       "\\end{enumerate*}\n"
+      ],
+      "text/html": [
+       "<style>\n",
+       ".list-inline {list-style: none; margin:0; padding: 0}\n",
+       ".list-inline>li {display: inline-block}\n",
+       ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+       "</style>\n",
+       "<ol class=list-inline><li>7</li><li>3</li></ol>\n"
+      ]
+     },
+     "metadata": {}
+    },
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  country year democracy_score gdp_pc\n",
+       "1 China   1994 11               6531 \n",
+       "2 China   1996  2               7780 \n",
+       "3 Sudan   1994  2               9747 \n",
+       "4 Sudan   1995 15               4242 \n",
+       "5 USA     1994  8               5661 \n",
+       "6 USA     1995 16              11459 \n",
+       "7 USA     1996  0               4509 "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 7 × 4\n",
+       "\n",
+       "| country &lt;fct&gt; | year &lt;int&gt; | democracy_score &lt;dbl&gt; | gdp_pc &lt;dbl&gt; |\n",
+       "|---|---|---|---|\n",
+       "| China | 1994 | 11 |  6531 |\n",
+       "| China | 1996 |  2 |  7780 |\n",
+       "| Sudan | 1994 |  2 |  9747 |\n",
+       "| Sudan | 1995 | 15 |  4242 |\n",
+       "| USA   | 1994 |  8 |  5661 |\n",
+       "| USA   | 1995 | 16 | 11459 |\n",
+       "| USA   | 1996 |  0 |  4509 |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 7 × 4\n",
+       "\\begin{tabular}{llll}\n",
+       " country & year & democracy\\_score & gdp\\_pc\\\\\n",
+       " <fct> & <int> & <dbl> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t China & 1994 & 11 &  6531\\\\\n",
+       "\t China & 1996 &  2 &  7780\\\\\n",
+       "\t Sudan & 1994 &  2 &  9747\\\\\n",
+       "\t Sudan & 1995 & 15 &  4242\\\\\n",
+       "\t USA   & 1994 &  8 &  5661\\\\\n",
+       "\t USA   & 1995 & 16 & 11459\\\\\n",
+       "\t USA   & 1996 &  0 &  4509\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 7 × 4</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>democracy_score</th><th scope=col>gdp_pc</th></tr>\n",
+       "\t<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>China</td><td>1994</td><td>11</td><td> 6531</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 2</td><td> 7780</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td> 2</td><td> 9747</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>15</td><td> 4242</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td> 8</td><td> 5661</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td>16</td><td>11459</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td> 0</td><td> 4509</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    },
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  country year democracy_score gdp_pc\n",
+       "1 USA     1994  8               5661 \n",
+       "2 USA     1995 16              11459 \n",
+       "3 USA     1996  0               4509 \n",
+       "4 China   1994 11               6531 \n",
+       "5 China   1995 16                 NA \n",
+       "6 China   1996  2               7780 \n",
+       "7 Sudan   1994  2               9747 \n",
+       "8 Sudan   1995 15               4242 \n",
+       "9 Sudan   1996  1                 NA "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 9 × 4\n",
+       "\n",
+       "| country &lt;fct&gt; | year &lt;int&gt; | democracy_score &lt;dbl&gt; | gdp_pc &lt;dbl&gt; |\n",
+       "|---|---|---|---|\n",
+       "| USA   | 1994 |  8 |  5661 |\n",
+       "| USA   | 1995 | 16 | 11459 |\n",
+       "| USA   | 1996 |  0 |  4509 |\n",
+       "| China | 1994 | 11 |  6531 |\n",
+       "| China | 1995 | 16 |    NA |\n",
+       "| China | 1996 |  2 |  7780 |\n",
+       "| Sudan | 1994 |  2 |  9747 |\n",
+       "| Sudan | 1995 | 15 |  4242 |\n",
+       "| Sudan | 1996 |  1 |    NA |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 9 × 4\n",
+       "\\begin{tabular}{llll}\n",
+       " country & year & democracy\\_score & gdp\\_pc\\\\\n",
+       " <fct> & <int> & <dbl> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t USA   & 1994 &  8 &  5661\\\\\n",
+       "\t USA   & 1995 & 16 & 11459\\\\\n",
+       "\t USA   & 1996 &  0 &  4509\\\\\n",
+       "\t China & 1994 & 11 &  6531\\\\\n",
+       "\t China & 1995 & 16 &    NA\\\\\n",
+       "\t China & 1996 &  2 &  7780\\\\\n",
+       "\t Sudan & 1994 &  2 &  9747\\\\\n",
+       "\t Sudan & 1995 & 15 &  4242\\\\\n",
+       "\t Sudan & 1996 &  1 &    NA\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 9 × 4</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>democracy_score</th><th scope=col>gdp_pc</th></tr>\n",
+       "\t<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td> 8</td><td> 5661</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td>16</td><td>11459</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td> 0</td><td> 4509</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td>11</td><td> 6531</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td>16</td><td>   NA</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 2</td><td> 7780</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td> 2</td><td> 9747</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>15</td><td> 4242</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td> 1</td><td>   NA</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
    "metadata": {
     "lines_to_next_cell": 2
    }
@@ -151,7 +797,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 5,
    "source": [
     "demo <- data.frame(\n",
     "    expand.grid(country = c(\"USA\", \"China\", \"Sudan\"), year = 1994:1996),\n",
@@ -165,7 +811,128 @@
     "    )\n",
     "region"
    ],
-   "outputs": [],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  country year democracy_score\n",
+       "1 USA     1994  2             \n",
+       "2 China   1994  3             \n",
+       "3 Sudan   1994 19             \n",
+       "4 USA     1995 13             \n",
+       "5 China   1995  2             \n",
+       "6 Sudan   1995  6             \n",
+       "7 USA     1996  9             \n",
+       "8 China   1996  8             \n",
+       "9 Sudan   1996  9             "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 9 × 3\n",
+       "\n",
+       "| country &lt;fct&gt; | year &lt;int&gt; | democracy_score &lt;dbl&gt; |\n",
+       "|---|---|---|\n",
+       "| USA   | 1994 |  2 |\n",
+       "| China | 1994 |  3 |\n",
+       "| Sudan | 1994 | 19 |\n",
+       "| USA   | 1995 | 13 |\n",
+       "| China | 1995 |  2 |\n",
+       "| Sudan | 1995 |  6 |\n",
+       "| USA   | 1996 |  9 |\n",
+       "| China | 1996 |  8 |\n",
+       "| Sudan | 1996 |  9 |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 9 × 3\n",
+       "\\begin{tabular}{lll}\n",
+       " country & year & democracy\\_score\\\\\n",
+       " <fct> & <int> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t USA   & 1994 &  2\\\\\n",
+       "\t China & 1994 &  3\\\\\n",
+       "\t Sudan & 1994 & 19\\\\\n",
+       "\t USA   & 1995 & 13\\\\\n",
+       "\t China & 1995 &  2\\\\\n",
+       "\t Sudan & 1995 &  6\\\\\n",
+       "\t USA   & 1996 &  9\\\\\n",
+       "\t China & 1996 &  8\\\\\n",
+       "\t Sudan & 1996 &  9\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 9 × 3</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>democracy_score</th></tr>\n",
+       "\t<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td> 2</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td> 3</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td>19</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td>13</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td> 2</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td> 6</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td> 9</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 8</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td> 9</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    },
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  country region \n",
+       "1 USA     America\n",
+       "2 China   Asia   \n",
+       "3 Sudan   Africa "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 3 × 2\n",
+       "\n",
+       "| country &lt;chr&gt; | region &lt;chr&gt; |\n",
+       "|---|---|\n",
+       "| USA   | America |\n",
+       "| China | Asia    |\n",
+       "| Sudan | Africa  |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 3 × 2\n",
+       "\\begin{tabular}{ll}\n",
+       " country & region\\\\\n",
+       " <chr> & <chr>\\\\\n",
+       "\\hline\n",
+       "\t USA   & America\\\\\n",
+       "\t China & Asia   \\\\\n",
+       "\t Sudan & Africa \\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 3 × 2</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th><th scope=col>region</th></tr>\n",
+       "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>USA  </td><td>America</td></tr>\n",
+       "\t<tr><td>China</td><td>Asia   </td></tr>\n",
+       "\t<tr><td>Sudan</td><td>Africa </td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
    "metadata": {}
   },
   {
@@ -177,11 +944,84 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 6,
    "source": [
     "merge(demo, region, by = \"country\")"
    ],
-   "outputs": [],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  country year democracy_score region \n",
+       "1 China   1994  3              Asia   \n",
+       "2 China   1995  2              Asia   \n",
+       "3 China   1996  8              Asia   \n",
+       "4 Sudan   1995  6              Africa \n",
+       "5 Sudan   1994 19              Africa \n",
+       "6 Sudan   1996  9              Africa \n",
+       "7 USA     1994  2              America\n",
+       "8 USA     1996  9              America\n",
+       "9 USA     1995 13              America"
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 9 × 4\n",
+       "\n",
+       "| country &lt;fct&gt; | year &lt;int&gt; | democracy_score &lt;dbl&gt; | region &lt;chr&gt; |\n",
+       "|---|---|---|---|\n",
+       "| China | 1994 |  3 | Asia    |\n",
+       "| China | 1995 |  2 | Asia    |\n",
+       "| China | 1996 |  8 | Asia    |\n",
+       "| Sudan | 1995 |  6 | Africa  |\n",
+       "| Sudan | 1994 | 19 | Africa  |\n",
+       "| Sudan | 1996 |  9 | Africa  |\n",
+       "| USA   | 1994 |  2 | America |\n",
+       "| USA   | 1996 |  9 | America |\n",
+       "| USA   | 1995 | 13 | America |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 9 × 4\n",
+       "\\begin{tabular}{llll}\n",
+       " country & year & democracy\\_score & region\\\\\n",
+       " <fct> & <int> & <dbl> & <chr>\\\\\n",
+       "\\hline\n",
+       "\t China & 1994 &  3 & Asia   \\\\\n",
+       "\t China & 1995 &  2 & Asia   \\\\\n",
+       "\t China & 1996 &  8 & Asia   \\\\\n",
+       "\t Sudan & 1995 &  6 & Africa \\\\\n",
+       "\t Sudan & 1994 & 19 & Africa \\\\\n",
+       "\t Sudan & 1996 &  9 & Africa \\\\\n",
+       "\t USA   & 1994 &  2 & America\\\\\n",
+       "\t USA   & 1996 &  9 & America\\\\\n",
+       "\t USA   & 1995 & 13 & America\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 9 × 4</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>democracy_score</th><th scope=col>region</th></tr>\n",
+       "\t<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>China</td><td>1994</td><td> 3</td><td>Asia   </td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td> 2</td><td>Asia   </td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 8</td><td>Asia   </td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td> 6</td><td>Africa </td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td>19</td><td>Africa </td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td> 9</td><td>Africa </td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td> 2</td><td>America</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td> 9</td><td>America</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td>13</td><td>America</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
    "metadata": {
     "lines_to_next_cell": 2
    }
@@ -200,7 +1040,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": 7,
    "source": [
     "df1 <- data.frame(\n",
     "    year = rep(1990:1995, 2),\n",
@@ -210,10 +1050,192 @@
     "    year = rep(1996:2000, 2),\n",
     "    country = c(rep(\"country1\", 5), rep(\"country2\", 5))\n",
     "    )\n",
-    "\n",
+    "df1"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "   year country \n",
+       "1  1990 country1\n",
+       "2  1991 country1\n",
+       "3  1992 country1\n",
+       "4  1993 country1\n",
+       "5  1994 country1\n",
+       "6  1995 country1\n",
+       "7  1990 country2\n",
+       "8  1991 country2\n",
+       "9  1992 country2\n",
+       "10 1993 country2\n",
+       "11 1994 country2\n",
+       "12 1995 country2"
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 12 × 2\n",
+       "\n",
+       "| year &lt;int&gt; | country &lt;chr&gt; |\n",
+       "|---|---|\n",
+       "| 1990 | country1 |\n",
+       "| 1991 | country1 |\n",
+       "| 1992 | country1 |\n",
+       "| 1993 | country1 |\n",
+       "| 1994 | country1 |\n",
+       "| 1995 | country1 |\n",
+       "| 1990 | country2 |\n",
+       "| 1991 | country2 |\n",
+       "| 1992 | country2 |\n",
+       "| 1993 | country2 |\n",
+       "| 1994 | country2 |\n",
+       "| 1995 | country2 |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 12 × 2\n",
+       "\\begin{tabular}{ll}\n",
+       " year & country\\\\\n",
+       " <int> & <chr>\\\\\n",
+       "\\hline\n",
+       "\t 1990 & country1\\\\\n",
+       "\t 1991 & country1\\\\\n",
+       "\t 1992 & country1\\\\\n",
+       "\t 1993 & country1\\\\\n",
+       "\t 1994 & country1\\\\\n",
+       "\t 1995 & country1\\\\\n",
+       "\t 1990 & country2\\\\\n",
+       "\t 1991 & country2\\\\\n",
+       "\t 1992 & country2\\\\\n",
+       "\t 1993 & country2\\\\\n",
+       "\t 1994 & country2\\\\\n",
+       "\t 1995 & country2\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 12 × 2</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>year</th><th scope=col>country</th></tr>\n",
+       "\t<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>1990</td><td>country1</td></tr>\n",
+       "\t<tr><td>1991</td><td>country1</td></tr>\n",
+       "\t<tr><td>1992</td><td>country1</td></tr>\n",
+       "\t<tr><td>1993</td><td>country1</td></tr>\n",
+       "\t<tr><td>1994</td><td>country1</td></tr>\n",
+       "\t<tr><td>1995</td><td>country1</td></tr>\n",
+       "\t<tr><td>1990</td><td>country2</td></tr>\n",
+       "\t<tr><td>1991</td><td>country2</td></tr>\n",
+       "\t<tr><td>1992</td><td>country2</td></tr>\n",
+       "\t<tr><td>1993</td><td>country2</td></tr>\n",
+       "\t<tr><td>1994</td><td>country2</td></tr>\n",
+       "\t<tr><td>1995</td><td>country2</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {
+    "lines_to_next_cell": 0
+   }
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "source": [
+    "df2"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "   year country \n",
+       "1  1996 country1\n",
+       "2  1997 country1\n",
+       "3  1998 country1\n",
+       "4  1999 country1\n",
+       "5  2000 country1\n",
+       "6  1996 country2\n",
+       "7  1997 country2\n",
+       "8  1998 country2\n",
+       "9  1999 country2\n",
+       "10 2000 country2"
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 10 × 2\n",
+       "\n",
+       "| year &lt;int&gt; | country &lt;chr&gt; |\n",
+       "|---|---|\n",
+       "| 1996 | country1 |\n",
+       "| 1997 | country1 |\n",
+       "| 1998 | country1 |\n",
+       "| 1999 | country1 |\n",
+       "| 2000 | country1 |\n",
+       "| 1996 | country2 |\n",
+       "| 1997 | country2 |\n",
+       "| 1998 | country2 |\n",
+       "| 1999 | country2 |\n",
+       "| 2000 | country2 |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 10 × 2\n",
+       "\\begin{tabular}{ll}\n",
+       " year & country\\\\\n",
+       " <int> & <chr>\\\\\n",
+       "\\hline\n",
+       "\t 1996 & country1\\\\\n",
+       "\t 1997 & country1\\\\\n",
+       "\t 1998 & country1\\\\\n",
+       "\t 1999 & country1\\\\\n",
+       "\t 2000 & country1\\\\\n",
+       "\t 1996 & country2\\\\\n",
+       "\t 1997 & country2\\\\\n",
+       "\t 1998 & country2\\\\\n",
+       "\t 1999 & country2\\\\\n",
+       "\t 2000 & country2\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 10 × 2</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>year</th><th scope=col>country</th></tr>\n",
+       "\t<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>1996</td><td>country1</td></tr>\n",
+       "\t<tr><td>1997</td><td>country1</td></tr>\n",
+       "\t<tr><td>1998</td><td>country1</td></tr>\n",
+       "\t<tr><td>1999</td><td>country1</td></tr>\n",
+       "\t<tr><td>2000</td><td>country1</td></tr>\n",
+       "\t<tr><td>1996</td><td>country2</td></tr>\n",
+       "\t<tr><td>1997</td><td>country2</td></tr>\n",
+       "\t<tr><td>1998</td><td>country2</td></tr>\n",
+       "\t<tr><td>1999</td><td>country2</td></tr>\n",
+       "\t<tr><td>2000</td><td>country2</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "source": [
     "df <- rbind(df1, df2) #append\n",
     "\n",
-    "df[order(df$country, df$year),]"
+    "# Sort\n",
+    "df[order(df$country, df$year), ]"
    ],
    "outputs": [
     {
@@ -341,13 +1363,6 @@
      "metadata": {}
     }
    ],
-   "metadata": {
-    "lines_to_next_cell": 0
-   }
-  },
-  {
-   "cell_type": "markdown",
-   "source": [],
    "metadata": {}
   },
   {
@@ -364,7 +1379,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": null,
+   "execution_count": 10,
    "source": [
     "df1 <- data.frame(\n",
     "    name = c(\"Mary\", \"Thor\", \"Sven\", \"Jane\", \"Ake\", \"Stephan\",\n",

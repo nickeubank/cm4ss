@@ -46,7 +46,6 @@ Session 3: Data Wrangling
 
 - Data Frames
 - Data Wrangling with `dplyr`
-- Reading error messages
 
 **Read Before Class:**
 
@@ -59,15 +58,17 @@ Session 4: Merging and Aggregating
 
 **Wednesday, August 11th, 10:00 - 11:30 EST**
 
--  Merging workflows (on paper)
 -  Merge data in R
--  Collapsing and Aggregating Data
 -  Defensive Programming
+-  Missing Data
+-  Reading error messages
+
 
 **Read Before Class:**
 
 - `Merging and Appending <merging_appending.ipynb>`__
 - `Defensive Programming <defensive_programming.ipynb>`__
+- `Missing Data <missing_data.ipynb>`__
 
 Session 5: Plotting, Loops and Functions
 -------------------------------------------------------------
@@ -76,12 +77,11 @@ Session 5: Plotting, Loops and Functions
 
 -  Loops
 -  Functions and return values
--  Vectorization with apply
 
 **Read Before Class:**
 
--  `Control Flow <controlflow.ipynb>`__
--  `Writing Functions <functions.ipynb>`__
+-  `Loops <loops.ipynb>`__
+-  `Functions <functions.ipynb>`__
 -  Plotting with ggplot
 
 Further Reading: Collapsing Data

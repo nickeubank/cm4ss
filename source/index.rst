@@ -85,7 +85,7 @@ Note that one consequence of this class structure is that the in person sessions
 
 .. toctree::
    :hidden:
-   :caption: Readings
+   :caption: Class Readings
    :maxdepth: 2
 
    introduction.ipynb
@@ -97,9 +97,18 @@ Note that one consequence of this class structure is that the in person sessions
    intro_to_dataframes.ipynb
    manipulating_dataframes.ipynb
    intro_to_tidyverse.ipynb
+   missing_data.ipynb
    merging_appending.ipynb
-   collapsing_data.ipynb
-   wide_and_long.ipynb
-   controlflow.ipynb
+   defensive_programming.ipynb
+   loops.ipynb
    functions.ipynb
 
+
+.. toctree::
+   :hidden:
+   :caption: Additional Topics
+   :maxdepth: 2
+
+   lists.ipynb
+   collapsing_data.ipynb
+   wide_and_long.ipynb
