@@ -56,7 +56,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 16,
+            "execution_count": 1,
             "source": [
                 "income <- c(22000, 65000, 19000)\n",
                 "age <- c(20, 35, 55)\n",
@@ -116,7 +116,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 17,
+            "execution_count": 2,
             "source": [
                 "respondent1 <- c(20, 22000, 12)\n",
                 "respondent2 <- c(35, 65000, 16)\n",
@@ -176,9 +176,9 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 18,
+            "execution_count": 3,
             "source": [
-                "matrix(1:9, nrow=3, ncol=3)"
+                "matrix(1:9, nrow = 3, ncol = 3)"
             ],
             "outputs": [
                 {
@@ -234,11 +234,11 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 19,
+            "execution_count": 4,
             "source": [
-                "salary_1980 = c(30000, 45000, 22000)\n",
-                "salary_1990 = c(37000, 42000, 29000)\n",
-                "salary_2000 = c(49000, 47000, 33000)\n",
+                "salary_1980 <- c(30000, 45000, 22000)\n",
+                "salary_1990 <- c(37000, 42000, 29000)\n",
+                "salary_2000 <- c(49000, 47000, 33000)\n",
                 "\n",
                 "salaries = cbind(salary_1980, salary_1990, salary_2000)\n",
                 "salaries"
@@ -302,9 +302,9 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 20,
+            "execution_count": 5,
             "source": [
-                "salaries_in_thousands = salaries / 1000\n",
+                "salaries_in_thousands <- salaries / 1000\n",
                 "salaries_in_thousands"
             ],
             "outputs": [
@@ -366,13 +366,13 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 21,
+            "execution_count": 6,
             "source": [
-                "tax_refunds_1980 = c(10000, 2000, 15000)\n",
-                "tax_refunds_1990 = c(0, 0, 14000)\n",
-                "tax_refunds_2000 = c(0, 0, 7000)\n",
+                "tax_refunds_1980 <- c(10000, 2000, 15000)\n",
+                "tax_refunds_1990 <- c(0, 0, 14000)\n",
+                "tax_refunds_2000 <- c(0, 0, 7000)\n",
                 "\n",
-                "refunds = cbind(tax_refunds_1980, tax_refunds_1990, tax_refunds_2000)\n",
+                "refunds <- cbind(tax_refunds_1980, tax_refunds_1990, tax_refunds_2000)\n",
                 "refunds\n"
             ],
             "outputs": [
@@ -427,9 +427,9 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 22,
+            "execution_count": 7,
             "source": [
-                "total_income = salaries + refunds \n",
+                "total_income <- salaries + refunds \n",
                 "total_income"
             ],
             "outputs": [
@@ -493,7 +493,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 38,
+            "execution_count": 8,
             "source": [
                 "# Num rows\n",
                 "nrow(total_income)"
@@ -522,7 +522,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 39,
+            "execution_count": 9,
             "source": [
                 "# Num cols\n",
                 "ncol(total_income)"
@@ -551,7 +551,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 44,
+            "execution_count": 10,
             "source": [
                 "# Overall statistics\n",
                 "mean(total_income)"
@@ -580,7 +580,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 45,
+            "execution_count": 11,
             "source": [
                 "# And statistics calculated for each columns\n",
                 "colMeans(total_income)"
@@ -623,7 +623,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 46,
+            "execution_count": 12,
             "source": [
                 "# Or for each row!\n",
                 "rowMeans(total_income)"
@@ -676,9 +676,9 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 23,
+            "execution_count": 13,
             "source": [
-                "matrix_1 = matrix(1:9, nrow=3)\n",
+                "matrix_1 <- matrix(1:9, nrow = 3)\n",
                 "matrix_1"
             ],
             "outputs": [
@@ -726,9 +726,9 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 24,
+            "execution_count": 14,
             "source": [
-                "matrix_2 = matrix(9:17, nrow=3)\n",
+                "matrix_2 <- matrix(9:17, nrow = 3)\n",
                 "matrix_2\n"
             ],
             "outputs": [
@@ -776,9 +776,8 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 25,
+            "execution_count": 15,
             "source": [
-                "\n",
                 "# Matrix multiplication \n",
                 "matrix_1 %*% matrix_2"
             ],
@@ -827,7 +826,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 26,
+            "execution_count": 16,
             "source": [
                 "# Transpose matrix\n",
                 "t(matrix_1)"
@@ -877,7 +876,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 27,
+            "execution_count": 17,
             "source": [
                 "# Eigen vector of matrix\n",
                 "eigen(matrix_1)"
@@ -918,7 +917,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 28,
+            "execution_count": 18,
             "source": [
                 "lm(income ~ age + education)"
             ],
@@ -950,10 +949,10 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 34,
+            "execution_count": 19,
             "source": [
-                "# Make X. note we need a vector of 1s for our intercept. \n",
-                "X = cbind(age, education, rep(1, 3))\n",
+                "# Make X. note we need a vector of 1s for our intercept.\n",
+                "X <- cbind(age, education, rep(1, 3))\n",
                 "X"
             ],
             "outputs": [
@@ -1008,8 +1007,11 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 35,
+            "execution_count": 20,
             "source": [
+                "# Write out the linear regression formula in matrix form\n",
+                "# Note that `solve` gets the inverse of a matrix.\n",
+                "\n",
                 "solve(t(X) %*% X) %*% (t(X) %*% income)\n"
             ],
             "outputs": [
@@ -1059,6 +1061,18 @@
             "cell_type": "markdown",
             "source": [
                 "Ta-da! That final matrix gives us our regression coefficients, which are identical to those from `lm`! Now you know how to do linear regression using matrices in R!"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "## Recap\n",
+                "\n",
+                "- Matrices are a natural extension of vectors from one dimension into two dimensions. \n",
+                "- You can think of a matrix as a collection of vectors of the same length side by side.\n",
+                "- Like vectors, we can do math using full matrices, as well as get summary statistics on both matrices as a whole and their rows/columns\n",
+                "- R implements lots of linear algebra-specific mathematical operations for matrices, like matrix multiplication and inverses. "
             ],
             "metadata": {}
         }

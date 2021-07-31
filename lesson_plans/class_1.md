@@ -4,6 +4,7 @@
 
 - Slack
 - How to pair program
+- Quizzes
 
 ##
 Welcome
