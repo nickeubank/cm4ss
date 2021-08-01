@@ -94,7 +94,7 @@ I owe a huge debt of gratitude to `Simon Ejdemyr <https://sejdemyr.github.io/>`_
    :maxdepth: 2
 
    intro_to_r.ipynb
-   into_to_datatypes.ipynb
+   intro_to_datatypes.ipynb
    intro_to_vectors.ipynb
    manipulating_vectors.ipynb
    intro_to_matrices.ipynb
