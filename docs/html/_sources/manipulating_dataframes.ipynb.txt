@@ -39,15 +39,15 @@
      "data": {
       "text/plain": [
        "  country year gdp_pc\n",
-       "1 USA     1994  8076 \n",
-       "2 China   1994  7740 \n",
-       "3 Sudan   1994 18648 \n",
-       "4 USA     1995 19452 \n",
-       "5 China   1995 13244 \n",
-       "6 Sudan   1995 10071 \n",
-       "7 USA     1996  3385 \n",
-       "8 China   1996  5956 \n",
-       "9 Sudan   1996  9772 "
+       "1 USA     1994  3521 \n",
+       "2 China   1994 12134 \n",
+       "3 Sudan   1994 19386 \n",
+       "4 USA     1995  9927 \n",
+       "5 China   1995  4042 \n",
+       "6 Sudan   1995 12528 \n",
+       "7 USA     1996 13416 \n",
+       "8 China   1996  2660 \n",
+       "9 Sudan   1996  6112 "
       ],
       "text/markdown": [
        "\n",
@@ -55,15 +55,15 @@
        "\n",
        "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|\n",
-       "| USA   | 1994 |  8076 |\n",
-       "| China | 1994 |  7740 |\n",
-       "| Sudan | 1994 | 18648 |\n",
-       "| USA   | 1995 | 19452 |\n",
-       "| China | 1995 | 13244 |\n",
-       "| Sudan | 1995 | 10071 |\n",
-       "| USA   | 1996 |  3385 |\n",
-       "| China | 1996 |  5956 |\n",
-       "| Sudan | 1996 |  9772 |\n",
+       "| USA   | 1994 |  3521 |\n",
+       "| China | 1994 | 12134 |\n",
+       "| Sudan | 1994 | 19386 |\n",
+       "| USA   | 1995 |  9927 |\n",
+       "| China | 1995 |  4042 |\n",
+       "| Sudan | 1995 | 12528 |\n",
+       "| USA   | 1996 | 13416 |\n",
+       "| China | 1996 |  2660 |\n",
+       "| Sudan | 1996 |  6112 |\n",
        "\n"
       ],
       "text/latex": [
@@ -72,15 +72,15 @@
        " country & year & gdp\\_pc\\\\\n",
        " <chr> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t USA   & 1994 &  8076\\\\\n",
-       "\t China & 1994 &  7740\\\\\n",
-       "\t Sudan & 1994 & 18648\\\\\n",
-       "\t USA   & 1995 & 19452\\\\\n",
-       "\t China & 1995 & 13244\\\\\n",
-       "\t Sudan & 1995 & 10071\\\\\n",
-       "\t USA   & 1996 &  3385\\\\\n",
-       "\t China & 1996 &  5956\\\\\n",
-       "\t Sudan & 1996 &  9772\\\\\n",
+       "\t USA   & 1994 &  3521\\\\\n",
+       "\t China & 1994 & 12134\\\\\n",
+       "\t Sudan & 1994 & 19386\\\\\n",
+       "\t USA   & 1995 &  9927\\\\\n",
+       "\t China & 1995 &  4042\\\\\n",
+       "\t Sudan & 1995 & 12528\\\\\n",
+       "\t USA   & 1996 & 13416\\\\\n",
+       "\t China & 1996 &  2660\\\\\n",
+       "\t Sudan & 1996 &  6112\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -91,15 +91,15 @@
        "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td> 8076</td></tr>\n",
-       "\t<tr><td>China</td><td>1994</td><td> 7740</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td>18648</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td>19452</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td>13244</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>10071</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 3385</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td> 5956</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td> 9772</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td> 3521</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td>12134</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td>19386</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td> 9927</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td> 4042</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>12528</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td>13416</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 2660</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td> 6112</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -131,12 +131,12 @@
      "output_type": "display_data",
      "data": {
       "text/plain": [
-       "[1] 1994 1994 1996 1996 1996"
+       "[1] 1994 1995 1995 1996 1996"
       ],
       "text/markdown": [
        "1. 1994\n",
-       "2. 1994\n",
-       "3. 1996\n",
+       "2. 1995\n",
+       "3. 1995\n",
        "4. 1996\n",
        "5. 1996\n",
        "\n",
@@ -145,8 +145,8 @@
       "text/latex": [
        "\\begin{enumerate*}\n",
        "\\item 1994\n",
-       "\\item 1994\n",
-       "\\item 1996\n",
+       "\\item 1995\n",
+       "\\item 1995\n",
        "\\item 1996\n",
        "\\item 1996\n",
        "\\end{enumerate*}\n"
@@ -157,7 +157,7 @@
        ".list-inline>li {display: inline-block}\n",
        ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
        "</style>\n",
-       "<ol class=list-inline><li>1994</li><li>1994</li><li>1996</li><li>1996</li><li>1996</li></ol>\n"
+       "<ol class=list-inline><li>1994</li><li>1995</li><li>1995</li><li>1996</li><li>1996</li></ol>\n"
       ]
      },
      "metadata": {}
@@ -185,67 +185,35 @@
     "\n",
     "It is also convention that columns in most datasets correspond to variables, so you we'll often want to do things like take the average of a single column (e.g. the average of a single variable), or edit the values in a single column.\n",
     "\n",
-    "In fact, accessing a single column is so common with dataframes that there are two exactly-identical ways to get a single column -- the one we're used to, and a new shorthand:"
+    "In fact, accessing a single column is so common with dataframes that there are **three** exactly-identical ways to get a single column -- the one we're used to, and a new shorthand:"
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 24,
    "source": [
     "# What we're used to from matrices\n",
     "countries[, \"gdp_pc\"]"
    ],
    "outputs": [
     {
-     "output_type": "display_data",
-     "data": {
-      "text/plain": [
-       "[1]  8076  7740 18648 19452 13244 10071  3385  5956  9772"
-      ],
-      "text/markdown": [
-       "1. 8076\n",
-       "2. 7740\n",
-       "3. 18648\n",
-       "4. 19452\n",
-       "5. 13244\n",
-       "6. 10071\n",
-       "7. 3385\n",
-       "8. 5956\n",
-       "9. 9772\n",
-       "\n",
-       "\n"
-      ],
-      "text/latex": [
-       "\\begin{enumerate*}\n",
-       "\\item 8076\n",
-       "\\item 7740\n",
-       "\\item 18648\n",
-       "\\item 19452\n",
-       "\\item 13244\n",
-       "\\item 10071\n",
-       "\\item 3385\n",
-       "\\item 5956\n",
-       "\\item 9772\n",
-       "\\end{enumerate*}\n"
-      ],
-      "text/html": [
-       "<style>\n",
-       ".list-inline {list-style: none; margin:0; padding: 0}\n",
-       ".list-inline>li {display: inline-block}\n",
-       ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
-       "</style>\n",
-       "<ol class=list-inline><li>8076</li><li>7740</li><li>18648</li><li>19452</li><li>13244</li><li>10071</li><li>3385</li><li>5956</li><li>9772</li></ol>\n"
-      ]
-     },
-     "metadata": {}
+     "output_type": "error",
+     "ename": "ERROR",
+     "evalue": "Error in `[.data.frame`(countries, , \"gdp_pc\"): undefined columns selected\n",
+     "traceback": [
+      "Error in `[.data.frame`(countries, , \"gdp_pc\"): undefined columns selected\nTraceback:\n",
+      "1. countries[, \"gdp_pc\"]",
+      "2. `[.data.frame`(countries, , \"gdp_pc\")",
+      "3. stop(\"undefined columns selected\")"
+     ]
     }
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 25,
    "source": [
     "# The shortcut for a single dataframe column\n",
     "countries$gdp_pc"
@@ -255,41 +223,90 @@
      "output_type": "display_data",
      "data": {
       "text/plain": [
-       "[1]  8076  7740 18648 19452 13244 10071  3385  5956  9772"
+       "NULL"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "source": [
+    "# And if you don't have a comma, R assumes you're accessing columns\n",
+    "countries[\"gdp_pc\"]"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  gdp_pc\n",
+       "1  3521 \n",
+       "2 12134 \n",
+       "3 19386 \n",
+       "4  9927 \n",
+       "5  4042 \n",
+       "6 12528 \n",
+       "7 13416 \n",
+       "8  2660 \n",
+       "9  6112 "
       ],
       "text/markdown": [
-       "1. 8076\n",
-       "2. 7740\n",
-       "3. 18648\n",
-       "4. 19452\n",
-       "5. 13244\n",
-       "6. 10071\n",
-       "7. 3385\n",
-       "8. 5956\n",
-       "9. 9772\n",
        "\n",
+       "A data.frame: 9 × 1\n",
+       "\n",
+       "| gdp_pc &lt;dbl&gt; |\n",
+       "|---|\n",
+       "|  3521 |\n",
+       "| 12134 |\n",
+       "| 19386 |\n",
+       "|  9927 |\n",
+       "|  4042 |\n",
+       "| 12528 |\n",
+       "| 13416 |\n",
+       "|  2660 |\n",
+       "|  6112 |\n",
        "\n"
       ],
       "text/latex": [
-       "\\begin{enumerate*}\n",
-       "\\item 8076\n",
-       "\\item 7740\n",
-       "\\item 18648\n",
-       "\\item 19452\n",
-       "\\item 13244\n",
-       "\\item 10071\n",
-       "\\item 3385\n",
-       "\\item 5956\n",
-       "\\item 9772\n",
-       "\\end{enumerate*}\n"
+       "A data.frame: 9 × 1\n",
+       "\\begin{tabular}{l}\n",
+       " gdp\\_pc\\\\\n",
+       " <dbl>\\\\\n",
+       "\\hline\n",
+       "\t  3521\\\\\n",
+       "\t 12134\\\\\n",
+       "\t 19386\\\\\n",
+       "\t  9927\\\\\n",
+       "\t  4042\\\\\n",
+       "\t 12528\\\\\n",
+       "\t 13416\\\\\n",
+       "\t  2660\\\\\n",
+       "\t  6112\\\\\n",
+       "\\end{tabular}\n"
       ],
       "text/html": [
-       "<style>\n",
-       ".list-inline {list-style: none; margin:0; padding: 0}\n",
-       ".list-inline>li {display: inline-block}\n",
-       ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
-       "</style>\n",
-       "<ol class=list-inline><li>8076</li><li>7740</li><li>18648</li><li>19452</li><li>13244</li><li>10071</li><li>3385</li><li>5956</li><li>9772</li></ol>\n"
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 9 × 1</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>gdp_pc</th></tr>\n",
+       "\t<tr><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td> 3521</td></tr>\n",
+       "\t<tr><td>12134</td></tr>\n",
+       "\t<tr><td>19386</td></tr>\n",
+       "\t<tr><td> 9927</td></tr>\n",
+       "\t<tr><td> 4042</td></tr>\n",
+       "\t<tr><td>12528</td></tr>\n",
+       "\t<tr><td>13416</td></tr>\n",
+       "\t<tr><td> 2660</td></tr>\n",
+       "\t<tr><td> 6112</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
       ]
      },
      "metadata": {}
@@ -315,7 +332,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 6,
    "source": [
     "# re-create with original gdp_pc \n",
     "countries <- data.frame(country, year, gdp_pc)\n",
@@ -327,15 +344,15 @@
      "data": {
       "text/plain": [
        "  country year gdp_pc\n",
-       "1 USA     1994  8076 \n",
-       "2 China   1994  7740 \n",
-       "3 Sudan   1994 18648 \n",
-       "4 USA     1995 19452 \n",
-       "5 China   1995 13244 \n",
-       "6 Sudan   1995 10071 \n",
-       "7 USA     1996  3385 \n",
-       "8 China   1996  5956 \n",
-       "9 Sudan   1996  9772 "
+       "1 USA     1994  3521 \n",
+       "2 China   1994 12134 \n",
+       "3 Sudan   1994 19386 \n",
+       "4 USA     1995  9927 \n",
+       "5 China   1995  4042 \n",
+       "6 Sudan   1995 12528 \n",
+       "7 USA     1996 13416 \n",
+       "8 China   1996  2660 \n",
+       "9 Sudan   1996  6112 "
       ],
       "text/markdown": [
        "\n",
@@ -343,15 +360,15 @@
        "\n",
        "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|\n",
-       "| USA   | 1994 |  8076 |\n",
-       "| China | 1994 |  7740 |\n",
-       "| Sudan | 1994 | 18648 |\n",
-       "| USA   | 1995 | 19452 |\n",
-       "| China | 1995 | 13244 |\n",
-       "| Sudan | 1995 | 10071 |\n",
-       "| USA   | 1996 |  3385 |\n",
-       "| China | 1996 |  5956 |\n",
-       "| Sudan | 1996 |  9772 |\n",
+       "| USA   | 1994 |  3521 |\n",
+       "| China | 1994 | 12134 |\n",
+       "| Sudan | 1994 | 19386 |\n",
+       "| USA   | 1995 |  9927 |\n",
+       "| China | 1995 |  4042 |\n",
+       "| Sudan | 1995 | 12528 |\n",
+       "| USA   | 1996 | 13416 |\n",
+       "| China | 1996 |  2660 |\n",
+       "| Sudan | 1996 |  6112 |\n",
        "\n"
       ],
       "text/latex": [
@@ -360,15 +377,15 @@
        " country & year & gdp\\_pc\\\\\n",
        " <chr> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t USA   & 1994 &  8076\\\\\n",
-       "\t China & 1994 &  7740\\\\\n",
-       "\t Sudan & 1994 & 18648\\\\\n",
-       "\t USA   & 1995 & 19452\\\\\n",
-       "\t China & 1995 & 13244\\\\\n",
-       "\t Sudan & 1995 & 10071\\\\\n",
-       "\t USA   & 1996 &  3385\\\\\n",
-       "\t China & 1996 &  5956\\\\\n",
-       "\t Sudan & 1996 &  9772\\\\\n",
+       "\t USA   & 1994 &  3521\\\\\n",
+       "\t China & 1994 & 12134\\\\\n",
+       "\t Sudan & 1994 & 19386\\\\\n",
+       "\t USA   & 1995 &  9927\\\\\n",
+       "\t China & 1995 &  4042\\\\\n",
+       "\t Sudan & 1995 & 12528\\\\\n",
+       "\t USA   & 1996 & 13416\\\\\n",
+       "\t China & 1996 &  2660\\\\\n",
+       "\t Sudan & 1996 &  6112\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -379,15 +396,15 @@
        "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td> 8076</td></tr>\n",
-       "\t<tr><td>China</td><td>1994</td><td> 7740</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td>18648</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td>19452</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td>13244</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>10071</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 3385</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td> 5956</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td> 9772</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td> 3521</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td>12134</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td>19386</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td> 9927</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td> 4042</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>12528</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td>13416</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 2660</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td> 6112</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -399,7 +416,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 7,
    "source": [
     "countries[, \"gdp_pc\"] <- countries[,\"gdp_pc\"] * 1.02"
    ],
@@ -415,7 +432,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 8,
    "source": [
     "countries$gdp_pc <- countries$gdp_pc * 1.02"
    ],
@@ -433,7 +450,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 9,
    "source": [
     "# re-create with original gdp_pc \n",
     "countries <- data.frame(country, year, gdp_pc)"
@@ -443,7 +460,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 10,
    "source": [
     "# Add new column\n",
     "countries$adjusted_gdp_pc <- countries$gdp_pc * 1.02\n",
@@ -455,15 +472,15 @@
      "data": {
       "text/plain": [
        "  country year gdp_pc adjusted_gdp_pc\n",
-       "1 USA     1994  8076   8237.52       \n",
-       "2 China   1994  7740   7894.80       \n",
-       "3 Sudan   1994 18648  19020.96       \n",
-       "4 USA     1995 19452  19841.04       \n",
-       "5 China   1995 13244  13508.88       \n",
-       "6 Sudan   1995 10071  10272.42       \n",
-       "7 USA     1996  3385   3452.70       \n",
-       "8 China   1996  5956   6075.12       \n",
-       "9 Sudan   1996  9772   9967.44       "
+       "1 USA     1994  3521   3591.42       \n",
+       "2 China   1994 12134  12376.68       \n",
+       "3 Sudan   1994 19386  19773.72       \n",
+       "4 USA     1995  9927  10125.54       \n",
+       "5 China   1995  4042   4122.84       \n",
+       "6 Sudan   1995 12528  12778.56       \n",
+       "7 USA     1996 13416  13684.32       \n",
+       "8 China   1996  2660   2713.20       \n",
+       "9 Sudan   1996  6112   6234.24       "
       ],
       "text/markdown": [
        "\n",
@@ -471,15 +488,15 @@
        "\n",
        "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc &lt;dbl&gt; | adjusted_gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|---|\n",
-       "| USA   | 1994 |  8076 |  8237.52 |\n",
-       "| China | 1994 |  7740 |  7894.80 |\n",
-       "| Sudan | 1994 | 18648 | 19020.96 |\n",
-       "| USA   | 1995 | 19452 | 19841.04 |\n",
-       "| China | 1995 | 13244 | 13508.88 |\n",
-       "| Sudan | 1995 | 10071 | 10272.42 |\n",
-       "| USA   | 1996 |  3385 |  3452.70 |\n",
-       "| China | 1996 |  5956 |  6075.12 |\n",
-       "| Sudan | 1996 |  9772 |  9967.44 |\n",
+       "| USA   | 1994 |  3521 |  3591.42 |\n",
+       "| China | 1994 | 12134 | 12376.68 |\n",
+       "| Sudan | 1994 | 19386 | 19773.72 |\n",
+       "| USA   | 1995 |  9927 | 10125.54 |\n",
+       "| China | 1995 |  4042 |  4122.84 |\n",
+       "| Sudan | 1995 | 12528 | 12778.56 |\n",
+       "| USA   | 1996 | 13416 | 13684.32 |\n",
+       "| China | 1996 |  2660 |  2713.20 |\n",
+       "| Sudan | 1996 |  6112 |  6234.24 |\n",
        "\n"
       ],
       "text/latex": [
@@ -488,15 +505,15 @@
        " country & year & gdp\\_pc & adjusted\\_gdp\\_pc\\\\\n",
        " <chr> & <dbl> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t USA   & 1994 &  8076 &  8237.52\\\\\n",
-       "\t China & 1994 &  7740 &  7894.80\\\\\n",
-       "\t Sudan & 1994 & 18648 & 19020.96\\\\\n",
-       "\t USA   & 1995 & 19452 & 19841.04\\\\\n",
-       "\t China & 1995 & 13244 & 13508.88\\\\\n",
-       "\t Sudan & 1995 & 10071 & 10272.42\\\\\n",
-       "\t USA   & 1996 &  3385 &  3452.70\\\\\n",
-       "\t China & 1996 &  5956 &  6075.12\\\\\n",
-       "\t Sudan & 1996 &  9772 &  9967.44\\\\\n",
+       "\t USA   & 1994 &  3521 &  3591.42\\\\\n",
+       "\t China & 1994 & 12134 & 12376.68\\\\\n",
+       "\t Sudan & 1994 & 19386 & 19773.72\\\\\n",
+       "\t USA   & 1995 &  9927 & 10125.54\\\\\n",
+       "\t China & 1995 &  4042 &  4122.84\\\\\n",
+       "\t Sudan & 1995 & 12528 & 12778.56\\\\\n",
+       "\t USA   & 1996 & 13416 & 13684.32\\\\\n",
+       "\t China & 1996 &  2660 &  2713.20\\\\\n",
+       "\t Sudan & 1996 &  6112 &  6234.24\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -507,15 +524,15 @@
        "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td> 8076</td><td> 8237.52</td></tr>\n",
-       "\t<tr><td>China</td><td>1994</td><td> 7740</td><td> 7894.80</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td>18648</td><td>19020.96</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td>19452</td><td>19841.04</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td>13244</td><td>13508.88</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>10071</td><td>10272.42</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 3385</td><td> 3452.70</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td> 5956</td><td> 6075.12</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td> 9772</td><td> 9967.44</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td> 3521</td><td> 3591.42</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td>12134</td><td>12376.68</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td>19386</td><td>19773.72</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td> 9927</td><td>10125.54</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td> 4042</td><td> 4122.84</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>12528</td><td>12778.56</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td>13416</td><td>13684.32</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 2660</td><td> 2713.20</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td> 6112</td><td> 6234.24</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -536,7 +553,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 11,
    "source": [
     "mean(countries$gdp_pc)"
    ],
@@ -545,16 +562,16 @@
      "output_type": "display_data",
      "data": {
       "text/plain": [
-       "[1] 10704.89"
+       "[1] 9302.889"
       ],
       "text/markdown": [
-       "10704.8888888889"
+       "9302.88888888889"
       ],
       "text/latex": [
-       "10704.8888888889"
+       "9302.88888888889"
       ],
       "text/html": [
-       "10704.8888888889"
+       "9302.88888888889"
       ]
      },
      "metadata": {}
@@ -571,7 +588,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 12,
    "source": [
     "# Number of observations by country \n",
     "table(countries$country)"
@@ -593,7 +610,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 13,
    "source": [
     "# Proportion of observations by country \n",
     "prop.table(table(countries$country))"
@@ -624,7 +641,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 14,
    "source": [
     "countries[, c(\"gdp_pc\", \"year\")]"
    ],
@@ -634,15 +651,15 @@
      "data": {
       "text/plain": [
        "  gdp_pc year\n",
-       "1  8076  1994\n",
-       "2  7740  1994\n",
-       "3 18648  1994\n",
-       "4 19452  1995\n",
-       "5 13244  1995\n",
-       "6 10071  1995\n",
-       "7  3385  1996\n",
-       "8  5956  1996\n",
-       "9  9772  1996"
+       "1  3521  1994\n",
+       "2 12134  1994\n",
+       "3 19386  1994\n",
+       "4  9927  1995\n",
+       "5  4042  1995\n",
+       "6 12528  1995\n",
+       "7 13416  1996\n",
+       "8  2660  1996\n",
+       "9  6112  1996"
       ],
       "text/markdown": [
        "\n",
@@ -650,15 +667,15 @@
        "\n",
        "| gdp_pc &lt;dbl&gt; | year &lt;dbl&gt; |\n",
        "|---|---|\n",
-       "|  8076 | 1994 |\n",
-       "|  7740 | 1994 |\n",
-       "| 18648 | 1994 |\n",
-       "| 19452 | 1995 |\n",
-       "| 13244 | 1995 |\n",
-       "| 10071 | 1995 |\n",
-       "|  3385 | 1996 |\n",
-       "|  5956 | 1996 |\n",
-       "|  9772 | 1996 |\n",
+       "|  3521 | 1994 |\n",
+       "| 12134 | 1994 |\n",
+       "| 19386 | 1994 |\n",
+       "|  9927 | 1995 |\n",
+       "|  4042 | 1995 |\n",
+       "| 12528 | 1995 |\n",
+       "| 13416 | 1996 |\n",
+       "|  2660 | 1996 |\n",
+       "|  6112 | 1996 |\n",
        "\n"
       ],
       "text/latex": [
@@ -667,15 +684,15 @@
        " gdp\\_pc & year\\\\\n",
        " <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t  8076 & 1994\\\\\n",
-       "\t  7740 & 1994\\\\\n",
-       "\t 18648 & 1994\\\\\n",
-       "\t 19452 & 1995\\\\\n",
-       "\t 13244 & 1995\\\\\n",
-       "\t 10071 & 1995\\\\\n",
-       "\t  3385 & 1996\\\\\n",
-       "\t  5956 & 1996\\\\\n",
-       "\t  9772 & 1996\\\\\n",
+       "\t  3521 & 1994\\\\\n",
+       "\t 12134 & 1994\\\\\n",
+       "\t 19386 & 1994\\\\\n",
+       "\t  9927 & 1995\\\\\n",
+       "\t  4042 & 1995\\\\\n",
+       "\t 12528 & 1995\\\\\n",
+       "\t 13416 & 1996\\\\\n",
+       "\t  2660 & 1996\\\\\n",
+       "\t  6112 & 1996\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -686,15 +703,15 @@
        "\t<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td> 8076</td><td>1994</td></tr>\n",
-       "\t<tr><td> 7740</td><td>1994</td></tr>\n",
-       "\t<tr><td>18648</td><td>1994</td></tr>\n",
-       "\t<tr><td>19452</td><td>1995</td></tr>\n",
-       "\t<tr><td>13244</td><td>1995</td></tr>\n",
-       "\t<tr><td>10071</td><td>1995</td></tr>\n",
-       "\t<tr><td> 3385</td><td>1996</td></tr>\n",
-       "\t<tr><td> 5956</td><td>1996</td></tr>\n",
-       "\t<tr><td> 9772</td><td>1996</td></tr>\n",
+       "\t<tr><td> 3521</td><td>1994</td></tr>\n",
+       "\t<tr><td>12134</td><td>1994</td></tr>\n",
+       "\t<tr><td>19386</td><td>1994</td></tr>\n",
+       "\t<tr><td> 9927</td><td>1995</td></tr>\n",
+       "\t<tr><td> 4042</td><td>1995</td></tr>\n",
+       "\t<tr><td>12528</td><td>1995</td></tr>\n",
+       "\t<tr><td>13416</td><td>1996</td></tr>\n",
+       "\t<tr><td> 2660</td><td>1996</td></tr>\n",
+       "\t<tr><td> 6112</td><td>1996</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -713,7 +730,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 15,
    "source": [
     "# Drop columns gdp_pc and year\n",
     "countries[, !(names(countries) %in% c(\"gdp_pc\", \"year\"))]\n"
@@ -724,15 +741,15 @@
      "data": {
       "text/plain": [
        "  country adjusted_gdp_pc\n",
-       "1 USA      8237.52       \n",
-       "2 China    7894.80       \n",
-       "3 Sudan   19020.96       \n",
-       "4 USA     19841.04       \n",
-       "5 China   13508.88       \n",
-       "6 Sudan   10272.42       \n",
-       "7 USA      3452.70       \n",
-       "8 China    6075.12       \n",
-       "9 Sudan    9967.44       "
+       "1 USA      3591.42       \n",
+       "2 China   12376.68       \n",
+       "3 Sudan   19773.72       \n",
+       "4 USA     10125.54       \n",
+       "5 China    4122.84       \n",
+       "6 Sudan   12778.56       \n",
+       "7 USA     13684.32       \n",
+       "8 China    2713.20       \n",
+       "9 Sudan    6234.24       "
       ],
       "text/markdown": [
        "\n",
@@ -740,15 +757,15 @@
        "\n",
        "| country &lt;chr&gt; | adjusted_gdp_pc &lt;dbl&gt; |\n",
        "|---|---|\n",
-       "| USA   |  8237.52 |\n",
-       "| China |  7894.80 |\n",
-       "| Sudan | 19020.96 |\n",
-       "| USA   | 19841.04 |\n",
-       "| China | 13508.88 |\n",
-       "| Sudan | 10272.42 |\n",
-       "| USA   |  3452.70 |\n",
-       "| China |  6075.12 |\n",
-       "| Sudan |  9967.44 |\n",
+       "| USA   |  3591.42 |\n",
+       "| China | 12376.68 |\n",
+       "| Sudan | 19773.72 |\n",
+       "| USA   | 10125.54 |\n",
+       "| China |  4122.84 |\n",
+       "| Sudan | 12778.56 |\n",
+       "| USA   | 13684.32 |\n",
+       "| China |  2713.20 |\n",
+       "| Sudan |  6234.24 |\n",
        "\n"
       ],
       "text/latex": [
@@ -757,15 +774,15 @@
        " country & adjusted\\_gdp\\_pc\\\\\n",
        " <chr> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t USA   &  8237.52\\\\\n",
-       "\t China &  7894.80\\\\\n",
-       "\t Sudan & 19020.96\\\\\n",
-       "\t USA   & 19841.04\\\\\n",
-       "\t China & 13508.88\\\\\n",
-       "\t Sudan & 10272.42\\\\\n",
-       "\t USA   &  3452.70\\\\\n",
-       "\t China &  6075.12\\\\\n",
-       "\t Sudan &  9967.44\\\\\n",
+       "\t USA   &  3591.42\\\\\n",
+       "\t China & 12376.68\\\\\n",
+       "\t Sudan & 19773.72\\\\\n",
+       "\t USA   & 10125.54\\\\\n",
+       "\t China &  4122.84\\\\\n",
+       "\t Sudan & 12778.56\\\\\n",
+       "\t USA   & 13684.32\\\\\n",
+       "\t China &  2713.20\\\\\n",
+       "\t Sudan &  6234.24\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -776,15 +793,15 @@
        "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>USA  </td><td> 8237.52</td></tr>\n",
-       "\t<tr><td>China</td><td> 7894.80</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>19020.96</td></tr>\n",
-       "\t<tr><td>USA  </td><td>19841.04</td></tr>\n",
-       "\t<tr><td>China</td><td>13508.88</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>10272.42</td></tr>\n",
-       "\t<tr><td>USA  </td><td> 3452.70</td></tr>\n",
-       "\t<tr><td>China</td><td> 6075.12</td></tr>\n",
-       "\t<tr><td>Sudan</td><td> 9967.44</td></tr>\n",
+       "\t<tr><td>USA  </td><td> 3591.42</td></tr>\n",
+       "\t<tr><td>China</td><td>12376.68</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>19773.72</td></tr>\n",
+       "\t<tr><td>USA  </td><td>10125.54</td></tr>\n",
+       "\t<tr><td>China</td><td> 4122.84</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>12778.56</td></tr>\n",
+       "\t<tr><td>USA  </td><td>13684.32</td></tr>\n",
+       "\t<tr><td>China</td><td> 2713.20</td></tr>\n",
+       "\t<tr><td>Sudan</td><td> 6234.24</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -805,7 +822,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 16,
    "source": [
     "names(countries)"
    ],
@@ -855,7 +872,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 17,
    "source": [
     "names(countries) %in% c(\"gdp_pc\", \"year\")"
    ],
@@ -909,7 +926,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 18,
    "source": [
     "countries$gdp_pc <- NULL\n",
     "countries"
@@ -920,15 +937,15 @@
      "data": {
       "text/plain": [
        "  country year adjusted_gdp_pc\n",
-       "1 USA     1994  8237.52       \n",
-       "2 China   1994  7894.80       \n",
-       "3 Sudan   1994 19020.96       \n",
-       "4 USA     1995 19841.04       \n",
-       "5 China   1995 13508.88       \n",
-       "6 Sudan   1995 10272.42       \n",
-       "7 USA     1996  3452.70       \n",
-       "8 China   1996  6075.12       \n",
-       "9 Sudan   1996  9967.44       "
+       "1 USA     1994  3591.42       \n",
+       "2 China   1994 12376.68       \n",
+       "3 Sudan   1994 19773.72       \n",
+       "4 USA     1995 10125.54       \n",
+       "5 China   1995  4122.84       \n",
+       "6 Sudan   1995 12778.56       \n",
+       "7 USA     1996 13684.32       \n",
+       "8 China   1996  2713.20       \n",
+       "9 Sudan   1996  6234.24       "
       ],
       "text/markdown": [
        "\n",
@@ -936,15 +953,15 @@
        "\n",
        "| country &lt;chr&gt; | year &lt;dbl&gt; | adjusted_gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|\n",
-       "| USA   | 1994 |  8237.52 |\n",
-       "| China | 1994 |  7894.80 |\n",
-       "| Sudan | 1994 | 19020.96 |\n",
-       "| USA   | 1995 | 19841.04 |\n",
-       "| China | 1995 | 13508.88 |\n",
-       "| Sudan | 1995 | 10272.42 |\n",
-       "| USA   | 1996 |  3452.70 |\n",
-       "| China | 1996 |  6075.12 |\n",
-       "| Sudan | 1996 |  9967.44 |\n",
+       "| USA   | 1994 |  3591.42 |\n",
+       "| China | 1994 | 12376.68 |\n",
+       "| Sudan | 1994 | 19773.72 |\n",
+       "| USA   | 1995 | 10125.54 |\n",
+       "| China | 1995 |  4122.84 |\n",
+       "| Sudan | 1995 | 12778.56 |\n",
+       "| USA   | 1996 | 13684.32 |\n",
+       "| China | 1996 |  2713.20 |\n",
+       "| Sudan | 1996 |  6234.24 |\n",
        "\n"
       ],
       "text/latex": [
@@ -953,15 +970,15 @@
        " country & year & adjusted\\_gdp\\_pc\\\\\n",
        " <chr> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t USA   & 1994 &  8237.52\\\\\n",
-       "\t China & 1994 &  7894.80\\\\\n",
-       "\t Sudan & 1994 & 19020.96\\\\\n",
-       "\t USA   & 1995 & 19841.04\\\\\n",
-       "\t China & 1995 & 13508.88\\\\\n",
-       "\t Sudan & 1995 & 10272.42\\\\\n",
-       "\t USA   & 1996 &  3452.70\\\\\n",
-       "\t China & 1996 &  6075.12\\\\\n",
-       "\t Sudan & 1996 &  9967.44\\\\\n",
+       "\t USA   & 1994 &  3591.42\\\\\n",
+       "\t China & 1994 & 12376.68\\\\\n",
+       "\t Sudan & 1994 & 19773.72\\\\\n",
+       "\t USA   & 1995 & 10125.54\\\\\n",
+       "\t China & 1995 &  4122.84\\\\\n",
+       "\t Sudan & 1995 & 12778.56\\\\\n",
+       "\t USA   & 1996 & 13684.32\\\\\n",
+       "\t China & 1996 &  2713.20\\\\\n",
+       "\t Sudan & 1996 &  6234.24\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -972,15 +989,15 @@
        "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td> 8237.52</td></tr>\n",
-       "\t<tr><td>China</td><td>1994</td><td> 7894.80</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td>19020.96</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td>19841.04</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td>13508.88</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>10272.42</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 3452.70</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td> 6075.12</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td> 9967.44</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td> 3591.42</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td>12376.68</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td>19773.72</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td>10125.54</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td> 4122.84</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>12778.56</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td>13684.32</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 2713.20</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td> 6234.24</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -1012,7 +1029,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": 19,
    "source": [
     "countries[countries$year == 1995 & countries$country == \"USA\", ]"
    ],
@@ -1022,7 +1039,7 @@
      "data": {
       "text/plain": [
        "  country year adjusted_gdp_pc\n",
-       "4 USA     1995 19841.04       "
+       "4 USA     1995 10125.54       "
       ],
       "text/markdown": [
        "\n",
@@ -1030,7 +1047,7 @@
        "\n",
        "| <!--/--> | country &lt;chr&gt; | year &lt;dbl&gt; | adjusted_gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|---|\n",
-       "| 4 | USA | 1995 | 19841.04 |\n",
+       "| 4 | USA | 1995 | 10125.54 |\n",
        "\n"
       ],
       "text/latex": [
@@ -1039,7 +1056,7 @@
        "  & country & year & adjusted\\_gdp\\_pc\\\\\n",
        "  & <chr> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t4 & USA & 1995 & 19841.04\\\\\n",
+       "\t4 & USA & 1995 & 10125.54\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -1050,7 +1067,7 @@
        "\t<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><th scope=row>4</th><td>USA</td><td>1995</td><td>19841.04</td></tr>\n",
+       "\t<tr><th scope=row>4</th><td>USA</td><td>1995</td><td>10125.54</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -1073,7 +1090,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 20,
    "source": [
     "# Sort by GDP\n",
     "countries[order(countries$adjusted_gdp_pc),]"
@@ -1084,15 +1101,15 @@
      "data": {
       "text/plain": [
        "  country year adjusted_gdp_pc\n",
-       "7 USA     1996  3452.70       \n",
-       "8 China   1996  6075.12       \n",
-       "2 China   1994  7894.80       \n",
-       "1 USA     1994  8237.52       \n",
-       "9 Sudan   1996  9967.44       \n",
-       "6 Sudan   1995 10272.42       \n",
-       "5 China   1995 13508.88       \n",
-       "3 Sudan   1994 19020.96       \n",
-       "4 USA     1995 19841.04       "
+       "8 China   1996  2713.20       \n",
+       "1 USA     1994  3591.42       \n",
+       "5 China   1995  4122.84       \n",
+       "9 Sudan   1996  6234.24       \n",
+       "4 USA     1995 10125.54       \n",
+       "2 China   1994 12376.68       \n",
+       "6 Sudan   1995 12778.56       \n",
+       "7 USA     1996 13684.32       \n",
+       "3 Sudan   1994 19773.72       "
       ],
       "text/markdown": [
        "\n",
@@ -1100,15 +1117,15 @@
        "\n",
        "| <!--/--> | country &lt;chr&gt; | year &lt;dbl&gt; | adjusted_gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|---|\n",
-       "| 7 | USA   | 1996 |  3452.70 |\n",
-       "| 8 | China | 1996 |  6075.12 |\n",
-       "| 2 | China | 1994 |  7894.80 |\n",
-       "| 1 | USA   | 1994 |  8237.52 |\n",
-       "| 9 | Sudan | 1996 |  9967.44 |\n",
-       "| 6 | Sudan | 1995 | 10272.42 |\n",
-       "| 5 | China | 1995 | 13508.88 |\n",
-       "| 3 | Sudan | 1994 | 19020.96 |\n",
-       "| 4 | USA   | 1995 | 19841.04 |\n",
+       "| 8 | China | 1996 |  2713.20 |\n",
+       "| 1 | USA   | 1994 |  3591.42 |\n",
+       "| 5 | China | 1995 |  4122.84 |\n",
+       "| 9 | Sudan | 1996 |  6234.24 |\n",
+       "| 4 | USA   | 1995 | 10125.54 |\n",
+       "| 2 | China | 1994 | 12376.68 |\n",
+       "| 6 | Sudan | 1995 | 12778.56 |\n",
+       "| 7 | USA   | 1996 | 13684.32 |\n",
+       "| 3 | Sudan | 1994 | 19773.72 |\n",
        "\n"
       ],
       "text/latex": [
@@ -1117,15 +1134,15 @@
        "  & country & year & adjusted\\_gdp\\_pc\\\\\n",
        "  & <chr> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t7 & USA   & 1996 &  3452.70\\\\\n",
-       "\t8 & China & 1996 &  6075.12\\\\\n",
-       "\t2 & China & 1994 &  7894.80\\\\\n",
-       "\t1 & USA   & 1994 &  8237.52\\\\\n",
-       "\t9 & Sudan & 1996 &  9967.44\\\\\n",
-       "\t6 & Sudan & 1995 & 10272.42\\\\\n",
-       "\t5 & China & 1995 & 13508.88\\\\\n",
-       "\t3 & Sudan & 1994 & 19020.96\\\\\n",
-       "\t4 & USA   & 1995 & 19841.04\\\\\n",
+       "\t8 & China & 1996 &  2713.20\\\\\n",
+       "\t1 & USA   & 1994 &  3591.42\\\\\n",
+       "\t5 & China & 1995 &  4122.84\\\\\n",
+       "\t9 & Sudan & 1996 &  6234.24\\\\\n",
+       "\t4 & USA   & 1995 & 10125.54\\\\\n",
+       "\t2 & China & 1994 & 12376.68\\\\\n",
+       "\t6 & Sudan & 1995 & 12778.56\\\\\n",
+       "\t7 & USA   & 1996 & 13684.32\\\\\n",
+       "\t3 & Sudan & 1994 & 19773.72\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -1136,15 +1153,15 @@
        "\t<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td> 3452.70</td></tr>\n",
-       "\t<tr><th scope=row>8</th><td>China</td><td>1996</td><td> 6075.12</td></tr>\n",
-       "\t<tr><th scope=row>2</th><td>China</td><td>1994</td><td> 7894.80</td></tr>\n",
-       "\t<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 8237.52</td></tr>\n",
-       "\t<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 9967.44</td></tr>\n",
-       "\t<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>10272.42</td></tr>\n",
-       "\t<tr><th scope=row>5</th><td>China</td><td>1995</td><td>13508.88</td></tr>\n",
-       "\t<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>19020.96</td></tr>\n",
-       "\t<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>19841.04</td></tr>\n",
+       "\t<tr><th scope=row>8</th><td>China</td><td>1996</td><td> 2713.20</td></tr>\n",
+       "\t<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 3591.42</td></tr>\n",
+       "\t<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 4122.84</td></tr>\n",
+       "\t<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 6234.24</td></tr>\n",
+       "\t<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>10125.54</td></tr>\n",
+       "\t<tr><th scope=row>2</th><td>China</td><td>1994</td><td>12376.68</td></tr>\n",
+       "\t<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>12778.56</td></tr>\n",
+       "\t<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td>13684.32</td></tr>\n",
+       "\t<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>19773.72</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -1163,7 +1180,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": 21,
    "source": [
     "order(countries$adjusted_gdp_pc)"
    ],
@@ -1172,32 +1189,32 @@
      "output_type": "display_data",
      "data": {
       "text/plain": [
-       "[1] 7 8 2 1 9 6 5 3 4"
+       "[1] 8 1 5 9 4 2 6 7 3"
       ],
       "text/markdown": [
-       "1. 7\n",
-       "2. 8\n",
-       "3. 2\n",
-       "4. 1\n",
-       "5. 9\n",
-       "6. 6\n",
-       "7. 5\n",
-       "8. 3\n",
-       "9. 4\n",
+       "1. 8\n",
+       "2. 1\n",
+       "3. 5\n",
+       "4. 9\n",
+       "5. 4\n",
+       "6. 2\n",
+       "7. 6\n",
+       "8. 7\n",
+       "9. 3\n",
        "\n",
        "\n"
       ],
       "text/latex": [
        "\\begin{enumerate*}\n",
-       "\\item 7\n",
        "\\item 8\n",
-       "\\item 2\n",
        "\\item 1\n",
-       "\\item 9\n",
-       "\\item 6\n",
        "\\item 5\n",
-       "\\item 3\n",
+       "\\item 9\n",
        "\\item 4\n",
+       "\\item 2\n",
+       "\\item 6\n",
+       "\\item 7\n",
+       "\\item 3\n",
        "\\end{enumerate*}\n"
       ],
       "text/html": [
@@ -1206,7 +1223,7 @@
        ".list-inline>li {display: inline-block}\n",
        ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
        "</style>\n",
-       "<ol class=list-inline><li>7</li><li>8</li><li>2</li><li>1</li><li>9</li><li>6</li><li>5</li><li>3</li><li>4</li></ol>\n"
+       "<ol class=list-inline><li>8</li><li>1</li><li>5</li><li>9</li><li>4</li><li>2</li><li>6</li><li>7</li><li>3</li></ol>\n"
       ]
      },
      "metadata": {}
@@ -1230,7 +1247,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": 22,
    "source": [
     "countries[order(countries$year, countries$country),]"
    ],
@@ -1240,15 +1257,15 @@
      "data": {
       "text/plain": [
        "  country year adjusted_gdp_pc\n",
-       "2 China   1994  7894.80       \n",
-       "3 Sudan   1994 19020.96       \n",
-       "1 USA     1994  8237.52       \n",
-       "5 China   1995 13508.88       \n",
-       "6 Sudan   1995 10272.42       \n",
-       "4 USA     1995 19841.04       \n",
-       "8 China   1996  6075.12       \n",
-       "9 Sudan   1996  9967.44       \n",
-       "7 USA     1996  3452.70       "
+       "2 China   1994 12376.68       \n",
+       "3 Sudan   1994 19773.72       \n",
+       "1 USA     1994  3591.42       \n",
+       "5 China   1995  4122.84       \n",
+       "6 Sudan   1995 12778.56       \n",
+       "4 USA     1995 10125.54       \n",
+       "8 China   1996  2713.20       \n",
+       "9 Sudan   1996  6234.24       \n",
+       "7 USA     1996 13684.32       "
       ],
       "text/markdown": [
        "\n",
@@ -1256,15 +1273,15 @@
        "\n",
        "| <!--/--> | country &lt;chr&gt; | year &lt;dbl&gt; | adjusted_gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|---|\n",
-       "| 2 | China | 1994 |  7894.80 |\n",
-       "| 3 | Sudan | 1994 | 19020.96 |\n",
-       "| 1 | USA   | 1994 |  8237.52 |\n",
-       "| 5 | China | 1995 | 13508.88 |\n",
-       "| 6 | Sudan | 1995 | 10272.42 |\n",
-       "| 4 | USA   | 1995 | 19841.04 |\n",
-       "| 8 | China | 1996 |  6075.12 |\n",
-       "| 9 | Sudan | 1996 |  9967.44 |\n",
-       "| 7 | USA   | 1996 |  3452.70 |\n",
+       "| 2 | China | 1994 | 12376.68 |\n",
+       "| 3 | Sudan | 1994 | 19773.72 |\n",
+       "| 1 | USA   | 1994 |  3591.42 |\n",
+       "| 5 | China | 1995 |  4122.84 |\n",
+       "| 6 | Sudan | 1995 | 12778.56 |\n",
+       "| 4 | USA   | 1995 | 10125.54 |\n",
+       "| 8 | China | 1996 |  2713.20 |\n",
+       "| 9 | Sudan | 1996 |  6234.24 |\n",
+       "| 7 | USA   | 1996 | 13684.32 |\n",
        "\n"
       ],
       "text/latex": [
@@ -1273,15 +1290,15 @@
        "  & country & year & adjusted\\_gdp\\_pc\\\\\n",
        "  & <chr> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t2 & China & 1994 &  7894.80\\\\\n",
-       "\t3 & Sudan & 1994 & 19020.96\\\\\n",
-       "\t1 & USA   & 1994 &  8237.52\\\\\n",
-       "\t5 & China & 1995 & 13508.88\\\\\n",
-       "\t6 & Sudan & 1995 & 10272.42\\\\\n",
-       "\t4 & USA   & 1995 & 19841.04\\\\\n",
-       "\t8 & China & 1996 &  6075.12\\\\\n",
-       "\t9 & Sudan & 1996 &  9967.44\\\\\n",
-       "\t7 & USA   & 1996 &  3452.70\\\\\n",
+       "\t2 & China & 1994 & 12376.68\\\\\n",
+       "\t3 & Sudan & 1994 & 19773.72\\\\\n",
+       "\t1 & USA   & 1994 &  3591.42\\\\\n",
+       "\t5 & China & 1995 &  4122.84\\\\\n",
+       "\t6 & Sudan & 1995 & 12778.56\\\\\n",
+       "\t4 & USA   & 1995 & 10125.54\\\\\n",
+       "\t8 & China & 1996 &  2713.20\\\\\n",
+       "\t9 & Sudan & 1996 &  6234.24\\\\\n",
+       "\t7 & USA   & 1996 & 13684.32\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -1292,15 +1309,15 @@
        "\t<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><th scope=row>2</th><td>China</td><td>1994</td><td> 7894.80</td></tr>\n",
-       "\t<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>19020.96</td></tr>\n",
-       "\t<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 8237.52</td></tr>\n",
-       "\t<tr><th scope=row>5</th><td>China</td><td>1995</td><td>13508.88</td></tr>\n",
-       "\t<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>10272.42</td></tr>\n",
-       "\t<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>19841.04</td></tr>\n",
-       "\t<tr><th scope=row>8</th><td>China</td><td>1996</td><td> 6075.12</td></tr>\n",
-       "\t<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 9967.44</td></tr>\n",
-       "\t<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td> 3452.70</td></tr>\n",
+       "\t<tr><th scope=row>2</th><td>China</td><td>1994</td><td>12376.68</td></tr>\n",
+       "\t<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>19773.72</td></tr>\n",
+       "\t<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 3591.42</td></tr>\n",
+       "\t<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 4122.84</td></tr>\n",
+       "\t<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>12778.56</td></tr>\n",
+       "\t<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>10125.54</td></tr>\n",
+       "\t<tr><th scope=row>8</th><td>China</td><td>1996</td><td> 2713.20</td></tr>\n",
+       "\t<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 6234.24</td></tr>\n",
+       "\t<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td>13684.32</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -1319,7 +1336,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 23,
    "source": [
     "countries[order(-countries$adjusted_gdp_pc), ]"
    ],
@@ -1329,15 +1346,15 @@
      "data": {
       "text/plain": [
        "  country year adjusted_gdp_pc\n",
-       "4 USA     1995 19841.04       \n",
-       "3 Sudan   1994 19020.96       \n",
-       "5 China   1995 13508.88       \n",
-       "6 Sudan   1995 10272.42       \n",
-       "9 Sudan   1996  9967.44       \n",
-       "1 USA     1994  8237.52       \n",
-       "2 China   1994  7894.80       \n",
-       "8 China   1996  6075.12       \n",
-       "7 USA     1996  3452.70       "
+       "3 Sudan   1994 19773.72       \n",
+       "7 USA     1996 13684.32       \n",
+       "6 Sudan   1995 12778.56       \n",
+       "2 China   1994 12376.68       \n",
+       "4 USA     1995 10125.54       \n",
+       "9 Sudan   1996  6234.24       \n",
+       "5 China   1995  4122.84       \n",
+       "1 USA     1994  3591.42       \n",
+       "8 China   1996  2713.20       "
       ],
       "text/markdown": [
        "\n",
@@ -1345,15 +1362,15 @@
        "\n",
        "| <!--/--> | country &lt;chr&gt; | year &lt;dbl&gt; | adjusted_gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|---|\n",
-       "| 4 | USA   | 1995 | 19841.04 |\n",
-       "| 3 | Sudan | 1994 | 19020.96 |\n",
-       "| 5 | China | 1995 | 13508.88 |\n",
-       "| 6 | Sudan | 1995 | 10272.42 |\n",
-       "| 9 | Sudan | 1996 |  9967.44 |\n",
-       "| 1 | USA   | 1994 |  8237.52 |\n",
-       "| 2 | China | 1994 |  7894.80 |\n",
-       "| 8 | China | 1996 |  6075.12 |\n",
-       "| 7 | USA   | 1996 |  3452.70 |\n",
+       "| 3 | Sudan | 1994 | 19773.72 |\n",
+       "| 7 | USA   | 1996 | 13684.32 |\n",
+       "| 6 | Sudan | 1995 | 12778.56 |\n",
+       "| 2 | China | 1994 | 12376.68 |\n",
+       "| 4 | USA   | 1995 | 10125.54 |\n",
+       "| 9 | Sudan | 1996 |  6234.24 |\n",
+       "| 5 | China | 1995 |  4122.84 |\n",
+       "| 1 | USA   | 1994 |  3591.42 |\n",
+       "| 8 | China | 1996 |  2713.20 |\n",
        "\n"
       ],
       "text/latex": [
@@ -1362,15 +1379,15 @@
        "  & country & year & adjusted\\_gdp\\_pc\\\\\n",
        "  & <chr> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t4 & USA   & 1995 & 19841.04\\\\\n",
-       "\t3 & Sudan & 1994 & 19020.96\\\\\n",
-       "\t5 & China & 1995 & 13508.88\\\\\n",
-       "\t6 & Sudan & 1995 & 10272.42\\\\\n",
-       "\t9 & Sudan & 1996 &  9967.44\\\\\n",
-       "\t1 & USA   & 1994 &  8237.52\\\\\n",
-       "\t2 & China & 1994 &  7894.80\\\\\n",
-       "\t8 & China & 1996 &  6075.12\\\\\n",
-       "\t7 & USA   & 1996 &  3452.70\\\\\n",
+       "\t3 & Sudan & 1994 & 19773.72\\\\\n",
+       "\t7 & USA   & 1996 & 13684.32\\\\\n",
+       "\t6 & Sudan & 1995 & 12778.56\\\\\n",
+       "\t2 & China & 1994 & 12376.68\\\\\n",
+       "\t4 & USA   & 1995 & 10125.54\\\\\n",
+       "\t9 & Sudan & 1996 &  6234.24\\\\\n",
+       "\t5 & China & 1995 &  4122.84\\\\\n",
+       "\t1 & USA   & 1994 &  3591.42\\\\\n",
+       "\t8 & China & 1996 &  2713.20\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -1381,15 +1398,15 @@
        "\t<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>19841.04</td></tr>\n",
-       "\t<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>19020.96</td></tr>\n",
-       "\t<tr><th scope=row>5</th><td>China</td><td>1995</td><td>13508.88</td></tr>\n",
-       "\t<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>10272.42</td></tr>\n",
-       "\t<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 9967.44</td></tr>\n",
-       "\t<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 8237.52</td></tr>\n",
-       "\t<tr><th scope=row>2</th><td>China</td><td>1994</td><td> 7894.80</td></tr>\n",
-       "\t<tr><th scope=row>8</th><td>China</td><td>1996</td><td> 6075.12</td></tr>\n",
-       "\t<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td> 3452.70</td></tr>\n",
+       "\t<tr><th scope=row>3</th><td>Sudan</td><td>1994</td><td>19773.72</td></tr>\n",
+       "\t<tr><th scope=row>7</th><td>USA  </td><td>1996</td><td>13684.32</td></tr>\n",
+       "\t<tr><th scope=row>6</th><td>Sudan</td><td>1995</td><td>12778.56</td></tr>\n",
+       "\t<tr><th scope=row>2</th><td>China</td><td>1994</td><td>12376.68</td></tr>\n",
+       "\t<tr><th scope=row>4</th><td>USA  </td><td>1995</td><td>10125.54</td></tr>\n",
+       "\t<tr><th scope=row>9</th><td>Sudan</td><td>1996</td><td> 6234.24</td></tr>\n",
+       "\t<tr><th scope=row>5</th><td>China</td><td>1995</td><td> 4122.84</td></tr>\n",
+       "\t<tr><th scope=row>1</th><td>USA  </td><td>1994</td><td> 3591.42</td></tr>\n",
+       "\t<tr><th scope=row>8</th><td>China</td><td>1996</td><td> 2713.20</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]

@@ -89,7 +89,7 @@ html_logo = "images/mids_logo.svg"
 #
 html_theme_options = {
     "base_url": "http://cm4ss.com",
-    "google_analytics_account": "UA-XXXXX",
+    "google_analytics_account": "UA-203713456-1",
     "html_minify": True,
     "css_minify": True,
     "globaltoc_depth": 1,

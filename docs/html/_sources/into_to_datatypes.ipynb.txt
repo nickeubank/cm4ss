@@ -3,7 +3,7 @@
         {
             "cell_type": "markdown",
             "source": [
-                "# Data Types\n",
+                "# Intro to Data Types\n",
                 "\n",
                 "One of the features of computers than can be frustrating to new programmers is their inflexibility, and one place this inflexibility is most evident is in the fact that programs like R store data as discrete *types*. In this section, we'll go over the four data types you'll encounter most -- `numeric`, `integer`, `character`, and `logical` types -- as well as what it means for R to have these distinct data types. \n",
                 "\n",

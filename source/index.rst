@@ -64,17 +64,22 @@ Who Am I?
 
 Because this Boot Camp is targeted at "social scientists" writ large, you may reasonably be asking whether it's actually appropriately designed for *you* and your specific interests. Obviously I can't guarantee the answer is yes for absolutely any student walking through the door, but I have designed this Boot Camp to focus on foundational topics that I think are critical for anyone interested in doing computational social science / data science in 2021 based on my own experiences as a researcher and educator. 
 
-What are those experiences? Over the past 15 years, I have had the good fortunate to do work in a wide range of contexts, including: doing academic social science research published in top political science journals; conducting impact evaluations and analyzing household survey data for the World Bank; working as an expert consultant in US voting rights litigation; and teaching a range of computational social science methods to everyone from undergraduate cultural anthropologists to PhD political scientists. My work has entailed lots of statistics, network analysis, geospatial analysis, and datasets large and small for all imaginable sources. Moreover, many of the instructional materials we'll use in this course were developed in conjunction with Simon Ejdemyr, who got his PhD in Political Science from Stanford before going on to work as a Data Scientist first at Facebook and now at Netflix. 
+What are those experiences? Over the past 15 years, I have had the good fortunate to do work in a wide range of contexts, including: doing academic social science research published in top political science journals; conducting impact evaluations and analyzing household survey data for the World Bank; working as an expert consultant in US voting rights litigation; and teaching a range of computational social science methods to everyone from undergraduate cultural anthropologists to PhD political scientists. My work has entailed lots of statistics, network analysis, geospatial analysis, and datasets large and small from all imaginable sources. Moreover, many of the instructional materials we'll use in this course were developed in conjunction with Simon Ejdemyr, who got his PhD in Political Science from Stanford before going on to work as a Data Scientist first at Facebook and now at Netflix. 
 
 So while I may not have worked in your *exact* area of interest, if your area of interest sounds close to any of those, what we'll be learning here should be relevant. 
 
 Class Organization
 --------------------------------
 
-In this class we will be "flipping the classroom" -- you will be required to review tutorials on R between classes, and each afternoon we will focus on doing exercises that allow you to get hands-on experience with the skills you've read about in an environment where help will be available. These tutorials aren't very long, and we **strongly** recommend that while you read through them you do so with an open R session so you can just play around a little, trying out the things you learn. The research on learning to program is exceedingly clear on this point: **the only way to learn to program is to actually program**, so the more time you spend playing with R, making mistakes, and troubleshooting, the more you will learn. We'll do lots of exercises in class, but the more you play on your own too, the more you will learn.
+In this class we will be "flipping the classroom" -- you will be required to review tutorials on R between classes, and each afternoon we will focus on doing exercises that allow you to get hands-on experience with the skills you've read about in an environment where help will be available. These tutorials aren't very long, and we **strongly** recommend that while you read through them, you do so with an open R session so you can just play around a little, trying out the things you learn. The research on learning to program is exceedingly clear on this point: **the only way to learn to program is to actually program**, so the more time you spend playing with R, making mistakes, and troubleshooting, the more you will learn. We'll do lots of exercises in class, but the more you play on your own too, the more you will learn.
 
-Note that one consequence of this class structure is that the in person sessions will only be of value if you do the required readings before attending. In fact, because many in class exercises will be done in small groups, students who don't read materials in advance will not only undermine their own learning, but they also have the potential to undermine the learning experience of their fellow students. As a result, **each class will begin with a short quiz on the required readings.** These quizzes should be trivially easy if you did the readings, **but any student who fails to quizzes** will be asked to leave the boot camp in the interest of ensuring unprepared students don't undermine the experiece of students who have prepared appropriately. 
+Note that one consequence of this class structure is that the in person sessions will only be of value if you do the required readings before attending. In fact, because many in class exercises will be done in small groups, students who don't read materials in advance will not only undermine their own learning, but they also have the potential to undermine the learning experience of their fellow students. As a result, **each class will begin with a short quiz on the required readings.** These quizzes should be trivially easy if you did the readings, **but any student who fails to quizzes** will be asked to leave the boot camp in the interest of ensuring unprepared students don't undermine the experience of students who have prepared appropriately. 
 
+
+Huge Thanks
+----------------
+
+I owe a huge debt of gratitude to `Simon Ejdemyr <https://sejdemyr.github.io/>`__, whose `R tutorials <https://sejdemyr.github.io/r-tutorials/basics/>`__ were the basis of the first version of this course, and whose tutorials I used as a starting point for the materials on this site.
 
 .. toctree:: 
    :hidden:
@@ -88,8 +93,8 @@ Note that one consequence of this class structure is that the in person sessions
    :caption: Class Readings
    :maxdepth: 2
 
-   introduction.ipynb
-   data_types.ipynb
+   intro_to_r.ipynb
+   into_to_datatypes.ipynb
    intro_to_vectors.ipynb
    manipulating_vectors.ipynb
    intro_to_matrices.ipynb
