@@ -17,7 +17,7 @@ Session 1: Variables & Vectors
 - Accept Slack Invitation
 - `Review Course Summary <index.rst>`__
 - Read `Introduction to R <intro_to_r.ipynb>`__
-- Read `Intro to Data Types <into_to_datatypes.ipynb>`__
+- Read `Intro to Data Types <intro_to_datatypes.ipynb>`__
 
 **In Class**
 
