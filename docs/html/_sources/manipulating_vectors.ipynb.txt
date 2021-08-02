@@ -31,7 +31,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 1,
    "source": [
     "a <- c(42, 47, -1)\n",
     "a[2]"
@@ -69,7 +69,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 2,
    "source": [
     "a[c(1, 3)]"
    ],
@@ -115,7 +115,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 3,
    "source": [
     "subset = c(1, 3)\n",
     "a[subset]"
@@ -162,7 +162,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 4,
    "source": [
     "a[c(3, 1)]"
    ],
@@ -217,7 +217,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 5,
    "source": [
     "fruits <- c(\"apple\", \"banana\")\n",
     "fruits[c(TRUE, FALSE)]"
@@ -263,7 +263,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 6,
    "source": [
     "# Create a vector with 30 fruits \n",
     "fruits <- rep(c(\"orange\", \"apple\", \"banana\"), 10)\n",
@@ -363,7 +363,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
+   "execution_count": 7,
    "source": [
     "# Create a logical vector for dropping bananas\n",
     "\n",
@@ -447,7 +447,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": 8,
    "source": [
     "fruits[not_banana]"
    ],
@@ -524,7 +524,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
+   "execution_count": 9,
    "source": [
     "fruits[not_banana2]"
    ],
@@ -616,7 +616,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+   "execution_count": 10,
    "source": [
     "orange_or_apple2 <- fruits %in% c(\"orange\", \"apple\")\n",
     "fruits[orange_or_apple2]"
@@ -907,7 +907,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
+   "execution_count": 15,
    "source": [
     "attendance = c(132, 94, 112, 84, 254, 322, 472)\n",
     "attendance"
@@ -957,7 +957,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 28,
+   "execution_count": 16,
    "source": [
     "names(attendance) <- c(\"Monday\", \"Tuesday\", \"Wednesday\", \"Thursday\", \"Friday\", \"Saturday\", \"Sunday\")\n",
     "attendance"
@@ -1015,7 +1015,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 29,
+   "execution_count": 17,
    "source": [
     "attendance[c(\"Saturday\", \"Sunday\")]"
    ],
@@ -1064,7 +1064,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 30,
+   "execution_count": 18,
    "source": [
     "# Recreate vector with age values\n",
     "age <- c(50, 55, 80)\n",
@@ -1120,7 +1120,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 31,
+   "execution_count": 19,
    "source": [
     "fruits <- rep(c(\"orange\", \"apple\", \"bamama\"), 5) \n",
     "fruits #bamamas anyone? "
@@ -1187,7 +1187,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 32,
+   "execution_count": 20,
    "source": [
     "# Let's fix the misspelled element\n",
     "fruits[fruits == \"bamama\"] <- \"banana\"\n",
@@ -1267,9 +1267,18 @@
   {
    "cell_type": "markdown",
    "source": [
-    "## Exercises\n",
+    "## Exercises for Now\n",
     "\n",
-    "Now that we've familiarized ourselves with vectors and vector manipulation, [it's time to do some exercises!](./exercises/exercise_vectors.ipynb)"
+    "Want to practice these skills? Head on over to [this site](exercises/exercise_vectors_now.ipynb) to find some exercises you can do right now!"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "## Exercises for Class\n",
+    "\n",
+    "[Here are some exercises](exercises/exercise_vectors.ipynb) we'll be doing in our synchronous class. If you are enrolled in our synchronous sessions, **please do not** do these before class! If you're reading these materials on your own or are enrolled in our asynchronous class, feel free to take a look now."
    ],
    "metadata": {}
   }

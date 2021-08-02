@@ -1,5 +1,5 @@
-Class Schedule
-==============
+Class Schedule & Curriculum
+===========================
 
 ..  youtube:: zEw7fX9EnIs
 
@@ -72,7 +72,6 @@ Session 4: Merging and Aggregating
 - `Merging and Appending <merging_appending.ipynb>`__
 - `Missing Data <missing_data.ipynb>`__
 - `Defensive Programming <defensive_programming.ipynb>`__
-- `Iceberg Principle (written in Python, but concept isn't language-specific!) <https://www.practicaldatascience.org/html/iceberg_principle.html>`__
 
 **In Class**
 

@@ -3,19 +3,14 @@
         {
             "cell_type": "markdown",
             "source": [
-                "# Vector Exercises"
+                "# Vector Exercises: Family and Friends"
             ],
             "metadata": {}
         },
         {
             "cell_type": "markdown",
             "source": [
-                "<div style=\"margin-top: 15px\"> </div>\n",
-                "\n",
-                "## Exercises\n",
-                "\n",
-                "Create a vector that represents the age of at least four different family\n",
-                "members or friends. You can name it whatever you want.\n",
+                "Create a vector that represents the age of at least four different family members or friends. You can name it whatever you want.\n",
                 "\n",
                 "1. What is the mean age of the people in your vector? Find out in two ways,\n",
                 "with and without using the `mean()` command.\n",
@@ -43,121 +38,6 @@
                 "vector?\n"
             ],
             "metadata": {}
-        },
-        {
-            "cell_type": "markdown",
-            "source": [
-                "```\n",
-                "\n",
-                "###########\n",
-                "# Vectors are the bread and butter of R.\n",
-                "#\n",
-                "# Let's see how to make them!\n",
-                "###########\n",
-                "\n",
-                "\n",
-                "# Exercise 1: Making vectors\n",
-                "   # make a vector called `my_favorite_numbers` with\n",
-                "   # a few of your favorite numbers.\n",
-                "   # (hint: use the `c()` function to concatenate or combine\n",
-                "   # numbers into a vector)\n",
-                "\n",
-                "   # use the `mean` function to find out the average of your\n",
-                "   # favorite numbers\n",
-                "\n",
-                "   # how many numbers did you put in your vector? Find out using the\n",
-                "   # `length` function!\n",
-                "\n",
-                "   # Create a vector will all the numbers from 1-10 by typing `first_ten = 1:10`.\n",
-                "   # This colon operator is a special function because it's so common\n",
-                "   # to make vectors with a series of sequential numbers.\n",
-                "\n",
-                "   # Now double all the values of `first_ten` by multiplying them by two.\n",
-                "\n",
-                "   # Now create a new variable by adding `first_ten` to itself.\n",
-                "\n",
-                "   # Now try and create a new variable by adding `1:5` to `first_ten`.\n",
-                "   # Why was that different then adding `first_ten` to itself?\n",
-                "\n",
-                "\n",
-                "# Exercise 2: The secret of R: everything's a vector!\n",
-                "\n",
-                "   # Remember when you typed `x=5`, and you saw a [1] next to the result\n",
-                "   # I told you to ignore? Well now it's time to tell you what it's doing there.\n",
-                "   # It's there because `x=5` doesn't actually assign 5 to `x`, it binds `x`\n",
-                "   # to a vector of size 1 that contains 5.\n",
-                "\n",
-                "```"
-            ],
-            "metadata": {}
-        },
-        {
-            "cell_type": "markdown",
-            "source": [
-                "```\n",
-                "\n",
-                "###########\n",
-                "# Often we want to access parts of vectors.\n",
-                "# Here's how!\n",
-                "#\n",
-                "# Below you will find a number of prompts.\n",
-                "# After each prompt, please add code\n",
-                "# that does what the prompt asks.\n",
-                "###########\n",
-                "\n",
-                "\n",
-                "# Exercise 1: Subsetting Vectors by Row Number\n",
-                "\n",
-                "   # Often we want to work with a subset of items in a vector.\n",
-                "   # This is generally done using square brackets.\n",
-                "\n",
-                "   # For example, pull out the second of your favorite numbers\n",
-                "   # by \"indexing\" into your vector by typing `my_favorite_numbers[2]`\n",
-                "\n",
-                "   # Now grab the third item!\n",
-                "\n",
-                "   # Now can you figure out how to get the first AND third of your favorite numbers\n",
-                "   # in one query?\n",
-                "\n",
-                "# Exercise 2: Subsetting Vectors with Booleans\n",
-                "   # Now suppose you only want the big values of `my_favorite_numbers`.\n",
-                "   # First, let's make a vector of true/false logical vectors. Try running\n",
-                "   # `big = my_favorite_numbers > 5`. If you look at `big`, do the values make\n",
-                "   # sense?\n",
-                "\n",
-                "   # Now try using `big` to get only the values of `my_favorite_numbers` that\n",
-                "   # are big back by typing `my_favorite_numbers[big]`\n",
-                "\n",
-                "   # OK, now try and get the values of `my_favorite_numbers` that are\n",
-                "   # bigger than the average of `my_favorite_numbers`. (Recall you can get the\n",
-                "   # average of a vector with the `mean` function).\n",
-                "```"
-            ],
-            "metadata": {}
-        },
-        {
-            "cell_type": "markdown",
-            "source": [
-                "```\n",
-                "\n",
-                "###########\n",
-                "# Remember those tricks we learned for subsetting vectors?\n",
-                "# We can use those to modify vectors too!\n",
-                "###########\n",
-                "\n",
-                "# when we use square brackets on the LEFT side of the assignment operator,\n",
-                "# we can actually modify parts of a vector.\n",
-                "\n",
-                "# For example, suppose you don't like the first favorite number in your\n",
-                "# `my_favorite_numbers` vector any more, and you want to replace it with -1.\n",
-                "# Try assigning -1 to the first item in `my_favorite_numbers`.\n",
-                "\n",
-                "# Now suppose you love -1 SO MUCH you want to assign it to the first THREE\n",
-                "# spots in `my_favorite_numbers`. Can you figure out how to do it?\n",
-                "\n",
-                "```"
-            ],
-            "metadata": {}
         }
     ],
     "metadata": {
@@ -167,7 +47,8 @@
         },
         "kernelspec": {
             "name": "ir",
-            "display_name": "R"
+            "display_name": "R",
+            "language": "R"
         }
     },
     "nbformat": 4,
