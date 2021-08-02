@@ -1,8 +1,9 @@
-Class Schedule and Curriculum
-=============================
+Class Schedule
+==============
+
+..  youtube:: zEw7fX9EnIs
 
 Class Zoom: `https://duke.zoom.us/j/99884547773 <https://duke.zoom.us/j/99884547773>`__
-
 
 Session 1: Variables & Vectors
 -------------------------------------------------
@@ -13,17 +14,17 @@ Session 1: Variables & Vectors
 
 - Welcome Video
 - `Student Knowledge Assessment survey <https://forms.gle/A2iSuLAn12LqzHx19>`__
-- `Review Course Summary <index.rst>`__
-- `Introduction to R <intro_to_r.ipynb>`__
-- `Intro to Data Types <into_to_datatypes.ipynb>`__
 - Accept Slack Invitation
+- `Review Course Summary <index.rst>`__
+- Read `Introduction to R <intro_to_r.ipynb>`__
+- Read `Intro to Data Types <into_to_datatypes.ipynb>`__
 
 **In Class**
 
 -  Welcome
 -  Why R?
 -  Course expectations
--  `Variable Assignment / Vector Exercises <exercises/exercise_types.ipynb>`__
+-  `Variable Assignment / Data Type Exercises <exercises/exercise_datatypes.ipynb>`__
 
 Session 2: Generalizing Vectors
 -------------------------------------------------

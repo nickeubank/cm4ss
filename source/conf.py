@@ -44,6 +44,7 @@ extensions = [
     "sphinx.ext.mathjax",
     "sphinx.ext.githubpages",
     "nbsphinx",
+    "sphinxcontrib.youtube",
 ]
 
 # Add any paths that contain templates here, relative to this directory.

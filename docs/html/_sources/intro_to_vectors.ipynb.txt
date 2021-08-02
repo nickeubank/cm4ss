@@ -947,7 +947,7 @@
   {
    "cell_type": "markdown",
    "source": [
-    "Why did R convert `42` to `\"42\"` and not convert `\"Nick\"` to a numeric type? Well because `\"Nick\"` can be represented as a numeric type in any meaningful sense while any number (like `42`) can always be represented as a character in a meaningful way.\n",
+    "Why did R convert `42` to `\"42\"` and not convert `\"Nick\"` to a numeric type? Well because `\"Nick\"` can't be represented as a numeric type in any meaningful sense while any number (like `42`) can always be represented as a character in a meaningful way.\n",
     "\n",
     "Indeed, there's a hierarchy of data types, where a type lower on the hierarchy can **always** be converted into something higher in the order, but not the other way around. That hierarchy is:\n",
     "\n",
