@@ -40,9 +40,8 @@ Session 2: Generalizing Vectors
 
 **In Class**
 
--  Data Types
--  Subsetting Vectors
--  Matrices and Linear Algebra
+-  `Vector Exercises <exercises/exercise_vectors.ipynb>`__
+-  `Matrix Exercises <exercises/exercise_matrices.ipynb>`__
 
 
 Session 3: Data Wrangling
@@ -58,8 +57,7 @@ Session 3: Data Wrangling
 
 **In Class**
 
-- Data Frames
-- Data Wrangling with `dplyr`
+- `Data Frame Exercises <exercises/exercise_dataframe.ipynb>`__
 
 
 Session 4: Merging and Aggregating
