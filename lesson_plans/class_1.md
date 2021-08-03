@@ -19,6 +19,10 @@ Welcome
   - May feel a little removed from social science applications up front, but stick with me -- we'll get there by lesson 3. 
   - Even if you have used are in the past, my experience from teaching this class before is that students often leave the class feeling that they now understand *how* R works at a much deeper level. 
 
+## Learning
+
+- Don’t expect you to master all this. Syntax doesn't matter. 
+
 ## Variable assignment
 - Variables are just labels on boxes we can put data in
 - Assignment is where we tell R to put data in a specific box
@@ -26,6 +30,7 @@ Welcome
 - Talk about order of execution
 
 ## Vectors
+
 - Vectors are the building blocks of R!
 - Collection of data with a concept of order. 
 - All entries of the same type. 

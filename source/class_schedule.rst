@@ -88,13 +88,12 @@ Session 5: Plotting, Loops and Functions
 **Read Before Class:**
 
 -  `Loops <loops.ipynb>`__
--  `Functions <functions.ipynb>`__
 -  Plotting with ggplot
 
 **In Class**
 
 -  Loops
--  Functions and return values
+-  Plotting with ggplot
 
 
 Further Reading: Collapsing Data
@@ -103,5 +102,6 @@ Further Reading: Collapsing Data
 'Cause we certainly didn't cover everything about R in five sessions!
 
 - `Lists <lists.ipynb>`__
+-  `Functions <functions.ipynb>`__
 - `Collapsing Data <collapsing_data.ipynb>`__
 - `Wide and Long Data <wide_and_long_data.ipynb>`__

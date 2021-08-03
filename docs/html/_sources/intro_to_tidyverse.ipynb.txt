@@ -97,15 +97,6 @@
    "metadata": {}
   },
   {
-   "cell_type": "code",
-   "execution_count": 5,
-   "source": [
-    "library(dplyr)"
-   ],
-   "outputs": [],
-   "metadata": {}
-  },
-  {
    "cell_type": "markdown",
    "source": [
     "## Chaining\n",
@@ -136,9 +127,19 @@
    "metadata": {}
   },
   {
-   "cell_type": "code",
-   "execution_count": 6,
+   "cell_type": "markdown",
    "source": [
+    "Suppose we wanted to use `countries` to create a new data frame called `countries_new`, which should have observations from years 1995 and 1996 (dropping 1994), should be sorted by country name (in lower case), and should have a new variable equal to GDP per capita in 1000s.\n",
+    "\n",
+    "Here's how we could do this with dplyr commands, but without chaining: "
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "source": [
+    "library(dplyr)\n",
     "country <- rep(c(\"USA\", \"China\", \"Sudan\"), 3)\n",
     "year <- c(1994, 1994, 1994, 1995, 1995, 1995, 1996, 1996, 1996)\n",
     "gdp_pc <- round(runif(9, 1000, 20000))\n",
@@ -152,15 +153,15 @@
      "data": {
       "text/plain": [
        "  country year gdp_pc\n",
-       "1 USA     1994 16407 \n",
-       "2 China   1994 10208 \n",
-       "3 Sudan   1994 17065 \n",
-       "4 USA     1995  1203 \n",
-       "5 China   1995  4587 \n",
-       "6 Sudan   1995 10505 \n",
-       "7 USA     1996 10355 \n",
-       "8 China   1996  9900 \n",
-       "9 Sudan   1996 15057 "
+       "1 USA     1994 17037 \n",
+       "2 China   1994  6087 \n",
+       "3 Sudan   1994  8358 \n",
+       "4 USA     1995  8361 \n",
+       "5 China   1995 17604 \n",
+       "6 Sudan   1995 16169 \n",
+       "7 USA     1996 13535 \n",
+       "8 China   1996  4386 \n",
+       "9 Sudan   1996 16923 "
       ],
       "text/markdown": [
        "\n",
@@ -168,15 +169,15 @@
        "\n",
        "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|\n",
-       "| USA   | 1994 | 16407 |\n",
-       "| China | 1994 | 10208 |\n",
-       "| Sudan | 1994 | 17065 |\n",
-       "| USA   | 1995 |  1203 |\n",
-       "| China | 1995 |  4587 |\n",
-       "| Sudan | 1995 | 10505 |\n",
-       "| USA   | 1996 | 10355 |\n",
-       "| China | 1996 |  9900 |\n",
-       "| Sudan | 1996 | 15057 |\n",
+       "| USA   | 1994 | 17037 |\n",
+       "| China | 1994 |  6087 |\n",
+       "| Sudan | 1994 |  8358 |\n",
+       "| USA   | 1995 |  8361 |\n",
+       "| China | 1995 | 17604 |\n",
+       "| Sudan | 1995 | 16169 |\n",
+       "| USA   | 1996 | 13535 |\n",
+       "| China | 1996 |  4386 |\n",
+       "| Sudan | 1996 | 16923 |\n",
        "\n"
       ],
       "text/latex": [
@@ -185,15 +186,15 @@
        " country & year & gdp\\_pc\\\\\n",
        " <chr> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t USA   & 1994 & 16407\\\\\n",
-       "\t China & 1994 & 10208\\\\\n",
-       "\t Sudan & 1994 & 17065\\\\\n",
-       "\t USA   & 1995 &  1203\\\\\n",
-       "\t China & 1995 &  4587\\\\\n",
-       "\t Sudan & 1995 & 10505\\\\\n",
-       "\t USA   & 1996 & 10355\\\\\n",
-       "\t China & 1996 &  9900\\\\\n",
-       "\t Sudan & 1996 & 15057\\\\\n",
+       "\t USA   & 1994 & 17037\\\\\n",
+       "\t China & 1994 &  6087\\\\\n",
+       "\t Sudan & 1994 &  8358\\\\\n",
+       "\t USA   & 1995 &  8361\\\\\n",
+       "\t China & 1995 & 17604\\\\\n",
+       "\t Sudan & 1995 & 16169\\\\\n",
+       "\t USA   & 1996 & 13535\\\\\n",
+       "\t China & 1996 &  4386\\\\\n",
+       "\t Sudan & 1996 & 16923\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -204,30 +205,21 @@
        "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td>16407</td></tr>\n",
-       "\t<tr><td>China</td><td>1994</td><td>10208</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td>17065</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td> 1203</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td> 4587</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>10505</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td>10355</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td> 9900</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td>15057</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td>17037</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td> 6087</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td> 8358</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td> 8361</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td>17604</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>16169</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td>13535</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 4386</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td>16923</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
      },
      "metadata": {}
     }
-   ],
-   "metadata": {}
-  },
-  {
-   "cell_type": "markdown",
-   "source": [
-    "Suppose we wanted to use `countries` to create a new data frame called `countries_new`, which should have observations from years 1995 and 1996 (dropping 1994), should be sorted by country name (in lower case), and should have a new variable equal to GDP per capita in 1000s.\n",
-    "\n",
-    "Here's how we could do this with dplyr commands, but without chaining: "
    ],
    "metadata": {}
   },
@@ -403,13 +395,362 @@
   {
    "cell_type": "markdown",
    "source": [
+    "## WARNING: Non-standard Evaluation in the Tidyverse\n",
+    "\n",
+    "One feature of the tidyverse syntax that may not immediately jump out at you but which is important to bear in mind is that it makes use of something called \"non-standard evaluation.\"\n",
+    "\n",
+    "Normally in a programming language like R, text sitting on its own is interpreted as a variable, and the first thing the language does is replace the variable with the data assigned to that variable. For example, in the second line of the code below, R sees `a`, interprets it as a variable, and so replaces it with `7` when evaluating the expression. "
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "source": [
+    "a <- 7\n",
+    "6 * a"
+   ],
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[1] 42"
+      ],
+      "text/markdown": [
+       "42"
+      ],
+      "text/latex": [
+       "42"
+      ],
+      "text/html": [
+       "42"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "When you have text you want the computer to think of as *data* and not as a variable, you normally have to put it in quotes (e.g. \"this is data, not a bunch of variables!\").\n",
+    "\n",
+    "But this is not true of most dplyr functions. Instead, inside a dplyr function, text is interpreted as *data*, not as variables. To illustrate, consider the following to ways of subsetting some data, one with normal R syntax, and one with dplyr syntax:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "source": [
+    "# Regular\n",
+    "countries[, \"country\"]"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "[1] \"USA\"   \"China\" \"Sudan\" \"USA\"   \"China\" \"Sudan\" \"USA\"   \"China\" \"Sudan\""
+      ],
+      "text/markdown": [
+       "1. 'USA'\n",
+       "2. 'China'\n",
+       "3. 'Sudan'\n",
+       "4. 'USA'\n",
+       "5. 'China'\n",
+       "6. 'Sudan'\n",
+       "7. 'USA'\n",
+       "8. 'China'\n",
+       "9. 'Sudan'\n",
+       "\n",
+       "\n"
+      ],
+      "text/latex": [
+       "\\begin{enumerate*}\n",
+       "\\item 'USA'\n",
+       "\\item 'China'\n",
+       "\\item 'Sudan'\n",
+       "\\item 'USA'\n",
+       "\\item 'China'\n",
+       "\\item 'Sudan'\n",
+       "\\item 'USA'\n",
+       "\\item 'China'\n",
+       "\\item 'Sudan'\n",
+       "\\end{enumerate*}\n"
+      ],
+      "text/html": [
+       "<style>\n",
+       ".list-inline {list-style: none; margin:0; padding: 0}\n",
+       ".list-inline>li {display: inline-block}\n",
+       ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+       "</style>\n",
+       "<ol class=list-inline><li>'USA'</li><li>'China'</li><li>'Sudan'</li><li>'USA'</li><li>'China'</li><li>'Sudan'</li><li>'USA'</li><li>'China'</li><li>'Sudan'</li></ol>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "source": [
+    "#dplyr \n",
+    "select(countries, country)"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  country\n",
+       "1 USA    \n",
+       "2 China  \n",
+       "3 Sudan  \n",
+       "4 USA    \n",
+       "5 China  \n",
+       "6 Sudan  \n",
+       "7 USA    \n",
+       "8 China  \n",
+       "9 Sudan  "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 9 × 1\n",
+       "\n",
+       "| country &lt;chr&gt; |\n",
+       "|---|\n",
+       "| USA   |\n",
+       "| China |\n",
+       "| Sudan |\n",
+       "| USA   |\n",
+       "| China |\n",
+       "| Sudan |\n",
+       "| USA   |\n",
+       "| China |\n",
+       "| Sudan |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 9 × 1\n",
+       "\\begin{tabular}{l}\n",
+       " country\\\\\n",
+       " <chr>\\\\\n",
+       "\\hline\n",
+       "\t USA  \\\\\n",
+       "\t China\\\\\n",
+       "\t Sudan\\\\\n",
+       "\t USA  \\\\\n",
+       "\t China\\\\\n",
+       "\t Sudan\\\\\n",
+       "\t USA  \\\\\n",
+       "\t China\\\\\n",
+       "\t Sudan\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 9 × 1</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th></tr>\n",
+       "\t<tr><th scope=col>&lt;chr&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>USA  </td></tr>\n",
+       "\t<tr><td>China</td></tr>\n",
+       "\t<tr><td>Sudan</td></tr>\n",
+       "\t<tr><td>USA  </td></tr>\n",
+       "\t<tr><td>China</td></tr>\n",
+       "\t<tr><td>Sudan</td></tr>\n",
+       "\t<tr><td>USA  </td></tr>\n",
+       "\t<tr><td>China</td></tr>\n",
+       "\t<tr><td>Sudan</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "Within `select`, the text `country` is assumed to be data, namely the name of a column you want to subset. \n",
+    "\n",
+    "For normal scripting, this can save you some typing. But it does make it harder to use variables in your expressions, which will come up later when we talk about loops and functions. e.g. with normal syntax I can write:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "source": [
+    "column_to_keep <- \"country\"\n",
+    "countries[, column_to_keep]"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "[1] \"USA\"   \"China\" \"Sudan\" \"USA\"   \"China\" \"Sudan\" \"USA\"   \"China\" \"Sudan\""
+      ],
+      "text/markdown": [
+       "1. 'USA'\n",
+       "2. 'China'\n",
+       "3. 'Sudan'\n",
+       "4. 'USA'\n",
+       "5. 'China'\n",
+       "6. 'Sudan'\n",
+       "7. 'USA'\n",
+       "8. 'China'\n",
+       "9. 'Sudan'\n",
+       "\n",
+       "\n"
+      ],
+      "text/latex": [
+       "\\begin{enumerate*}\n",
+       "\\item 'USA'\n",
+       "\\item 'China'\n",
+       "\\item 'Sudan'\n",
+       "\\item 'USA'\n",
+       "\\item 'China'\n",
+       "\\item 'Sudan'\n",
+       "\\item 'USA'\n",
+       "\\item 'China'\n",
+       "\\item 'Sudan'\n",
+       "\\end{enumerate*}\n"
+      ],
+      "text/html": [
+       "<style>\n",
+       ".list-inline {list-style: none; margin:0; padding: 0}\n",
+       ".list-inline>li {display: inline-block}\n",
+       ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+       "</style>\n",
+       "<ol class=list-inline><li>'USA'</li><li>'China'</li><li>'Sudan'</li><li>'USA'</li><li>'China'</li><li>'Sudan'</li><li>'USA'</li><li>'China'</li><li>'Sudan'</li></ol>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "While to do the same thing in dplyr, I have to tell dplyr I *don't* want my text to be interpreted as data, I want it interpreted as a variable:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "source": [
+    "select(countries, .data[[column_to_keep]])"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  country\n",
+       "1 USA    \n",
+       "2 China  \n",
+       "3 Sudan  \n",
+       "4 USA    \n",
+       "5 China  \n",
+       "6 Sudan  \n",
+       "7 USA    \n",
+       "8 China  \n",
+       "9 Sudan  "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 9 × 1\n",
+       "\n",
+       "| country &lt;chr&gt; |\n",
+       "|---|\n",
+       "| USA   |\n",
+       "| China |\n",
+       "| Sudan |\n",
+       "| USA   |\n",
+       "| China |\n",
+       "| Sudan |\n",
+       "| USA   |\n",
+       "| China |\n",
+       "| Sudan |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 9 × 1\n",
+       "\\begin{tabular}{l}\n",
+       " country\\\\\n",
+       " <chr>\\\\\n",
+       "\\hline\n",
+       "\t USA  \\\\\n",
+       "\t China\\\\\n",
+       "\t Sudan\\\\\n",
+       "\t USA  \\\\\n",
+       "\t China\\\\\n",
+       "\t Sudan\\\\\n",
+       "\t USA  \\\\\n",
+       "\t China\\\\\n",
+       "\t Sudan\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 9 × 1</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th></tr>\n",
+       "\t<tr><th scope=col>&lt;chr&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>USA  </td></tr>\n",
+       "\t<tr><td>China</td></tr>\n",
+       "\t<tr><td>Sudan</td></tr>\n",
+       "\t<tr><td>USA  </td></tr>\n",
+       "\t<tr><td>China</td></tr>\n",
+       "\t<tr><td>Sudan</td></tr>\n",
+       "\t<tr><td>USA  </td></tr>\n",
+       "\t<tr><td>China</td></tr>\n",
+       "\t<tr><td>Sudan</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "Anyway, both approaches work, but it can be confusing for students when the fundamental way the program works changes, so I want to make sure to flag it explicitly!\n",
+    "\n",
+    "It's also worth noting that this is one of the reasons not everyone loves the tidyverse -- in addition to replacing array indexing with a collection of distinct functions, in this sense it is also modifying how the language works in a very fundamental way, which can cause a lot of confusion. As an instructor, I can say from experience it's definitely hard teaching students that the language works one way **except** if you're using functions from this handful of popular libraries.\n",
+    "\n",
+    "(Addendum: The people in the tidyverse call this [\"tidy evaluation\"](https://dplyr.tidyverse.org/articles/programming.html) and say it's not \"non-standard evaluation\" but... it's not standard, so... I'm ok with calling it non-standard evaluation. The term may have a special meaning to people who study compilers? Anyway...)"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
     "## Summing Up\n",
     "\n",
     "In conclusion, dplyr allows you to write more concise commands with more familiar terminology -- `select` and `filter` rather than array notation. Chaining, similarly, can definitely make code more concise. As a result, many people are drawn to dplyr, and you may be too!\n",
     "\n",
-    "So should you use it? Well, first of all, this isn't a yes or no question -- you may decide there are a couple `dplyr` functions you really love, but that you don't like all of them. \n",
+    "So should you use it? Well, first of all, this isn't a yes or no question -- you may decide there are a couple `dplyr` functions you really love, but that you don't like all of them.\n",
     "\n",
-    "But more generally, at this point you know enough about the different approaches to dataframe manipulation that you can make your own educated decision, and change that decision in the future if you want! So go forth and explore. :) \n",
+    "But more generally, at this point you know enough about the different approaches to dataframe manipulation, and how tidyverse modifies how R works, that you can make your own educated decision. And you're also free to change that decision in the future if you want! So go forth and explore. :)\n",
     "\n",
     "### Want to Learn More?\n",
     "\n",
