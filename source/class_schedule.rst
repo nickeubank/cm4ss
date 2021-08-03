@@ -34,9 +34,9 @@ Session 2: Generalizing Vectors
 **Read Before Class:**
 
 -  `Intro to Vectors <intro_to_vectors.ipynb>`__
--  `Subsetting Vectors <subsetting_vectors.ipynb>`__
+-  `Manipulating Vectors <manipulating_vectors.ipynb>`__
 -  `Intro to Matrices <intro_to_matrices.ipynb>`__
--  `Subsetting Matrices <subsetting_matrices.ipynb>`__
+-  `Manipulating Matrices <manipulating_matrices.ipynb>`__
 
 **In Class**
 
