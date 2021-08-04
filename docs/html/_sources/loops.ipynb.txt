@@ -39,7 +39,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 60,
+   "execution_count": 1,
    "source": [
     "names <- c(\"Yi\", \"Zoe\", \"Ishani\", \"Kelly\")"
    ],
@@ -63,7 +63,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 61,
+   "execution_count": 2,
    "source": [
     "for (i in names) {\n",
     "    print(i)\n",
@@ -94,7 +94,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 62,
+   "execution_count": 3,
    "source": [
     "# Set `i` to first entry in `names`\n",
     "# When we put this inside the loop,\n",
@@ -127,7 +127,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 63,
+   "execution_count": 4,
    "source": [
     "for (i in names) {\n",
     "    message <- paste0(\"Thank you \", i,\n",
@@ -209,7 +209,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 64,
+   "execution_count": 5,
    "source": [
     "for (i in 1:5) {\n",
     "    print(i)\n",
@@ -243,7 +243,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 65,
+   "execution_count": 6,
    "source": [
     "a <- 5\n",
     "\n",
@@ -264,7 +264,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 66,
+   "execution_count": 7,
    "source": [
     "a <- 5\n",
     "\n",
@@ -284,7 +284,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 67,
+   "execution_count": 8,
    "source": [
     "a <- 5\n",
     "\n",
@@ -307,7 +307,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 68,
+   "execution_count": 9,
    "source": [
     "a <- 20\n",
     "\n",
@@ -337,7 +337,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 69,
+   "execution_count": 10,
    "source": [
     "files <- c(\"data12.txt\", \"code38978.R\", \"data_2021_08_01.dta\",\n",
     "           \"data_123.csv\", \"code13.R\")\n",
@@ -382,7 +382,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 70,
+   "execution_count": 11,
    "source": [
     "# Our sum:\n",
     "sum <- 0\n",
@@ -432,13 +432,13 @@
     "\n",
     "This becomes important when writing loops because in loops, we need to use variables!\n",
     "\n",
-    "To get around this, with tidyverse functions we can wrap our text in `.data[[]]` **if that text refers to a column name** to ensure it's interpreted as a variable and not a literal value. For example:"
+    "To get around this, there are some hacks to make tidyverse work with loops. For example, we can wrap our text in `.data[[]]` if that text refers to a column name to ensure it's interpreted as a variable and not a literal value. For example:"
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 71,
+   "execution_count": 12,
    "source": [
     "library(dplyr)\n",
     "country <- rep(c(\"USA\", \"China\", \"Sudan\"), 3)\n",
@@ -452,19 +452,39 @@
    ],
    "outputs": [
     {
+     "output_type": "stream",
+     "name": "stderr",
+     "text": [
+      "\n",
+      "Attaching package: 'dplyr'\n",
+      "\n",
+      "\n",
+      "The following objects are masked from 'package:stats':\n",
+      "\n",
+      "    filter, lag\n",
+      "\n",
+      "\n",
+      "The following objects are masked from 'package:base':\n",
+      "\n",
+      "    intersect, setdiff, setequal, union\n",
+      "\n",
+      "\n"
+     ]
+    },
+    {
      "output_type": "display_data",
      "data": {
       "text/plain": [
        "  country year gdp_pc_2008 gdp_pc_2010 gdp_pc_2012\n",
-       "1 USA     1994  7938       12273       18322      \n",
-       "2 China   1994 18114       10415       16252      \n",
-       "3 Sudan   1994 19256       15363       18556      \n",
-       "4 USA     1995 13927       18068        4509      \n",
-       "5 China   1995 15264       18078        9752      \n",
-       "6 Sudan   1995 11154       18947       17991      \n",
-       "7 USA     1996  4515        9753       10046      \n",
-       "8 China   1996 19349        9594       15684      \n",
-       "9 Sudan   1996 13740       12172        8970      "
+       "1 USA     1994 18142       18778        3246      \n",
+       "2 China   1994  8573        3339       11562      \n",
+       "3 Sudan   1994  5199       19910       11370      \n",
+       "4 USA     1995 18628       17827       11375      \n",
+       "5 China   1995  8039       13211       14396      \n",
+       "6 Sudan   1995 16518       12017       12923      \n",
+       "7 USA     1996  2137       10247       15444      \n",
+       "8 China   1996 12667        4412        3713      \n",
+       "9 Sudan   1996 18298        8967        7706      "
       ],
       "text/markdown": [
        "\n",
@@ -472,15 +492,15 @@
        "\n",
        "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc_2008 &lt;dbl&gt; | gdp_pc_2010 &lt;dbl&gt; | gdp_pc_2012 &lt;dbl&gt; |\n",
        "|---|---|---|---|---|\n",
-       "| USA   | 1994 |  7938 | 12273 | 18322 |\n",
-       "| China | 1994 | 18114 | 10415 | 16252 |\n",
-       "| Sudan | 1994 | 19256 | 15363 | 18556 |\n",
-       "| USA   | 1995 | 13927 | 18068 |  4509 |\n",
-       "| China | 1995 | 15264 | 18078 |  9752 |\n",
-       "| Sudan | 1995 | 11154 | 18947 | 17991 |\n",
-       "| USA   | 1996 |  4515 |  9753 | 10046 |\n",
-       "| China | 1996 | 19349 |  9594 | 15684 |\n",
-       "| Sudan | 1996 | 13740 | 12172 |  8970 |\n",
+       "| USA   | 1994 | 18142 | 18778 |  3246 |\n",
+       "| China | 1994 |  8573 |  3339 | 11562 |\n",
+       "| Sudan | 1994 |  5199 | 19910 | 11370 |\n",
+       "| USA   | 1995 | 18628 | 17827 | 11375 |\n",
+       "| China | 1995 |  8039 | 13211 | 14396 |\n",
+       "| Sudan | 1995 | 16518 | 12017 | 12923 |\n",
+       "| USA   | 1996 |  2137 | 10247 | 15444 |\n",
+       "| China | 1996 | 12667 |  4412 |  3713 |\n",
+       "| Sudan | 1996 | 18298 |  8967 |  7706 |\n",
        "\n"
       ],
       "text/latex": [
@@ -489,15 +509,15 @@
        " country & year & gdp\\_pc\\_2008 & gdp\\_pc\\_2010 & gdp\\_pc\\_2012\\\\\n",
        " <chr> & <dbl> & <dbl> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t USA   & 1994 &  7938 & 12273 & 18322\\\\\n",
-       "\t China & 1994 & 18114 & 10415 & 16252\\\\\n",
-       "\t Sudan & 1994 & 19256 & 15363 & 18556\\\\\n",
-       "\t USA   & 1995 & 13927 & 18068 &  4509\\\\\n",
-       "\t China & 1995 & 15264 & 18078 &  9752\\\\\n",
-       "\t Sudan & 1995 & 11154 & 18947 & 17991\\\\\n",
-       "\t USA   & 1996 &  4515 &  9753 & 10046\\\\\n",
-       "\t China & 1996 & 19349 &  9594 & 15684\\\\\n",
-       "\t Sudan & 1996 & 13740 & 12172 &  8970\\\\\n",
+       "\t USA   & 1994 & 18142 & 18778 &  3246\\\\\n",
+       "\t China & 1994 &  8573 &  3339 & 11562\\\\\n",
+       "\t Sudan & 1994 &  5199 & 19910 & 11370\\\\\n",
+       "\t USA   & 1995 & 18628 & 17827 & 11375\\\\\n",
+       "\t China & 1995 &  8039 & 13211 & 14396\\\\\n",
+       "\t Sudan & 1995 & 16518 & 12017 & 12923\\\\\n",
+       "\t USA   & 1996 &  2137 & 10247 & 15444\\\\\n",
+       "\t China & 1996 & 12667 &  4412 &  3713\\\\\n",
+       "\t Sudan & 1996 & 18298 &  8967 &  7706\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -508,15 +528,15 @@
        "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td> 7938</td><td>12273</td><td>18322</td></tr>\n",
-       "\t<tr><td>China</td><td>1994</td><td>18114</td><td>10415</td><td>16252</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td>19256</td><td>15363</td><td>18556</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td>13927</td><td>18068</td><td> 4509</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td>15264</td><td>18078</td><td> 9752</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>11154</td><td>18947</td><td>17991</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 4515</td><td> 9753</td><td>10046</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td>19349</td><td> 9594</td><td>15684</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td>13740</td><td>12172</td><td> 8970</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td>18142</td><td>18778</td><td> 3246</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td> 8573</td><td> 3339</td><td>11562</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td> 5199</td><td>19910</td><td>11370</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td>18628</td><td>17827</td><td>11375</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td> 8039</td><td>13211</td><td>14396</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>16518</td><td>12017</td><td>12923</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td> 2137</td><td>10247</td><td>15444</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td>12667</td><td> 4412</td><td> 3713</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td>18298</td><td> 8967</td><td> 7706</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -528,7 +548,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 72,
+   "execution_count": 13,
    "source": [
     "# Convert all gdp_pc quantities to 1,000s of dollars\n",
     "\n",
@@ -545,15 +565,15 @@
      "data": {
       "text/plain": [
        "  country year gdp_pc_2008 gdp_pc_2010 gdp_pc_2012\n",
-       "1 USA     1994  7.938      12.273      18.322     \n",
-       "2 China   1994 18.114      10.415      16.252     \n",
-       "3 Sudan   1994 19.256      15.363      18.556     \n",
-       "4 USA     1995 13.927      18.068       4.509     \n",
-       "5 China   1995 15.264      18.078       9.752     \n",
-       "6 Sudan   1995 11.154      18.947      17.991     \n",
-       "7 USA     1996  4.515       9.753      10.046     \n",
-       "8 China   1996 19.349       9.594      15.684     \n",
-       "9 Sudan   1996 13.740      12.172       8.970     "
+       "1 USA     1994 18.142      18.778       3.246     \n",
+       "2 China   1994  8.573       3.339      11.562     \n",
+       "3 Sudan   1994  5.199      19.910      11.370     \n",
+       "4 USA     1995 18.628      17.827      11.375     \n",
+       "5 China   1995  8.039      13.211      14.396     \n",
+       "6 Sudan   1995 16.518      12.017      12.923     \n",
+       "7 USA     1996  2.137      10.247      15.444     \n",
+       "8 China   1996 12.667       4.412       3.713     \n",
+       "9 Sudan   1996 18.298       8.967       7.706     "
       ],
       "text/markdown": [
        "\n",
@@ -561,15 +581,15 @@
        "\n",
        "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc_2008 &lt;dbl&gt; | gdp_pc_2010 &lt;dbl&gt; | gdp_pc_2012 &lt;dbl&gt; |\n",
        "|---|---|---|---|---|\n",
-       "| USA   | 1994 |  7.938 | 12.273 | 18.322 |\n",
-       "| China | 1994 | 18.114 | 10.415 | 16.252 |\n",
-       "| Sudan | 1994 | 19.256 | 15.363 | 18.556 |\n",
-       "| USA   | 1995 | 13.927 | 18.068 |  4.509 |\n",
-       "| China | 1995 | 15.264 | 18.078 |  9.752 |\n",
-       "| Sudan | 1995 | 11.154 | 18.947 | 17.991 |\n",
-       "| USA   | 1996 |  4.515 |  9.753 | 10.046 |\n",
-       "| China | 1996 | 19.349 |  9.594 | 15.684 |\n",
-       "| Sudan | 1996 | 13.740 | 12.172 |  8.970 |\n",
+       "| USA   | 1994 | 18.142 | 18.778 |  3.246 |\n",
+       "| China | 1994 |  8.573 |  3.339 | 11.562 |\n",
+       "| Sudan | 1994 |  5.199 | 19.910 | 11.370 |\n",
+       "| USA   | 1995 | 18.628 | 17.827 | 11.375 |\n",
+       "| China | 1995 |  8.039 | 13.211 | 14.396 |\n",
+       "| Sudan | 1995 | 16.518 | 12.017 | 12.923 |\n",
+       "| USA   | 1996 |  2.137 | 10.247 | 15.444 |\n",
+       "| China | 1996 | 12.667 |  4.412 |  3.713 |\n",
+       "| Sudan | 1996 | 18.298 |  8.967 |  7.706 |\n",
        "\n"
       ],
       "text/latex": [
@@ -578,15 +598,15 @@
        " country & year & gdp\\_pc\\_2008 & gdp\\_pc\\_2010 & gdp\\_pc\\_2012\\\\\n",
        " <chr> & <dbl> & <dbl> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t USA   & 1994 &  7.938 & 12.273 & 18.322\\\\\n",
-       "\t China & 1994 & 18.114 & 10.415 & 16.252\\\\\n",
-       "\t Sudan & 1994 & 19.256 & 15.363 & 18.556\\\\\n",
-       "\t USA   & 1995 & 13.927 & 18.068 &  4.509\\\\\n",
-       "\t China & 1995 & 15.264 & 18.078 &  9.752\\\\\n",
-       "\t Sudan & 1995 & 11.154 & 18.947 & 17.991\\\\\n",
-       "\t USA   & 1996 &  4.515 &  9.753 & 10.046\\\\\n",
-       "\t China & 1996 & 19.349 &  9.594 & 15.684\\\\\n",
-       "\t Sudan & 1996 & 13.740 & 12.172 &  8.970\\\\\n",
+       "\t USA   & 1994 & 18.142 & 18.778 &  3.246\\\\\n",
+       "\t China & 1994 &  8.573 &  3.339 & 11.562\\\\\n",
+       "\t Sudan & 1994 &  5.199 & 19.910 & 11.370\\\\\n",
+       "\t USA   & 1995 & 18.628 & 17.827 & 11.375\\\\\n",
+       "\t China & 1995 &  8.039 & 13.211 & 14.396\\\\\n",
+       "\t Sudan & 1995 & 16.518 & 12.017 & 12.923\\\\\n",
+       "\t USA   & 1996 &  2.137 & 10.247 & 15.444\\\\\n",
+       "\t China & 1996 & 12.667 &  4.412 &  3.713\\\\\n",
+       "\t Sudan & 1996 & 18.298 &  8.967 &  7.706\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -597,15 +617,15 @@
        "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td> 7.938</td><td>12.273</td><td>18.322</td></tr>\n",
-       "\t<tr><td>China</td><td>1994</td><td>18.114</td><td>10.415</td><td>16.252</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td>19.256</td><td>15.363</td><td>18.556</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td>13.927</td><td>18.068</td><td> 4.509</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td>15.264</td><td>18.078</td><td> 9.752</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>11.154</td><td>18.947</td><td>17.991</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 4.515</td><td> 9.753</td><td>10.046</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td>19.349</td><td> 9.594</td><td>15.684</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td>13.740</td><td>12.172</td><td> 8.970</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td>18.142</td><td>18.778</td><td> 3.246</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td> 8.573</td><td> 3.339</td><td>11.562</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td> 5.199</td><td>19.910</td><td>11.370</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td>18.628</td><td>17.827</td><td>11.375</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td> 8.039</td><td>13.211</td><td>14.396</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>16.518</td><td>12.017</td><td>12.923</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td> 2.137</td><td>10.247</td><td>15.444</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td>12.667</td><td> 4.412</td><td> 3.713</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td>18.298</td><td> 8.967</td><td> 7.706</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -618,7 +638,7 @@
   {
    "cell_type": "markdown",
    "source": [
-    "But that trick doesn't always work... sometimes you have to do even weirder stuff. For example, if wanted to do this with `mutate` I couldn't use `.data[[c]]` for the name of the new column:\n",
+    "Of course, that trick doesn't solve all problems from looping over things in the tidyverse... For example, if wanted to do this with `mutate` I couldn't use `.data[[c]]` for the name of the new column:\n",
     "\n",
     "```r\n",
     "for (c in c(\"gdp_pc_2008\", \"gdp_pc_2010\", \"gdp_pc_2012\")) {\n",
@@ -641,104 +661,26 @@
   {
    "cell_type": "markdown",
    "source": [
-    "To get it to work, I have to use another helper function -- `!!var()` and `:=` like this:"
+    "And this is one of the reasons that it's good not to become *over-reliant* on tidyverse libraries -- for basic scripting they can be very convenient, but it's important to be comfortable with traditional tools like array indexing when things break down.\n",
+    "\n",
+    "BTW: obviously the looping example above is contrived. The much more concise way to do what the loop above does is:"
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 73,
+   "execution_count": 14,
    "source": [
-    "# Make clean copy\n",
-    "countries <- data.frame(country, year, gdp_pc_2008, gdp_pc_2010, gdp_pc_2012)\n",
-    "\n",
-    "for (c in c(\"gdp_pc_2008\", \"gdp_pc_2010\", \"gdp_pc_2012\")) {\n",
-    "    countries <- mutate(countries, !!sym(c) := .data[[c]] / 1000)\n",
-    "}\n",
-    "countries"
+    "columns <- c(\"gdp_pc_2008\", \"gdp_pc_2010\", \"gdp_pc_2012\")\n",
+    "countries[columns] <- countries[columns] / 1000"
    ],
-   "outputs": [
-    {
-     "output_type": "display_data",
-     "data": {
-      "text/plain": [
-       "  country year gdp_pc_2008 gdp_pc_2010 gdp_pc_2012\n",
-       "1 USA     1994  7.938      12.273      18.322     \n",
-       "2 China   1994 18.114      10.415      16.252     \n",
-       "3 Sudan   1994 19.256      15.363      18.556     \n",
-       "4 USA     1995 13.927      18.068       4.509     \n",
-       "5 China   1995 15.264      18.078       9.752     \n",
-       "6 Sudan   1995 11.154      18.947      17.991     \n",
-       "7 USA     1996  4.515       9.753      10.046     \n",
-       "8 China   1996 19.349       9.594      15.684     \n",
-       "9 Sudan   1996 13.740      12.172       8.970     "
-      ],
-      "text/markdown": [
-       "\n",
-       "A data.frame: 9 × 5\n",
-       "\n",
-       "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc_2008 &lt;dbl&gt; | gdp_pc_2010 &lt;dbl&gt; | gdp_pc_2012 &lt;dbl&gt; |\n",
-       "|---|---|---|---|---|\n",
-       "| USA   | 1994 |  7.938 | 12.273 | 18.322 |\n",
-       "| China | 1994 | 18.114 | 10.415 | 16.252 |\n",
-       "| Sudan | 1994 | 19.256 | 15.363 | 18.556 |\n",
-       "| USA   | 1995 | 13.927 | 18.068 |  4.509 |\n",
-       "| China | 1995 | 15.264 | 18.078 |  9.752 |\n",
-       "| Sudan | 1995 | 11.154 | 18.947 | 17.991 |\n",
-       "| USA   | 1996 |  4.515 |  9.753 | 10.046 |\n",
-       "| China | 1996 | 19.349 |  9.594 | 15.684 |\n",
-       "| Sudan | 1996 | 13.740 | 12.172 |  8.970 |\n",
-       "\n"
-      ],
-      "text/latex": [
-       "A data.frame: 9 × 5\n",
-       "\\begin{tabular}{lllll}\n",
-       " country & year & gdp\\_pc\\_2008 & gdp\\_pc\\_2010 & gdp\\_pc\\_2012\\\\\n",
-       " <chr> & <dbl> & <dbl> & <dbl> & <dbl>\\\\\n",
-       "\\hline\n",
-       "\t USA   & 1994 &  7.938 & 12.273 & 18.322\\\\\n",
-       "\t China & 1994 & 18.114 & 10.415 & 16.252\\\\\n",
-       "\t Sudan & 1994 & 19.256 & 15.363 & 18.556\\\\\n",
-       "\t USA   & 1995 & 13.927 & 18.068 &  4.509\\\\\n",
-       "\t China & 1995 & 15.264 & 18.078 &  9.752\\\\\n",
-       "\t Sudan & 1995 & 11.154 & 18.947 & 17.991\\\\\n",
-       "\t USA   & 1996 &  4.515 &  9.753 & 10.046\\\\\n",
-       "\t China & 1996 & 19.349 &  9.594 & 15.684\\\\\n",
-       "\t Sudan & 1996 & 13.740 & 12.172 &  8.970\\\\\n",
-       "\\end{tabular}\n"
-      ],
-      "text/html": [
-       "<table class=\"dataframe\">\n",
-       "<caption>A data.frame: 9 × 5</caption>\n",
-       "<thead>\n",
-       "\t<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>gdp_pc_2008</th><th scope=col>gdp_pc_2010</th><th scope=col>gdp_pc_2012</th></tr>\n",
-       "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
-       "</thead>\n",
-       "<tbody>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td> 7.938</td><td>12.273</td><td>18.322</td></tr>\n",
-       "\t<tr><td>China</td><td>1994</td><td>18.114</td><td>10.415</td><td>16.252</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td>19.256</td><td>15.363</td><td>18.556</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td>13.927</td><td>18.068</td><td> 4.509</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td>15.264</td><td>18.078</td><td> 9.752</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>11.154</td><td>18.947</td><td>17.991</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 4.515</td><td> 9.753</td><td>10.046</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td>19.349</td><td> 9.594</td><td>15.684</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td>13.740</td><td>12.172</td><td> 8.970</td></tr>\n",
-       "</tbody>\n",
-       "</table>\n"
-      ]
-     },
-     "metadata": {}
-    }
-   ],
+   "outputs": [],
    "metadata": {}
   },
   {
    "cell_type": "markdown",
    "source": [
-    "Anyway, maybe there's another, better way to do this, but... I haven't found it! \n",
-    "\n",
-    "And while I don't mean to editorialize too much, this is why you aren't supposed to mess with how a programming language works at the level of function evaluation -- it breaks all the other tools the language supports for composing sophisticated manipulations from more basic components! >:["
+    "But we *will* do some less-contrived looping over tidyverse functions in our exercises, so I wanted a simple example here. "
    ],
    "metadata": {}
   },
@@ -770,7 +712,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 74,
+   "execution_count": 15,
    "source": [
     "# Two random variables:\n",
     "v1 <- rnorm(10000000)\n",
@@ -797,7 +739,7 @@
      "data": {
       "text/plain": [
        "   user  system elapsed \n",
-       "  0.062   0.011   0.074 "
+       "  0.073   0.019   0.094 "
       ]
      },
      "metadata": {}
@@ -814,7 +756,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 75,
+   "execution_count": 16,
    "source": [
     "# Now add them up in a loop.\n",
     "\n",
@@ -839,7 +781,7 @@
      "data": {
       "text/plain": [
        "   user  system elapsed \n",
-       "  0.601   0.003   0.608 "
+       "  0.655   0.010   0.670 "
       ]
      },
      "metadata": {}
@@ -849,7 +791,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 76,
+   "execution_count": 17,
    "source": [
     "# Looped took about this many time longer:\n",
     "\n",
@@ -861,16 +803,16 @@
      "data": {
       "text/plain": [
        "user.self \n",
-       "     9.69 "
+       "     8.97 "
       ],
       "text/markdown": [
-       "**user.self:** 9.69"
+       "**user.self:** 8.97"
       ],
       "text/latex": [
-       "\\textbf{user.self:} 9.69"
+       "\\textbf{user.self:} 8.97"
       ],
       "text/html": [
-       "<strong>user.self:</strong> 9.69"
+       "<strong>user.self:</strong> 8.97"
       ]
      },
      "metadata": {}

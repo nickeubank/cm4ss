@@ -5,9 +5,6 @@
    "source": [
     "# Merging & Appending\n",
     "\n",
-    "**PRELIMINARY SITE DRAFT. MUCH WORK TO BE DONE!**\n",
-    "\n",
-    "\n",
     "This tutorial explains how to combine datasets by merging or appending them. Merging means transferring *columns* from one dataset to another, while appending means transferring *rows* from one dataset to another. These are two important tasks since datasets only very rarely come with all the information we need. \n"
    ],
    "metadata": {}
@@ -39,7 +36,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": 3,
    "source": [
     "# Generate toy dataset 1: \n",
     "demo <- data.frame(\n",
@@ -183,7 +180,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 4,
    "source": [
     "df <- merge(demo, econ, by = \"country\")\n",
     "df"
@@ -258,7 +255,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 5,
    "source": [
     "# Generate toy dataset 1: \n",
     "demo <- data.frame(\n",
@@ -282,15 +279,15 @@
      "data": {
       "text/plain": [
        "  country year democracy_score\n",
-       "1 USA     1994  8             \n",
-       "2 China   1994 11             \n",
-       "3 Sudan   1994  2             \n",
-       "4 USA     1995 16             \n",
-       "5 China   1995 16             \n",
-       "6 Sudan   1995 15             \n",
-       "7 USA     1996  0             \n",
-       "8 China   1996  2             \n",
-       "9 Sudan   1996  1             "
+       "1 USA     1994 12             \n",
+       "2 China   1994 18             \n",
+       "3 Sudan   1994  0             \n",
+       "4 USA     1995  4             \n",
+       "5 China   1995 12             \n",
+       "6 Sudan   1995  4             \n",
+       "7 USA     1996  6             \n",
+       "8 China   1996  9             \n",
+       "9 Sudan   1996 15             "
       ],
       "text/markdown": [
        "\n",
@@ -298,15 +295,15 @@
        "\n",
        "| country &lt;fct&gt; | year &lt;int&gt; | democracy_score &lt;dbl&gt; |\n",
        "|---|---|---|\n",
-       "| USA   | 1994 |  8 |\n",
-       "| China | 1994 | 11 |\n",
-       "| Sudan | 1994 |  2 |\n",
-       "| USA   | 1995 | 16 |\n",
-       "| China | 1995 | 16 |\n",
-       "| Sudan | 1995 | 15 |\n",
-       "| USA   | 1996 |  0 |\n",
-       "| China | 1996 |  2 |\n",
-       "| Sudan | 1996 |  1 |\n",
+       "| USA   | 1994 | 12 |\n",
+       "| China | 1994 | 18 |\n",
+       "| Sudan | 1994 |  0 |\n",
+       "| USA   | 1995 |  4 |\n",
+       "| China | 1995 | 12 |\n",
+       "| Sudan | 1995 |  4 |\n",
+       "| USA   | 1996 |  6 |\n",
+       "| China | 1996 |  9 |\n",
+       "| Sudan | 1996 | 15 |\n",
        "\n"
       ],
       "text/latex": [
@@ -315,15 +312,15 @@
        " country & year & democracy\\_score\\\\\n",
        " <fct> & <int> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t USA   & 1994 &  8\\\\\n",
-       "\t China & 1994 & 11\\\\\n",
-       "\t Sudan & 1994 &  2\\\\\n",
-       "\t USA   & 1995 & 16\\\\\n",
-       "\t China & 1995 & 16\\\\\n",
-       "\t Sudan & 1995 & 15\\\\\n",
-       "\t USA   & 1996 &  0\\\\\n",
-       "\t China & 1996 &  2\\\\\n",
-       "\t Sudan & 1996 &  1\\\\\n",
+       "\t USA   & 1994 & 12\\\\\n",
+       "\t China & 1994 & 18\\\\\n",
+       "\t Sudan & 1994 &  0\\\\\n",
+       "\t USA   & 1995 &  4\\\\\n",
+       "\t China & 1995 & 12\\\\\n",
+       "\t Sudan & 1995 &  4\\\\\n",
+       "\t USA   & 1996 &  6\\\\\n",
+       "\t China & 1996 &  9\\\\\n",
+       "\t Sudan & 1996 & 15\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -334,15 +331,15 @@
        "\t<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td> 8</td></tr>\n",
-       "\t<tr><td>China</td><td>1994</td><td>11</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td> 2</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td>16</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td>16</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>15</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 0</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td> 2</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td> 1</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td>12</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td>18</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td> 0</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td> 4</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td>12</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td> 4</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td> 6</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 9</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td>15</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -354,15 +351,15 @@
      "data": {
       "text/plain": [
        "  year country gdp_pc\n",
-       "1 1994 USA      5661 \n",
-       "2 1995 USA     11459 \n",
-       "3 1996 USA      4509 \n",
-       "4 1994 China    6531 \n",
-       "5 1995 China    8181 \n",
-       "6 1996 China    7780 \n",
-       "7 1994 Sudan    9747 \n",
-       "8 1995 Sudan    4242 \n",
-       "9 1996 Sudan   15742 "
+       "1 1994 USA     14059 \n",
+       "2 1995 USA     19280 \n",
+       "3 1996 USA      9361 \n",
+       "4 1994 China    7861 \n",
+       "5 1995 China    9918 \n",
+       "6 1996 China   18450 \n",
+       "7 1994 Sudan    9304 \n",
+       "8 1995 Sudan    2441 \n",
+       "9 1996 Sudan   15416 "
       ],
       "text/markdown": [
        "\n",
@@ -370,15 +367,15 @@
        "\n",
        "| year &lt;int&gt; | country &lt;fct&gt; | gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|\n",
-       "| 1994 | USA   |  5661 |\n",
-       "| 1995 | USA   | 11459 |\n",
-       "| 1996 | USA   |  4509 |\n",
-       "| 1994 | China |  6531 |\n",
-       "| 1995 | China |  8181 |\n",
-       "| 1996 | China |  7780 |\n",
-       "| 1994 | Sudan |  9747 |\n",
-       "| 1995 | Sudan |  4242 |\n",
-       "| 1996 | Sudan | 15742 |\n",
+       "| 1994 | USA   | 14059 |\n",
+       "| 1995 | USA   | 19280 |\n",
+       "| 1996 | USA   |  9361 |\n",
+       "| 1994 | China |  7861 |\n",
+       "| 1995 | China |  9918 |\n",
+       "| 1996 | China | 18450 |\n",
+       "| 1994 | Sudan |  9304 |\n",
+       "| 1995 | Sudan |  2441 |\n",
+       "| 1996 | Sudan | 15416 |\n",
        "\n"
       ],
       "text/latex": [
@@ -387,15 +384,15 @@
        " year & country & gdp\\_pc\\\\\n",
        " <int> & <fct> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t 1994 & USA   &  5661\\\\\n",
-       "\t 1995 & USA   & 11459\\\\\n",
-       "\t 1996 & USA   &  4509\\\\\n",
-       "\t 1994 & China &  6531\\\\\n",
-       "\t 1995 & China &  8181\\\\\n",
-       "\t 1996 & China &  7780\\\\\n",
-       "\t 1994 & Sudan &  9747\\\\\n",
-       "\t 1995 & Sudan &  4242\\\\\n",
-       "\t 1996 & Sudan & 15742\\\\\n",
+       "\t 1994 & USA   & 14059\\\\\n",
+       "\t 1995 & USA   & 19280\\\\\n",
+       "\t 1996 & USA   &  9361\\\\\n",
+       "\t 1994 & China &  7861\\\\\n",
+       "\t 1995 & China &  9918\\\\\n",
+       "\t 1996 & China & 18450\\\\\n",
+       "\t 1994 & Sudan &  9304\\\\\n",
+       "\t 1995 & Sudan &  2441\\\\\n",
+       "\t 1996 & Sudan & 15416\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -406,15 +403,15 @@
        "\t<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>1994</td><td>USA  </td><td> 5661</td></tr>\n",
-       "\t<tr><td>1995</td><td>USA  </td><td>11459</td></tr>\n",
-       "\t<tr><td>1996</td><td>USA  </td><td> 4509</td></tr>\n",
-       "\t<tr><td>1994</td><td>China</td><td> 6531</td></tr>\n",
-       "\t<tr><td>1995</td><td>China</td><td> 8181</td></tr>\n",
-       "\t<tr><td>1996</td><td>China</td><td> 7780</td></tr>\n",
-       "\t<tr><td>1994</td><td>Sudan</td><td> 9747</td></tr>\n",
-       "\t<tr><td>1995</td><td>Sudan</td><td> 4242</td></tr>\n",
-       "\t<tr><td>1996</td><td>Sudan</td><td>15742</td></tr>\n",
+       "\t<tr><td>1994</td><td>USA  </td><td>14059</td></tr>\n",
+       "\t<tr><td>1995</td><td>USA  </td><td>19280</td></tr>\n",
+       "\t<tr><td>1996</td><td>USA  </td><td> 9361</td></tr>\n",
+       "\t<tr><td>1994</td><td>China</td><td> 7861</td></tr>\n",
+       "\t<tr><td>1995</td><td>China</td><td> 9918</td></tr>\n",
+       "\t<tr><td>1996</td><td>China</td><td>18450</td></tr>\n",
+       "\t<tr><td>1994</td><td>Sudan</td><td> 9304</td></tr>\n",
+       "\t<tr><td>1995</td><td>Sudan</td><td> 2441</td></tr>\n",
+       "\t<tr><td>1996</td><td>Sudan</td><td>15416</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -426,15 +423,15 @@
      "data": {
       "text/plain": [
        "  country year democracy_score gdp_pc\n",
-       "1 China   1994 11               6531 \n",
-       "2 China   1995 16               8181 \n",
-       "3 China   1996  2               7780 \n",
-       "4 Sudan   1994  2               9747 \n",
-       "5 Sudan   1995 15               4242 \n",
-       "6 Sudan   1996  1              15742 \n",
-       "7 USA     1994  8               5661 \n",
-       "8 USA     1995 16              11459 \n",
-       "9 USA     1996  0               4509 "
+       "1 China   1994 18               7861 \n",
+       "2 China   1995 12               9918 \n",
+       "3 China   1996  9              18450 \n",
+       "4 Sudan   1994  0               9304 \n",
+       "5 Sudan   1995  4               2441 \n",
+       "6 Sudan   1996 15              15416 \n",
+       "7 USA     1994 12              14059 \n",
+       "8 USA     1995  4              19280 \n",
+       "9 USA     1996  6               9361 "
       ],
       "text/markdown": [
        "\n",
@@ -442,15 +439,15 @@
        "\n",
        "| country &lt;fct&gt; | year &lt;int&gt; | democracy_score &lt;dbl&gt; | gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|---|\n",
-       "| China | 1994 | 11 |  6531 |\n",
-       "| China | 1995 | 16 |  8181 |\n",
-       "| China | 1996 |  2 |  7780 |\n",
-       "| Sudan | 1994 |  2 |  9747 |\n",
-       "| Sudan | 1995 | 15 |  4242 |\n",
-       "| Sudan | 1996 |  1 | 15742 |\n",
-       "| USA   | 1994 |  8 |  5661 |\n",
-       "| USA   | 1995 | 16 | 11459 |\n",
-       "| USA   | 1996 |  0 |  4509 |\n",
+       "| China | 1994 | 18 |  7861 |\n",
+       "| China | 1995 | 12 |  9918 |\n",
+       "| China | 1996 |  9 | 18450 |\n",
+       "| Sudan | 1994 |  0 |  9304 |\n",
+       "| Sudan | 1995 |  4 |  2441 |\n",
+       "| Sudan | 1996 | 15 | 15416 |\n",
+       "| USA   | 1994 | 12 | 14059 |\n",
+       "| USA   | 1995 |  4 | 19280 |\n",
+       "| USA   | 1996 |  6 |  9361 |\n",
        "\n"
       ],
       "text/latex": [
@@ -459,15 +456,15 @@
        " country & year & democracy\\_score & gdp\\_pc\\\\\n",
        " <fct> & <int> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t China & 1994 & 11 &  6531\\\\\n",
-       "\t China & 1995 & 16 &  8181\\\\\n",
-       "\t China & 1996 &  2 &  7780\\\\\n",
-       "\t Sudan & 1994 &  2 &  9747\\\\\n",
-       "\t Sudan & 1995 & 15 &  4242\\\\\n",
-       "\t Sudan & 1996 &  1 & 15742\\\\\n",
-       "\t USA   & 1994 &  8 &  5661\\\\\n",
-       "\t USA   & 1995 & 16 & 11459\\\\\n",
-       "\t USA   & 1996 &  0 &  4509\\\\\n",
+       "\t China & 1994 & 18 &  7861\\\\\n",
+       "\t China & 1995 & 12 &  9918\\\\\n",
+       "\t China & 1996 &  9 & 18450\\\\\n",
+       "\t Sudan & 1994 &  0 &  9304\\\\\n",
+       "\t Sudan & 1995 &  4 &  2441\\\\\n",
+       "\t Sudan & 1996 & 15 & 15416\\\\\n",
+       "\t USA   & 1994 & 12 & 14059\\\\\n",
+       "\t USA   & 1995 &  4 & 19280\\\\\n",
+       "\t USA   & 1996 &  6 &  9361\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -478,15 +475,15 @@
        "\t<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>China</td><td>1994</td><td>11</td><td> 6531</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td>16</td><td> 8181</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td> 2</td><td> 7780</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td> 2</td><td> 9747</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>15</td><td> 4242</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td> 1</td><td>15742</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td> 8</td><td> 5661</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td>16</td><td>11459</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 0</td><td> 4509</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td>18</td><td> 7861</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td>12</td><td> 9918</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 9</td><td>18450</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td> 0</td><td> 9304</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td> 4</td><td> 2441</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td>15</td><td>15416</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td>12</td><td>14059</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td> 4</td><td>19280</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td> 6</td><td> 9361</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -509,15 +506,10 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 6,
    "source": [
     "econ <- econ[-c(5, 9), ] #delete obs. 5 & 9 for illustrative purposes\n",
-    "econ\n",
-    "dim(demo) #different number of observations (rows) than 'econ'\n",
-    "dim(econ) #different number of observations (rows) than 'demo'\n",
-    "\n",
-    "merge(demo, econ, by = c(\"country\", \"year\")) #keep only matching observations \n",
-    "merge(demo, econ, by = c(\"country\", \"year\"), all.x = TRUE) #keep all observations in 'demo'"
+    "econ"
    ],
    "outputs": [
     {
@@ -525,13 +517,13 @@
      "data": {
       "text/plain": [
        "  year country gdp_pc\n",
-       "1 1994 USA      5661 \n",
-       "2 1995 USA     11459 \n",
-       "3 1996 USA      4509 \n",
-       "4 1994 China    6531 \n",
-       "6 1996 China    7780 \n",
-       "7 1994 Sudan    9747 \n",
-       "8 1995 Sudan    4242 "
+       "1 1994 USA     14059 \n",
+       "2 1995 USA     19280 \n",
+       "3 1996 USA      9361 \n",
+       "4 1994 China    7861 \n",
+       "6 1996 China   18450 \n",
+       "7 1994 Sudan    9304 \n",
+       "8 1995 Sudan    2441 "
       ],
       "text/markdown": [
        "\n",
@@ -539,13 +531,13 @@
        "\n",
        "| <!--/--> | year &lt;int&gt; | country &lt;fct&gt; | gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|---|\n",
-       "| 1 | 1994 | USA   |  5661 |\n",
-       "| 2 | 1995 | USA   | 11459 |\n",
-       "| 3 | 1996 | USA   |  4509 |\n",
-       "| 4 | 1994 | China |  6531 |\n",
-       "| 6 | 1996 | China |  7780 |\n",
-       "| 7 | 1994 | Sudan |  9747 |\n",
-       "| 8 | 1995 | Sudan |  4242 |\n",
+       "| 1 | 1994 | USA   | 14059 |\n",
+       "| 2 | 1995 | USA   | 19280 |\n",
+       "| 3 | 1996 | USA   |  9361 |\n",
+       "| 4 | 1994 | China |  7861 |\n",
+       "| 6 | 1996 | China | 18450 |\n",
+       "| 7 | 1994 | Sudan |  9304 |\n",
+       "| 8 | 1995 | Sudan |  2441 |\n",
        "\n"
       ],
       "text/latex": [
@@ -554,13 +546,13 @@
        "  & year & country & gdp\\_pc\\\\\n",
        "  & <int> & <fct> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t1 & 1994 & USA   &  5661\\\\\n",
-       "\t2 & 1995 & USA   & 11459\\\\\n",
-       "\t3 & 1996 & USA   &  4509\\\\\n",
-       "\t4 & 1994 & China &  6531\\\\\n",
-       "\t6 & 1996 & China &  7780\\\\\n",
-       "\t7 & 1994 & Sudan &  9747\\\\\n",
-       "\t8 & 1995 & Sudan &  4242\\\\\n",
+       "\t1 & 1994 & USA   & 14059\\\\\n",
+       "\t2 & 1995 & USA   & 19280\\\\\n",
+       "\t3 & 1996 & USA   &  9361\\\\\n",
+       "\t4 & 1994 & China &  7861\\\\\n",
+       "\t6 & 1996 & China & 18450\\\\\n",
+       "\t7 & 1994 & Sudan &  9304\\\\\n",
+       "\t8 & 1995 & Sudan &  2441\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -571,19 +563,35 @@
        "\t<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><th scope=row>1</th><td>1994</td><td>USA  </td><td> 5661</td></tr>\n",
-       "\t<tr><th scope=row>2</th><td>1995</td><td>USA  </td><td>11459</td></tr>\n",
-       "\t<tr><th scope=row>3</th><td>1996</td><td>USA  </td><td> 4509</td></tr>\n",
-       "\t<tr><th scope=row>4</th><td>1994</td><td>China</td><td> 6531</td></tr>\n",
-       "\t<tr><th scope=row>6</th><td>1996</td><td>China</td><td> 7780</td></tr>\n",
-       "\t<tr><th scope=row>7</th><td>1994</td><td>Sudan</td><td> 9747</td></tr>\n",
-       "\t<tr><th scope=row>8</th><td>1995</td><td>Sudan</td><td> 4242</td></tr>\n",
+       "\t<tr><th scope=row>1</th><td>1994</td><td>USA  </td><td>14059</td></tr>\n",
+       "\t<tr><th scope=row>2</th><td>1995</td><td>USA  </td><td>19280</td></tr>\n",
+       "\t<tr><th scope=row>3</th><td>1996</td><td>USA  </td><td> 9361</td></tr>\n",
+       "\t<tr><th scope=row>4</th><td>1994</td><td>China</td><td> 7861</td></tr>\n",
+       "\t<tr><th scope=row>6</th><td>1996</td><td>China</td><td>18450</td></tr>\n",
+       "\t<tr><th scope=row>7</th><td>1994</td><td>Sudan</td><td> 9304</td></tr>\n",
+       "\t<tr><th scope=row>8</th><td>1995</td><td>Sudan</td><td> 2441</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
      },
      "metadata": {}
-    },
+    }
+   ],
+   "metadata": {
+    "lines_to_next_cell": 2
+   }
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "source": [
+    "#different number of observations (rows) than 'econ'\n",
+    "dim(demo)\n",
+    "\n",
+    "# different number of observations (rows) than 'demo'\n",
+    "dim(econ)"
+   ],
+   "outputs": [
     {
      "output_type": "display_data",
      "data": {
@@ -641,19 +649,34 @@
       ]
      },
      "metadata": {}
-    },
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "source": [
+    "\n",
+    "#keep only matching observations\n",
+    "merge(demo, econ, by = c(\"country\", \"year\"))\n",
+    "\n",
+    "#keep all observations in 'demo'\n",
+    "merge(demo, econ, by = c(\"country\", \"year\"), all.x = TRUE)"
+   ],
+   "outputs": [
     {
      "output_type": "display_data",
      "data": {
       "text/plain": [
        "  country year democracy_score gdp_pc\n",
-       "1 China   1994 11               6531 \n",
-       "2 China   1996  2               7780 \n",
-       "3 Sudan   1994  2               9747 \n",
-       "4 Sudan   1995 15               4242 \n",
-       "5 USA     1994  8               5661 \n",
-       "6 USA     1995 16              11459 \n",
-       "7 USA     1996  0               4509 "
+       "1 China   1994 18               7861 \n",
+       "2 China   1996  9              18450 \n",
+       "3 Sudan   1994  0               9304 \n",
+       "4 Sudan   1995  4               2441 \n",
+       "5 USA     1994 12              14059 \n",
+       "6 USA     1995  4              19280 \n",
+       "7 USA     1996  6               9361 "
       ],
       "text/markdown": [
        "\n",
@@ -661,13 +684,13 @@
        "\n",
        "| country &lt;fct&gt; | year &lt;int&gt; | democracy_score &lt;dbl&gt; | gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|---|\n",
-       "| China | 1994 | 11 |  6531 |\n",
-       "| China | 1996 |  2 |  7780 |\n",
-       "| Sudan | 1994 |  2 |  9747 |\n",
-       "| Sudan | 1995 | 15 |  4242 |\n",
-       "| USA   | 1994 |  8 |  5661 |\n",
-       "| USA   | 1995 | 16 | 11459 |\n",
-       "| USA   | 1996 |  0 |  4509 |\n",
+       "| China | 1994 | 18 |  7861 |\n",
+       "| China | 1996 |  9 | 18450 |\n",
+       "| Sudan | 1994 |  0 |  9304 |\n",
+       "| Sudan | 1995 |  4 |  2441 |\n",
+       "| USA   | 1994 | 12 | 14059 |\n",
+       "| USA   | 1995 |  4 | 19280 |\n",
+       "| USA   | 1996 |  6 |  9361 |\n",
        "\n"
       ],
       "text/latex": [
@@ -676,13 +699,13 @@
        " country & year & democracy\\_score & gdp\\_pc\\\\\n",
        " <fct> & <int> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t China & 1994 & 11 &  6531\\\\\n",
-       "\t China & 1996 &  2 &  7780\\\\\n",
-       "\t Sudan & 1994 &  2 &  9747\\\\\n",
-       "\t Sudan & 1995 & 15 &  4242\\\\\n",
-       "\t USA   & 1994 &  8 &  5661\\\\\n",
-       "\t USA   & 1995 & 16 & 11459\\\\\n",
-       "\t USA   & 1996 &  0 &  4509\\\\\n",
+       "\t China & 1994 & 18 &  7861\\\\\n",
+       "\t China & 1996 &  9 & 18450\\\\\n",
+       "\t Sudan & 1994 &  0 &  9304\\\\\n",
+       "\t Sudan & 1995 &  4 &  2441\\\\\n",
+       "\t USA   & 1994 & 12 & 14059\\\\\n",
+       "\t USA   & 1995 &  4 & 19280\\\\\n",
+       "\t USA   & 1996 &  6 &  9361\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -693,13 +716,13 @@
        "\t<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>China</td><td>1994</td><td>11</td><td> 6531</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td> 2</td><td> 7780</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td> 2</td><td> 9747</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>15</td><td> 4242</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td> 8</td><td> 5661</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td>16</td><td>11459</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 0</td><td> 4509</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td>18</td><td> 7861</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 9</td><td>18450</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td> 0</td><td> 9304</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td> 4</td><td> 2441</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td>12</td><td>14059</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td> 4</td><td>19280</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td> 6</td><td> 9361</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -711,15 +734,15 @@
      "data": {
       "text/plain": [
        "  country year democracy_score gdp_pc\n",
-       "1 USA     1994  8               5661 \n",
-       "2 USA     1995 16              11459 \n",
-       "3 USA     1996  0               4509 \n",
-       "4 China   1994 11               6531 \n",
-       "5 China   1995 16                 NA \n",
-       "6 China   1996  2               7780 \n",
-       "7 Sudan   1994  2               9747 \n",
-       "8 Sudan   1995 15               4242 \n",
-       "9 Sudan   1996  1                 NA "
+       "1 USA     1994 12              14059 \n",
+       "2 USA     1995  4              19280 \n",
+       "3 USA     1996  6               9361 \n",
+       "4 China   1994 18               7861 \n",
+       "5 China   1995 12                 NA \n",
+       "6 China   1996  9              18450 \n",
+       "7 Sudan   1994  0               9304 \n",
+       "8 Sudan   1995  4               2441 \n",
+       "9 Sudan   1996 15                 NA "
       ],
       "text/markdown": [
        "\n",
@@ -727,15 +750,15 @@
        "\n",
        "| country &lt;fct&gt; | year &lt;int&gt; | democracy_score &lt;dbl&gt; | gdp_pc &lt;dbl&gt; |\n",
        "|---|---|---|---|\n",
-       "| USA   | 1994 |  8 |  5661 |\n",
-       "| USA   | 1995 | 16 | 11459 |\n",
-       "| USA   | 1996 |  0 |  4509 |\n",
-       "| China | 1994 | 11 |  6531 |\n",
-       "| China | 1995 | 16 |    NA |\n",
-       "| China | 1996 |  2 |  7780 |\n",
-       "| Sudan | 1994 |  2 |  9747 |\n",
-       "| Sudan | 1995 | 15 |  4242 |\n",
-       "| Sudan | 1996 |  1 |    NA |\n",
+       "| USA   | 1994 | 12 | 14059 |\n",
+       "| USA   | 1995 |  4 | 19280 |\n",
+       "| USA   | 1996 |  6 |  9361 |\n",
+       "| China | 1994 | 18 |  7861 |\n",
+       "| China | 1995 | 12 |    NA |\n",
+       "| China | 1996 |  9 | 18450 |\n",
+       "| Sudan | 1994 |  0 |  9304 |\n",
+       "| Sudan | 1995 |  4 |  2441 |\n",
+       "| Sudan | 1996 | 15 |    NA |\n",
        "\n"
       ],
       "text/latex": [
@@ -744,15 +767,15 @@
        " country & year & democracy\\_score & gdp\\_pc\\\\\n",
        " <fct> & <int> & <dbl> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t USA   & 1994 &  8 &  5661\\\\\n",
-       "\t USA   & 1995 & 16 & 11459\\\\\n",
-       "\t USA   & 1996 &  0 &  4509\\\\\n",
-       "\t China & 1994 & 11 &  6531\\\\\n",
-       "\t China & 1995 & 16 &    NA\\\\\n",
-       "\t China & 1996 &  2 &  7780\\\\\n",
-       "\t Sudan & 1994 &  2 &  9747\\\\\n",
-       "\t Sudan & 1995 & 15 &  4242\\\\\n",
-       "\t Sudan & 1996 &  1 &    NA\\\\\n",
+       "\t USA   & 1994 & 12 & 14059\\\\\n",
+       "\t USA   & 1995 &  4 & 19280\\\\\n",
+       "\t USA   & 1996 &  6 &  9361\\\\\n",
+       "\t China & 1994 & 18 &  7861\\\\\n",
+       "\t China & 1995 & 12 &    NA\\\\\n",
+       "\t China & 1996 &  9 & 18450\\\\\n",
+       "\t Sudan & 1994 &  0 &  9304\\\\\n",
+       "\t Sudan & 1995 &  4 &  2441\\\\\n",
+       "\t Sudan & 1996 & 15 &    NA\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -763,15 +786,15 @@
        "\t<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td> 8</td><td> 5661</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td>16</td><td>11459</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 0</td><td> 4509</td></tr>\n",
-       "\t<tr><td>China</td><td>1994</td><td>11</td><td> 6531</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td>16</td><td>   NA</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td> 2</td><td> 7780</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td> 2</td><td> 9747</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>15</td><td> 4242</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td> 1</td><td>   NA</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td>12</td><td>14059</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td> 4</td><td>19280</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td> 6</td><td> 9361</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td>18</td><td> 7861</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td>12</td><td>   NA</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 9</td><td>18450</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td> 0</td><td> 9304</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td> 4</td><td> 2441</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td>15</td><td>   NA</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -779,9 +802,7 @@
      "metadata": {}
     }
    ],
-   "metadata": {
-    "lines_to_next_cell": 2
-   }
+   "metadata": {}
   },
   {
    "cell_type": "markdown",
@@ -800,7 +821,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 9,
    "source": [
     "demo <- data.frame(\n",
     "    expand.grid(country = c(\"USA\", \"China\", \"Sudan\"), year = 1994:1996),\n",
@@ -820,15 +841,15 @@
      "data": {
       "text/plain": [
        "  country year democracy_score\n",
-       "1 USA     1994  2             \n",
-       "2 China   1994  3             \n",
-       "3 Sudan   1994 19             \n",
+       "1 USA     1994 17             \n",
+       "2 China   1994 16             \n",
+       "3 Sudan   1994 20             \n",
        "4 USA     1995 13             \n",
-       "5 China   1995  2             \n",
-       "6 Sudan   1995  6             \n",
-       "7 USA     1996  9             \n",
-       "8 China   1996  8             \n",
-       "9 Sudan   1996  9             "
+       "5 China   1995  7             \n",
+       "6 Sudan   1995 20             \n",
+       "7 USA     1996 11             \n",
+       "8 China   1996  4             \n",
+       "9 Sudan   1996  1             "
       ],
       "text/markdown": [
        "\n",
@@ -836,15 +857,15 @@
        "\n",
        "| country &lt;fct&gt; | year &lt;int&gt; | democracy_score &lt;dbl&gt; |\n",
        "|---|---|---|\n",
-       "| USA   | 1994 |  2 |\n",
-       "| China | 1994 |  3 |\n",
-       "| Sudan | 1994 | 19 |\n",
+       "| USA   | 1994 | 17 |\n",
+       "| China | 1994 | 16 |\n",
+       "| Sudan | 1994 | 20 |\n",
        "| USA   | 1995 | 13 |\n",
-       "| China | 1995 |  2 |\n",
-       "| Sudan | 1995 |  6 |\n",
-       "| USA   | 1996 |  9 |\n",
-       "| China | 1996 |  8 |\n",
-       "| Sudan | 1996 |  9 |\n",
+       "| China | 1995 |  7 |\n",
+       "| Sudan | 1995 | 20 |\n",
+       "| USA   | 1996 | 11 |\n",
+       "| China | 1996 |  4 |\n",
+       "| Sudan | 1996 |  1 |\n",
        "\n"
       ],
       "text/latex": [
@@ -853,15 +874,15 @@
        " country & year & democracy\\_score\\\\\n",
        " <fct> & <int> & <dbl>\\\\\n",
        "\\hline\n",
-       "\t USA   & 1994 &  2\\\\\n",
-       "\t China & 1994 &  3\\\\\n",
-       "\t Sudan & 1994 & 19\\\\\n",
+       "\t USA   & 1994 & 17\\\\\n",
+       "\t China & 1994 & 16\\\\\n",
+       "\t Sudan & 1994 & 20\\\\\n",
        "\t USA   & 1995 & 13\\\\\n",
-       "\t China & 1995 &  2\\\\\n",
-       "\t Sudan & 1995 &  6\\\\\n",
-       "\t USA   & 1996 &  9\\\\\n",
-       "\t China & 1996 &  8\\\\\n",
-       "\t Sudan & 1996 &  9\\\\\n",
+       "\t China & 1995 &  7\\\\\n",
+       "\t Sudan & 1995 & 20\\\\\n",
+       "\t USA   & 1996 & 11\\\\\n",
+       "\t China & 1996 &  4\\\\\n",
+       "\t Sudan & 1996 &  1\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
@@ -872,15 +893,15 @@
        "\t<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td> 2</td></tr>\n",
-       "\t<tr><td>China</td><td>1994</td><td> 3</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td>19</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td>17</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td>16</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td>20</td></tr>\n",
        "\t<tr><td>USA  </td><td>1995</td><td>13</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td> 2</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td> 6</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 9</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td> 8</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td> 9</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td> 7</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>20</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td>11</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 4</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td> 1</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -947,7 +968,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 10,
    "source": [
     "merge(demo, region, by = \"country\")"
    ],
@@ -957,14 +978,14 @@
      "data": {
       "text/plain": [
        "  country year democracy_score region \n",
-       "1 China   1994  3              Asia   \n",
-       "2 China   1995  2              Asia   \n",
-       "3 China   1996  8              Asia   \n",
-       "4 Sudan   1995  6              Africa \n",
-       "5 Sudan   1994 19              Africa \n",
-       "6 Sudan   1996  9              Africa \n",
-       "7 USA     1994  2              America\n",
-       "8 USA     1996  9              America\n",
+       "1 China   1994 16              Asia   \n",
+       "2 China   1995  7              Asia   \n",
+       "3 China   1996  4              Asia   \n",
+       "4 Sudan   1995 20              Africa \n",
+       "5 Sudan   1994 20              Africa \n",
+       "6 Sudan   1996  1              Africa \n",
+       "7 USA     1994 17              America\n",
+       "8 USA     1996 11              America\n",
        "9 USA     1995 13              America"
       ],
       "text/markdown": [
@@ -973,14 +994,14 @@
        "\n",
        "| country &lt;fct&gt; | year &lt;int&gt; | democracy_score &lt;dbl&gt; | region &lt;chr&gt; |\n",
        "|---|---|---|---|\n",
-       "| China | 1994 |  3 | Asia    |\n",
-       "| China | 1995 |  2 | Asia    |\n",
-       "| China | 1996 |  8 | Asia    |\n",
-       "| Sudan | 1995 |  6 | Africa  |\n",
-       "| Sudan | 1994 | 19 | Africa  |\n",
-       "| Sudan | 1996 |  9 | Africa  |\n",
-       "| USA   | 1994 |  2 | America |\n",
-       "| USA   | 1996 |  9 | America |\n",
+       "| China | 1994 | 16 | Asia    |\n",
+       "| China | 1995 |  7 | Asia    |\n",
+       "| China | 1996 |  4 | Asia    |\n",
+       "| Sudan | 1995 | 20 | Africa  |\n",
+       "| Sudan | 1994 | 20 | Africa  |\n",
+       "| Sudan | 1996 |  1 | Africa  |\n",
+       "| USA   | 1994 | 17 | America |\n",
+       "| USA   | 1996 | 11 | America |\n",
        "| USA   | 1995 | 13 | America |\n",
        "\n"
       ],
@@ -990,14 +1011,14 @@
        " country & year & democracy\\_score & region\\\\\n",
        " <fct> & <int> & <dbl> & <chr>\\\\\n",
        "\\hline\n",
-       "\t China & 1994 &  3 & Asia   \\\\\n",
-       "\t China & 1995 &  2 & Asia   \\\\\n",
-       "\t China & 1996 &  8 & Asia   \\\\\n",
-       "\t Sudan & 1995 &  6 & Africa \\\\\n",
-       "\t Sudan & 1994 & 19 & Africa \\\\\n",
-       "\t Sudan & 1996 &  9 & Africa \\\\\n",
-       "\t USA   & 1994 &  2 & America\\\\\n",
-       "\t USA   & 1996 &  9 & America\\\\\n",
+       "\t China & 1994 & 16 & Asia   \\\\\n",
+       "\t China & 1995 &  7 & Asia   \\\\\n",
+       "\t China & 1996 &  4 & Asia   \\\\\n",
+       "\t Sudan & 1995 & 20 & Africa \\\\\n",
+       "\t Sudan & 1994 & 20 & Africa \\\\\n",
+       "\t Sudan & 1996 &  1 & Africa \\\\\n",
+       "\t USA   & 1994 & 17 & America\\\\\n",
+       "\t USA   & 1996 & 11 & America\\\\\n",
        "\t USA   & 1995 & 13 & America\\\\\n",
        "\\end{tabular}\n"
       ],
@@ -1009,14 +1030,14 @@
        "\t<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>China</td><td>1994</td><td> 3</td><td>Asia   </td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td> 2</td><td>Asia   </td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td> 8</td><td>Asia   </td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td> 6</td><td>Africa </td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td>19</td><td>Africa </td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td> 9</td><td>Africa </td></tr>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td> 2</td><td>America</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 9</td><td>America</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td>16</td><td>Asia   </td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td> 7</td><td>Asia   </td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 4</td><td>Asia   </td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>20</td><td>Africa </td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td>20</td><td>Africa </td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td> 1</td><td>Africa </td></tr>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td>17</td><td>America</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td>11</td><td>America</td></tr>\n",
        "\t<tr><td>USA  </td><td>1995</td><td>13</td><td>America</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
@@ -1032,6 +1053,117 @@
   {
    "cell_type": "markdown",
    "source": [
+    "## Merging with Checks\n",
+    "\n",
+    "[statar](https://github.com/matthieugomez/statar#join--merge)"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "source": [
+    "install.packages(\"statar\")\n",
+    "library(statar)\n",
+    "\n",
+    "join(demo, region, on = \"country\", kind = \"full\", check = m~1, gen = \"_merge\")"
+   ],
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "\n",
+      "The downloaded binary packages are in\n",
+      "\t/var/folders/tj/s8f2_ks15h315z5thvtnhz8r0000gp/T//Rtmp7iYw1f/downloaded_packages\n"
+     ]
+    },
+    {
+     "output_type": "stream",
+     "name": "stderr",
+     "text": [
+      "Joining, by = \"country\"\n",
+      "\n"
+     ]
+    },
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  country year democracy_score region  _merge\n",
+       "1 USA     1994 17              America 3     \n",
+       "2 China   1994 16              Asia    3     \n",
+       "3 Sudan   1994 20              Africa  3     \n",
+       "4 USA     1995 13              America 3     \n",
+       "5 China   1995  7              Asia    3     \n",
+       "6 Sudan   1995 20              Africa  3     \n",
+       "7 USA     1996 11              America 3     \n",
+       "8 China   1996  4              Asia    3     \n",
+       "9 Sudan   1996  1              Africa  3     "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 9 × 5\n",
+       "\n",
+       "| country &lt;chr&gt; | year &lt;int&gt; | democracy_score &lt;dbl&gt; | region &lt;chr&gt; | _merge &lt;int&gt; |\n",
+       "|---|---|---|---|---|\n",
+       "| USA   | 1994 | 17 | America | 3 |\n",
+       "| China | 1994 | 16 | Asia    | 3 |\n",
+       "| Sudan | 1994 | 20 | Africa  | 3 |\n",
+       "| USA   | 1995 | 13 | America | 3 |\n",
+       "| China | 1995 |  7 | Asia    | 3 |\n",
+       "| Sudan | 1995 | 20 | Africa  | 3 |\n",
+       "| USA   | 1996 | 11 | America | 3 |\n",
+       "| China | 1996 |  4 | Asia    | 3 |\n",
+       "| Sudan | 1996 |  1 | Africa  | 3 |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 9 × 5\n",
+       "\\begin{tabular}{lllll}\n",
+       " country & year & democracy\\_score & region & \\_merge\\\\\n",
+       " <chr> & <int> & <dbl> & <chr> & <int>\\\\\n",
+       "\\hline\n",
+       "\t USA   & 1994 & 17 & America & 3\\\\\n",
+       "\t China & 1994 & 16 & Asia    & 3\\\\\n",
+       "\t Sudan & 1994 & 20 & Africa  & 3\\\\\n",
+       "\t USA   & 1995 & 13 & America & 3\\\\\n",
+       "\t China & 1995 &  7 & Asia    & 3\\\\\n",
+       "\t Sudan & 1995 & 20 & Africa  & 3\\\\\n",
+       "\t USA   & 1996 & 11 & America & 3\\\\\n",
+       "\t China & 1996 &  4 & Asia    & 3\\\\\n",
+       "\t Sudan & 1996 &  1 & Africa  & 3\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 9 × 5</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>democracy_score</th><th scope=col>region</th><th scope=col>_merge</th></tr>\n",
+       "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>USA  </td><td>1994</td><td>17</td><td>America</td><td>3</td></tr>\n",
+       "\t<tr><td>China</td><td>1994</td><td>16</td><td>Asia   </td><td>3</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1994</td><td>20</td><td>Africa </td><td>3</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1995</td><td>13</td><td>America</td><td>3</td></tr>\n",
+       "\t<tr><td>China</td><td>1995</td><td> 7</td><td>Asia   </td><td>3</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1995</td><td>20</td><td>Africa </td><td>3</td></tr>\n",
+       "\t<tr><td>USA  </td><td>1996</td><td>11</td><td>America</td><td>3</td></tr>\n",
+       "\t<tr><td>China</td><td>1996</td><td> 4</td><td>Asia   </td><td>3</td></tr>\n",
+       "\t<tr><td>Sudan</td><td>1996</td><td> 1</td><td>Africa </td><td>3</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
     "## Appending\n",
     "\n",
     "\n",
@@ -1043,7 +1175,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 11,
    "source": [
     "df1 <- data.frame(\n",
     "    year = rep(1990:1995, 2),\n",
@@ -1147,7 +1279,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 12,
    "source": [
     "df2"
    ],
@@ -1233,7 +1365,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 13,
    "source": [
     "df <- rbind(df1, df2) #append\n",
     "\n",
@@ -1382,7 +1514,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 14,
    "source": [
     "df1 <- data.frame(\n",
     "    name = c(\"Mary\", \"Thor\", \"Sven\", \"Jane\", \"Ake\", \"Stephan\",\n",
