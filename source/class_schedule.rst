@@ -68,7 +68,7 @@ Session 4: Merging and Aggregating
 **Read Before Class:**
 
 - `Defensive Programming <defensive_programming.ipynb>`__
-- `Merging and Appending <merging_appending.ipynb>`__
+- `Merging <merging.ipynb>`__
 - `Missing Data <missing_data.ipynb>`__
 
 **In Class**

@@ -102,9 +102,9 @@ I owe a huge debt of gratitude to `Simon Ejdemyr <https://sejdemyr.github.io/>`_
    intro_to_dataframes.ipynb
    manipulating_dataframes.ipynb
    intro_to_tidyverse.ipynb
-   missing_data.ipynb
-   merging_appending.ipynb
    defensive_programming.ipynb
+   merging.ipynb
+   missing_data.ipynb
    loops.ipynb
    functions.ipynb
 
