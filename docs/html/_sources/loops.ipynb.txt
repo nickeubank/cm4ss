@@ -428,11 +428,10 @@
    "source": [
     "## Loops and the Tidyverse\n",
     "\n",
-    "As you may recall from our discussion of dplyr and the tidyverse, most functions in the tidyverse use a form of nonstandard evaluation within their functions -- namely, text appearing within a function is not interpreted as the name of a variable, but as explicit data.\n",
+    "As you may recall from our discussion of dplyr and the tidyverse, most functions in the tidyverse use a form of nonstandard evaluation within their functions -- namely, text appearing within a function is interpreted as data (e.g. the name of a column), not as the name of a variable. As will discuss in the section, that becomes problematic when we start working with loops.\n",
     "\n",
-    "This becomes important when writing loops because in loops, we need to use variables!\n",
     "\n",
-    "To get around this, there are some hacks to make tidyverse work with loops. For example, we can wrap our text in `.data[[]]` if that text refers to a column name to ensure it's interpreted as a variable and not a literal value. For example:"
+    "To illustrate, suppose we have a dataframe with the columns `a` and `column_to_keep`:"
    ],
    "metadata": {}
   },
@@ -440,15 +439,184 @@
    "cell_type": "code",
    "execution_count": 12,
    "source": [
-    "library(dplyr)\n",
-    "country <- rep(c(\"USA\", \"China\", \"Sudan\"), 3)\n",
-    "year <- c(1994, 1994, 1994, 1995, 1995, 1995, 1996, 1996, 1996)\n",
-    "gdp_pc_2008 <- round(runif(9, 1000, 20000))\n",
-    "gdp_pc_2010 <- round(runif(9, 1000, 20000))\n",
-    "gdp_pc_2012 <- round(runif(9, 1000, 20000))\n",
-    "\n",
-    "countries <- data.frame(country, year, gdp_pc_2008, gdp_pc_2010, gdp_pc_2012)\n",
-    "countries"
+    "df <- data.frame(a = c(1, 2, 3), column_to_keep = c(4, 5, 6))\n",
+    "df"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "  a column_to_keep\n",
+       "1 1 4             \n",
+       "2 2 5             \n",
+       "3 3 6             "
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 3 × 2\n",
+       "\n",
+       "| a &lt;dbl&gt; | column_to_keep &lt;dbl&gt; |\n",
+       "|---|---|\n",
+       "| 1 | 4 |\n",
+       "| 2 | 5 |\n",
+       "| 3 | 6 |\n",
+       "\n"
+      ],
+      "text/latex": [
+       "A data.frame: 3 × 2\n",
+       "\\begin{tabular}{ll}\n",
+       " a & column\\_to\\_keep\\\\\n",
+       " <dbl> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t 1 & 4\\\\\n",
+       "\t 2 & 5\\\\\n",
+       "\t 3 & 6\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 3 × 2</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>a</th><th scope=col>column_to_keep</th></tr>\n",
+       "\t<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>1</td><td>4</td></tr>\n",
+       "\t<tr><td>2</td><td>5</td></tr>\n",
+       "\t<tr><td>3</td><td>6</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "Now, suppose we also created a variable called `column_to_keep` and assigned to it the character `\"a\"`. So we now have a column named `column_to_keep`, and a variable named `column_to_keep` that has the value `\"a\"` assigned to it."
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "source": [
+    "column_to_keep <- \"a\""
+   ],
+   "outputs": [],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "With normal array indexing, it's not hard to make clear when we're talking about the variable and when we're talking about the column name: if you write `column_to_keep` without quotes, you mean the variable; if you write `\"column_to_keep\"` with quotes, you mean the literal set of characters \"column_to_keep\", which correspond to the name of a column. So:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "source": [
+    "# No quotes -> read as a variable ->\n",
+    "# R substitutes the value assigned\n",
+    "# to the variable before evaluating,\n",
+    "# so this is the same as `df[, \"a\"]`:\n",
+    "df[, column_to_keep]"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "[1] 1 2 3"
+      ],
+      "text/markdown": [
+       "1. 1\n",
+       "2. 2\n",
+       "3. 3\n",
+       "\n",
+       "\n"
+      ],
+      "text/latex": [
+       "\\begin{enumerate*}\n",
+       "\\item 1\n",
+       "\\item 2\n",
+       "\\item 3\n",
+       "\\end{enumerate*}\n"
+      ],
+      "text/html": [
+       "<style>\n",
+       ".list-inline {list-style: none; margin:0; padding: 0}\n",
+       ".list-inline>li {display: inline-block}\n",
+       ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+       "</style>\n",
+       "<ol class=list-inline><li>1</li><li>2</li><li>3</li></ol>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "source": [
+    "# With quotes -> read as a character ->\n",
+    "# get column \"column_to_keep\"\n",
+    "df[, \"column_to_keep\"]"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "[1] 4 5 6"
+      ],
+      "text/markdown": [
+       "1. 4\n",
+       "2. 5\n",
+       "3. 6\n",
+       "\n",
+       "\n"
+      ],
+      "text/latex": [
+       "\\begin{enumerate*}\n",
+       "\\item 4\n",
+       "\\item 5\n",
+       "\\item 6\n",
+       "\\end{enumerate*}\n"
+      ],
+      "text/html": [
+       "<style>\n",
+       ".list-inline {list-style: none; margin:0; padding: 0}\n",
+       ".list-inline>li {display: inline-block}\n",
+       ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+       "</style>\n",
+       "<ol class=list-inline><li>4</li><li>5</li><li>6</li></ol>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "But this is harder to deal with in tidyverse functions, because when they see text without quotes they assume you **are not** talking about a variable, you're talking about the actual name of a column:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "source": [
+    "library(dplyr)"
    ],
    "outputs": [
     {
@@ -470,73 +638,60 @@
       "\n",
       "\n"
      ]
-    },
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "source": [
+    "# Get column \"column_to_keep\"\n",
+    "select(df, column_to_keep)"
+   ],
+   "outputs": [
     {
      "output_type": "display_data",
      "data": {
       "text/plain": [
-       "  country year gdp_pc_2008 gdp_pc_2010 gdp_pc_2012\n",
-       "1 USA     1994 18142       18778        3246      \n",
-       "2 China   1994  8573        3339       11562      \n",
-       "3 Sudan   1994  5199       19910       11370      \n",
-       "4 USA     1995 18628       17827       11375      \n",
-       "5 China   1995  8039       13211       14396      \n",
-       "6 Sudan   1995 16518       12017       12923      \n",
-       "7 USA     1996  2137       10247       15444      \n",
-       "8 China   1996 12667        4412        3713      \n",
-       "9 Sudan   1996 18298        8967        7706      "
+       "  column_to_keep\n",
+       "1 4             \n",
+       "2 5             \n",
+       "3 6             "
       ],
       "text/markdown": [
        "\n",
-       "A data.frame: 9 × 5\n",
+       "A data.frame: 3 × 1\n",
        "\n",
-       "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc_2008 &lt;dbl&gt; | gdp_pc_2010 &lt;dbl&gt; | gdp_pc_2012 &lt;dbl&gt; |\n",
-       "|---|---|---|---|---|\n",
-       "| USA   | 1994 | 18142 | 18778 |  3246 |\n",
-       "| China | 1994 |  8573 |  3339 | 11562 |\n",
-       "| Sudan | 1994 |  5199 | 19910 | 11370 |\n",
-       "| USA   | 1995 | 18628 | 17827 | 11375 |\n",
-       "| China | 1995 |  8039 | 13211 | 14396 |\n",
-       "| Sudan | 1995 | 16518 | 12017 | 12923 |\n",
-       "| USA   | 1996 |  2137 | 10247 | 15444 |\n",
-       "| China | 1996 | 12667 |  4412 |  3713 |\n",
-       "| Sudan | 1996 | 18298 |  8967 |  7706 |\n",
+       "| column_to_keep &lt;dbl&gt; |\n",
+       "|---|\n",
+       "| 4 |\n",
+       "| 5 |\n",
+       "| 6 |\n",
        "\n"
       ],
       "text/latex": [
-       "A data.frame: 9 × 5\n",
-       "\\begin{tabular}{lllll}\n",
-       " country & year & gdp\\_pc\\_2008 & gdp\\_pc\\_2010 & gdp\\_pc\\_2012\\\\\n",
-       " <chr> & <dbl> & <dbl> & <dbl> & <dbl>\\\\\n",
+       "A data.frame: 3 × 1\n",
+       "\\begin{tabular}{l}\n",
+       " column\\_to\\_keep\\\\\n",
+       " <dbl>\\\\\n",
        "\\hline\n",
-       "\t USA   & 1994 & 18142 & 18778 &  3246\\\\\n",
-       "\t China & 1994 &  8573 &  3339 & 11562\\\\\n",
-       "\t Sudan & 1994 &  5199 & 19910 & 11370\\\\\n",
-       "\t USA   & 1995 & 18628 & 17827 & 11375\\\\\n",
-       "\t China & 1995 &  8039 & 13211 & 14396\\\\\n",
-       "\t Sudan & 1995 & 16518 & 12017 & 12923\\\\\n",
-       "\t USA   & 1996 &  2137 & 10247 & 15444\\\\\n",
-       "\t China & 1996 & 12667 &  4412 &  3713\\\\\n",
-       "\t Sudan & 1996 & 18298 &  8967 &  7706\\\\\n",
+       "\t 4\\\\\n",
+       "\t 5\\\\\n",
+       "\t 6\\\\\n",
        "\\end{tabular}\n"
       ],
       "text/html": [
        "<table class=\"dataframe\">\n",
-       "<caption>A data.frame: 9 × 5</caption>\n",
+       "<caption>A data.frame: 3 × 1</caption>\n",
        "<thead>\n",
-       "\t<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>gdp_pc_2008</th><th scope=col>gdp_pc_2010</th><th scope=col>gdp_pc_2012</th></tr>\n",
-       "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "\t<tr><th scope=col>column_to_keep</th></tr>\n",
+       "\t<tr><th scope=col>&lt;dbl&gt;</th></tr>\n",
        "</thead>\n",
        "<tbody>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td>18142</td><td>18778</td><td> 3246</td></tr>\n",
-       "\t<tr><td>China</td><td>1994</td><td> 8573</td><td> 3339</td><td>11562</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td> 5199</td><td>19910</td><td>11370</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td>18628</td><td>17827</td><td>11375</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td> 8039</td><td>13211</td><td>14396</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>16518</td><td>12017</td><td>12923</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 2137</td><td>10247</td><td>15444</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td>12667</td><td> 4412</td><td> 3713</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td>18298</td><td> 8967</td><td> 7706</td></tr>\n",
+       "\t<tr><td>4</td></tr>\n",
+       "\t<tr><td>5</td></tr>\n",
+       "\t<tr><td>6</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
       ]
@@ -547,90 +702,97 @@
    "metadata": {}
   },
   {
-   "cell_type": "code",
-   "execution_count": 13,
+   "cell_type": "markdown",
    "source": [
-    "# Convert all gdp_pc quantities to 1,000s of dollars\n",
+    "For normal scripting, this can save you from having to type double quotes around column names all the time. But when we write loops, we *need* to get our tidyverse functions to interpret text as variables, because the whole point of a loop is that we have a variable that's changing every time we go through the loop.\n",
     "\n",
-    "countries <- data.frame(country, year, gdp_pc_2008, gdp_pc_2010, gdp_pc_2012)\n",
-    "\n",
-    "for (c in c(\"gdp_pc_2008\", \"gdp_pc_2010\", \"gdp_pc_2012\")) {\n",
-    "    countries[c] <- select(countries, .data[[c]]) / 1000\n",
-    "}\n",
-    "countries"
+    "For example, if I wanted to loop over the columns of this dataset, with array indexing I could write: "
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "source": [
+    "for (column_to_keep in c(\"a\", \"column_to_keep\")) {\n",
+    "    print(df[, column_to_keep])\n",
+    "}"
    ],
    "outputs": [
     {
-     "output_type": "display_data",
-     "data": {
-      "text/plain": [
-       "  country year gdp_pc_2008 gdp_pc_2010 gdp_pc_2012\n",
-       "1 USA     1994 18.142      18.778       3.246     \n",
-       "2 China   1994  8.573       3.339      11.562     \n",
-       "3 Sudan   1994  5.199      19.910      11.370     \n",
-       "4 USA     1995 18.628      17.827      11.375     \n",
-       "5 China   1995  8.039      13.211      14.396     \n",
-       "6 Sudan   1995 16.518      12.017      12.923     \n",
-       "7 USA     1996  2.137      10.247      15.444     \n",
-       "8 China   1996 12.667       4.412       3.713     \n",
-       "9 Sudan   1996 18.298       8.967       7.706     "
-      ],
-      "text/markdown": [
-       "\n",
-       "A data.frame: 9 × 5\n",
-       "\n",
-       "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc_2008 &lt;dbl&gt; | gdp_pc_2010 &lt;dbl&gt; | gdp_pc_2012 &lt;dbl&gt; |\n",
-       "|---|---|---|---|---|\n",
-       "| USA   | 1994 | 18.142 | 18.778 |  3.246 |\n",
-       "| China | 1994 |  8.573 |  3.339 | 11.562 |\n",
-       "| Sudan | 1994 |  5.199 | 19.910 | 11.370 |\n",
-       "| USA   | 1995 | 18.628 | 17.827 | 11.375 |\n",
-       "| China | 1995 |  8.039 | 13.211 | 14.396 |\n",
-       "| Sudan | 1995 | 16.518 | 12.017 | 12.923 |\n",
-       "| USA   | 1996 |  2.137 | 10.247 | 15.444 |\n",
-       "| China | 1996 | 12.667 |  4.412 |  3.713 |\n",
-       "| Sudan | 1996 | 18.298 |  8.967 |  7.706 |\n",
-       "\n"
-      ],
-      "text/latex": [
-       "A data.frame: 9 × 5\n",
-       "\\begin{tabular}{lllll}\n",
-       " country & year & gdp\\_pc\\_2008 & gdp\\_pc\\_2010 & gdp\\_pc\\_2012\\\\\n",
-       " <chr> & <dbl> & <dbl> & <dbl> & <dbl>\\\\\n",
-       "\\hline\n",
-       "\t USA   & 1994 & 18.142 & 18.778 &  3.246\\\\\n",
-       "\t China & 1994 &  8.573 &  3.339 & 11.562\\\\\n",
-       "\t Sudan & 1994 &  5.199 & 19.910 & 11.370\\\\\n",
-       "\t USA   & 1995 & 18.628 & 17.827 & 11.375\\\\\n",
-       "\t China & 1995 &  8.039 & 13.211 & 14.396\\\\\n",
-       "\t Sudan & 1995 & 16.518 & 12.017 & 12.923\\\\\n",
-       "\t USA   & 1996 &  2.137 & 10.247 & 15.444\\\\\n",
-       "\t China & 1996 & 12.667 &  4.412 &  3.713\\\\\n",
-       "\t Sudan & 1996 & 18.298 &  8.967 &  7.706\\\\\n",
-       "\\end{tabular}\n"
-      ],
-      "text/html": [
-       "<table class=\"dataframe\">\n",
-       "<caption>A data.frame: 9 × 5</caption>\n",
-       "<thead>\n",
-       "\t<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>gdp_pc_2008</th><th scope=col>gdp_pc_2010</th><th scope=col>gdp_pc_2012</th></tr>\n",
-       "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
-       "</thead>\n",
-       "<tbody>\n",
-       "\t<tr><td>USA  </td><td>1994</td><td>18.142</td><td>18.778</td><td> 3.246</td></tr>\n",
-       "\t<tr><td>China</td><td>1994</td><td> 8.573</td><td> 3.339</td><td>11.562</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1994</td><td> 5.199</td><td>19.910</td><td>11.370</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1995</td><td>18.628</td><td>17.827</td><td>11.375</td></tr>\n",
-       "\t<tr><td>China</td><td>1995</td><td> 8.039</td><td>13.211</td><td>14.396</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1995</td><td>16.518</td><td>12.017</td><td>12.923</td></tr>\n",
-       "\t<tr><td>USA  </td><td>1996</td><td> 2.137</td><td>10.247</td><td>15.444</td></tr>\n",
-       "\t<tr><td>China</td><td>1996</td><td>12.667</td><td> 4.412</td><td> 3.713</td></tr>\n",
-       "\t<tr><td>Sudan</td><td>1996</td><td>18.298</td><td> 8.967</td><td> 7.706</td></tr>\n",
-       "</tbody>\n",
-       "</table>\n"
-      ]
-     },
-     "metadata": {}
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "[1] 1 2 3\n",
+      "[1] 4 5 6\n"
+     ]
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "But... how do I do that if I'm using `select`? If I do what I did here, I'd just get `column_to_keep` twice:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "source": [
+    "for (column_to_keep in c(\"a\", \"column_to_keep\")) {\n",
+    "    print(select(df, column_to_keep))\n",
+    "}"
+   ],
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "  column_to_keep\n",
+      "1              4\n",
+      "2              5\n",
+      "3              6\n",
+      "  column_to_keep\n",
+      "1              4\n",
+      "2              5\n",
+      "3              6\n"
+     ]
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "\n",
+    "To get around this, there are some hacks to make tidyverse work with loops. For example, we can wrap our text in `.data[[]]` if that text refers to a column name to ensure it's interpreted as a variable and not a literal value. For example:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "source": [
+    "for (column_to_keep in c(\"a\", \"column_to_keep\")) {\n",
+    "    print(select(df, .data[[column_to_keep]]))\n",
+    "}"
+   ],
+   "outputs": [
+    {
+     "output_type": "stream",
+     "name": "stdout",
+     "text": [
+      "  a\n",
+      "1 1\n",
+      "2 2\n",
+      "3 3\n",
+      "  column_to_keep\n",
+      "1              4\n",
+      "2              5\n",
+      "3              6\n"
+     ]
     }
    ],
    "metadata": {}
@@ -641,17 +803,17 @@
     "Of course, that trick doesn't solve all problems from looping over things in the tidyverse... For example, if wanted to do this with `mutate` I couldn't use `.data[[c]]` for the name of the new column:\n",
     "\n",
     "```r\n",
-    "for (c in c(\"gdp_pc_2008\", \"gdp_pc_2010\", \"gdp_pc_2012\")) {\n",
-    "    countries = mutate(countries, .data[[c]] = ) .data[[c]]/ 1000\n",
+    "for (column_to_keep in c(\"a\", \"column_to_keep\")) {\n",
+    "    df <- mutate(df, .data[[column_to_keep]] = .data[[column_to_keep]]/ 1000\n",
     "}\n",
     "\n",
     "> ERROR: Error in parse(text = x, srcfile = src): <text>:2:46: unexpected '='\n",
-    "> 1: for (c in c(\"gdp_pc_2008\", \"gdp_pc_2010\", \"gdp_pc_2012\")) {\n",
-    "> 2: countries = mutate(countries, .data[[c]] =\n",
-    "> ^\n",
+    "> 1: for (column_to_keep in c(\"a\", \"column_to_keep\")) {\n",
+    "> 2:     df <- mutate(df, .data[[column_to_keep]] =\n",
+    ">                                                 ^\n",
     "> Error in parse(text = x, srcfile = src): <text>:2:46: unexpected '='\n",
-    "> 1: for (c in c(\"gdp_pc_2008\", \"gdp_pc_2010\", \"gdp_pc_2012\")) {\n",
-    "> 2:     countries = mutate(countries, .data[[c]] =\n",
+    "> 1: for (column_to_keep in c(\"a\", \"column_to_keep\")) {\n",
+    "> 2:     df <- mutate(df, .data[[column_to_keep]] =\n",
     ">                                                 ^\n",
     "> Traceback:\n",
     "```"
@@ -661,20 +823,8 @@
   {
    "cell_type": "markdown",
    "source": [
-    "And this is one of the reasons that it's good not to become *over-reliant* on tidyverse libraries -- for basic scripting they can be very convenient, but it's important to be comfortable with traditional tools like array indexing when things break down.\n",
-    "\n",
-    "BTW: obviously the looping example above is contrived. The much more concise way to do what the loop above does is:"
+    "And this is one of the reasons that it's good not to become *over-reliant* on tidyverse libraries -- for basic scripting they can be very convenient, but it's important to be comfortable with traditional tools like array indexing when things break down."
    ],
-   "metadata": {}
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 14,
-   "source": [
-    "columns <- c(\"gdp_pc_2008\", \"gdp_pc_2010\", \"gdp_pc_2012\")\n",
-    "countries[columns] <- countries[columns] / 1000"
-   ],
-   "outputs": [],
    "metadata": {}
   },
   {
@@ -715,7 +865,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 21,
    "source": [
     "# Two random variables:\n",
     "v1 <- rnorm(10000000)\n",
@@ -736,18 +886,7 @@
     "run_time_vector_addition <- stop - start\n",
     "run_time_vector_addition"
    ],
-   "outputs": [
-    {
-     "output_type": "display_data",
-     "data": {
-      "text/plain": [
-       "   user  system elapsed \n",
-       "  0.073   0.019   0.094 "
-      ]
-     },
-     "metadata": {}
-    }
-   ],
+   "outputs": [],
    "metadata": {}
   },
   {
@@ -759,7 +898,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": null,
    "source": [
     "# Now add them up in a loop.\n",
     "\n",
@@ -794,7 +933,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": null,
    "source": [
     "# Looped took about this many time longer:\n",
     "\n",
