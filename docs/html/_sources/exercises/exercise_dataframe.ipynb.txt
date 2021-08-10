@@ -7,21 +7,21 @@
                 "\n",
                 "## Manipulating Real Data\n",
                 "\n",
-                "0. Download the world-small.csv dataset [from here](../data/world-small.csv).\n",
+                "1. Download the world-small.csv dataset [from here](https://github.com/nickeubank/computational_methods_boot_camp/blob/main/source/data/world-small.csv) by clicking the `raw` button, then right-clicking, selecting \"Save As...\", and saving the file as `world-small.csv`.\n",
                 "\n",
-                "1. Read the `world-small.csv` data into R and store it in an object called `world`. (Set your working directory using code first.) \n",
+                "2. Read the `world-small.csv` data into R and store it in an object called `world`. (Set your working directory using code first.) \n",
                 "\n",
-                "2. (Conceptual) What is the unit of analysis in the dataset? In other words, what does each row represent?\n",
+                "3. (Conceptual) What is the unit of analysis in the dataset? In other words, what does each row represent?\n",
                 "\n",
-                "3. How many observations does `world` have? How many variables? Use an R command to find out.\n",
+                "4. How many observations does `world` have? How many variables? Use an R command to find out.\n",
                 "\n",
-                "4. Use brackets and a logical statement to inspect all the values for Nigeria and United States. That is, your code should return two entire rows of the dataset. \n",
+                "5. Use brackets and a logical statement to inspect all the values for Nigeria and United States. That is, your code should return two entire rows of the dataset. \n",
                 "\n",
-                "5. Use R to return China's Polity IV score (this is a measure of how Democratic its political institutions are). As in question 4, use a logical statement and brackets, but don't return the entire row. Rather, return a single value with the Polity IV score.\n",
+                "6. Use R to return China's Polity IV score (this is a measure of how Democratic its political institutions are). As in question 4, use a logical statement and brackets, but don't return the entire row. Rather, return a single value with the Polity IV score.\n",
                 "\n",
-                "6. What is the lowest GDP per capita in the dataset? (Use R to return only the value.)\n",
+                "7. What is the lowest GDP per capita in the dataset? (Use R to return only the value.)\n",
                 "\n",
-                "7. What country has the lowest GDP per capita? (Your code should return the country name and be general enough so that if the observations in the dataset --- or their order --- change, your code should still return the country with the lowest GDP per capita.)\n"
+                "8. What country has the lowest GDP per capita? (Your code should return the country name and be general enough so that if the observations in the dataset --- or their order --- change, your code should still return the country with the lowest GDP per capita.)\n"
             ],
             "metadata": {}
         },
@@ -52,7 +52,9 @@
             "source": [
                 "**2)** Now import `US_ACS_2017_10pct_sample.dta`. Because this file is a Stata datafile (ends with a `.dta` suffix), you need to install and load the `foreign` package, then read in the file with the command `read.dta`.\n",
                 "\n",
-                "**2b)** Interestingly, you don't always have to download data to load it! R can also load data directly from a URL *if* you get the right URL. To illustrate, head over to [this location](https://github.com/nickeubank/MIDS_Data/blob/master/US_AmericanCommunitySurvey/US_ACS_2017_10pct_sample.dta), right click on the \"Download\" button, and select \"Copy Link\". Then in R, instead of writing the path to your file, just write `url(\"paste_the_url_here\")`. So your final command will look something like `acs <- read.dta(url(\"url_here\"))`."
+                "**2b)** Interestingly, you don't always have to download data to load it! R can also load data directly from a URL *if* you get the right URL. To illustrate, head over to [this location](https://github.com/nickeubank/MIDS_Data/blob/master/US_AmericanCommunitySurvey/US_ACS_2017_10pct_sample.dta), right click on the \"Download\" button, and select \"Copy Link\". Then in R, instead of writing the path to your file, just paste the URL (e.g. `acs <- read.dta(\"url_here\")`.)\n",
+                "\n",
+                "(Note most commands can read from URLs, but the syntax differs by library. For `foreign` functions, you just put in the URL; for `read.csv`, you have to add the `url` function: `read.csv(url(\"url here\"))`)"
             ],
             "metadata": {}
         },
@@ -116,14 +118,14 @@
         {
             "cell_type": "markdown",
             "source": [
-                "**7)** Do you see any immediate problems? Write them down with your partner. "
+                "**8)** Do you see any immediate problems? Write them down with your partner. "
             ],
             "metadata": {}
         },
         {
             "cell_type": "markdown",
             "source": [
-                "**8)** One problem is that many people seem to have incomes of $9,999,999. Moreover, people with those incomes seem to be very young children. \n",
+                "**9)** One problem is that many people seem to have incomes of $9,999,999. Moreover, people with those incomes seem to be very young children. \n",
                 "\n",
                 "What you are seeing is one method (a relatively old one) for representing missing data. In this case, the value 9999999 is used to denote observations for which there is no data (Or more specifically, in this case observations where the person is too young to work, so their income value is missing). \n",
                 "\n",
@@ -134,7 +136,7 @@
         {
             "cell_type": "markdown",
             "source": [
-                "**9)** OK, the other potential problem is that our data includes lots of people who are unemployed and people who are not in the labor force (this means they not only don't have a job, but also aren't looking for a job). For this analysis, we want to focus on the wages of people who are currently employed. So subset the dataset for the people for whom `empstat` is equal to \"employed\". \n",
+                "**10)** OK, the other potential problem is that our data includes lots of people who are unemployed and people who are not in the labor force (this means they not only don't have a job, but also aren't looking for a job). For this analysis, we want to focus on the wages of people who are currently employed. So subset the dataset for the people for whom `empstat` is equal to \"employed\". \n",
                 "\n",
                 "Note that our decision to only look at people who are employed impacts how we should interpret the relationship we estimate between education and income. Because we are only looking at employed people, we will be estimating the relationship between education and income *for people who are employed*. That means that if education affects the *likelihood* someone is employed, we won't capture that in this analysis. (Economists all this the \"intensive margin\", while looking at whether people get jobs in the first place is called the \"extensive margin\".)"
             ],
@@ -143,7 +145,7 @@
         {
             "cell_type": "markdown",
             "source": [
-                "**10)** Now let's turn to education. The `educ` variable seems to have a lot of discrete values. Let's see what values exist, and their distribution, using the `table()` function. This is an *extremely* useful tool you'll use a lot! Try the following code (modified for the name of your dataset, of course):\n",
+                "**11)** Now let's turn to education. The `educ` variable seems to have a lot of discrete values. Let's see what values exist, and their distribution, using the `table()` function. This is an *extremely* useful tool you'll use a lot! Try the following code (modified for the name of your dataset, of course):\n",
                 "\n",
                 "```R\n",
                 "table(acs[,'educ'])\n",
@@ -154,28 +156,28 @@
         {
             "cell_type": "markdown",
             "source": [
-                "**11)** There are a lot of values in here, so let's just check a couple. What is the average value of `inctot` for people whose highest grade level is \"grade 12\" (in the US, that is someone who has graduated high school)?"
+                "**12)** There are a lot of values in here, so let's just check a couple. What is the average value of `inctot` for people whose highest grade level is \"grade 12\" (in the US, that is someone who has graduated high school)?"
             ],
             "metadata": {}
         },
         {
             "cell_type": "markdown",
             "source": [
-                "**12)** What is the average income of someone who graduated college (\"4 years of college\")? What does that suggest is the value of getting a college degree after graduating high school?"
+                "**13)** What is the average income of someone who graduated college (\"4 years of college\")? What does that suggest is the value of getting a college degree after graduating high school?"
             ],
             "metadata": {}
         },
         {
             "cell_type": "markdown",
             "source": [
-                "**13)** What is the average income for someone who has not finished high school? What does that suggest is the value of a high school diploma?"
+                "**14)** What is the average income for someone who has not finished high school? What does that suggest is the value of a high school diploma?"
             ],
             "metadata": {}
         },
         {
             "cell_type": "markdown",
             "source": [
-                "**14)** Complete the following table:\n",
+                "**15)** Complete the following table:\n",
                 "\n",
                 "- Average income for someone who has not finished high school: _________\n",
                 "- Average income for someone who only completed 9th grade: _________\n",
@@ -189,7 +191,7 @@
         {
             "cell_type": "markdown",
             "source": [
-                "**15)** Why do you think there is no benefit from moving from grade 9 to grade 10, or grade 10 to grade 11, but there is a huge benefit to moving from grade 11 to graduating high school (grade 12)?"
+                "**16)** Why do you think there is no benefit from moving from grade 9 to grade 10, or grade 10 to grade 11, but there is a huge benefit to moving from grade 11 to graduating high school (grade 12)?"
             ],
             "metadata": {}
         },
@@ -215,7 +217,7 @@
             "source": [
                 "## Want More Practice?\n",
                 "\n",
-                "**(16)** The US Census isn't the only organization that published surveys of their populations -- most countries in the world conduct regular surveys, and most publish versions of their data online. \n",
+                "**(1)** The US Census isn't the only organization that published surveys of their populations -- most countries in the world conduct regular surveys, and most publish versions of their data online. \n",
                 "\n",
                 "In addition to making US Census data available to researchers, IPUMS (through \"IPUMS International\") also makes survey data available from a wide range of countries. \n",
                 "\n",
@@ -235,7 +237,7 @@
         {
             "cell_type": "markdown",
             "source": [
-                "**(17)** Repeat these exercises for your new dataset!"
+                "**(2)** Repeat these exercises for your new dataset!"
             ],
             "metadata": {}
         }
@@ -243,7 +245,17 @@
     "metadata": {
         "orig_nbformat": 4,
         "language_info": {
-            "name": "r"
+            "name": "R",
+            "codemirror_mode": "r",
+            "pygments_lexer": "r",
+            "mimetype": "text/x-r-source",
+            "file_extension": ".r",
+            "version": "4.1.0"
+        },
+        "kernelspec": {
+            "name": "ir",
+            "display_name": "R",
+            "language": "R"
         }
     },
     "nbformat": 4,
