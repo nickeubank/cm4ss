@@ -11,7 +11,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 8,
+            "execution_count": 1,
             "source": [
                 "income <- c(22000, 65000, 19000, 110000, 14000, 0, 35000)\n",
                 "age <- c(20, 35, 55, 35, 21, 56, 42)\n",
@@ -97,7 +97,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 9,
+            "execution_count": 2,
             "source": [
                 "mean(svy[, \"age\"])"
             ],
@@ -132,7 +132,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 10,
+            "execution_count": 3,
             "source": [
                 "mean(svy[svy[, \"age\"] > 30, \"income\"])"
             ],
@@ -167,7 +167,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 11,
+            "execution_count": 4,
             "source": [
                 "# Broken out\n",
                 "avg_income <- mean(svy[, \"income\"])\n",
@@ -199,7 +199,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 12,
+            "execution_count": 5,
             "source": [
                 "# Condensed as much as I'd like\n",
                 "avg_income <- mean(svy[, \"income\"])\n",
@@ -241,7 +241,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 13,
+            "execution_count": 6,
             "source": [
                 "after_tax_income <- svy[, \"income\"]\n",
                 "updated_survey <- cbind(svy, after_tax_income)\n",
@@ -315,10 +315,10 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 14,
+            "execution_count": 7,
             "source": [
                 "under_20000 <- updated_survey[, \"income\"] < 20000\n",
-                "updated_survey[under_20000, \"after_tax_income\"] = updated_survey[under_20000, \"after_tax_income\"] + 20000\n",
+                "updated_survey[under_20000, \"after_tax_income\"] = updated_survey[under_20000, \"after_tax_income\"] + 10000\n",
                 "updated_survey"
             ],
             "outputs": [
@@ -329,10 +329,10 @@
                             "     income age education after_tax_income\n",
                             "[1,]  22000 20  12         22000          \n",
                             "[2,]  65000 35  16         65000          \n",
-                            "[3,]  19000 55  11         39000          \n",
+                            "[3,]  19000 55  11         29000          \n",
                             "[4,] 110000 35  22        110000          \n",
-                            "[5,]  14000 21  12         34000          \n",
-                            "[6,]      0 56   8         20000          \n",
+                            "[5,]  14000 21  12         24000          \n",
+                            "[6,]      0 56   8         10000          \n",
                             "[7,]  35000 42  12         35000          "
                         ],
                         "text/markdown": [
@@ -343,10 +343,10 @@
                             "|---|---|---|---|\n",
                             "|  22000 | 20 | 12 |  22000 |\n",
                             "|  65000 | 35 | 16 |  65000 |\n",
-                            "|  19000 | 55 | 11 |  39000 |\n",
+                            "|  19000 | 55 | 11 |  29000 |\n",
                             "| 110000 | 35 | 22 | 110000 |\n",
-                            "|  14000 | 21 | 12 |  34000 |\n",
-                            "|      0 | 56 |  8 |  20000 |\n",
+                            "|  14000 | 21 | 12 |  24000 |\n",
+                            "|      0 | 56 |  8 |  10000 |\n",
                             "|  35000 | 42 | 12 |  35000 |\n",
                             "\n"
                         ],
@@ -357,10 +357,10 @@
                             "\\hline\n",
                             "\t  22000 & 20 & 12 &  22000\\\\\n",
                             "\t  65000 & 35 & 16 &  65000\\\\\n",
-                            "\t  19000 & 55 & 11 &  39000\\\\\n",
+                            "\t  19000 & 55 & 11 &  29000\\\\\n",
                             "\t 110000 & 35 & 22 & 110000\\\\\n",
-                            "\t  14000 & 21 & 12 &  34000\\\\\n",
-                            "\t      0 & 56 &  8 &  20000\\\\\n",
+                            "\t  14000 & 21 & 12 &  24000\\\\\n",
+                            "\t      0 & 56 &  8 &  10000\\\\\n",
                             "\t  35000 & 42 & 12 &  35000\\\\\n",
                             "\\end{tabular}\n"
                         ],
@@ -373,10 +373,10 @@
                             "<tbody>\n",
                             "\t<tr><td> 22000</td><td>20</td><td>12</td><td> 22000</td></tr>\n",
                             "\t<tr><td> 65000</td><td>35</td><td>16</td><td> 65000</td></tr>\n",
-                            "\t<tr><td> 19000</td><td>55</td><td>11</td><td> 39000</td></tr>\n",
+                            "\t<tr><td> 19000</td><td>55</td><td>11</td><td> 29000</td></tr>\n",
                             "\t<tr><td>110000</td><td>35</td><td>22</td><td>110000</td></tr>\n",
-                            "\t<tr><td> 14000</td><td>21</td><td>12</td><td> 34000</td></tr>\n",
-                            "\t<tr><td>     0</td><td>56</td><td> 8</td><td> 20000</td></tr>\n",
+                            "\t<tr><td> 14000</td><td>21</td><td>12</td><td> 24000</td></tr>\n",
+                            "\t<tr><td>     0</td><td>56</td><td> 8</td><td> 10000</td></tr>\n",
                             "\t<tr><td> 35000</td><td>42</td><td>12</td><td> 35000</td></tr>\n",
                             "</tbody>\n",
                             "</table>\n"
