@@ -88,6 +88,7 @@ Session 5: Plotting, Loops and Functions
 
 -  `Loops <loops.ipynb>`__
 -  `Functions <functions.ipynb>`__
+-  `Function Example <function_example.ipynb>`__
 
 **In Class**
 

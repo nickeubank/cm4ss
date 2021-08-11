@@ -108,6 +108,7 @@ I owe a huge debt of gratitude to `Simon Ejdemyr <https://sejdemyr.github.io/>`_
    missing_data.ipynb
    loops.ipynb
    functions.ipynb
+   function_example.ipynb
 
 
 .. toctree::
