@@ -5,9 +5,377 @@
             "source": [
                 "# Lists\n",
                 "\n",
-                "**PRELIMINARY SITE DRAFT. MUCH WORK TO BE DONE!**\n",
+                "Up till now, we've mostly been focused on vectors and matrices in different forms. Arrays like vectors and matrices are *extremely* important in data science, in part because constraining a collection of values to all be of the same time allows R to be much faster than it would be otherwise. \n",
                 "\n",
-                "They should know about them..."
+                "**But** sometimes we want a collection that can hold things of different types, and for that, R has lists. \n",
+                "\n",
+                "Lists are a collection that looks very similar to vectors -- it has a concept of order in one dimension, for example, and you can name entries. Unlike vectors, though, items in a list can be anything.\n",
+                "\n",
+                "## Creating and Adding to Lists\n",
+                "\n",
+                "To create a list, just use `list()` instead of `c()`:"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 13,
+            "source": [
+                "# Create a list with characters, a numeric,\n",
+                "# a logical, and a longer numeric\n",
+                "my_list <- list(\"one\", 2, TRUE, c(1, 2, 3))\n",
+                "my_list"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[[1]]\n",
+                            "[1] \"one\"\n",
+                            "\n",
+                            "[[2]]\n",
+                            "[1] 2\n",
+                            "\n",
+                            "[[3]]\n",
+                            "[1] TRUE\n",
+                            "\n",
+                            "[[4]]\n",
+                            "[1] 1 2 3\n"
+                        ],
+                        "text/markdown": [
+                            "1. 'one'\n",
+                            "2. 2\n",
+                            "3. TRUE\n",
+                            "4. 1. 1\n",
+                            "2. 2\n",
+                            "3. 3\n",
+                            "\n",
+                            "\n",
+                            "\n",
+                            "\n",
+                            "\n"
+                        ],
+                        "text/latex": [
+                            "\\begin{enumerate}\n",
+                            "\\item 'one'\n",
+                            "\\item 2\n",
+                            "\\item TRUE\n",
+                            "\\item \\begin{enumerate*}\n",
+                            "\\item 1\n",
+                            "\\item 2\n",
+                            "\\item 3\n",
+                            "\\end{enumerate*}\n",
+                            "\n",
+                            "\\end{enumerate}\n"
+                        ],
+                        "text/html": [
+                            "<ol>\n",
+                            "\t<li>'one'</li>\n",
+                            "\t<li>2</li>\n",
+                            "\t<li>TRUE</li>\n",
+                            "\t<li><style>\n",
+                            ".list-inline {list-style: none; margin:0; padding: 0}\n",
+                            ".list-inline>li {display: inline-block}\n",
+                            ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+                            "</style>\n",
+                            "<ol class=list-inline><li>1</li><li>2</li><li>3</li></ol>\n",
+                            "</li>\n",
+                            "</ol>\n"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "Lists have a concept of order, so you can modify things by index, just like a vector:"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 15,
+            "source": [
+                "# Change the third entry\n",
+                "my_list[3] <- \"three\"\n",
+                "my_list"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[[1]]\n",
+                            "[1] \"one\"\n",
+                            "\n",
+                            "[[2]]\n",
+                            "[1] 2\n",
+                            "\n",
+                            "[[3]]\n",
+                            "[1] \"three\"\n",
+                            "\n",
+                            "[[4]]\n",
+                            "[1] 1 2 3\n"
+                        ],
+                        "text/markdown": [
+                            "1. 'one'\n",
+                            "2. 2\n",
+                            "3. 'three'\n",
+                            "4. 1. 1\n",
+                            "2. 2\n",
+                            "3. 3\n",
+                            "\n",
+                            "\n",
+                            "\n",
+                            "\n",
+                            "\n"
+                        ],
+                        "text/latex": [
+                            "\\begin{enumerate}\n",
+                            "\\item 'one'\n",
+                            "\\item 2\n",
+                            "\\item 'three'\n",
+                            "\\item \\begin{enumerate*}\n",
+                            "\\item 1\n",
+                            "\\item 2\n",
+                            "\\item 3\n",
+                            "\\end{enumerate*}\n",
+                            "\n",
+                            "\\end{enumerate}\n"
+                        ],
+                        "text/html": [
+                            "<ol>\n",
+                            "\t<li>'one'</li>\n",
+                            "\t<li>2</li>\n",
+                            "\t<li>'three'</li>\n",
+                            "\t<li><style>\n",
+                            ".list-inline {list-style: none; margin:0; padding: 0}\n",
+                            ".list-inline>li {display: inline-block}\n",
+                            ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+                            "</style>\n",
+                            "<ol class=list-inline><li>1</li><li>2</li><li>3</li></ol>\n",
+                            "</li>\n",
+                            "</ol>\n"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "And you can append things to the end of lists:"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 16,
+            "source": [
+                "my_list <- append(my_list, \"five\")"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[[1]]\n",
+                            "[1] \"one\"\n",
+                            "\n",
+                            "[[2]]\n",
+                            "[1] 2\n",
+                            "\n",
+                            "[[3]]\n",
+                            "[1] \"three\"\n",
+                            "\n",
+                            "[[4]]\n",
+                            "[1] 1 2 3\n",
+                            "\n",
+                            "[[5]]\n",
+                            "[1] \"five\"\n"
+                        ],
+                        "text/markdown": [
+                            "1. 'one'\n",
+                            "2. 2\n",
+                            "3. 'three'\n",
+                            "4. 1. 1\n",
+                            "2. 2\n",
+                            "3. 3\n",
+                            "\n",
+                            "\n",
+                            "\n",
+                            "5. 'five'\n",
+                            "\n",
+                            "\n"
+                        ],
+                        "text/latex": [
+                            "\\begin{enumerate}\n",
+                            "\\item 'one'\n",
+                            "\\item 2\n",
+                            "\\item 'three'\n",
+                            "\\item \\begin{enumerate*}\n",
+                            "\\item 1\n",
+                            "\\item 2\n",
+                            "\\item 3\n",
+                            "\\end{enumerate*}\n",
+                            "\n",
+                            "\\item 'five'\n",
+                            "\\end{enumerate}\n"
+                        ],
+                        "text/html": [
+                            "<ol>\n",
+                            "\t<li>'one'</li>\n",
+                            "\t<li>2</li>\n",
+                            "\t<li>'three'</li>\n",
+                            "\t<li><style>\n",
+                            ".list-inline {list-style: none; margin:0; padding: 0}\n",
+                            ".list-inline>li {display: inline-block}\n",
+                            ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+                            "</style>\n",
+                            "<ol class=list-inline><li>1</li><li>2</li><li>3</li></ol>\n",
+                            "</li>\n",
+                            "\t<li>'five'</li>\n",
+                            "</ol>\n"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "markdown",
+            "source": [
+                "## Subsetting Lists\n",
+                "\n",
+                "Lists do have one odd feature -- if you access them with single [] brackets, you get back a list with the things you wanted, not the things themselves. To just get the thing in the list, you have to use double [] brackets:"
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 18,
+            "source": [
+                "x <- my_list[1]\n",
+                "x"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[[1]]\n",
+                            "[1] \"one\"\n"
+                        ],
+                        "text/markdown": [
+                            "1. 'one'\n",
+                            "\n",
+                            "\n"
+                        ],
+                        "text/latex": [
+                            "\\begin{enumerate}\n",
+                            "\\item 'one'\n",
+                            "\\end{enumerate}\n"
+                        ],
+                        "text/html": [
+                            "<ol>\n",
+                            "\t<li>'one'</li>\n",
+                            "</ol>\n"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 19,
+            "source": [
+                "class(x)"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[1] \"list\""
+                        ],
+                        "text/markdown": [
+                            "'list'"
+                        ],
+                        "text/latex": [
+                            "'list'"
+                        ],
+                        "text/html": [
+                            "'list'"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 20,
+            "source": [
+                "y <- my_list[[1]]\n",
+                "y"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[1] \"one\""
+                        ],
+                        "text/markdown": [
+                            "'one'"
+                        ],
+                        "text/latex": [
+                            "'one'"
+                        ],
+                        "text/html": [
+                            "'one'"
+                        ]
+                    },
+                    "metadata": {}
+                }
+            ],
+            "metadata": {}
+        },
+        {
+            "cell_type": "code",
+            "execution_count": 21,
+            "source": [
+                "class(y)"
+            ],
+            "outputs": [
+                {
+                    "output_type": "display_data",
+                    "data": {
+                        "text/plain": [
+                            "[1] \"character\""
+                        ],
+                        "text/markdown": [
+                            "'character'"
+                        ],
+                        "text/latex": [
+                            "'character'"
+                        ],
+                        "text/html": [
+                            "'character'"
+                        ]
+                    },
+                    "metadata": {}
+                }
             ],
             "metadata": {}
         }
@@ -15,7 +383,17 @@
     "metadata": {
         "orig_nbformat": 4,
         "language_info": {
-            "name": "r"
+            "name": "R",
+            "codemirror_mode": "r",
+            "pygments_lexer": "r",
+            "mimetype": "text/x-r-source",
+            "file_extension": ".r",
+            "version": "4.1.0"
+        },
+        "kernelspec": {
+            "name": "ir",
+            "display_name": "R",
+            "language": "R"
         }
     },
     "nbformat": 4,
