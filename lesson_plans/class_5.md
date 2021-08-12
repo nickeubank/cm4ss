@@ -1,3 +1,6 @@
+Other r things you can do:
+    - GIS
+    - igraph
 
 
 - I know this is been fast, you've learned SO MUCH!
@@ -5,3 +8,6 @@
 
 
 https://duke.qualtrics.com/jfe/form/SV_exKDSQPITaCPbzE
+
+
+`substr update`

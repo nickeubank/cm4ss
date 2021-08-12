@@ -75,7 +75,6 @@ In this class we will be "flipping the classroom" -- you will be required to rev
 
 Note that one consequence of this class structure is that the in person sessions will only be of value if you do the required readings before attending. In fact, because many in class exercises will be done in small groups, students who don't read materials in advance will not only undermine their own learning, but they also have the potential to undermine the learning experience of their fellow students. As a result, **each class will begin with a short quiz on the required readings.** These quizzes should be trivially easy if you did the readings, **but any student who fails to quizzes** will be asked to leave the boot camp in the interest of ensuring unprepared students don't undermine the experience of students who have prepared appropriately. 
 
-
 Huge Thanks
 ----------------
 
@@ -117,5 +116,4 @@ I owe a huge debt of gratitude to `Simon Ejdemyr <https://sejdemyr.github.io/>`_
    :maxdepth: 2
 
    lists.ipynb
-   collapsing_data.ipynb
-   wide_and_long.ipynb
+
