@@ -23,15 +23,184 @@
   {
    "cell_type": "markdown",
    "source": [
-    "## Subsetting By Index\n",
+    "## What is Subsetting?\n",
     "\n",
-    "As you've probably already realized, vectors don't just contain a jumble of data -- they also have a concept of \"order\". When I create a vector with `c(42, 47, -1)`, I have in mind that 42 is the first entry, 47 is the second, and -1 is the third. And we can use that concept of order to subset vectors by passing the index (order number) of an entry we want to our vector in square brackets:"
+    "As you've probably already realized, vectors don't just contain a jumble of data -- they also have a concept of \"order\". When I create a vector with `c(42, 47, -1)`, I have in mind that 42 is the first entry, 47 is the second, and -1 is the third. And we can use that concept of order to subset vectors by passing the index (order number) of an entry we want to our vector in square brackets. For example, consider the following vector:"
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
    "execution_count": 1,
+   "source": [
+    "a <- c(42, 47, -1)\n",
+    "a"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "[1] 42 47 -1"
+      ],
+      "text/markdown": [
+       "1. 42\n",
+       "2. 47\n",
+       "3. -1\n",
+       "\n",
+       "\n"
+      ],
+      "text/latex": [
+       "\\begin{enumerate*}\n",
+       "\\item 42\n",
+       "\\item 47\n",
+       "\\item -1\n",
+       "\\end{enumerate*}\n"
+      ],
+      "text/html": [
+       "<style>\n",
+       ".list-inline {list-style: none; margin:0; padding: 0}\n",
+       ".list-inline>li {display: inline-block}\n",
+       ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+       "</style>\n",
+       "<ol class=list-inline><li>42</li><li>47</li><li>-1</li></ol>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "If I wanted to pull out the second entry in that vector, I could do so with *array indexing* using square brackets (`[]`):"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "source": [
+    "a[2]"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "[1] 47"
+      ],
+      "text/markdown": [
+       "47"
+      ],
+      "text/latex": [
+       "47"
+      ],
+      "text/html": [
+       "47"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "And of course, if I wanted to assign that second entry to a new variable, I could!"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "source": [
+    "new <- a[2]\n",
+    "new"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "[1] 47"
+      ],
+      "text/markdown": [
+       "47"
+      ],
+      "text/latex": [
+       "47"
+      ],
+      "text/html": [
+       "47"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "But what, exactly, is happening when I subset? Let's return to the idea that a variable is just a box holding some data, and walk-through the following block of code:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "```r\n",
+    "a <- c(42, 47, -1)\n",
+    "new <- a[2]\n",
+    "```"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "In the first line of code, we create a new vector with three entries and assign it to the variable `a`. Just as in our previous reading, we can think of the variable `a` as a box that is holding this new vector.\n",
+    "\n",
+    "![vector_subsetting1](images/vector_subsetting1.png)\n",
+    "\n",
+    "In the second line, the first thing that happens is R evaluates the expression on the right side of the assignment operator: `a[2]`. The use of `a` and square brackets indicates to R that we're not trying to access a portion of the data stored in the box labelled `a`. In particular, by putting a `2` between the square brackets, we're telling R we want the second item in the box `a`: `47`. \n",
+    "\n",
+    "![vector_subsetting2](images/vector_subsetting2.png)\n",
+    "\n",
+    "Then when we assign that value -- 47 -- to `new`, we create a new variable, and insert our data into that box:\n",
+    "\n",
+    "![vector_subsetting3](images/vector_subsetting3.png)"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "This `variable[]` notation is something we'll use a *lot* in R, and it will always mean the same thing: we're trying to access some data in the data stored in the box `variable`."
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "## Subsetting By Index\n",
+    "\n"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "What we just did is an example of subsetting by index, where we just specify the location (index) of the data we want:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
    "source": [
     "a <- c(42, 47, -1)\n",
     "a[2]"
@@ -61,15 +230,13 @@
   {
    "cell_type": "markdown",
    "source": [
-    "Note the use of brackets, `[]` --- this is common when filtering, and we'll use it a lot!\n",
-    "\n",
     "But of course, because everything in R is a vector, if I can pass a single index, then I can pass any other numeric vector of indices, either directly:"
    ],
    "metadata": {}
   },
   {
    "cell_type": "code",
-   "execution_count": 2,
+   "execution_count": 7,
    "source": [
     "a[c(1, 3)]"
    ],
@@ -117,7 +284,7 @@
    "cell_type": "code",
    "execution_count": 3,
    "source": [
-    "subset = c(1, 3)\n",
+    "subset <- c(1, 3)\n",
     "a[subset]"
    ],
    "outputs": [
@@ -202,6 +369,13 @@
   {
    "cell_type": "markdown",
    "source": [
+    "Again, this is all working the same was as our example with just one entry -- R interprets the square brackets as a request for some data in the box `a`, and if we pass multiple indices, it just grabs multiple items from that box. "
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
     "## Subsetting with Logicals"
    ],
    "metadata": {}
@@ -249,6 +423,82 @@
    "source": [
     "Within these brackets is a vector with the same number of logical elements as there are elements in the vector you want to subset. Elements across the two vectors are matched by order: elements that match with `TRUE` are kept while elements that match with `FALSE` are dropped.\n",
     "\n",
+    "Visualized with the same tools we used before, we can draw out what's happening in this block of code:"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "source": [
+    "a <- c(42, 47, -1)\n",
+    "my_subset <- c(TRUE, FALSE, TRUE)\n",
+    "b <- a[my_subset]\n",
+    "b"
+   ],
+   "outputs": [
+    {
+     "output_type": "display_data",
+     "data": {
+      "text/plain": [
+       "[1] 42 -1"
+      ],
+      "text/markdown": [
+       "1. 42\n",
+       "2. -1\n",
+       "\n",
+       "\n"
+      ],
+      "text/latex": [
+       "\\begin{enumerate*}\n",
+       "\\item 42\n",
+       "\\item -1\n",
+       "\\end{enumerate*}\n"
+      ],
+      "text/html": [
+       "<style>\n",
+       ".list-inline {list-style: none; margin:0; padding: 0}\n",
+       ".list-inline>li {display: inline-block}\n",
+       ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+       "</style>\n",
+       "<ol class=list-inline><li>42</li><li>-1</li></ol>\n"
+      ]
+     },
+     "metadata": {}
+    }
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "First we create `a`:\n",
+    "![logical_subset_1](images/logical_subset_1.png)\n",
+    "\n",
+    "Then we create `my_subset`:\n",
+    "\n",
+    "![logical_subset_2](images/logical_subset_2.png)\n",
+    "\n",
+    "Then the magic: R lines up the entries in the data in the box labelled `a` and the data in the box labelled `my_subset`, and keeps any entries from `a` that line up with values of `my_subset` that are `TRUE`. \n",
+    "\n",
+    "Then it assigns the values in `a` that line up with `TRUE`s in `my_subset` to a new variable `b`:\n",
+    "\n",
+    "![logical_subset_3](images/logical_subset_3.png)"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "### Logical Operations"
+   ],
+   "metadata": {}
+  },
+  {
+   "cell_type": "markdown",
+   "source": [
+    "\n",
+    "\n",
     "This process is extremely useful when combined with a *logical operation* to combine multiple conditions. For example, you can use:\n",
     "\n",
     "- the logical \"and\" (written `&` in R) to say \"only be true if both conditions are true\", \n",
@@ -263,11 +513,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 8,
    "source": [
     "# Create a vector with 30 fruits \n",
     "fruits <- rep(c(\"orange\", \"apple\", \"banana\"), 10)\n",
-    "fruits \n"
+    "fruits\n"
    ],
    "outputs": [
     {
