@@ -78,7 +78,7 @@ Note that one consequence of this class structure is that the in person sessions
 Huge Thanks
 ----------------
 
-I owe a huge debt of gratitude to `Simon Ejdemyr <https://sejdemyr.github.io/>`__, whose `R tutorials <https://sejdemyr.github.io/r-tutorials/basics/>`__ were the basis of the first version of this course, and whose tutorials I used as a starting point for the materials on this site.
+I owe a huge debt of gratitude to `Simon Ejdemyr <https://sejdemyr.github.io/>`__, whose `R tutorials <https://sejdemyr.github.io/r-tutorials/basics/>`__ I used the first time that I taught a version of this boot camp, and whose tutorials were the inspiration for the resources on this site.
 
 .. toctree:: 
    :hidden:
