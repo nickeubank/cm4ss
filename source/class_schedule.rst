@@ -1,14 +1,16 @@
-Class Schedule & Curriculum
-===========================
+Class Schedule & Curriculum (2022)
+==================================
+
+**Video From 2021, Needs to Update for In Person**
 
 ..  youtube:: zEw7fX9EnIs
 
-Class Zoom: `https://duke.zoom.us/j/99884547773 <https://duke.zoom.us/j/99884547773>`__
+**All Sessions will be in person in Ahmadieh Room, Gross Hall, Third Floor**
 
 Session 1: Variables & Vectors
 -------------------------------------------------
 
-*Friday, August 6th, 10:00 - 11:30 ET*
+*Monday, August 15th, 1:30-3*
 
 **Do Before Class**
 
@@ -29,7 +31,8 @@ Session 1: Variables & Vectors
 Session 2: Generalizing Vectors
 -------------------------------------------------
 
-*Monday, August 9th, 10:00 - 11:30 ET*
+*Tuesday, August 16th, 10-11:30*
+
 
 **Read Before Class:**
 
@@ -47,7 +50,7 @@ Session 2: Generalizing Vectors
 Session 3: Data Wrangling
 ---------------------------------------------
 
-*Tuesday, August 10th, 10:00 - 11:30 ET*
+*Tuesday, August 16th, 1:30-3*
 
 **Read Before Class:**
 
@@ -63,7 +66,7 @@ Session 3: Data Wrangling
 Session 4: Merging and Aggregating
 -----------------------------------------------------
 
-*Wednesday, August 11th, 10:00 - 11:30 ET*
+*Thursday, August 18th, 10:00-11:30*
 
 **Read Before Class:**
 
@@ -82,7 +85,7 @@ Session 4: Merging and Aggregating
 Session 5: Plotting, Loops and Functions
 -------------------------------------------------------------
 
-*Thursday, August 12th, 10:00 - 11:30 ET*
+*Thursday, August 18th, 1:30-3:00*
 
 **Read Before Class:**
 
@@ -95,8 +98,10 @@ Session 5: Plotting, Loops and Functions
 -  Loops
 -  Functions
 
-Further Reading: Collapsing Data
+Session 6: Loops and Reshaping
 ---------------------------------
+
+*Friday, August 19th, 10:00-11:30*
 
 'Cause we certainly didn't cover everything about R in five sessions!
 
