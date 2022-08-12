@@ -1,9 +1,7 @@
 Class Schedule & Curriculum (2022)
 ==================================
 
-**Video From 2021, Needs to Update for In Person**
-
-..  youtube:: zEw7fX9EnIs
+..  youtube:: HqvHh1WdP5E
 
 **All Sessions will be in person in Ahmadieh Room, Gross Hall, Third Floor**
 
