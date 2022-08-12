@@ -14,18 +14,18 @@ Session 1: Variables & Vectors
 
 **Do Before Class**
 
-- Welcome Video
-- `Student Knowledge Assessment survey <https://forms.gle/A2iSuLAn12LqzHx19>`__
+- Watch Welcome Video
+- Complete `Student Knowledge Assessment survey <https://forms.gle/PbY6xMLTALt4zdxT9>`__
 - Accept Slack Invitation
-- `Review Course Summary <index.rst>`__
-- Read `Introduction to R <intro_to_r.ipynb>`__
-- Read `Intro to Data Types <intro_to_datatypes.ipynb>`__
+- Read `Course Summary <index.rst>`__
+- Read `Introduction to R <intro_to_r.ipynb>`__ (following the directions for installing R and RSTudio).
 
 **In Class**
 
 -  Welcome
 -  Why R?
 -  Course expectations
+-  Discuss `Intro to Data Types <intro_to_datatypes.ipynb>`__
 -  `Variable Assignment / Data Type Exercises <exercises/exercise_datatypes.ipynb>`__
 
 Session 2: Generalizing Vectors
