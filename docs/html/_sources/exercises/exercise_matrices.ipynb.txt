@@ -2,67 +2,24 @@
     "cells": [
         {
             "cell_type": "markdown",
+            "metadata": {},
             "source": [
                 "# Matrix Exercises\n",
                 "\n",
                 "For the following matrix manipulation exercises, begin by building the following matrix (you'll probably want to just copy-paste this code), which we can imagine is a survey of age, education and income:"
-            ],
-            "metadata": {}
+            ]
         },
         {
             "cell_type": "code",
             "execution_count": 5,
-            "source": [
-                "income <- c(22000, 65000, 19000, 110000, 14000, 0, 35000)\n",
-                "age <- c(20, 35, 55, 35, 21, 56, 42)\n",
-                "education <- c(12, 16, 11, 22, 12, 8, 12)\n",
-                "\n",
-                "svy <- cbind(income, age, education)\n",
-                "svy\n"
-            ],
+            "metadata": {
+                "vscode": {
+                    "languageId": "r"
+                }
+            },
             "outputs": [
                 {
-                    "output_type": "display_data",
                     "data": {
-                        "text/plain": [
-                            "     income age education\n",
-                            "[1,]  22000 20  12       \n",
-                            "[2,]  65000 35  16       \n",
-                            "[3,]  19000 55  11       \n",
-                            "[4,] 110000 35  22       \n",
-                            "[5,]  14000 21  12       \n",
-                            "[6,]      0 56   8       \n",
-                            "[7,]  35000 42  12       "
-                        ],
-                        "text/markdown": [
-                            "\n",
-                            "A matrix: 7 × 3 of type dbl\n",
-                            "\n",
-                            "| income | age | education |\n",
-                            "|---|---|---|\n",
-                            "|  22000 | 20 | 12 |\n",
-                            "|  65000 | 35 | 16 |\n",
-                            "|  19000 | 55 | 11 |\n",
-                            "| 110000 | 35 | 22 |\n",
-                            "|  14000 | 21 | 12 |\n",
-                            "|      0 | 56 |  8 |\n",
-                            "|  35000 | 42 | 12 |\n",
-                            "\n"
-                        ],
-                        "text/latex": [
-                            "A matrix: 7 × 3 of type dbl\n",
-                            "\\begin{tabular}{lll}\n",
-                            " income & age & education\\\\\n",
-                            "\\hline\n",
-                            "\t  22000 & 20 & 12\\\\\n",
-                            "\t  65000 & 35 & 16\\\\\n",
-                            "\t  19000 & 55 & 11\\\\\n",
-                            "\t 110000 & 35 & 22\\\\\n",
-                            "\t  14000 & 21 & 12\\\\\n",
-                            "\t      0 & 56 &  8\\\\\n",
-                            "\t  35000 & 42 & 12\\\\\n",
-                            "\\end{tabular}\n"
-                        ],
                         "text/html": [
                             "<table class=\"dataframe\">\n",
                             "<caption>A matrix: 7 × 3 of type dbl</caption>\n",
@@ -79,15 +36,63 @@
                             "\t<tr><td> 35000</td><td>42</td><td>12</td></tr>\n",
                             "</tbody>\n",
                             "</table>\n"
+                        ],
+                        "text/latex": [
+                            "A matrix: 7 × 3 of type dbl\n",
+                            "\\begin{tabular}{lll}\n",
+                            " income & age & education\\\\\n",
+                            "\\hline\n",
+                            "\t  22000 & 20 & 12\\\\\n",
+                            "\t  65000 & 35 & 16\\\\\n",
+                            "\t  19000 & 55 & 11\\\\\n",
+                            "\t 110000 & 35 & 22\\\\\n",
+                            "\t  14000 & 21 & 12\\\\\n",
+                            "\t      0 & 56 &  8\\\\\n",
+                            "\t  35000 & 42 & 12\\\\\n",
+                            "\\end{tabular}\n"
+                        ],
+                        "text/markdown": [
+                            "\n",
+                            "A matrix: 7 × 3 of type dbl\n",
+                            "\n",
+                            "| income | age | education |\n",
+                            "|---|---|---|\n",
+                            "|  22000 | 20 | 12 |\n",
+                            "|  65000 | 35 | 16 |\n",
+                            "|  19000 | 55 | 11 |\n",
+                            "| 110000 | 35 | 22 |\n",
+                            "|  14000 | 21 | 12 |\n",
+                            "|      0 | 56 |  8 |\n",
+                            "|  35000 | 42 | 12 |\n",
+                            "\n"
+                        ],
+                        "text/plain": [
+                            "     income age education\n",
+                            "[1,]  22000 20  12       \n",
+                            "[2,]  65000 35  16       \n",
+                            "[3,]  19000 55  11       \n",
+                            "[4,] 110000 35  22       \n",
+                            "[5,]  14000 21  12       \n",
+                            "[6,]      0 56   8       \n",
+                            "[7,]  35000 42  12       "
                         ]
                     },
-                    "metadata": {}
+                    "metadata": {},
+                    "output_type": "display_data"
                 }
             ],
-            "metadata": {}
+            "source": [
+                "income <- c(22000, 65000, 19000, 110000, 14000, 0, 35000)\n",
+                "age <- c(20, 35, 55, 35, 21, 56, 42)\n",
+                "education <- c(12, 16, 11, 22, 12, 8, 12)\n",
+                "\n",
+                "svy <- cbind(income, age, education)\n",
+                "svy\n"
+            ]
         },
         {
             "cell_type": "markdown",
+            "metadata": {},
             "source": [
                 "## Exercise 1: Summarizing Data\n",
                 "\n",
@@ -100,25 +105,24 @@
                 "The US government is thinking about offering a 10,000 tax credit to anyone making less than 20,000 a year. \n",
                 "\n",
                 "Using `cbind`, add a new column to the matrix called \"after_tax_income\" populated with the incomes individuals will get *after* receiving the tax credit if they are eligible. Hint: you may wish to break this down into several steps."
-            ],
-            "metadata": {}
+            ]
         }
     ],
     "metadata": {
-        "orig_nbformat": 4,
+        "kernelspec": {
+            "display_name": "R",
+            "language": "R",
+            "name": "ir"
+        },
         "language_info": {
-            "name": "R",
             "codemirror_mode": "r",
-            "pygments_lexer": "r",
-            "mimetype": "text/x-r-source",
             "file_extension": ".r",
+            "mimetype": "text/x-r-source",
+            "name": "R",
+            "pygments_lexer": "r",
             "version": "4.1.0"
         },
-        "kernelspec": {
-            "name": "ir",
-            "display_name": "R",
-            "language": "R"
-        }
+        "orig_nbformat": 4
     },
     "nbformat": 4,
     "nbformat_minor": 2

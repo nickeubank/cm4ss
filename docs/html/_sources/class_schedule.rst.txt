@@ -23,67 +23,82 @@ Session 1: Variables & Vectors
 -  Welcome
 -  Why R?
 -  Course expectations
+- `Variable Assignment and Functions <exercises/exercise_assignment_and_funcs.ipynb>`__
 -  Discuss `Intro to Data Types <intro_to_datatypes.ipynb>`__
--  `Variable Assignment / Data Type Exercises <exercises/exercise_datatypes.ipynb>`__
+-  `Data Type Exercises <exercises/exercise_datatypes.ipynb>`__
 
-Session 2: Generalizing Vectors
+Session 2: Vectors
 -------------------------------------------------
 
 *Tuesday, August 16th, 10-11:30*
 
-
 **Read Before Class:**
 
+-   Review `Intro to Data Types <intro_to_datatypes.ipynb>`__
 -  `Intro to Vectors <intro_to_vectors.ipynb>`__
 -  `Manipulating Vectors <manipulating_vectors.ipynb>`__
--  `Intro to Matrices <intro_to_matrices.ipynb>`__
--  `Manipulating Matrices <manipulating_matrices.ipynb>`__
 
 **In Class**
 
 -  `Vector Exercises <exercises/exercise_vectors.ipynb>`__
--  `Matrix Exercises <exercises/exercise_matrices.ipynb>`__
 
-
-Session 3: Data Wrangling
+Session 3: Matrices
 ---------------------------------------------
 
 *Tuesday, August 16th, 1:30-3*
 
 **Read Before Class:**
 
--  `DataFrames <intro_to_dataframes.ipynb>`__
--  `Manipulating Dataframes <manipulating_dataframes.ipynb>`__
--  `dplyr and the Tidyverse <intro_to_tidyverse.ipynb>`__
+-  `Intro to Matrices <intro_to_matrices.ipynb>`__
+-  `Manipulating Matrices <manipulating_matrices.ipynb>`__
 
 **In Class**
 
-- `Data Frame Exercises <exercises/exercise_dataframe.ipynb>`__
+-  `Matrix Exercises <exercises/exercise_matrices.ipynb>`__
 
-
-Session 4: Merging and Aggregating
+Session 4: DataFrames
 -----------------------------------------------------
 
 *Thursday, August 18th, 10:00-11:30*
 
 **Read Before Class:**
 
-- `Defensive Programming <defensive_programming.ipynb>`__
-- `Intro to Merging <intro_to_merging.ipynb>`__
-- `Defensive Merging <defensive_merging.ipynb>`__
-- `Missing Data <missing_data.ipynb>`__
+-  `Arrays <intro_to_arrays.ipynb>`__
+-  `DataFrames <intro_to_dataframes.ipynb>`__
+-  `Manipulating Dataframes <manipulating_dataframes.ipynb>`__
+-  `dplyr and the Tidyverse <intro_to_tidyverse.ipynb>`__
+-  `Defensive Programming <defensive_programming.ipynb>`__
+
+Also, **please** start the readings for Thursday afternoon so you
+have time to absorb them!
 
 **In Class**
 
 -  Defensive Programming
 -  Merge data in R
 -  Missing Data
+- `Data Frame Exercises <exercises/exercise_dataframe.ipynb>`__
 
 
-Session 5: Plotting, Loops and Functions
+Session 5: Merging and Missing Data
 -------------------------------------------------------------
 
 *Thursday, August 18th, 1:30-3:00*
+
+**Read Before Class:**
+
+- `Intro to Merging <intro_to_merging.ipynb>`__
+- `Defensive Merging <defensive_merging.ipynb>`__
+- `Missing Data <missing_data.ipynb>`__
+
+**In Class**
+
+-  `Merging Exercise <exercises/exercise_merging_parsonsproblem.ipynb>`__
+
+Session 6: Loops and Reshaping
+---------------------------------
+
+*Friday, August 19th, 10:00-11:30*
 
 **Read Before Class:**
 
@@ -91,18 +106,16 @@ Session 5: Plotting, Loops and Functions
 -  `Functions <functions.ipynb>`__
 -  `Function Example <function_example.ipynb>`__
 
-**In Class**
+**In Class:**
 
--  Loops
--  Functions
+- `Loop Exercise <exercises/exercise_loops.ipynb>`__
+- `Functions Exercise <exercises/exercise_functions.ipynb>`
 
-Session 6: Loops and Reshaping
----------------------------------
+Additional Readings
+-------------------
 
-*Friday, August 19th, 10:00-11:30*
+*Because we certainly can't learn everything in six sessions!*
 
-'Cause we certainly didn't cover everything about R in five sessions!
+-  `Lists <lists.ipynb>`__
+-  `Reshaping <wide_and_long.ipynb>`__
 
-- `Lists <lists.ipynb>`__
-- `Collapsing Data <collapsing_data.ipynb>`__
-- `Wide and Long Data <wide_and_long_data.ipynb>`__

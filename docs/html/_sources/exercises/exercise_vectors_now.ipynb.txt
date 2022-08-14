@@ -2,13 +2,14 @@
     "cells": [
         {
             "cell_type": "markdown",
+            "metadata": {},
             "source": [
                 "# Vector Exercises"
-            ],
-            "metadata": {}
+            ]
         },
         {
             "cell_type": "markdown",
+            "metadata": {},
             "source": [
                 "## Exercise 1: Favorite Numbers\n",
                 "\n",
@@ -18,18 +19,18 @@
                 "4. Create a vector will all the numbers from 1-10 *without* typing out all the numbers from 1 to 10.\n",
                 "5. Now double all the values of `first_ten` in one operation.\n",
                 "6. Now create a new variable by adding `first_ten` to itself."
-            ],
-            "metadata": {}
+            ]
         },
         {
             "cell_type": "markdown",
+            "metadata": {},
             "source": [
                 "## Exercise 2: Subsetting Your Favorites"
-            ],
-            "metadata": {}
+            ]
         },
         {
             "cell_type": "markdown",
+            "metadata": {},
             "source": [
                 "Now suppose you only want the big values of `my_favorite_numbers`.\n",
                 "\n",
@@ -37,11 +38,11 @@
                 "2. Now use `big` to return only the values of `my_favorite_numbers` that are greater than 5.\n",
                 "3. Now, using the same logic, try and get all the values of `my_favorite_numbers` that are bigger than the average of `my_favorite_numbers`. (Hint: you'll need to use a function we've seen.)\n",
                 "4. Now, if you used more than one line to do number 3, try and do it in one line of code."
-            ],
-            "metadata": {}
+            ]
         },
         {
             "cell_type": "markdown",
+            "metadata": {},
             "source": [
                 "## Solutions\n",
                 "\n",
@@ -50,19 +51,19 @@
                 "Moreover, in coding in particular, the process of debugging your code is a critical skill in and of itself, and the only way you will learn to do it is by literally spending hours working through your own problems. And once you’ve seen an answer, there’s no way to unsee it, so proceed only if you absolutely have to.\n",
                 "\n",
                 "OK, if you still want to proceed, you can find [solutions here](solutions/solution_vectors_now.ipynb)."
-            ],
-            "metadata": {}
+            ]
         }
     ],
     "metadata": {
-        "orig_nbformat": 4,
+        "kernelspec": {
+            "display_name": "R",
+            "language": "R",
+            "name": "ir"
+        },
         "language_info": {
             "name": "R"
         },
-        "kernelspec": {
-            "name": "ir",
-            "display_name": "R"
-        }
+        "orig_nbformat": 4
     },
     "nbformat": 4,
     "nbformat_minor": 2

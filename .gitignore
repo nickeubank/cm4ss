@@ -16,3 +16,5 @@ source/.ipynb_checkpoints/*
 *(busy)
 *.log
 source/exercises/solutions/*.ipynb
+
+.DS_Store
