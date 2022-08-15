@@ -51,6 +51,7 @@ Session 3: Matrices
 
 -  `Intro to Matrices <intro_to_matrices.ipynb>`__
 -  `Manipulating Matrices <manipulating_matrices.ipynb>`__
+-  `Arrays <intro_to_arrays.ipynb>`__
 
 **In Class**
 
@@ -63,7 +64,6 @@ Session 4: DataFrames
 
 **Read Before Class:**
 
--  `Arrays <intro_to_arrays.ipynb>`__
 -  `DataFrames <intro_to_dataframes.ipynb>`__
 -  `Manipulating Dataframes <manipulating_dataframes.ipynb>`__
 -  `dplyr and the Tidyverse <intro_to_tidyverse.ipynb>`__
