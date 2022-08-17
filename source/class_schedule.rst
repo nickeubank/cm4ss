@@ -74,11 +74,8 @@ have time to absorb them!
 
 **In Class**
 
--  Defensive Programming
--  Merge data in R
--  Missing Data
 - `Data Frame Exercises <exercises/exercise_dataframe.ipynb>`__
-
+- `Lists <lists.ipynb>`__
 
 Session 5: Merging and Missing Data
 -------------------------------------------------------------
@@ -94,6 +91,7 @@ Session 5: Merging and Missing Data
 **In Class**
 
 -  `Merging Exercise <exercises/exercise_merging_parsonsproblem.ipynb>`__
+-  `Defensive Merging <exercises/exercise_defensive_merging.ipynb>`__
 
 Session 6: Loops and Reshaping
 ---------------------------------

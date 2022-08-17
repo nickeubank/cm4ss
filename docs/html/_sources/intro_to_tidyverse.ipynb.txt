@@ -2,6 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
+   "metadata": {},
    "source": [
     "# dplyr and the Tidyverse\n",
     "\n",
@@ -28,20 +29,20 @@
     "None of that is to suggest you should avoid dplyr or the rest of the tidyverse entirely. To the contrary, I think the tidyverse plotting library (`ggplot`) is the best plotting library around, and I'm a fan of several dplyr functions (especially `rename`, which makes an otherwise tedious task quite simple). \n",
     "\n",
     "But as you use it, be mindful of its different philosophy of programming it embodies, and how using it shapes the way you think about using R."
-   ],
-   "metadata": {}
+   ]
   },
   {
    "cell_type": "markdown",
+   "metadata": {},
    "source": [
     "## Mapping Array Indexing onto dplyr\n",
     "\n",
     "The easiest way to introduce dplyr, I think, is just to show how the things we did in our last reading are done in dplyr:"
-   ],
-   "metadata": {}
+   ]
   },
   {
    "cell_type": "markdown",
+   "metadata": {},
    "source": [
     "**Row Operations**\n",
     "\n",
@@ -81,11 +82,11 @@
     "- Create new column: \n",
     "  - Base R: `df$newcol <- df$col1 * 42` or `df[, \"newcol\"] <- df[, \"col1\"] * 42`\n",
     "  - dplyr: `mutate(countries, gdppc_1k = gdp_pc / 1000)`"
-   ],
-   "metadata": {}
+   ]
   },
   {
    "cell_type": "markdown",
+   "metadata": {},
    "source": [
     "## Installing dplyr\n",
     "\n",
@@ -93,20 +94,20 @@
     "\n",
     "- Install dplyr with the command `install.packages(\"dplyr\")`. You only have to do this once on a given computer.\n",
     "- Load it into your R session with `library(dplyr)`. This you have to run every time you open R and want to use dplyr. "
-   ],
-   "metadata": {}
+   ]
   },
   {
    "cell_type": "markdown",
+   "metadata": {},
    "source": [
     "## Chaining\n",
     "\n",
     "The last feature of dplyr to be aware of is *chaining*. Chaining is a way of combining commands to make code more concise. Basically, you use the command `%>%` to tell R to take the result of one function and make it the first argument in the next. "
-   ],
-   "metadata": {}
+   ]
   },
   {
    "cell_type": "markdown",
+   "metadata": {},
    "source": [
     "In dplyr, if we wanted to change `country` into all lower case text, we could do:\n",
     "\n",
@@ -123,34 +124,29 @@
     "Where `countries` is understood to be the first argument for `mutate`. \n",
     "\n",
     "Obviously this isn't very efficient with only one command, but it can be used with a long series of commands. To illustrate, let's return to our old `countries` example dataset:"
-   ],
-   "metadata": {}
+   ]
   },
   {
    "cell_type": "markdown",
+   "metadata": {},
    "source": [
     "Suppose we wanted to use `countries` to create a new data frame called `countries_new`, which should have observations from years 1995 and 1996 (dropping 1994), should be sorted by country name (in lower case), and should have a new variable equal to GDP per capita in 1000s.\n",
     "\n",
     "Here's how we could do this with dplyr commands, but without chaining: "
-   ],
-   "metadata": {}
+   ]
   },
   {
    "cell_type": "code",
    "execution_count": 1,
-   "source": [
-    "library(dplyr)\n",
-    "country <- rep(c(\"USA\", \"China\", \"Sudan\"), 3)\n",
-    "year <- c(1994, 1994, 1994, 1995, 1995, 1995, 1996, 1996, 1996)\n",
-    "gdp_pc <- round(runif(9, 1000, 20000))\n",
-    "\n",
-    "countries <- data.frame(country, year, gdp_pc)\n",
-    "countries"
-   ],
+   "metadata": {
+    "vscode": {
+     "languageId": "r"
+    }
+   },
    "outputs": [
     {
-     "output_type": "stream",
      "name": "stderr",
+     "output_type": "stream",
      "text": [
       "\n",
       "Attaching package: 'dplyr'\n",
@@ -169,54 +165,7 @@
      ]
     },
     {
-     "output_type": "display_data",
      "data": {
-      "text/plain": [
-       "  country year gdp_pc\n",
-       "1 USA     1994 14495 \n",
-       "2 China   1994 14451 \n",
-       "3 Sudan   1994 16149 \n",
-       "4 USA     1995 11765 \n",
-       "5 China   1995  2372 \n",
-       "6 Sudan   1995 14220 \n",
-       "7 USA     1996  9444 \n",
-       "8 China   1996  1136 \n",
-       "9 Sudan   1996 14150 "
-      ],
-      "text/markdown": [
-       "\n",
-       "A data.frame: 9 × 3\n",
-       "\n",
-       "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc &lt;dbl&gt; |\n",
-       "|---|---|---|\n",
-       "| USA   | 1994 | 14495 |\n",
-       "| China | 1994 | 14451 |\n",
-       "| Sudan | 1994 | 16149 |\n",
-       "| USA   | 1995 | 11765 |\n",
-       "| China | 1995 |  2372 |\n",
-       "| Sudan | 1995 | 14220 |\n",
-       "| USA   | 1996 |  9444 |\n",
-       "| China | 1996 |  1136 |\n",
-       "| Sudan | 1996 | 14150 |\n",
-       "\n"
-      ],
-      "text/latex": [
-       "A data.frame: 9 × 3\n",
-       "\\begin{tabular}{lll}\n",
-       " country & year & gdp\\_pc\\\\\n",
-       " <chr> & <dbl> & <dbl>\\\\\n",
-       "\\hline\n",
-       "\t USA   & 1994 & 14495\\\\\n",
-       "\t China & 1994 & 14451\\\\\n",
-       "\t Sudan & 1994 & 16149\\\\\n",
-       "\t USA   & 1995 & 11765\\\\\n",
-       "\t China & 1995 &  2372\\\\\n",
-       "\t Sudan & 1995 & 14220\\\\\n",
-       "\t USA   & 1996 &  9444\\\\\n",
-       "\t China & 1996 &  1136\\\\\n",
-       "\t Sudan & 1996 & 14150\\\\\n",
-       "\\end{tabular}\n"
-      ],
       "text/html": [
        "<table class=\"dataframe\">\n",
        "<caption>A data.frame: 9 × 3</caption>\n",
@@ -236,64 +185,164 @@
        "\t<tr><td>Sudan</td><td>1996</td><td>14150</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
+      ],
+      "text/latex": [
+       "A data.frame: 9 × 3\n",
+       "\\begin{tabular}{lll}\n",
+       " country & year & gdp\\_pc\\\\\n",
+       " <chr> & <dbl> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t USA   & 1994 & 14495\\\\\n",
+       "\t China & 1994 & 14451\\\\\n",
+       "\t Sudan & 1994 & 16149\\\\\n",
+       "\t USA   & 1995 & 11765\\\\\n",
+       "\t China & 1995 &  2372\\\\\n",
+       "\t Sudan & 1995 & 14220\\\\\n",
+       "\t USA   & 1996 &  9444\\\\\n",
+       "\t China & 1996 &  1136\\\\\n",
+       "\t Sudan & 1996 & 14150\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 9 × 3\n",
+       "\n",
+       "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc &lt;dbl&gt; |\n",
+       "|---|---|---|\n",
+       "| USA   | 1994 | 14495 |\n",
+       "| China | 1994 | 14451 |\n",
+       "| Sudan | 1994 | 16149 |\n",
+       "| USA   | 1995 | 11765 |\n",
+       "| China | 1995 |  2372 |\n",
+       "| Sudan | 1995 | 14220 |\n",
+       "| USA   | 1996 |  9444 |\n",
+       "| China | 1996 |  1136 |\n",
+       "| Sudan | 1996 | 14150 |\n",
+       "\n"
+      ],
+      "text/plain": [
+       "  country year gdp_pc\n",
+       "1 USA     1994 14495 \n",
+       "2 China   1994 14451 \n",
+       "3 Sudan   1994 16149 \n",
+       "4 USA     1995 11765 \n",
+       "5 China   1995  2372 \n",
+       "6 Sudan   1995 14220 \n",
+       "7 USA     1996  9444 \n",
+       "8 China   1996  1136 \n",
+       "9 Sudan   1996 14150 "
       ]
      },
-     "metadata": {}
+     "metadata": {},
+     "output_type": "display_data"
     }
    ],
-   "metadata": {}
+   "source": [
+    "library(dplyr)\n",
+    "country <- rep(c(\"USA\", \"China\", \"Sudan\"), 3)\n",
+    "year <- c(1994, 1994, 1994, 1995, 1995, 1995, 1996, 1996, 1996)\n",
+    "gdp_pc <- round(runif(9, 1000, 20000))\n",
+    "\n",
+    "countries <- data.frame(country, year, gdp_pc)\n",
+    "countries"
+   ]
   },
   {
    "cell_type": "code",
    "execution_count": 2,
+   "metadata": {
+    "vscode": {
+     "languageId": "r"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<table class=\"dataframe\">\n",
+       "<caption>A data.frame: 6 × 4</caption>\n",
+       "<thead>\n",
+       "\t<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>gdp_pc</th><th scope=col>gdppc_1k</th></tr>\n",
+       "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
+       "</thead>\n",
+       "<tbody>\n",
+       "\t<tr><td>china</td><td>1995</td><td> 2372</td><td> 2.372</td></tr>\n",
+       "\t<tr><td>china</td><td>1996</td><td> 1136</td><td> 1.136</td></tr>\n",
+       "\t<tr><td>sudan</td><td>1995</td><td>14220</td><td>14.220</td></tr>\n",
+       "\t<tr><td>sudan</td><td>1996</td><td>14150</td><td>14.150</td></tr>\n",
+       "\t<tr><td>usa  </td><td>1995</td><td>11765</td><td>11.765</td></tr>\n",
+       "\t<tr><td>usa  </td><td>1996</td><td> 9444</td><td> 9.444</td></tr>\n",
+       "</tbody>\n",
+       "</table>\n"
+      ],
+      "text/latex": [
+       "A data.frame: 6 × 4\n",
+       "\\begin{tabular}{llll}\n",
+       " country & year & gdp\\_pc & gdppc\\_1k\\\\\n",
+       " <chr> & <dbl> & <dbl> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t china & 1995 &  2372 &  2.372\\\\\n",
+       "\t china & 1996 &  1136 &  1.136\\\\\n",
+       "\t sudan & 1995 & 14220 & 14.220\\\\\n",
+       "\t sudan & 1996 & 14150 & 14.150\\\\\n",
+       "\t usa   & 1995 & 11765 & 11.765\\\\\n",
+       "\t usa   & 1996 &  9444 &  9.444\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 6 × 4\n",
+       "\n",
+       "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc &lt;dbl&gt; | gdppc_1k &lt;dbl&gt; |\n",
+       "|---|---|---|---|\n",
+       "| china | 1995 |  2372 |  2.372 |\n",
+       "| china | 1996 |  1136 |  1.136 |\n",
+       "| sudan | 1995 | 14220 | 14.220 |\n",
+       "| sudan | 1996 | 14150 | 14.150 |\n",
+       "| usa   | 1995 | 11765 | 11.765 |\n",
+       "| usa   | 1996 |  9444 |  9.444 |\n",
+       "\n"
+      ],
+      "text/plain": [
+       "  country year gdp_pc gdppc_1k\n",
+       "1 china   1995  2372   2.372  \n",
+       "2 china   1996  1136   1.136  \n",
+       "3 sudan   1995 14220  14.220  \n",
+       "4 sudan   1996 14150  14.150  \n",
+       "5 usa     1995 11765  11.765  \n",
+       "6 usa     1996  9444   9.444  "
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
    "source": [
     "countries_new <- filter(countries, year != 1994) #drop year 1994\n",
     "countries_new <- arrange(countries_new, country) #sort by country names\n",
     "countries_new <- mutate(countries_new, country = tolower(country), #convert name to lower-case\n",
     "                        gdppc_1k = gdp_pc / 1000) #create GDP pc in 1000s\n",
     "countries_new"
-   ],
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "And now here's the same thing using chaining: "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {
+    "vscode": {
+     "languageId": "r"
+    }
+   },
    "outputs": [
     {
-     "output_type": "display_data",
      "data": {
-      "text/plain": [
-       "  country year gdp_pc gdppc_1k\n",
-       "1 china   1995  2372   2.372  \n",
-       "2 china   1996  1136   1.136  \n",
-       "3 sudan   1995 14220  14.220  \n",
-       "4 sudan   1996 14150  14.150  \n",
-       "5 usa     1995 11765  11.765  \n",
-       "6 usa     1996  9444   9.444  "
-      ],
-      "text/markdown": [
-       "\n",
-       "A data.frame: 6 × 4\n",
-       "\n",
-       "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc &lt;dbl&gt; | gdppc_1k &lt;dbl&gt; |\n",
-       "|---|---|---|---|\n",
-       "| china | 1995 |  2372 |  2.372 |\n",
-       "| china | 1996 |  1136 |  1.136 |\n",
-       "| sudan | 1995 | 14220 | 14.220 |\n",
-       "| sudan | 1996 | 14150 | 14.150 |\n",
-       "| usa   | 1995 | 11765 | 11.765 |\n",
-       "| usa   | 1996 |  9444 |  9.444 |\n",
-       "\n"
-      ],
-      "text/latex": [
-       "A data.frame: 6 × 4\n",
-       "\\begin{tabular}{llll}\n",
-       " country & year & gdp\\_pc & gdppc\\_1k\\\\\n",
-       " <chr> & <dbl> & <dbl> & <dbl>\\\\\n",
-       "\\hline\n",
-       "\t china & 1995 &  2372 &  2.372\\\\\n",
-       "\t china & 1996 &  1136 &  1.136\\\\\n",
-       "\t sudan & 1995 & 14220 & 14.220\\\\\n",
-       "\t sudan & 1996 & 14150 & 14.150\\\\\n",
-       "\t usa   & 1995 & 11765 & 11.765\\\\\n",
-       "\t usa   & 1996 &  9444 &  9.444\\\\\n",
-       "\\end{tabular}\n"
-      ],
       "text/html": [
        "<table class=\"dataframe\">\n",
        "<caption>A data.frame: 6 × 4</caption>\n",
@@ -310,96 +359,60 @@
        "\t<tr><td>usa  </td><td>1996</td><td> 9444</td><td> 9.444</td></tr>\n",
        "</tbody>\n",
        "</table>\n"
+      ],
+      "text/latex": [
+       "A data.frame: 6 × 4\n",
+       "\\begin{tabular}{llll}\n",
+       " country & year & gdp\\_pc & gdppc\\_1k\\\\\n",
+       " <chr> & <dbl> & <dbl> & <dbl>\\\\\n",
+       "\\hline\n",
+       "\t china & 1995 &  2372 &  2.372\\\\\n",
+       "\t china & 1996 &  1136 &  1.136\\\\\n",
+       "\t sudan & 1995 & 14220 & 14.220\\\\\n",
+       "\t sudan & 1996 & 14150 & 14.150\\\\\n",
+       "\t usa   & 1995 & 11765 & 11.765\\\\\n",
+       "\t usa   & 1996 &  9444 &  9.444\\\\\n",
+       "\\end{tabular}\n"
+      ],
+      "text/markdown": [
+       "\n",
+       "A data.frame: 6 × 4\n",
+       "\n",
+       "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc &lt;dbl&gt; | gdppc_1k &lt;dbl&gt; |\n",
+       "|---|---|---|---|\n",
+       "| china | 1995 |  2372 |  2.372 |\n",
+       "| china | 1996 |  1136 |  1.136 |\n",
+       "| sudan | 1995 | 14220 | 14.220 |\n",
+       "| sudan | 1996 | 14150 | 14.150 |\n",
+       "| usa   | 1995 | 11765 | 11.765 |\n",
+       "| usa   | 1996 |  9444 |  9.444 |\n",
+       "\n"
+      ],
+      "text/plain": [
+       "  country year gdp_pc gdppc_1k\n",
+       "1 china   1995  2372   2.372  \n",
+       "2 china   1996  1136   1.136  \n",
+       "3 sudan   1995 14220  14.220  \n",
+       "4 sudan   1996 14150  14.150  \n",
+       "5 usa     1995 11765  11.765  \n",
+       "6 usa     1996  9444   9.444  "
       ]
      },
-     "metadata": {}
+     "metadata": {},
+     "output_type": "display_data"
     }
    ],
-   "metadata": {}
-  },
-  {
-   "cell_type": "markdown",
-   "source": [
-    "And now here's the same thing using chaining: "
-   ],
-   "metadata": {}
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 3,
    "source": [
     "countries_new <- countries %>%\n",
     "    filter(year != 1994) %>%\n",
     "    arrange(country) %>%\n",
     "    mutate(country = tolower(country), gdppc_1k = gdp_pc / 1000)\n",
     "countries_new"
-   ],
-   "outputs": [
-    {
-     "output_type": "display_data",
-     "data": {
-      "text/plain": [
-       "  country year gdp_pc gdppc_1k\n",
-       "1 china   1995  2372   2.372  \n",
-       "2 china   1996  1136   1.136  \n",
-       "3 sudan   1995 14220  14.220  \n",
-       "4 sudan   1996 14150  14.150  \n",
-       "5 usa     1995 11765  11.765  \n",
-       "6 usa     1996  9444   9.444  "
-      ],
-      "text/markdown": [
-       "\n",
-       "A data.frame: 6 × 4\n",
-       "\n",
-       "| country &lt;chr&gt; | year &lt;dbl&gt; | gdp_pc &lt;dbl&gt; | gdppc_1k &lt;dbl&gt; |\n",
-       "|---|---|---|---|\n",
-       "| china | 1995 |  2372 |  2.372 |\n",
-       "| china | 1996 |  1136 |  1.136 |\n",
-       "| sudan | 1995 | 14220 | 14.220 |\n",
-       "| sudan | 1996 | 14150 | 14.150 |\n",
-       "| usa   | 1995 | 11765 | 11.765 |\n",
-       "| usa   | 1996 |  9444 |  9.444 |\n",
-       "\n"
-      ],
-      "text/latex": [
-       "A data.frame: 6 × 4\n",
-       "\\begin{tabular}{llll}\n",
-       " country & year & gdp\\_pc & gdppc\\_1k\\\\\n",
-       " <chr> & <dbl> & <dbl> & <dbl>\\\\\n",
-       "\\hline\n",
-       "\t china & 1995 &  2372 &  2.372\\\\\n",
-       "\t china & 1996 &  1136 &  1.136\\\\\n",
-       "\t sudan & 1995 & 14220 & 14.220\\\\\n",
-       "\t sudan & 1996 & 14150 & 14.150\\\\\n",
-       "\t usa   & 1995 & 11765 & 11.765\\\\\n",
-       "\t usa   & 1996 &  9444 &  9.444\\\\\n",
-       "\\end{tabular}\n"
-      ],
-      "text/html": [
-       "<table class=\"dataframe\">\n",
-       "<caption>A data.frame: 6 × 4</caption>\n",
-       "<thead>\n",
-       "\t<tr><th scope=col>country</th><th scope=col>year</th><th scope=col>gdp_pc</th><th scope=col>gdppc_1k</th></tr>\n",
-       "\t<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>\n",
-       "</thead>\n",
-       "<tbody>\n",
-       "\t<tr><td>china</td><td>1995</td><td> 2372</td><td> 2.372</td></tr>\n",
-       "\t<tr><td>china</td><td>1996</td><td> 1136</td><td> 1.136</td></tr>\n",
-       "\t<tr><td>sudan</td><td>1995</td><td>14220</td><td>14.220</td></tr>\n",
-       "\t<tr><td>sudan</td><td>1996</td><td>14150</td><td>14.150</td></tr>\n",
-       "\t<tr><td>usa  </td><td>1995</td><td>11765</td><td>11.765</td></tr>\n",
-       "\t<tr><td>usa  </td><td>1996</td><td> 9444</td><td> 9.444</td></tr>\n",
-       "</tbody>\n",
-       "</table>\n"
-      ]
-     },
-     "metadata": {}
-    }
-   ],
-   "metadata": {}
+   ]
   },
   {
    "cell_type": "markdown",
+   "metadata": {},
    "source": [
     "Chaining always begins with specifying the data frame we want to operate on (e.g.,\n",
     "`countries`).  Every subsequent statement will then operate on this data frame, starting with the function that comes right after the data frame and working its way down.  In our case, the first thing we'll do to `countries` is to subset it. We'll then sort it by country name. Lastly, we'll overwrite the country name to be lower-case and create a new variable representing GDP per capita in 1000s.\n",
@@ -409,11 +422,11 @@
     "Personally, my preference is actually to break down long chains of manipulations into a series of distinct commands. Why? Because it allows me to look at each intermediate step and make sure I didn't mess something up. And as we'll discuss in a later reading, I think you should *always* assume you've messed something up, because humans are bad at programming! And if you chain a bunch of manipulations, there's no way to look at the intermediate outputs to check for errors. \n",
     "\n",
     "But again, chaining is definitely the more popular approach to R these days, so it's important to introduce!"
-   ],
-   "metadata": {}
+   ]
   },
   {
    "cell_type": "markdown",
+   "metadata": {},
    "source": [
     "## WARNING: Non-standard Evaluation in the Tidyverse\n",
     "\n",
@@ -433,97 +446,109 @@
     "That's because dplyr and other tidyverse functions make use of something called \"non-standard evaluation.\"\n",
     "\n",
     "Normally in a programming language like R, text sitting on its own is interpreted as a variable, and the first thing the language does is replace the variable with the data assigned to that variable. For example, in the second line of the code below, R sees `a`, interprets it as a variable, and so replaces it with `7` when evaluating the expression. "
-   ],
-   "metadata": {}
+   ]
   },
   {
    "cell_type": "code",
    "execution_count": 1,
-   "source": [
-    "a <- 7\n",
-    "6 * a"
-   ],
+   "metadata": {
+    "vscode": {
+     "languageId": "r"
+    }
+   },
    "outputs": [
     {
-     "output_type": "display_data",
      "data": {
-      "text/plain": [
-       "[1] 42"
-      ],
-      "text/markdown": [
+      "text/html": [
        "42"
       ],
       "text/latex": [
        "42"
       ],
-      "text/html": [
+      "text/markdown": [
        "42"
+      ],
+      "text/plain": [
+       "[1] 42"
       ]
      },
-     "metadata": {}
+     "metadata": {},
+     "output_type": "display_data"
     }
    ],
-   "metadata": {}
+   "source": [
+    "a <- 7\n",
+    "6 * a"
+   ]
   },
   {
    "cell_type": "markdown",
+   "metadata": {},
    "source": [
     "When you have text you want the computer to think of as *data* and not as a variable, you normally have to put it in quotes. e.g.:"
-   ],
-   "metadata": {}
+   ]
   },
   {
    "cell_type": "code",
    "execution_count": 2,
-   "source": [
-    "a <- 7\n",
-    "\n",
-    "# a without quotes interpreted as a variable:\n",
-    "print(a)"
-   ],
+   "metadata": {
+    "vscode": {
+     "languageId": "r"
+    }
+   },
    "outputs": [
     {
-     "output_type": "stream",
      "name": "stdout",
+     "output_type": "stream",
      "text": [
       "[1] 7\n"
      ]
     }
    ],
-   "metadata": {}
+   "source": [
+    "a <- 7\n",
+    "\n",
+    "# a without quotes interpreted as a variable:\n",
+    "print(a)"
+   ]
   },
   {
    "cell_type": "code",
    "execution_count": 3,
-   "source": [
-    "# a with double quotes interpreted\n",
-    "# as data -- namely, the character a\n",
-    "print(\"a\")"
-   ],
+   "metadata": {
+    "vscode": {
+     "languageId": "r"
+    }
+   },
    "outputs": [
     {
-     "output_type": "stream",
      "name": "stdout",
+     "output_type": "stream",
      "text": [
       "[1] \"a\"\n"
      ]
     }
    ],
-   "metadata": {}
+   "source": [
+    "# a with double quotes interpreted\n",
+    "# as data -- namely, the character a\n",
+    "print(\"a\")"
+   ]
   },
   {
    "cell_type": "markdown",
+   "metadata": {},
    "source": [
     "\n",
     "\n",
     "\n",
     "\n",
     "But tidyverse functions interpret text on its own as *data*, not as variables."
-   ],
-   "metadata": {}
+   ]
   },
   {
    "cell_type": "markdown",
+   "metadata": {},
    "source": [
     "We'll talk later about some of the reasons that this can cause problems, but for the moment I just want to emphasize this because **\"When do I use double quotes?\"** is a common question from students, and the fact that the rules change between array indexing and tidyverse functions is a common source of confusion. \n",
     "\n",
@@ -531,11 +556,11 @@
     "\n",
     "- Normally, text without quotes is interpreted as the name of a variable, *but*\n",
     "- In tidyverse functions, text without quotes is interpreted as data."
-   ],
-   "metadata": {}
+   ]
   },
   {
    "cell_type": "markdown",
+   "metadata": {},
    "source": [
     "## Summing Up\n",
     "\n",
@@ -548,8 +573,7 @@
     "### Want to Learn More?\n",
     "\n",
     "If there's anything the tidyverse is good at, it's documentation! [Here are the docs for dplyr.](https://dplyr.tidyverse.org/)"
-   ],
-   "metadata": {}
+   ]
   }
  ],
  "metadata": {
@@ -558,18 +582,18 @@
    "main_language": "R",
    "notebook_metadata_filter": "-all"
   },
-  "language_info": {
-   "name": "R",
-   "codemirror_mode": "r",
-   "pygments_lexer": "r",
-   "mimetype": "text/x-r-source",
-   "file_extension": ".r",
-   "version": "4.1.0"
-  },
   "kernelspec": {
-   "name": "ir",
    "display_name": "R",
-   "language": "R"
+   "language": "R",
+   "name": "ir"
+  },
+  "language_info": {
+   "codemirror_mode": "r",
+   "file_extension": ".r",
+   "mimetype": "text/x-r-source",
+   "name": "R",
+   "pygments_lexer": "r",
+   "version": "4.1.0"
   }
  },
  "nbformat": 4,
