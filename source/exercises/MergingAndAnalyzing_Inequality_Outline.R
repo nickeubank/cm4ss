@@ -68,17 +68,44 @@
 ##############
 
 # Inequality and Taxation don't have a variable in common -- one uses
-# state FIPS codes (the official US Census bureau state id number for each state)
+# state FIPS codes (the official US Census bureau state
+# id number for each state)
 # and one has state names as strings.
-# So we need to merge taxation with our "cross-walk" dataset (called fips_codes)
+# So we need to merge taxation with our
+# "cross-walk" dataset (called fips_codes)
 # so we have both in one place.
 
+####
+# Now we can merge inequality and taxation. Make sure
+####
 
-# Now we can merge inequality and taxation
+# you have a commonly-named merge variable, then join
 
+# Check to make sure all records merged successfully
+
+# Delete merge validation var
+
+###
+# Now merge with inequality
+###
+
+# you have a commonly-named merge variable, then join
+
+# Check to make sure all records merged successfully
+
+# Delete merge validation var
+
+
+###
 # Now we can merge that data with populations!
+###
 
 
+# you have a commonly-named merge variable, then join
+
+# Check to make sure all records merged successfully
+
+# Delete merge validation var
 
 
 ##############

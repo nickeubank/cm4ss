@@ -23,19 +23,47 @@
 
 # Load data on inequality (inequality.dta)
 
+install.packages("statar")
+install.packages("foreign")
+install.packages("dplyr")
 library(foreign)
 library(statar)
+library(dplyr)
 
-inequality <- read.dta("https://github.com/nickeubank/computational_methods_boot_camp/raw/main/source/data/inequality.dta")
+
+inequality <- read.dta(paste0(
+    "https://github.com/nickeubank/",
+    "computational_methods_boot_camp/",
+    "raw/main/source/data/inequality.dta"
+))
 
 
 # Load Stata_FIPS.txt, which has codes to merge states with
 # one another
-fips_codes <- read.csv(url("https://raw.githubusercontent.com/nickeubank/computational_methods_boot_camp/main/source/data/State_FIPS.txt"), sep = "\t", header = TRUE)
+
+fips_codes <- read.csv(paste0(
+    "https://raw.githubusercontent.com/nickeubank/",
+    "computational_methods_boot_camp/",
+    "main/source/data/State_FIPS.txt"
+),
+sep = "\t", header = TRUE
+)
 
 # Load data on taxation
 
-taxation <- read.csv(url("https://raw.githubusercontent.com/nickeubank/computational_methods_boot_camp/main/source/data/STC_Historical_taxes.csv"))
+taxation <- read.csv(paste0(
+    "https://raw.githubusercontent.com/nickeubank/",
+    "computational_methods_boot_camp/",
+    "main/source/data/STC_Historical_taxes.csv"
+))
+
+
+populations <- read.csv(paste0(
+    "https://raw.githubusercontent.com/nickeubank/",
+    "computational_methods_boot_camp/",
+    "main/source/data/state_populations.csv"
+))
+
 
 
 ######################
@@ -92,7 +120,6 @@ taxation <- taxation[, c(
 # Drop non-states from taxation
 taxation <- taxation[taxation$name != "US STATE GOVTS", ]
 
-
 # Get relevant observations and variables from populations
 
 taxation <- taxation[taxation$year == 2010, ]
@@ -116,7 +143,7 @@ populations <- populations[, c("NAME", "CENSUS2010POP")]
 
 # Delete non-states:
 
-populations <- populations[!(populations$state %in% c(
+populations <- populations[!(populations$NAME %in% c(
     "United States",
     "District of Columbia",
     "Puerto Rico",
@@ -133,32 +160,58 @@ populations <- populations[!(populations$state %in% c(
 ##############
 
 # Inequality and Taxation don't have a variable in common -- one uses
-# state FIPS codes (the official US Census bureau state id number for each state)
+# state FIPS codes (the official US Census bureau state
+# id number for each state)
 # and one has state names as strings.
-# So we need to merge taxation with our "cross-walk" dataset (called fips_codes)
+# So we need to merge taxation with our
+# "cross-walk" dataset (called fips_codes)
 # so we have both in one place.
 
-taxation_w_names <- join(taxation, fips_codes,
-    by.x = "FILL_IN_CORRECT_VALUE_HERE", by.y = "FILL_IN_CORRECT_VALUE_HERE",
-    kind = "outer"
+fips_codes <- rename(fips_codes,
+    state = "State.FIPS"
 )
+taxation_w_names <- join(taxation, fips_codes,
+    on = "state",
+    kind = "full",
+    check = 1 ~ 1,
+    gen = "_merge"
+)
+stopifnot(taxation_w_names["_merge"] == 3)
+taxation_w_names["_merge"] <- NULL
+
 
 
 # Now we can merge inequality and taxation
-ineq_and_taxation <- join(taxation_w_names, inequality,
-    by.x = "FILL_IN_CORRECT_VALUE_HERE",
-    by.y = "FILL_IN_CORRECT_VALUE_HERE",
-    kind = "outer"
+
+inequality <- rename(inequality,
+    Name = "state"
 )
+ineq_and_taxation <- join(taxation_w_names, inequality,
+    on = "Name",
+    kind = "full",
+    check = 1 ~ 1,
+    gen = "_merge"
+)
+
+stopifnot(ineq_and_taxation["_merge"] == 3)
+ineq_and_taxation["_merge"] <- NULL
 
 
 # Now we can merge that data with populations!
-full_data <- merge(ineq_and_taxation, populations,
-    by.x = "FILL_IN_CORRECT_VALUE_HERE",
-    by.y = "FILL_IN_CORRECT_VALUE_HERE",
-    kind = "outer"
+
+populations <- rename(populations,
+    Name = "NAME"
 )
 
+full_data <- join(ineq_and_taxation, populations,
+    on = "Name",
+    kind = "full",
+    check = 1 ~ 1,
+    gen = "_merge"
+)
+
+stopifnot(full_data["_merge"] == 3)
+full_data["_merge"] <- NULL
 
 ##############
 # Analysis

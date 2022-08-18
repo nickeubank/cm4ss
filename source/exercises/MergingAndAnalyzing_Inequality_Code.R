@@ -104,20 +104,45 @@ populations <- populations[, c("NAME", "CENSUS2010POP")]
 ##############
 
 
-full_data <- join(ineq_and_taxation, populations,
-    by.x = "FILL_IN_CORRECT_VALUE_HERE",
-    by.y = "FILL_IN_CORRECT_VALUE_HERE",
-    kind = "outer"
+fips_codes <- rename(fips_codes,
+    state = "State.FIPS"
 )
 
+stopifnot(taxation_w_names["_merge"] == 3)
+taxation_w_names["_merge"] <- NULL
 
 ineq_and_taxation <- join(taxation_w_names, inequality,
-    by.x = "FILL_IN_CORRECT_VALUE_HERE",
-    by.y = "FILL_IN_CORRECT_VALUE_HERE",
-    kind = "outer"
+    on = "FILL_IN",
+    kind = "FILL_IN",
+    check = FILL_IN,
+    gen = "_merge"
 )
 
+
+inequality <- rename(inequality,
+    Name = "state"
+)
+
+stopifnot(full_data["_merge"] == 3)
+full_data["_merge"] <- NULL
+
+full_data <- join(ineq_and_taxation, populations,
+    on = "FILL_IN",
+    kind = "FILL_IN",
+    check = FILL_IN,
+    gen = "_merge"
+)
+
+stopifnot(ineq_and_taxation["_merge"] == 3)
+ineq_and_taxation["_merge"] <- NULL
+
 taxation_w_names <- join(taxation, fips_codes,
-    by.x = "FILL_IN_CORRECT_VALUE_HERE", by.y = "FILL_IN_CORRECT_VALUE_HERE",
-    kind = "outer"
+    on = "FILL_IN",
+    kind = "FILL_IN",
+    check = FILL_IN,
+    gen = "_merge"
+)
+
+populations <- rename(populations,
+    Name = "NAME"
 )
