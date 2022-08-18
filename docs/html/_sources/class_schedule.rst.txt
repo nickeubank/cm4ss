@@ -96,7 +96,7 @@ Session 5: Merging and Missing Data
 Session 6: Loops and Reshaping
 ---------------------------------
 
-*Friday, August 19th, 10:00-11:30*
+*Friday, August 19th, 1:30-3:00*
 
 **Read Before Class:**
 
