@@ -89,6 +89,7 @@ Session 5: Merging and Missing Data
 
 **In Class**
 
+-  `Lists <lists.ipynb>`__
 -  `Merging Exercise <exercises/exercise_merging_parsonsproblem.ipynb>`__
 -  `Defensive Merging <exercises/exercise_defensive_merging.ipynb>`__
 
@@ -101,7 +102,7 @@ Session 6: Loops and Lists
 
 -  `Loops <loops.ipynb>`__
 -  `Functions <functions.ipynb>`__
--  `Function Example <function_example.ipynb>`__
+- `Missing Data <missing_data.ipynb>`__
 
 **In Class:**
 
@@ -113,6 +114,5 @@ Additional Readings
 
 *Because we certainly can't learn everything in six sessions!*
 
--  `Lists <lists.ipynb>`__
 -  `Reshaping <wide_and_long.ipynb>`__
 
