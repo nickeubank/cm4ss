@@ -107,7 +107,7 @@ Session 6: Loops and Lists
 **In Class:**
 
 - `Loop Exercise <exercises/exercise_loops.ipynb>`__
-- `Functions Exercise <exercises/exercise_functions.ipynb>`
+- `Functions Exercise <exercises/exercise_functions.ipynb>`__
 
 Additional Readings
 -------------------
