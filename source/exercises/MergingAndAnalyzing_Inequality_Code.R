@@ -27,6 +27,9 @@ head(inequality)
 
 install.packages("statar")
 
+table(taxation$name)
+
+length(unique(taxation$name))
 
 populations <- read.csv(url("https://raw.githubusercontent.com/nickeubank/computational_methods_boot_camp/main/source/data/state_populations.csv"))
 

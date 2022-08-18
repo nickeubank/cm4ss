@@ -26,6 +26,7 @@
 # Check how many years are in taxation.
 
 # See if we have all the states in taxation
+# (two commands to get full picture)
 
 ##############
 # Clean up the data

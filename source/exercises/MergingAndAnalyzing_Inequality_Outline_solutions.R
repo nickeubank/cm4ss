@@ -53,7 +53,8 @@ table(taxation$year)
 
 # See if we have all the states in taxation
 
-table(taxation$state)
+table(taxation$name)
+length(unique(taxation$name))
 
 
 ##############
