@@ -7,7 +7,10 @@
 
 library(statar)
 
-inequality <- read.dta("https://github.com/nickeubank/computational_methods_boot_camp/raw/main/source/data/inequality.dta")
+inequality <- read.dta("https://github.com/nickeubank/"
+    "computational_methods_boot_camp/"
+    "raw/main/source/data/inequality.dta"
+)
 
 table(inequality$year)
 
@@ -19,7 +22,11 @@ head(taxation)
 
 install.packages("foreign")
 
-fips_codes <- read.csv(url("https://raw.githubusercontent.com/nickeubank/computational_methods_boot_camp/main/source/data/State_FIPS.txt"), sep = "\t", header = TRUE)
+fips_codes <- read.csv("https://raw.githubusercontent.com/nickeubank/"
+    "computational_methods_boot_camp/"
+    "main/source/data/State_FIPS.txt", 
+    sep = "\t", header = TRUE
+)
 
 library(foreign)
 
@@ -27,15 +34,18 @@ head(inequality)
 
 install.packages("statar")
 
+taxation <- read.csv("https://raw.githubusercontent.com/nickeubank/"
+    "computational_methods_boot_camp/"
+    "main/source/data/STC_Historical_taxes.csv"
+)
 
-populations <- read.csv(url("https://raw.githubusercontent.com/nickeubank/computational_methods_boot_camp/main/source/data/state_populations.csv"))
+populations <- read.csv("https://raw.githubusercontent.com/nickeubank/"
+    "computational_methods_boot_camp/"
+    "main/source/data/state_populations.csv")
 
 #####
 # Data Cleaning
 #####
-
-
-
 
 
 populations <- rename(populations, state = NAME, population_2010 = CENSUS2010POP)
