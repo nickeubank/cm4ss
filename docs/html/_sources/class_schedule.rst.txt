@@ -1,19 +1,19 @@
-Class Schedule & Curriculum (2022)
+Class Schedule & Curriculum (2023)
 ==================================
 
 ..  youtube:: HqvHh1WdP5E
 
-**All Sessions will be in person in Ahmadieh Room, Gross Hall, Third Floor**
+**All Sessions will be in person in Gross Hall, Third Floor**
 
 Session 1: Variables & Vectors
 -------------------------------------------------
 
-*Monday, August 15th, 1:30-3*
+*Monday, August 14th 2023, 2:00-3:30*
 
 **Do Before Class**
 
 - Watch Welcome Video
-- Complete `Student Knowledge Assessment survey <https://forms.gle/PbY6xMLTALt4zdxT9>`__
+- Complete `Student Knowledge Assessment survey <https://forms.gle/CbN86jkFWf3A2hHL9>`__
 - Accept Slack Invitation
 - Read `Course Summary <index.rst>`__
 - Read `Introduction to R <intro_to_r.ipynb>`__ (following the directions for installing R and RSTudio).
@@ -30,7 +30,7 @@ Session 1: Variables & Vectors
 Session 2: Vectors
 -------------------------------------------------
 
-*Tuesday, August 16th, 10-11:30*
+*Tuesday, August 15th 2023, 10-11:30*
 
 **Read Before Class:**
 
@@ -45,7 +45,7 @@ Session 2: Vectors
 Session 3: Matrices
 ---------------------------------------------
 
-*Tuesday, August 16th, 1:30-3*
+*Tuesday, August 15th 2023, 2:00-3:30*
 
 **Read Before Class:**
 
@@ -60,7 +60,7 @@ Session 3: Matrices
 Session 4: DataFrames
 -----------------------------------------------------
 
-*Thursday, August 18th, 10:00-11:30*
+*Thursday, August 17th 2023, 10:00-11:30*
 
 **Read Before Class:**
 
@@ -79,7 +79,7 @@ have time to absorb them!
 Session 5: Merging and Missing Data
 -------------------------------------------------------------
 
-*Thursday, August 18th, 1:30-3:00*
+*Thursday, August 17th 2023, 2:00-3:30*
 
 **Read Before Class:**
 
@@ -96,7 +96,7 @@ Session 5: Merging and Missing Data
 Session 6: Loops and Lists
 ---------------------------------
 
-*Friday, August 19th, 1:30-3:00*
+*Friday, August 18th 2023, 2:00-3:30*
 
 **Read Before Class:**
 
