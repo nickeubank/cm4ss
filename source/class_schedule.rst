@@ -52,6 +52,7 @@ Session 3: Matrices
 -  `Intro to Matrices <intro_to_matrices.ipynb>`__
 -  `Manipulating Matrices <manipulating_matrices.ipynb>`__
 -  `Arrays <intro_to_arrays.ipynb>`__
+-  `Lists <lists.ipynb>`__
 
 **In Class**
 
@@ -68,7 +69,6 @@ Session 4: DataFrames
 -  `Manipulating Dataframes <manipulating_dataframes.ipynb>`__
 -  `dplyr and the Tidyverse <intro_to_tidyverse.ipynb>`__
 -  `Defensive Programming <defensive_programming.ipynb>`__
--  `Lists <lists.ipynb>`__
 
 Also, **please** start the readings for Thursday afternoon so you
 have time to absorb them!
