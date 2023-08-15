@@ -3,7 +3,7 @@ Class Schedule & Curriculum (2023)
 
 ..  youtube:: HqvHh1WdP5E
 
-**All Sessions will be in person in Gross Hall, Third Floor**
+**All Sessions will be in person in Gross Hall, Second Floor, 270**
 
 Session 1: Variables & Vectors
 -------------------------------------------------
@@ -68,6 +68,7 @@ Session 4: DataFrames
 -  `Manipulating Dataframes <manipulating_dataframes.ipynb>`__
 -  `dplyr and the Tidyverse <intro_to_tidyverse.ipynb>`__
 -  `Defensive Programming <defensive_programming.ipynb>`__
+-  `Lists <lists.ipynb>`__
 
 Also, **please** start the readings for Thursday afternoon so you
 have time to absorb them!
@@ -86,10 +87,11 @@ Session 5: Merging and Missing Data
 - `Intro to Merging <intro_to_merging.ipynb>`__
 - `Defensive Merging <defensive_merging.ipynb>`__
 - `Missing Data <missing_data.ipynb>`__
+- `Types of Data: Plaintext <00_plaintext_files.ipynb>`__
+- `Types of Data: Binary <05_binary_files.ipynb>`__
 
 **In Class**
 
--  `Lists <lists.ipynb>`__
 -  `Merging Exercise <exercises/exercise_merging_parsonsproblem.ipynb>`__
 -  `Defensive Merging <exercises/exercise_defensive_merging.ipynb>`__
 
