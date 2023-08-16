@@ -95,7 +95,22 @@ Session 5: Merging and Missing Data
 -  `Merging Exercise <exercises/exercise_merging_parsonsproblem.ipynb>`__
 -  `Defensive Merging <exercises/exercise_defensive_merging.ipynb>`__
 
-Session 6: Loops and Lists
+Session 6: The Seven Steps
+---------------------------------
+
+*Friday, August 18th 2023, 10:00-11:30*
+
+**Read Before Class:**
+
+-  `Overview of the Seven Steps <seven_steps_overview.ipynb>`__
+-  `Steps 1-4 <seven_steps_1_4.ipynb>`__
+- `Seven Steps Example <seven_steps_1_4_example.ipynb>`__
+
+**In Class:**
+
+Legos!
+ 
+Session 7: Loops and Lists
 ---------------------------------
 
 *Friday, August 18th 2023, 2:00-3:30*
@@ -104,7 +119,6 @@ Session 6: Loops and Lists
 
 -  `Loops <loops.ipynb>`__
 -  `Functions <functions.ipynb>`__
-- `Missing Data <missing_data.ipynb>`__
 
 **In Class:**
 
