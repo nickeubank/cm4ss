@@ -17,4 +17,4 @@ source/.ipynb_checkpoints/*
 *.log
 source/exercises/solutions/*.ipynb
 
-.DS_Store
+**/.DS_Store
