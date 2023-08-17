@@ -63,8 +63,17 @@
 
 # Don't want weird region lines and stuff
 
+
 ##############
 # Merge the data!
+#
+# Note that if any of your merge validation
+# checks fail, you will need to ADD code
+# you write yourself to fix the issues.
+#
+# Also, not that in the merge commands below,
+# I've just put in `FILL_IN` for fields you 
+# need to complete.
 ##############
 
 # Inequality and Taxation don't have a variable in common -- one uses
@@ -76,24 +85,13 @@
 # so we have both in one place.
 
 ####
-# Now we can merge inequality and taxation. Make sure
+# Now we can merge inequality and taxation.
 ####
 
-# you have a commonly-named merge variable, then join
-
-# Check to make sure all records merged successfully
-
-# Delete merge validation var
 
 ###
 # Now merge with inequality
 ###
-
-# you have a commonly-named merge variable, then join
-
-# Check to make sure all records merged successfully
-
-# Delete merge validation var
 
 
 ###
@@ -101,18 +99,16 @@
 ###
 
 
-# you have a commonly-named merge variable, then join
-
-# Check to make sure all records merged successfully
-
-# Delete merge validation var
-
 
 ##############
 # Analysis
 #
 # OK, enough hand-holding. Time for you to do your analysis!
 #
-# One hint: the comma in taxes may cause you problems. can you fix it?
+# One hint: the comma in taxes may cause you problems. 
+# can you fix it?
 # You may need `gsub`
+#
+# To run a linear regression, use `lm()`.
+# Examples here: https://www.datacamp.com/tutorial/linear-regression-R
 ##############
