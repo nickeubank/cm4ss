@@ -5,7 +5,7 @@ Region	Division	State FIPS	Name
 1	1	23	Maine
 1	1	25	Massachusetts
 1	1	33	New Hampshire
-1	1	44	Rhode Island
+1	1	44	Rhode Isl.
 1	1	50	Vermont
 1	2	00	Middle Atlantic Division
 1	2	34	New Jersey
@@ -29,7 +29,7 @@ Region	Division	State FIPS	Name
 3	0	00	South Region
 3	5	00	South Atlantic Division
 3	5	10	Delaware
-3	5	11	District of Columbia
+3	5	11	District-of-Columbia
 3	5	12	Florida
 3	5	13	Georgia
 3	5	24	Maryland
@@ -60,6 +60,6 @@ Region	Division	State FIPS	Name
 4	9	00	Pacific Division
 4	9	02	Alaska
 4	9	06	California
-4	9	15	Hawaii
+4	9	15	Hawai'i
 4	9	41	Oregon
 4	9	53	Washington
