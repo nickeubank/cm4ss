@@ -5,7 +5,7 @@ Region	Division	State FIPS	Name
 1	1	23	Maine
 1	1	25	Massachusetts
 1	1	33	New Hampshire
-1	1	44	Rhode Island
+1	1	44	Rhode Isl
 1	1	50	Vermont
 1	2	00	Middle Atlantic Division
 1	2	34	New Jersey
