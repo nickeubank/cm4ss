@@ -56,6 +56,11 @@ populations <- read.csv(paste0(
   "main/source/data/state_populations.csv"
 ))
 
+inequality <- read_dta(paste0(
+  "https://github.com/nickeubank/",
+  "cm4ss/",
+  "raw/main/source/data/inequality.dta"
+))
 
 
 ######################

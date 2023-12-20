@@ -132,3 +132,13 @@ Additional Readings
 
 -  `Reshaping <wide_and_long.ipynb>`__
 
+
+January Session 2
+---------------------------------
+
+*Friday, August 18th 2023, 2:00-3:30*
+
+**Read Before Class:**
+
+-  `Intro to R Markdown <intro_to_rmarkdown.ipynb>`__
+-  `Making Your Own R Markdown <making_your_own_rmarkdown.ipynb>`__
