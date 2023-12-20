@@ -7,7 +7,7 @@
 # a Stata format (file ends in .dta)
 #
 # To load Stata datasets, you need to load
-# the package `foreign`.
+# the package `haven`.
 #
 # Before you can load it, though, you will have to
 # install it. In a normal project I would not include code to
