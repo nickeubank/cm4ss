@@ -1,4 +1,4 @@
-Class Schedule & Curriculum (2023)
+Class Schedule (August 2023)
 ==================================
 
 ..  youtube:: HqvHh1WdP5E

@@ -22,7 +22,7 @@
 html_title = "Computational Methods for Social Scientists"
 project = "CM4SS"
 nav_title = "CM4SS"
-copyright = "2022, Nick Eubank"
+copyright = "2024, Nick Eubank"
 author = "Nick Eubank"
 
 # The short X.Y version
@@ -108,7 +108,16 @@ html_theme_options = {
             "internal": True,
             "title": "Home",
         },
-        {"href": "class_schedule", "internal": True, "title": "Class Schedule"},
+        {
+            "href": "class_schedule_fall",
+            "internal": True,
+            "title": "Class Schedule (Fall 2023)",
+        },
+        {
+            "href": "class_schedule_winter",
+            "internal": True,
+            "title": "Class Schedule (Winter 2024)",
+        },
         {
             "href": "https://www.nickeubank.com",
             "internal": False,
