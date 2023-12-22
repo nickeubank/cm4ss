@@ -107,7 +107,7 @@ Session 3: Loops & Bootstrapping
 
 **In Class**
 
-- `Bootstrapping Exercise <exercise/exercise_bootstrapping.ipynb>`__
+- `Bootstrapping Exercise <exercises/exercise_bootstrapping.ipynb>`__
 
 Session 4: R Markdown
 ---------------------------------------------
