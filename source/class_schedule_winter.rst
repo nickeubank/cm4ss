@@ -41,12 +41,9 @@ Session 0: Materials to do Before January 5th if you weren't present in August
 
 - Read `Intro to Vectors <intro_to_vectors.ipynb>`__
 - Read `Manipulating Vectors <manipulating_vectors.ipynb>`__
-- Complete `Vector Exercises <exercises/exercise_vectors.ipynb>`__
 
 *Then* 
 
-- Read `Intro to Vectors <intro_to_vectors.ipynb>`__
-- Read `Manipulating Vectors <manipulating_vectors.ipynb>`__
 - Complete `Vector Exercises <exercises/exercise_vectors.ipynb>`__
 
 **Intro to Matrices and Lists**
@@ -54,7 +51,9 @@ Session 0: Materials to do Before January 5th if you weren't present in August
 -  Read `Intro to Matrices <intro_to_matrices.ipynb>`__
 -  Read `Manipulating Matrices <manipulating_matrices.ipynb>`__
 -  Read `Arrays <intro_to_arrays.ipynb>`__
--  Read `Lists <lists.ipynb>`__
+
+*Then* 
+
 -  Complete `Matrix Exercises <exercises/exercise_matrices.ipynb>`__
 
 
@@ -70,6 +69,7 @@ Session 1: DataFrames
 
 **Do Before Class**
 
+- Read `Lists <lists.ipynb>`__
 - Read `DataFrames <intro_to_dataframes.ipynb>`__
 - Read `Manipulating Dataframes <manipulating_dataframes.ipynb>`__
 - Read `dplyr and the Tidyverse <intro_to_tidyverse.ipynb>`__
