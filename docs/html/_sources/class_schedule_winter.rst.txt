@@ -104,6 +104,7 @@ Session 3: Loops & Bootstrapping
 
 - `chatGPT and You <https://nickeubank.github.io/practicaldatascience_book/notebooks/PDS_not_yet_in_coursera/99_advice/llms.html>`_
 - Anything you want to review! Our next exercise will be to do a "bring it all together" project.
+- `Defensive Programming <defensive_programming.ipynb>__`
 - `What is bootstrapping? <what_is_bootstrapping.ipynb>`__
 
 **In Class**
