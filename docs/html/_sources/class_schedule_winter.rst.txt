@@ -120,6 +120,9 @@ Session 4: R Markdown
 
 -  `Intro to R Markdown <intro_to_rmarkdown.ipynb>`__
 -  `Making Your Own R Markdown <making_your_own_rmarkdown.ipynb>`__
+-  Install LaTeX **before class**
+    - On a mac: Install [MacTeX](https://www.tug.org/mactex/mactex-download.html). The file is 5 gbs, and will take forever to download, but don't try and get LaTeX any other way. You'll regret it. :)
+    - On Windows: Install [MiKteX](https://miktex.org/download) here.
 
 **In Class**
 
