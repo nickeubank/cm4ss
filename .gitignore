@@ -18,3 +18,4 @@ source/.ipynb_checkpoints/*
 source/exercises/solutions/*.ipynb
 
 **/.DS_Store
+.Rproj.user
