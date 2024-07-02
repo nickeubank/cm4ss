@@ -374,10 +374,10 @@
     "\n",
     "Now the slightly tricky part. Because we're going to do this over and over, we need to find a way to \"save\" the coefficient on `black`, which means we need to figure out how to get just the coefficient on `black` out of the object we got back from `lm()`. \n",
     "\n",
-    "Objects, like what you get back from `lm()` are kind of like lists, and you can see their contents with the `str()` command. So to see what's in the result of `lm()`, you can do something like:\n",
+    "Objects, like what you get back from `lm()` are kind of like lists, and you can see their contents with the `str()` command (short for structure). So to see what's in the result of `lm()`, you can do something like:\n",
     "\n",
     "```r\n",
-    "my_model <- str(lm(\"call ~ black + female + ofjobs\", resumes))\n",
+    "my_model <- lm(\"call ~ black + female + ofjobs\", resumes))\n",
     "str(my_model)\n",
     "```\n",
     "\n",
@@ -511,7 +511,7 @@
    "source": [
     "### Exercise 11\n",
     "\n",
-    "To make the bootstrap work, we'll need to store the value of our coefficient each time the loop runs. So *above* the loop, create a vector that's 5 entries long (e.g., `bootstrap_coefficients <- zeros(5)`).\n",
+    "To make the bootstrap work, we'll need to store the value of our coefficient each time the loop runs. So *above* the loop, create a vector that's 5 entries long (e.g., `bootstrap_coefficients <- rep(0, 5)`).\n",
     "\n",
     "Then, each time the loop goes around, store the value of the coefficient on `black` in the vector. Put the first estimate in the first spot, the second in the second, etc. \n",
     "\n",
@@ -530,7 +530,7 @@
     "\n",
     "### Exercise 12\n",
     "\n",
-    "We're going to do our bootstrap 500 times, so make the vector in which you are storing coefficients bigger (`zeros(500)`) and set your loop to run 500 times. Then let 'er rip!"
+    "We're going to do our bootstrap 500 times, so make the vector in which you are storing coefficients bigger (`rep(0, 500)`) and set your loop to run 500 times. Then let 'er rip!"
    ]
   },
   {

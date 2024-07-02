@@ -1,4 +1,4 @@
-Class Schedule (August 2023)
+Class Schedule (August 2024)
 ==================================
 
 ..  youtube:: HqvHh1WdP5E
@@ -8,7 +8,7 @@ Class Schedule (August 2023)
 Session 1: Variables & Vectors
 -------------------------------------------------
 
-*Monday, August 14th 2023, 2:00-3:30*
+*Tuesday, August 13th 2024, 2:00-3:30*
 
 **Do Before Class**
 
@@ -30,7 +30,7 @@ Session 1: Variables & Vectors
 Session 2: Vectors
 -------------------------------------------------
 
-*Tuesday, August 15th 2023, 10-11:30*
+*Wednesday, August 14th 2024, 10-11:30*
 
 **Read Before Class:**
 
@@ -45,7 +45,7 @@ Session 2: Vectors
 Session 3: Matrices
 ---------------------------------------------
 
-*Tuesday, August 15th 2023, 2:00-3:30*
+*Wednesday, August 14th 2024, 2:00-3:30*
 
 **Read Before Class:**
 
@@ -61,7 +61,7 @@ Session 3: Matrices
 Session 4: DataFrames
 -----------------------------------------------------
 
-*Thursday, August 17th 2023, 10:00-11:30*
+*Thursday, August 15th 2024, 10:00-11:30*
 
 **Read Before Class:**
 
@@ -80,7 +80,7 @@ have time to absorb them!
 Session 5: Merging and Missing Data
 -------------------------------------------------------------
 
-*Thursday, August 17th 2023, 2:00-3:30*
+*Thursday, August 15th 2024, 2:00-3:30*
 
 **Read Before Class:**
 
@@ -98,7 +98,7 @@ Session 5: Merging and Missing Data
 Session 6: The Seven Steps
 ---------------------------------
 
-*Friday, August 18th 2023, 10:00-11:30*
+*Friday, August 16th 2024, 10:00-11:30*
 
 **Read Before Class:**
 
@@ -113,7 +113,7 @@ Legos!
 Session 7: Loops and Lists
 ---------------------------------
 
-*Friday, August 18th 2023, 2:00-3:30*
+*Friday, August 16th 2024, 2:00-3:30*
 
 **Read Before Class:**
 
