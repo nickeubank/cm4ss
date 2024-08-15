@@ -1,13 +1,10 @@
-
-
 #####
 # Session Setup: Loading, familiarizing
 #####
 
-
 library(statar)
 
-inequality <- read_dta(paste0(
+inequality <- read.dta(paste0(
   "https://github.com/nickeubank/",
   "cm4ss/",
   "raw/main/source/data/inequality.dta"
@@ -21,18 +18,18 @@ head(populations)
 
 head(taxation)
 
-install.packages("haven")
+install.packages("foreign")
 
 fips_codes <- read.csv(
   paste0(
-  "https://raw.githubusercontent.com/nickeubank/",
-  "cm4ss/",
-  "main/source/data/State_FIPS.txt"
+    "https://raw.githubusercontent.com/nickeubank/",
+    "cm4ss/",
+    "main/source/data/State_FIPS.txt"
   ),
   sep = "\t", header = TRUE
 )
 
-library(haven)
+library(foreign)
 
 head(inequality)
 
@@ -74,10 +71,11 @@ inequality <- inequality[(inequality$state != "District of Columbia") &
   (inequality$state != "United States"), ]
 
 
-populations <- rename(populations,
-  state = NAME,
-  population_2010 = CENSUS2010POP
-)
+populations$state <- populations$NAME
+populations$NAME <- NULL
+
+populations$population_2010 <- populations$CENSUS2010POP
+populations$CENSUS2010POP <- NULL
 
 inequality <- inequality[, c("year", "state", "gini", "top10", "top1")]
 
@@ -108,7 +106,7 @@ populations <- populations[, c("NAME", "CENSUS2010POP")]
 # you write yourself to fix the issues.
 #
 # Also, not that in the merge commands below,
-# I've just put in `FILL_IN` for fields you 
+# I've just put in `FILL_IN` for fields you
 # need to complete.
 ##############
 
@@ -127,10 +125,8 @@ ineq_and_taxation <- join(taxation_w_names, inequality,
   gen = "_merge"
 )
 
-
-inequality <- rename(inequality,
-  Name = "state"
-)
+inequality$Name <- inequality$state
+inequality$state <- NULL
 
 stopifnot(full_data["_merge"] == 3)
 full_data["_merge"] <- NULL
@@ -152,6 +148,5 @@ taxation_w_names <- join(taxation, fips_codes,
   gen = "_merge"
 )
 
-populations <- rename(populations,
-  Name = "NAME"
-)
+populations$Name <- populations$NAME
+populations$NAME <- NULL

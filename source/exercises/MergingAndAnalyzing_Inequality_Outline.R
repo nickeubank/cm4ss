@@ -1,5 +1,3 @@
-
-
 ######################
 # Load relevant data.
 #
@@ -7,7 +5,7 @@
 # a Stata format (file ends in .dta)
 #
 # To load Stata datasets, you need to load
-# the package `haven`.
+# the package `foreign`.
 #
 # Before you can load it, though, you will have to
 # install it. In a normal project I would not include code to
@@ -72,7 +70,7 @@
 # you write yourself to fix the issues.
 #
 # Also, not that in the merge commands below,
-# I've just put in `FILL_IN` for fields you 
+# I've just put in `FILL_IN` for fields you
 # need to complete.
 ##############
 
@@ -105,7 +103,7 @@
 #
 # OK, enough hand-holding. Time for you to do your analysis!
 #
-# One hint: the comma in taxes may cause you problems. 
+# One hint: the comma in taxes may cause you problems.
 # can you fix it?
 # You may need `gsub`
 #
