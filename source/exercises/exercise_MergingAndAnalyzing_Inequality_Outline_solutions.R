@@ -22,11 +22,9 @@
 # Load data on inequality (inequality.dta)
 
 install.packages("statar")
-install.packages("haven")
-install.packages("dplyr")
-library(haven)
+install.packages("foreign")
+library(foreign)
 library(statar)
-library(dplyr)
 
 
 # Load Stata_FIPS.txt, which has codes to merge states with
@@ -56,7 +54,7 @@ populations <- read.csv(paste0(
   "main/source/data/state_populations.csv"
 ))
 
-inequality <- read_dta(paste0(
+inequality <- read.dta(paste0(
   "https://github.com/nickeubank/",
   "cm4ss/",
   "raw/main/source/data/inequality.dta"
@@ -164,9 +162,9 @@ populations <- populations[!(populations$NAME %in% c(
 # "cross-walk" dataset (called fips_codes)
 # so we have both in one place.
 
-fips_codes <- rename(fips_codes,
-  state = "State.FIPS"
-)
+fips_codes$state <- fips_codes[, "State.FIPS"]
+fips_codes[, "State.FIPS"] <- NULL
+
 taxation_w_names <- join(taxation, fips_codes,
   on = "state",
   kind = "full",
@@ -179,9 +177,8 @@ taxation_w_names["_merge"] <- NULL
 
 # Now we can merge inequality and taxation
 
-inequality <- rename(inequality,
-  Name = "state"
-)
+inequality$Name <- inequality$state
+inequality$state <- NULL
 
 
 ##########
@@ -209,9 +206,8 @@ ineq_and_taxation["_merge"] <- NULL
 
 # Now we can merge that data with populations!
 
-populations <- rename(populations,
-  Name = "NAME"
-)
+populations$Name <- populations$NAME
+populations$NAME <- NULL
 
 full_data <- join(ineq_and_taxation, populations,
   on = "Name",
@@ -228,7 +224,7 @@ full_data["_merge"] <- NULL
 #
 # OK, enough hand-holding. Time for you to do your analysis!
 #
-# One hint: the comma in taxes may cause you problems. 
+# One hint: the comma in taxes may cause you problems.
 # can you fix it?
 # You may need `gsub`
 ##############

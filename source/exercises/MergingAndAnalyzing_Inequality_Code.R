@@ -110,10 +110,8 @@ populations <- populations[, c("NAME", "CENSUS2010POP")]
 # need to complete.
 ##############
 
-
-fips_codes <- rename(fips_codes,
-  state = "State.FIPS"
-)
+fips_codes$state <- fips_codes[, "State.FIPS"]
+fips_codes[, "State.FIPS"] <- NULL
 
 stopifnot(taxation_w_names["_merge"] == 3)
 taxation_w_names["_merge"] <- NULL
