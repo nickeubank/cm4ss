@@ -37,6 +37,8 @@
 # Get relevant observations and variables from inequality
 
 # Get rid of entries that aren't states
+# (no district of columbia, puerto rico, regions, divisions,
+# US STATE GOVTS, or "United States")
 
 ###
 # Taxation
@@ -45,13 +47,15 @@
 # Get relevant observations and variables from taxation
 
 # Drop non-states from taxation
-
+# (no district of columbia, puerto rico, regions, divisions,
+# US STATE GOVTS, or "United States")
 
 # Get relevant observations and variables from populations
 
-
-
 # Get rid of non-states
+# (no district of columbia, puerto rico, regions, divisions,
+# US STATE GOVTS, or "United States")
+
 
 ###
 # Fips codes
@@ -60,7 +64,8 @@
 # Only need names and fips codes
 
 # Don't want weird region lines and stuff
-
+# (no district of columbia, puerto rico, regions, divisions,
+# US STATE GOVTS, or "United States")
 
 ##############
 # Merge the data!
