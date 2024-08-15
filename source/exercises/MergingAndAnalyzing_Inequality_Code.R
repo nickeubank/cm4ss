@@ -121,7 +121,7 @@ ineq_and_taxation <- join(taxation_w_names, inequality,
   kind = "FILL_IN",
   check = FILL_IN,
   gen = "_merge"
-)
+) # NOTE: You have to replace `FILL_IN` with appropriate content in this func
 
 inequality$Name <- inequality$state
 inequality$state <- NULL
@@ -134,7 +134,7 @@ full_data <- join(ineq_and_taxation, populations,
   kind = "FILL_IN",
   check = FILL_IN,
   gen = "_merge"
-)
+) # NOTE: You have to replace `FILL_IN` with appropriate content in this func
 
 stopifnot(ineq_and_taxation["_merge"] == 3)
 ineq_and_taxation["_merge"] <- NULL
@@ -144,7 +144,7 @@ taxation_w_names <- join(taxation, fips_codes,
   kind = "FILL_IN",
   check = FILL_IN,
   gen = "_merge"
-)
+) # NOTE: You have to replace `FILL_IN` with appropriate content in this func
 
 populations$Name <- populations$NAME
 populations$NAME <- NULL
