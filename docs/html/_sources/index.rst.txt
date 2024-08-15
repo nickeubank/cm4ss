@@ -119,5 +119,7 @@ I owe a huge debt of gratitude to `Simon Ejdemyr <https://sejdemyr.github.io/>`_
    :caption: Additional Topics
    :maxdepth: 2
 
+   intro_to_rmarkdown.ipynb
+   making_your_own_rmarkdown.ipynb
    lists.ipynb
 
