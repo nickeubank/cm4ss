@@ -105,6 +105,7 @@ Session 6: The Seven Steps
 -  `Overview of the Seven Steps <seven_steps_overview.ipynb>`__
 -  `Steps 1-4 <seven_steps_1_4.ipynb>`__
 - `Seven Steps Example <seven_steps_1_4_example.ipynb>`__
+- `R Markdown <intro_to_rmarkdown.ipynb>`__
 
 **In Class:**
 

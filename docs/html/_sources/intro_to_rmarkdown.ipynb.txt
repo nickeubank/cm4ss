@@ -149,6 +149,15 @@
     "\n",
     "*Note: Image formatting tricks are one of those things that aren't very standard across implementations of markdown, so while these tricks will work in R Markdown, they may not work elsewhere.*\n"
    ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Ready to Make Your Own?\n",
+    "\n",
+    "[Then let's keep going!](making_your_own_rmarkdown.ipynb)"
+   ]
   }
  ],
  "metadata": {
