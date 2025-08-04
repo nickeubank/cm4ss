@@ -27,10 +27,9 @@ By the end of this Boot Camp, our goal if for you to be able to:
 Class Schedule
 ---------------
 
-The workshop is held at two distinct times of the year: Fall (September) and Winter (January). Please follow the appropriate link for schedule of classes, reading assignments and exercises.
+The fall class schedule can be found here:
 
 - `Fall (August) Schedule <class_schedule_fall.rst>`_
-- `Winter (January) Schedule <class_schedule_winter.rst>`_
 
 R
 ----

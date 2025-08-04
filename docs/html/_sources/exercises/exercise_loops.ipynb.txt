@@ -11,7 +11,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "### Exercise 1\n",
+    "## Exercise 1\n",
     "\n",
     "Create a dataframe from the \"Datasaurus.tsv\" file with the following code:"
    ]
@@ -144,9 +144,9 @@
    "source": [
     "## Exercise 2\n",
     "\n",
-    "This dataset actually contains 13 separate example datasets, each with two variables named `example[number]_x` and `example[number]_y`. \n",
+    "This dataset actually contains 13 separate example datasets, each with two variables named `example[number]_x` and `example[number]_y`. Each dataset comes from a different city, and `_x` is the city's level of spending on police, and `_y` is the city's homocide rate.\n",
     "\n",
-    "In order to get a better sense of what these datasets look like, our first goal will be to write a loop that iterates over each example dataset (numbered 1 to 13) and prints out the mean and standard deviation for `example[number]_x` and `example[number]_y` for each dataset. \n",
+    "In order to get a better sense of the relationship between spending and crime, we will want to loop over these 13 different cities and calculate some summary statistics for each. In particular, we want to calculate the mean and standard deviation of both variables for each city as well as the correlation between the two variables.\n",
     "\n",
     "For example, the first iteration of this loop might return something like (note I'm also rounding my answers for readability):\n",
     "\n",
@@ -161,9 +161,11 @@
     "\n",
     "(Though you shouldn't get those specific values)\n",
     "\n",
-    "But as we discussed in our reading, we want to approach this in stages. So first, write out the skeleton of your loop. Don't put anything in it except to print out the value of the variable that is iterating in the loop for now. \n",
+    "But as we discussed in our reading, we want to approach this in stages. \n",
     "\n",
-    "Note: the function in R for the correlation between two variables may not be what you think it is..."
+    "First, write code that subsets the first city's data (the columns `example1_x` and `example1_y`), then calculates and prints out all the values requested above. Note your code should include the header that identifies the results that follow as coming from Example Dataset 1.\n",
+    "\n",
+    "You will probably need to use `paste()` and/or `paste0()` to make outputs that combine labels (`Mean x:`) with the calculated values. Also if your output ends up with quotes (`\"`) around it, that's fine.\n"
    ]
   },
   {
@@ -172,11 +174,22 @@
    "source": [
     "## Exercise 3\n",
     "\n",
-    "Now sketch out what the inside of your loop will look like. As discussed in the readings, begin by creating a variable that takes on the first value you'll loop over, then, using that variable, write code that does what you want your first pass of the loop to do. \n",
+    "Now, we want to think about how we could *parameterize* our code so that instead of explicitly being written for dataset 1, the code would work for any of our 13 datasets. \n",
     "\n",
-    "You'll probably need to make use of `print()`, `paste0()`, and `round()`.\n",
+    "We do so by creating a variable — let's call it `i` — that we initially set equal to 1 (but we figure we'll later set to other values, like 2, 3, 4, etc. to get summary statistics for different datasets). Then anywhere our code explicitly references dataset 1, we replace that with `i`. \n",
     "\n",
-    "Round your answers to three decimal places. Note these numbers *should* look *very* similar across datasets."
+    "So you'd end up with something like:\n",
+    "\n",
+    "```R\n",
+    "i <- 1\n",
+    "[your code from above that now uses i]\n",
+    "```\n",
+    "\n",
+    "And when you run it, you should get the same output as above.\n",
+    "\n",
+    "NOTE: you'll almost certainly need to use `paste0()` again.\n",
+    "\n",
+    "NOTE 2: If you used `$` to access columns, you will need to move to using `[]`. `$` is easy to use, but there's no way to use it with a variable — to use `$` to get a column you have to explicitly write the name of the column you want to access. And our goal is to NOT have our code explicitly reference one specific dataset so that when `i` changes, so does our code."
    ]
   },
   {
@@ -185,7 +198,9 @@
    "source": [
     "## Exercise 4\n",
     "\n",
-    "Now put them together! Can you print out these summary statistics for all 13 pairs of variables? "
+    "Change the value of `i` at the top of your code to `i <- 2`. Does your code now calculate the values you want for `example2_x` and `example2_y`?\n",
+    "\n",
+    "NOTE: The numbers from the different datasets will look quite similar, but won't be identical."
    ]
   },
   {
@@ -194,7 +209,7 @@
    "source": [
     "## Exercise 5\n",
     "\n",
-    "Based only on these results, discuss what might you conclude about these example datasets with your partner. Write down your thoughts."
+    "Now put your code in a loop, where each time the loop is run it changes the value of `i` to calculate your summary statistics for a different dataset (from 1 to 13)."
    ]
   },
   {
@@ -202,6 +217,15 @@
    "metadata": {},
    "source": [
     "## Exercise 6\n",
+    "\n",
+    "Based only on these results, discuss what might you conclude about these example datasets with your partner. Write down your thoughts."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Exercise 7\n",
     "\n",
     "Now we're going to write a loop that plots these datasets out in a scatter plot. To do this, we'll be using the library `ggplot2`, a libraries from the tidyverse the is unequivocally the best tool for plotting in R.\n",
     "\n",
@@ -259,7 +283,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "### Exercise 7\n",
+    "## Exercise 8\n",
     "\n",
     "Review you plots. How does your impression of how these datasets differ from what you wrote down in Exercise 3?"
    ]

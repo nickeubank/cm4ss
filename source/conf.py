@@ -114,11 +114,6 @@ html_theme_options = {
             "title": "Class Schedule (Fall 2024)",
         },
         {
-            "href": "class_schedule_winter",
-            "internal": True,
-            "title": "Class Schedule (Winter 2025)",
-        },
-        {
             "href": "https://www.nickeubank.com",
             "internal": False,
             "title": "About The Author",

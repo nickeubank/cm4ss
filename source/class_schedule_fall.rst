@@ -1,4 +1,4 @@
-Class Schedule (August 2024)
+Class Schedule (August 2025)
 ==================================
 
 ..  youtube:: HqvHh1WdP5E
@@ -8,7 +8,7 @@ Class Schedule (August 2024)
 Session 1: Variables & Vectors
 -------------------------------------------------
 
-*Tuesday, August 13th 2024, 2:00-3:30*
+*Monday, August 11th 2025, 1:30-3:00*
 
 **Do Before Class**
 
@@ -30,7 +30,7 @@ Session 1: Variables & Vectors
 Session 2: Vectors
 -------------------------------------------------
 
-*Wednesday, August 14th 2024, 10-11:30*
+*Tuesday, August 12th 2025, 10-11:30*
 
 **Read Before Class:**
 
@@ -45,7 +45,7 @@ Session 2: Vectors
 Session 3: Matrices
 ---------------------------------------------
 
-*Wednesday, August 14th 2024, 2:00-3:30*
+*Tuesday, August 12th 2025, 1:30-3:00*
 
 **Read Before Class:**
 
@@ -61,7 +61,7 @@ Session 3: Matrices
 Session 4: DataFrames
 -----------------------------------------------------
 
-*Thursday, August 15th 2024, 10:00-11:30*
+*Wednesday, August 13th 2025, 1:30-3:30* **NOTE LATER RELEASE**
 
 **Read Before Class:**
 
@@ -80,7 +80,7 @@ have time to absorb them!
 Session 5: Merging and Missing Data
 -------------------------------------------------------------
 
-*Thursday, August 15th 2024, 2:00-3:30*
+*Thursday, August 14th 2025, 10:00-11:30*
 
 **Read Before Class:**
 
@@ -98,7 +98,7 @@ Session 5: Merging and Missing Data
 Session 6: The Seven Steps
 ---------------------------------
 
-*Friday, August 16th 2024, 10:00-11:30*
+*Thursday, August 14th 2025, 1:30-3:00*
 
 **Read Before Class:**
 
@@ -110,11 +110,27 @@ Session 6: The Seven Steps
 **In Class:**
 
 Legos!
- 
-Session 7: Loops and Lists
+
+Session 7: Legos Part 2
 ---------------------------------
 
-*Friday, August 16th 2024, 2:00-3:30*
+*Friday, August 15th 2025, 10:00-11:30*
+
+**Read Before Class:**
+
+-  `Loops <loops.ipynb>`__
+-  `Functions <functions.ipynb>`__
+
+**In Class:**
+
+- `Loop Exercise <exercises/exercise_loops.ipynb>`__
+- `Functions Exercise <exercises/exercise_functions.ipynb>`__
+
+
+Session 8: Loops and Lists
+---------------------------------
+
+*Friday, August 15th 2025, 11:30-1:00pm* **NOTE THIS IS NOT USUAL TIME**
 
 **Read Before Class:**
 
