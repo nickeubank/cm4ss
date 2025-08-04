@@ -86,9 +86,7 @@ I owe a huge debt of gratitude to `Simon Ejdemyr <https://sejdemyr.github.io/>`_
    :hidden:
    :maxdepth: 1
 
-   class_schedule_fall
-   class_schedule_winter
-   
+   class_schedule_fall   
 
 .. toctree::
    :hidden:

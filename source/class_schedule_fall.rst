@@ -3,6 +3,8 @@ Class Schedule (August 2025)
 
 ..  youtube:: HqvHh1WdP5E
 
+*Yes, the welcome video was recorded a few years ago, but still works!*
+
 **All Sessions will be in person in Gross Hall, Second Floor, 270**
 
 Session 1: Variables & Vectors

@@ -22,7 +22,7 @@
 html_title = "Computational Methods for Social Scientists"
 project = "CM4SS"
 nav_title = "CM4SS"
-copyright = "2024, Nick Eubank"
+copyright = "2025, Nick Eubank"
 author = "Nick Eubank"
 
 # The short X.Y version
@@ -111,7 +111,7 @@ html_theme_options = {
         {
             "href": "class_schedule_fall",
             "internal": True,
-            "title": "Class Schedule (Fall 2024)",
+            "title": "Class Schedule (Fall 2025)",
         },
         {
             "href": "https://www.nickeubank.com",
