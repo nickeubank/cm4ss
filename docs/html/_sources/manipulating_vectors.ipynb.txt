@@ -72,7 +72,7 @@
    ],
    "source": [
     "a <- c(42, 47, -1)\n",
-    "a"
+    "a\n"
    ]
   },
   {
@@ -111,7 +111,7 @@
     }
    ],
    "source": [
-    "a[2]"
+    "a[2]\n"
    ]
   },
   {
@@ -151,7 +151,7 @@
    ],
    "source": [
     "new <- a[2]\n",
-    "new"
+    "new\n"
    ]
   },
   {
@@ -212,7 +212,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 4,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -240,7 +240,7 @@
    ],
    "source": [
     "a <- c(42, 47, -1)\n",
-    "a[2]"
+    "a[2]\n"
    ]
   },
   {
@@ -252,7 +252,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 5,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -290,7 +290,7 @@
     }
    ],
    "source": [
-    "a[c(1, 3)]"
+    "a[c(1, 3)]\n"
    ]
   },
   {
@@ -302,7 +302,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 6,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -341,7 +341,7 @@
    ],
    "source": [
     "subset <- c(1, 3)\n",
-    "a[subset]"
+    "a[subset]\n"
    ]
   },
   {
@@ -353,7 +353,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 7,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -391,7 +391,7 @@
     }
    ],
    "source": [
-    "a[c(3, 1)]"
+    "a[c(3, 1)]\n"
    ]
   },
   {
@@ -419,7 +419,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 8,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -447,7 +447,7 @@
    ],
    "source": [
     "fruits <- c(\"apple\", \"banana\")\n",
-    "fruits[c(TRUE, FALSE)]"
+    "fruits[c(TRUE, FALSE)]\n"
    ]
   },
   {
@@ -461,7 +461,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 9,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -502,7 +502,7 @@
     "a <- c(42, 47, -1)\n",
     "my_subset <- c(TRUE, FALSE, TRUE)\n",
     "b <- a[my_subset]\n",
-    "b"
+    "b\n"
    ]
   },
   {
@@ -550,7 +550,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 1,
+   "execution_count": 10,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -649,12 +649,12 @@
    "source": [
     "# Create a vector with 30 fruits\n",
     "fruits <- rep(c(\"orange\", \"apple\", \"banana\"), 10)\n",
-    "fruits"
+    "fruits\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 11,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -733,16 +733,16 @@
     "# Create a logical vector for dropping bananas\n",
     "\n",
     "orange_or_apple <- fruits == \"orange\" | fruits == \"apple\" # TRUE if orange OR apple\n",
-    "not_banana <- fruits != \"banana\"                            # TRUE if not equal\n",
-    "not_banana2 <- !(fruits == \"banana\")                        # Also TRUE if not equal\n",
+    "not_banana <- fruits != \"banana\" # TRUE if not equal\n",
+    "not_banana2 <- !(fruits == \"banana\") # Also TRUE if not equal\n",
     "\n",
     "# Carry out the subset\n",
-    "fruits[orange_or_apple]"
+    "fruits[orange_or_apple]\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 12,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -818,12 +818,12 @@
     }
    ],
    "source": [
-    "fruits[not_banana]"
+    "fruits[not_banana]\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 13,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -899,7 +899,7 @@
     }
    ],
    "source": [
-    "fruits[not_banana2]"
+    "fruits[not_banana2]\n"
    ]
   },
   {
@@ -919,7 +919,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 14,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -996,7 +996,7 @@
    ],
    "source": [
     "orange_or_apple2 <- fruits %in% c(\"orange\", \"apple\")\n",
-    "fruits[orange_or_apple2]"
+    "fruits[orange_or_apple2]\n"
    ]
   },
   {
@@ -1027,7 +1027,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 15,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -1090,7 +1090,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 16,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -1135,12 +1135,12 @@
    ],
    "source": [
     "# Illustrate three different filters\n",
-    "numbers[numbers <= 50 & numbers != 30]"
+    "numbers[numbers <= 50 & numbers != 30]\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 17,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -1178,12 +1178,12 @@
     }
    ],
    "source": [
-    "numbers[numbers == 0 | numbers == 100]"
+    "numbers[numbers == 0 | numbers == 100]\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 18,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -1204,7 +1204,7 @@
     }
    ],
    "source": [
-    "numbers[numbers > 100] #returns an empty vector"
+    "numbers[numbers > 100] # returns an empty vector\n"
    ]
   },
   {
@@ -1230,7 +1230,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 19,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -1279,12 +1279,12 @@
    ],
    "source": [
     "attendance <- c(132, 94, 112, 84, 254, 322, 472)\n",
-    "attendance"
+    "attendance\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 20,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -1333,10 +1333,12 @@
     }
    ],
    "source": [
-    "names(attendance) <- c(\"Monday\", \"Tuesday\",\n",
-    "                       \"Wednesday\", \"Thursday\", \"Friday\",\n",
-    "                       \"Saturday\", \"Sunday\")\n",
-    "attendance"
+    "names(attendance) <- c(\n",
+    "    \"Monday\", \"Tuesday\",\n",
+    "    \"Wednesday\", \"Thursday\", \"Friday\",\n",
+    "    \"Saturday\", \"Sunday\"\n",
+    ")\n",
+    "attendance\n"
    ]
   },
   {
@@ -1348,7 +1350,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 21,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -1387,7 +1389,7 @@
     }
    ],
    "source": [
-    "attendance[c(\"Saturday\", \"Sunday\")]"
+    "attendance[c(\"Saturday\", \"Sunday\")]\n"
    ]
   },
   {
@@ -1401,7 +1403,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": 22,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -1447,8 +1449,8 @@
     "# Three ways of changing grandpa's age\n",
     "# Note: you'd only need to use one of these\n",
     "age[age == 80] <- 82 # using a logical statement\n",
-    "age[2] <- 45         # using indexing\n",
-    "age"
+    "age[2] <- 45 # using indexing\n",
+    "age\n"
    ]
   },
   {
@@ -1461,7 +1463,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 23,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -1526,13 +1528,13 @@
     }
    ],
    "source": [
-    "fruits <- rep(c(\"orange\", \"apple\", \"bamama\"), 5) \n",
-    "fruits #bamamas anyone? "
+    "fruits <- rep(c(\"orange\", \"apple\", \"bamama\"), 5)\n",
+    "fruits # bamamas anyone?\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": 24,
    "metadata": {
     "vscode": {
      "languageId": "r"
@@ -1599,7 +1601,230 @@
    "source": [
     "# Let's fix the misspelled element\n",
     "fruits[fruits == \"bamama\"] <- \"banana\"\n",
-    "fruits"
+    "fruits\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "06c3e879",
+   "metadata": {},
+   "source": [
+    "### Conditionally Modifying a Subset\n",
+    "\n",
+    "The final way that one can use subsets to modify a vector is in a situation where the modification you want to make depends on the value of an observation. \n",
+    "\n",
+    "For example, suppose you have the following salary data:\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "a9e4ec6f",
+   "metadata": {
+    "vscode": {
+     "languageId": "r"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<style>\n",
+       ".list-inline {list-style: none; margin:0; padding: 0}\n",
+       ".list-inline>li {display: inline-block}\n",
+       ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+       "</style>\n",
+       "<ol class=list-inline><li>105000</li><li>50000</li><li>55000</li><li>80000</li><li>70000</li></ol>\n"
+      ],
+      "text/latex": [
+       "\\begin{enumerate*}\n",
+       "\\item 105000\n",
+       "\\item 50000\n",
+       "\\item 55000\n",
+       "\\item 80000\n",
+       "\\item 70000\n",
+       "\\end{enumerate*}\n"
+      ],
+      "text/markdown": [
+       "1. 105000\n",
+       "2. 50000\n",
+       "3. 55000\n",
+       "4. 80000\n",
+       "5. 70000\n",
+       "\n",
+       "\n"
+      ],
+      "text/plain": [
+       "[1] 105000  50000  55000  80000  70000"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "salaries <- c(105000, 50000, 55000, 80000, 70000)\n",
+    "salaries\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8dae5bf7",
+   "metadata": {},
+   "source": [
+    "Now you want to give everyone with an income below \\$75,000 a \\$10,000 tax refund. You can't just do `salaries + 10000`, because that would apply to all salaries. \n",
+    "\n",
+    "One way to address this would be to do it in a couple steps. Create a vector of refund:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "b4381c64",
+   "metadata": {
+    "vscode": {
+     "languageId": "r"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<style>\n",
+       ".list-inline {list-style: none; margin:0; padding: 0}\n",
+       ".list-inline>li {display: inline-block}\n",
+       ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+       "</style>\n",
+       "<ol class=list-inline><li>0</li><li>10000</li><li>10000</li><li>0</li><li>10000</li></ol>\n"
+      ],
+      "text/latex": [
+       "\\begin{enumerate*}\n",
+       "\\item 0\n",
+       "\\item 10000\n",
+       "\\item 10000\n",
+       "\\item 0\n",
+       "\\item 10000\n",
+       "\\end{enumerate*}\n"
+      ],
+      "text/markdown": [
+       "1. 0\n",
+       "2. 10000\n",
+       "3. 10000\n",
+       "4. 0\n",
+       "5. 10000\n",
+       "\n",
+       "\n"
+      ],
+      "text/plain": [
+       "[1]     0 10000 10000     0 10000"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "refund <- replicate(length(salaries), 0)\n",
+    "refund[salaries < 75000] <- 10000\n",
+    "refund\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "c42b0afe",
+   "metadata": {
+    "vscode": {
+     "languageId": "r"
+    }
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<style>\n",
+       ".list-inline {list-style: none; margin:0; padding: 0}\n",
+       ".list-inline>li {display: inline-block}\n",
+       ".list-inline>li:not(:last-child)::after {content: \"\\00b7\"; padding: 0 .5ex}\n",
+       "</style>\n",
+       "<ol class=list-inline><li>105000</li><li>60000</li><li>65000</li><li>80000</li><li>80000</li></ol>\n"
+      ],
+      "text/latex": [
+       "\\begin{enumerate*}\n",
+       "\\item 105000\n",
+       "\\item 60000\n",
+       "\\item 65000\n",
+       "\\item 80000\n",
+       "\\item 80000\n",
+       "\\end{enumerate*}\n"
+      ],
+      "text/markdown": [
+       "1. 105000\n",
+       "2. 60000\n",
+       "3. 65000\n",
+       "4. 80000\n",
+       "5. 80000\n",
+       "\n",
+       "\n"
+      ],
+      "text/plain": [
+       "[1] 105000  60000  65000  80000  80000"
+      ]
+     },
+     "metadata": {},
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "salaries + refund\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b072ab28",
+   "metadata": {},
+   "source": [
+    "But you can also apply this more directly by subsetting on either side of the assignment operator:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "9609fc68",
+   "metadata": {
+    "vscode": {
+     "languageId": "r"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "salaries[salaries < 75000] <- salaries[salaries < 75000] + 10000\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6e25c92c",
+   "metadata": {
+    "vscode": {
+     "languageId": "r"
+    }
+   },
+   "source": [
+    "This can seem very unintuitive at first — the expression on the right hand side of the assignment operator (`salaries[salaries < 75000] + 10000`) is creating a vector that only has three entries. But `salaries` has five entries, so where will those three values be assigned?\n",
+    "\n",
+    "The answer is that the subsetting on the left-hand-side of the assignment operator (`[salaries < 75000]`) tells R which entries of `salaries` are \"open\" to assignment of new values, as shown in the figure below (sorry about the underscores in the numbers — the figure is originally from Python code, which allows underscores in numbers.)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1e40b1e8",
+   "metadata": {
+    "vscode": {
+     "languageId": "r"
+    }
+   },
+   "source": [
+    "![double subsetting](images/2.2.35_modifying_subsets_2.png)\n"
    ]
   },
   {
@@ -1649,7 +1874,7 @@
    "mimetype": "text/x-r-source",
    "name": "R",
    "pygments_lexer": "r",
-   "version": "4.1.0"
+   "version": "4.3.1"
   }
  },
  "nbformat": 4,
