@@ -8,7 +8,7 @@
                 "\n",
                 "Matrices are a natural extension of the vectors that we have been working with in the last couple reading; where a vector is a collection of data of the same type ordered along a *single* dimension, a matrix is a collection of data of the same type ordered along *two* dimensions.\n",
                 "\n",
-                "If you've taken a linear algebra course before, the idea of a matrix will be very familiar, but if you haven't,  you can think of a matrix as a collection of vectors lined up side-by-side. For example a 3x3 matrix might look something like:\n",
+                "If you've taken a linear algebra course before, the idea of a matrix will be very familiar, but if you haven't, you can think of a matrix as a collection of vectors lined up side-by-side. For example a 3x3 matrix might look something like:\n",
                 "\n",
                 "$$\n",
                 "\\begin{bmatrix} \n",
@@ -56,7 +56,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 1,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -115,12 +115,12 @@
                 "age <- c(20, 35, 55)\n",
                 "education <- c(12, 16, 11)\n",
                 "\n",
-                "cbind(income, age, education)"
+                "cbind(income, age, education)\n"
             ]
         },
         {
             "cell_type": "code",
-            "execution_count": 2,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -172,7 +172,7 @@
                 "respondent2 <- c(35, 65000, 16)\n",
                 "respondent3 <- c(55, 19000, 11)\n",
                 "\n",
-                "rbind(respondent1, respondent2, respondent3)"
+                "rbind(respondent1, respondent2, respondent3)\n"
             ]
         },
         {
@@ -184,7 +184,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 3,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -232,7 +232,7 @@
                 }
             ],
             "source": [
-                "matrix(1:9, nrow = 3, ncol = 3)"
+                "matrix(1:9, nrow = 3, ncol = 3)\n"
             ]
         },
         {
@@ -246,7 +246,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 4,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -306,7 +306,7 @@
                 "salary_2000 <- c(49000, 47000, 33000)\n",
                 "\n",
                 "salaries <- cbind(salary_1980, salary_1990, salary_2000)\n",
-                "salaries"
+                "salaries\n"
             ]
         },
         {
@@ -318,7 +318,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 5,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -374,7 +374,7 @@
             ],
             "source": [
                 "salaries_in_thousands <- salaries / 1000\n",
-                "salaries_in_thousands"
+                "salaries_in_thousands\n"
             ]
         },
         {
@@ -451,7 +451,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 7,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -507,7 +507,7 @@
             ],
             "source": [
                 "total_income <- salaries + refunds\n",
-                "total_income"
+                "total_income\n"
             ]
         },
         {
@@ -521,7 +521,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 8,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -549,12 +549,12 @@
             ],
             "source": [
                 "# Num rows\n",
-                "nrow(total_income)"
+                "nrow(total_income)\n"
             ]
         },
         {
             "cell_type": "code",
-            "execution_count": 9,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -582,12 +582,12 @@
             ],
             "source": [
                 "# Num cols\n",
-                "ncol(total_income)"
+                "ncol(total_income)\n"
             ]
         },
         {
             "cell_type": "code",
-            "execution_count": 10,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -615,12 +615,12 @@
             ],
             "source": [
                 "# Overall statistics\n",
-                "mean(total_income)"
+                "mean(total_income)\n"
             ]
         },
         {
             "cell_type": "code",
-            "execution_count": 11,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -662,12 +662,12 @@
             ],
             "source": [
                 "# And statistics calculated for each columns\n",
-                "colMeans(total_income)"
+                "colMeans(total_income)\n"
             ]
         },
         {
             "cell_type": "code",
-            "execution_count": 12,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -708,7 +708,7 @@
             ],
             "source": [
                 "# Or for each row!\n",
-                "rowMeans(total_income)"
+                "rowMeans(total_income)\n"
             ]
         },
         {
@@ -724,7 +724,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 13,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -773,7 +773,7 @@
             ],
             "source": [
                 "matrix_1 <- matrix(1:9, nrow = 3)\n",
-                "matrix_1"
+                "matrix_1\n"
             ]
         },
         {
@@ -832,7 +832,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 15,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -881,12 +881,12 @@
             ],
             "source": [
                 "# Matrix multiplication\n",
-                "matrix_1 %*% matrix_2"
+                "matrix_1 %*% matrix_2\n"
             ]
         },
         {
             "cell_type": "code",
-            "execution_count": 16,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -935,12 +935,12 @@
             ],
             "source": [
                 "# Transpose matrix\n",
-                "t(matrix_1)"
+                "t(matrix_1)\n"
             ]
         },
         {
             "cell_type": "code",
-            "execution_count": 17,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -967,7 +967,7 @@
             ],
             "source": [
                 "# Eigen vector of matrix\n",
-                "eigen(matrix_1)"
+                "eigen(matrix_1)\n"
             ]
         },
         {
@@ -996,7 +996,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 18,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -1044,7 +1044,7 @@
                 }
             ],
             "source": [
-                "solve(salaries)"
+                "solve(salaries)\n"
             ]
         },
         {
@@ -1062,7 +1062,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 19,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -1086,19 +1086,19 @@
                 }
             ],
             "source": [
-                "lm(income ~ age + education)"
+                "lm(income ~ age + education)\n"
             ]
         },
         {
             "cell_type": "markdown",
             "metadata": {},
             "source": [
-                "Now as you'll learn in your statistics courses, linear algebra can actually be expressed in terms of matrices as $$(X'X)^{-1}X'Y$$ (The inverse of the transverse of X matrix multiplied by X times the transpose of X times Y, where X is a matrix of predictors, and Y is the variable we're trying to predict). So we can write this directly as:"
+                "Now as you'll learn in your statistics courses, linear regression can actually be expressed in terms of matrices as $$(X'X)^{-1}X'Y$$ (The inverse of the transverse of X matrix multiplied by X times the transpose of X times Y, where X is a matrix of predictors, and Y is the variable we're trying to predict). So we can write this directly as:"
             ]
         },
         {
             "cell_type": "code",
-            "execution_count": 20,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -1155,12 +1155,12 @@
             "source": [
                 "# Make X. note we need a vector of 1s for our intercept.\n",
                 "X <- cbind(age, education, rep(1, 3))\n",
-                "X"
+                "X\n"
             ]
         },
         {
             "cell_type": "code",
-            "execution_count": 21,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -1213,12 +1213,12 @@
                 "# Here's X' (i.e. X transpose)\n",
                 "\n",
                 "X_transpose <- t(X)\n",
-                "X_transpose"
+                "X_transpose\n"
             ]
         },
         {
             "cell_type": "code",
-            "execution_count": 22,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -1227,7 +1227,7 @@
             "outputs": [],
             "source": [
                 "# And now the block on the left: (X'X)^-1\n",
-                "inverse_of_X_transpose_times_X <- solve(X_transpose %*% X)"
+                "inverse_of_X_transpose_times_X <- solve(X_transpose %*% X)\n"
             ]
         },
         {
@@ -1246,7 +1246,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 24,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -1295,7 +1295,7 @@
             ],
             "source": [
                 "# And putting it all together we get:\n",
-                "inverse_of_X_transpose_times_X %*% X_transpose_y"
+                "inverse_of_X_transpose_times_X %*% X_transpose_y\n"
             ]
         },
         {
@@ -1314,7 +1314,7 @@
         },
         {
             "cell_type": "code",
-            "execution_count": 25,
+            "execution_count": null,
             "metadata": {
                 "vscode": {
                     "languageId": "r"
@@ -1362,7 +1362,7 @@
                 }
             ],
             "source": [
-                "solve(t(X) %*% X) %*% (t(X) %*% income)"
+                "solve(t(X) %*% X) %*% (t(X) %*% income)\n"
             ]
         },
         {
