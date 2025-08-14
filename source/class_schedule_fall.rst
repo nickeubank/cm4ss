@@ -118,16 +118,7 @@ Session 7: Legos Part 2
 
 *Friday, August 15th 2025, 10:00-11:30*
 
-**Read Before Class:**
-
--  `Loops <loops.ipynb>`__
--  `Functions <functions.ipynb>`__
-
-**In Class:**
-
-- `Loop Exercise <exercises/exercise_loops.ipynb>`__
-- `Functions Exercise <exercises/exercise_functions.ipynb>`__
-
+More legos!
 
 Session 8: Loops and Lists
 ---------------------------------
