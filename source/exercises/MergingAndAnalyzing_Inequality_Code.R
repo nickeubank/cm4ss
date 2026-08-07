@@ -5,9 +5,9 @@
 library(statar)
 
 inequality <- read.dta(paste0(
-  "https://github.com/nickeubank/",
-  "cm4ss/",
-  "raw/main/source/data/inequality.dta"
+    "https://github.com/nickeubank/",
+    "cm4ss/",
+    "raw/main/source/data/inequality.dta"
 ))
 
 table(inequality$year)
@@ -21,12 +21,12 @@ head(taxation)
 install.packages("foreign")
 
 fips_codes <- read.csv(
-  paste0(
-    "https://raw.githubusercontent.com/nickeubank/",
-    "cm4ss/",
-    "main/source/data/State_FIPS.txt"
-  ),
-  sep = "\t", header = TRUE
+    paste0(
+        "https://raw.githubusercontent.com/nickeubank/",
+        "cm4ss/",
+        "main/source/data/State_FIPS.txt"
+    ),
+    sep = "\t", header = TRUE
 )
 
 library(foreign)
@@ -40,15 +40,15 @@ table(taxation$name)
 length(unique(taxation$name))
 
 taxation <- read.csv(paste0(
-  "https://raw.githubusercontent.com/nickeubank/",
-  "cm4ss/",
-  "main/source/data/STC_Historical_taxes.csv"
+    "https://raw.githubusercontent.com/nickeubank/",
+    "cm4ss/",
+    "main/source/data/STC_Historical_taxes.csv"
 ))
 
 populations <- read.csv(paste0(
-  "https://raw.githubusercontent.com/nickeubank/",
-  "cm4ss/",
-  "main/source/data/state_populations.csv"
+    "https://raw.githubusercontent.com/nickeubank/",
+    "cm4ss/",
+    "main/source/data/state_populations.csv"
 ))
 
 #####
@@ -56,19 +56,19 @@ populations <- read.csv(paste0(
 #####
 
 populations <- populations[!(populations$NAME %in% c(
-  "United States",
-  "District of Columbia",
-  "Puerto Rico",
-  "Northeast Region",
-  "Midwest Region",
-  "South Region",
-  "West Region"
+    "United States",
+    "District of Columbia",
+    "Puerto Rico",
+    "Northeast Region",
+    "Midwest Region",
+    "South Region",
+    "West Region"
 )), ]
 
 taxation <- taxation[taxation$name != "US STATE GOVTS", ]
 
 inequality <- inequality[(inequality$state != "District of Columbia") &
-  (inequality$state != "United States"), ]
+    (inequality$state != "United States"), ]
 
 
 populations$state <- populations$NAME
@@ -80,12 +80,12 @@ populations$CENSUS2010POP <- NULL
 inequality <- inequality[, c("year", "state", "gini", "top10", "top1")]
 
 taxation <- taxation[, c(
-  "year", "state", "Total.Taxes",
-  "Total.Income.Taxes", "name"
+    "year", "state", "Total.Taxes",
+    "Total.Income.Taxes", "name"
 )]
 
 fips_codes <- fips_codes[fips_codes$State.FIPS != 11 &
-  fips_codes$State.FIPS != 0, ]
+    fips_codes$State.FIPS != 0, ]
 
 fips_codes <- fips_codes[, c("State.FIPS", "Name")]
 
@@ -117,10 +117,10 @@ stopifnot(taxation_w_names["_merge"] == 3)
 taxation_w_names["_merge"] <- NULL
 
 ineq_and_taxation <- join(taxation_w_names, inequality,
-  on = "FILL_IN",
-  kind = "FILL_IN",
-  check = FILL_IN,
-  gen = "_merge"
+    on = "FILL_IN",
+    kind = "FILL_IN",
+    check = FILL_IN,
+    gen = "_merge"
 ) # NOTE: You have to replace `FILL_IN` with appropriate content in this func
 
 inequality$Name <- inequality$state
@@ -130,20 +130,20 @@ stopifnot(full_data["_merge"] == 3)
 full_data["_merge"] <- NULL
 
 full_data <- join(ineq_and_taxation, populations,
-  on = "FILL_IN",
-  kind = "FILL_IN",
-  check = FILL_IN,
-  gen = "_merge"
+    on = "FILL_IN",
+    kind = "FILL_IN",
+    check = FILL_IN,
+    gen = "_merge"
 ) # NOTE: You have to replace `FILL_IN` with appropriate content in this func
 
 stopifnot(ineq_and_taxation["_merge"] == 3)
 ineq_and_taxation["_merge"] <- NULL
 
 taxation_w_names <- join(taxation, fips_codes,
-  on = "FILL_IN",
-  kind = "FILL_IN",
-  check = FILL_IN,
-  gen = "_merge"
+    on = "FILL_IN",
+    kind = "FILL_IN",
+    check = FILL_IN,
+    gen = "_merge"
 ) # NOTE: You have to replace `FILL_IN` with appropriate content in this func
 
 populations$Name <- populations$NAME

@@ -1,22 +1,20 @@
-Class Schedule (August 2025)
+Class Schedule (August 2026)
 ==================================
 
 ..  youtube:: HqvHh1WdP5E
 
 *Yes, the welcome video was recorded a few years ago, but still works!*
 
-**All Sessions will be in person in Gross Hall, Second Floor, 270**
+**All Sessions will be in person in Gross Hall, Second Floor, 230E**
 
 Session 1: Variables & Vectors
 -------------------------------------------------
 
-*Monday, August 11th 2025, 1:30-3:00*
+*Monday, August 10th 2026, 1:30-3:00*
 
 **Do Before Class**
 
 - Watch Welcome Video
-- Complete `Student Knowledge Assessment survey <https://forms.gle/CbN86jkFWf3A2hHL9>`__
-- Accept Slack Invitation
 - Read `Course Summary <index.rst>`__
 - Read `Introduction to R <intro_to_r.ipynb>`__ (following the directions for installing R and RSTudio).
 
@@ -32,22 +30,25 @@ Session 1: Variables & Vectors
 Session 2: Vectors
 -------------------------------------------------
 
-*Tuesday, August 12th 2025, 10-11:30*
+*Tuesday, August 11th 2026, 10:00-12:00*
 
 **Read Before Class:**
 
 -   Review `Intro to Data Types <intro_to_datatypes.ipynb>`__
 -  `Intro to Vectors <intro_to_vectors.ipynb>`__
 -  `Manipulating Vectors <manipulating_vectors.ipynb>`__
+- `R Markdown <intro_to_rmarkdown.ipynb>`__
 
 **In Class**
 
 -  `Vector Exercises <exercises/exercise_vectors.ipynb>`__
+- `R Markdown <intro_to_rmarkdown.ipynb>_`
+
 
 Session 3: Matrices
 ---------------------------------------------
 
-*Tuesday, August 12th 2025, 1:30-3:00*
+*Tuesday, August 11th 2026, 1:30-3:00*
 
 **Read Before Class:**
 
@@ -63,7 +64,7 @@ Session 3: Matrices
 Session 4: DataFrames
 -----------------------------------------------------
 
-*Wednesday, August 13th 2025, 1:30-3:30* **NOTE LATER RELEASE**
+*Thursday, August 13th 2026, 10:00-12:00*
 
 **Read Before Class:**
 
@@ -82,7 +83,7 @@ have time to absorb them!
 Session 5: Merging and Missing Data
 -------------------------------------------------------------
 
-*Thursday, August 14th 2025, 10:00-11:30*
+*Thursday, August 13th 2026, 1:30-3:00*
 
 **Read Before Class:**
 
@@ -100,14 +101,13 @@ Session 5: Merging and Missing Data
 Session 6: The Seven Steps
 ---------------------------------
 
-*Thursday, August 14th 2025, 1:30-3:00*
+*Friday, August 14th 2026, 10:00-12:00*
 
 **Read Before Class:**
 
 -  `Overview of the Seven Steps <seven_steps_overview.ipynb>`__
 -  `Steps 1-4 <seven_steps_1_4.ipynb>`__
 - `Seven Steps Example <seven_steps_1_4_example.ipynb>`__
-- `R Markdown <intro_to_rmarkdown.ipynb>`__
 
 **In Class:**
 
@@ -116,19 +116,12 @@ Legos!
 Session 7: Legos Part 2
 ---------------------------------
 
-*Friday, August 15th 2025, 10:00-11:30*
-
-More legos!
-
-Session 8: Loops and Lists
----------------------------------
-
-*Friday, August 15th 2025, 11:30-1:00pm* **NOTE THIS IS NOT USUAL TIME**
+*Friday, August 14th 2026, 1:30-3pm*
 
 **Read Before Class:**
 
--  `Loops <loops.ipynb>`__
--  `Functions <functions.ipynb>`__
+- `Loops <loops.ipynb>`__
+- `Functions <functions.ipynb>`__
 
 **In Class:**
 
@@ -138,7 +131,7 @@ Session 8: Loops and Lists
 Additional Readings
 -------------------
 
-*Because we certainly can't learn everything in six sessions!*
+*Because we certainly can't learn everything in five sessions!*
 
 -  `Reshaping <wide_and_long.ipynb>`__
 

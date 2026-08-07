@@ -31,33 +31,33 @@ library(statar)
 # one another
 
 fips_codes <- read.csv(
-  paste0(
-    "https://raw.githubusercontent.com/nickeubank/",
-    "cm4ss/",
-    "main/source/data/State_FIPS.txt"
-  ),
-  sep = "\t", header = TRUE
+    paste0(
+        "https://raw.githubusercontent.com/nickeubank/",
+        "cm4ss/",
+        "main/source/data/State_FIPS.txt"
+    ),
+    sep = "\t", header = TRUE
 )
 
 # Load data on taxation
 
 taxation <- read.csv(paste0(
-  "https://raw.githubusercontent.com/nickeubank/",
-  "cm4ss/",
-  "main/source/data/STC_Historical_taxes.csv"
+    "https://raw.githubusercontent.com/nickeubank/",
+    "cm4ss/",
+    "main/source/data/STC_Historical_taxes.csv"
 ))
 
 
 populations <- read.csv(paste0(
-  "https://raw.githubusercontent.com/nickeubank/",
-  "cm4ss/",
-  "main/source/data/state_populations.csv"
+    "https://raw.githubusercontent.com/nickeubank/",
+    "cm4ss/",
+    "main/source/data/state_populations.csv"
 ))
 
 inequality <- read.dta(paste0(
-  "https://github.com/nickeubank/",
-  "cm4ss/",
-  "raw/main/source/data/inequality.dta"
+    "https://github.com/nickeubank/",
+    "cm4ss/",
+    "raw/main/source/data/inequality.dta"
 ))
 
 
@@ -96,8 +96,10 @@ inequality <- inequality[inequality$year == 2010, ]
 # Get rid of entries that aren't states
 table(inequality$state)
 
-inequality <- inequality[(inequality$state != "District of Columbia") &
-  (inequality$state != "United States"), ]
+inequality <- inequality[
+    (inequality$state != "District of Columbia") &
+        (inequality$state != "United States"),
+]
 
 
 ###
@@ -107,8 +109,8 @@ inequality <- inequality[(inequality$state != "District of Columbia") &
 # Get relevant observations and variables from taxation
 
 taxation <- taxation[, c(
-  "year", "state", "Total.Taxes",
-  "Total.Income.Taxes", "name"
+    "year", "state", "Total.Taxes",
+    "Total.Income.Taxes", "name"
 )]
 
 
@@ -127,8 +129,10 @@ taxation <- taxation[taxation$year == 2010, ]
 fips_codes <- fips_codes[, c("State.FIPS", "Name")]
 
 # Don't want weird region lines and stuff
-fips_codes <- fips_codes[fips_codes$State.FIPS != 11 &
-  fips_codes$State.FIPS != 0, ]
+fips_codes <- fips_codes[
+    fips_codes$State.FIPS != 11 &
+        fips_codes$State.FIPS != 0,
+]
 
 ###
 # Population Data
@@ -139,13 +143,13 @@ populations <- populations[, c("NAME", "CENSUS2010POP")]
 # Delete non-states:
 
 populations <- populations[!(populations$NAME %in% c(
-  "United States",
-  "District of Columbia",
-  "Puerto Rico",
-  "Northeast Region",
-  "Midwest Region",
-  "South Region",
-  "West Region"
+    "United States",
+    "District of Columbia",
+    "Puerto Rico",
+    "Northeast Region",
+    "Midwest Region",
+    "South Region",
+    "West Region"
 )), ]
 
 
@@ -166,10 +170,10 @@ fips_codes$state <- fips_codes[, "State.FIPS"]
 fips_codes[, "State.FIPS"] <- NULL
 
 taxation_w_names <- join(taxation, fips_codes,
-  on = "state",
-  kind = "full",
-  check = 1 ~ 1,
-  gen = "_merge"
+    on = "state",
+    kind = "full",
+    check = 1 ~ 1,
+    gen = "_merge"
 )
 stopifnot(taxation_w_names["_merge"] == 3)
 taxation_w_names["_merge"] <- NULL
@@ -194,10 +198,10 @@ taxation_w_names[taxation_w_names["Name"] == "Rhode Isl.", "Name"] <- "Rhode Isl
 
 
 ineq_and_taxation <- join(taxation_w_names, inequality,
-  on = "Name",
-  kind = "full",
-  check = 1 ~ 1,
-  gen = "_merge"
+    on = "Name",
+    kind = "full",
+    check = 1 ~ 1,
+    gen = "_merge"
 )
 
 stopifnot(ineq_and_taxation["_merge"] == 3)
@@ -210,10 +214,10 @@ populations$Name <- populations$NAME
 populations$NAME <- NULL
 
 full_data <- join(ineq_and_taxation, populations,
-  on = "Name",
-  kind = "full",
-  check = 1 ~ 1,
-  gen = "_merge"
+    on = "Name",
+    kind = "full",
+    check = 1 ~ 1,
+    gen = "_merge"
 )
 
 stopifnot(full_data["_merge"] == 3)
