@@ -42,7 +42,7 @@ Session 2: Vectors
 **In Class**
 
 -  `Vector Exercises <exercises/exercise_vectors.ipynb>`__
-- `R Markdown <intro_to_rmarkdown.ipynb>_`
+- `R Markdown <exercises/exercise_rmarkdown.ipynb>`__
 
 
 Session 3: Matrices
